@@ -33,10 +33,13 @@
     if ([param count] == 0) return nil;
 
     NSString *result = [param componentsJoinedByString:(component?:@"")];
-    if ([result length] == 0) return nil;
-
-    result = [DESUtils MD5:result];
+    result = [self signQueryFrom:result];
     return result;
+}
+
++ (NSString *_Nullable)signQueryFrom:(nonnull NSString *)paramStr {
+    if ([paramStr length] == 0) return nil;
+    return [DESUtils MD5:paramStr];
 }
 
 @end

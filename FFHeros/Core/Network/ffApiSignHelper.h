@@ -12,5 +12,6 @@
 
 + (NSString *_Nullable)signQueryFrom:(nonnull NSDictionary<NSString *,NSString *> *)param withOrder:(nonnull NSArray<NSString *> *)order;
 + (NSString *_Nullable)signQueryFrom:(nonnull NSArray<NSString *> *)param withCombineComponent:(NSString *_Nullable)component;
++ (NSString *_Nullable)signQueryFrom:(nonnull NSString *)paramStr;
 
 @end

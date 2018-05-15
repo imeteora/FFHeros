@@ -8,6 +8,7 @@
 
 #import "ffAPIRequest.h"
 #import "ffApiRequestOperation.h"
+#import "ffApiSignHelper.h"
 
 @interface ffAPIRequest () <ffApiRequestOperationDelegate>
 {
@@ -42,14 +43,33 @@
 
 #pragma mark - public helpers
 - (void)requestSync {
+    NSAssert(_currentThread == [NSThread currentThread], @"ffApiRquest: current thread is not same as one when request be created.");
+    if (NOT _isRequested) {
+        _isRequested = YES;
+        [self _queryNowOrNot:YES];
+    } else {
+        NSAssert(NO, @"ffApiRequest: current http request had been already established.");
+    }
     return;
 }
 
 - (void)requestAsync {
+    NSAssert(_currentThread == [NSThread currentThread], @"ffApiRquest: current thread is not same as one when request be created.");
+    if (NOT _isRequested) {
+        _isRequested = YES;
+        [self _queryNowOrNot:NO];
+    } else {
+        NSAssert(NO, @"ffApiRequest: current http request had been already established.");
+    }
     return;
 }
 
 #pragma mark - private helpers
+- (void)_queryNowOrNot:(BOOL)bNowOrNot {
+
+}
+
+
 - (nullable ffApiRequestOperation *)_makeRequestOperationWithPreOp:(BOOL (^)(void))preRequestBlock andPostOp:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))postRequestBlock {
     ffApiRequestOperation *result = [[ffApiRequestOperation alloc] init];
     result.preRequestHandler = preRequestBlock;
@@ -122,7 +142,20 @@
 }
 
 - (NSString *)_quertyString {
-    return @"";
+    NSMutableDictionary<NSString *, NSString *> *mutableParms = [[NSMutableDictionary alloc] init];
+    if (_requestConfig.signType != FFApiSignNone) {
+        mutableParms[_requestConfig.signKey] = [ffApiSignHelper signQueryFrom:_requestConfig.authSignStringOfRequest];
+    }
+    [mutableParms addEntriesFromDictionary:_requestConfig.params];
+
+    NSMutableArray<NSString *> *all_params = [[NSMutableArray alloc] init];
+    [mutableParms enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
+        NSString *param_pair = [NSString stringWithFormat:@"%@=%@", key, obj];
+        [all_params addObject:param_pair];
+    }];
+
+    NSString *finalQuery = [all_params componentsJoinedByString:@"&"];
+    return finalQuery;
 }
 
 - (nullable NSData *)_queryBodyFromQuery:(NSString *)query {
