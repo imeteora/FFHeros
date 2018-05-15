@@ -208,6 +208,8 @@
 			children = (
 				133B29F220AA587900117E4F /* ffAPIConfig.h */,
 				133B29F320AA587900117E4F /* ffAPIConfig.m */,
+				13F9E3BE20AB700C00912533 /* ffApiError.h */,
+				13F9E3BF20AB700C00912533 /* ffApiError.m */,
 				133B2A0A20AA71FB00117E4F /* ffApiModel.h */,
 				133B2A0B20AA71FB00117E4F /* ffApiModel.m */,
 				133B29F820AA5B1A00117E4F /* ffAPIModelDescription.h */,
@@ -220,8 +222,6 @@
 				13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */,
 				13974C1920AAFBF800C3063A /* ffApiSignHelper.h */,
 				13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */,
-				13F9E3BE20AB700C00912533 /* ffApiError.h */,
-				13F9E3BF20AB700C00912533 /* ffApiError.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -397,6 +397,7 @@
 				133B29CC20AA56E400117E4F /* AppDelegate.m in Sources */,
 				133B2A0920AA6F9800117E4F /* DESUtils.m in Sources */,
 				133B29F420AA587900117E4F /* ffAPIConfig.m in Sources */,
+				13F9E3C020AB700C00912533 /* ffApiError.m in Sources */,
 				133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */,
 				133B29FA20AA5B1A00117E4F /* ffAPIModelDescription.m in Sources */,
 				133B29F720AA589200117E4F /* ffAPIRequest.m in Sources */,
@@ -406,7 +407,6 @@
 				133E1FA420AB4F5E00CA800C /* ffCharacterModel.m in Sources */,
 				133E1FA620AB4F5E00CA800C /* ffCharacterModelCategoryList.m in Sources */,
 				133E1FA520AB4F5E00CA800C /* ffCharacterModelData.m in Sources */,
-				13F9E3C020AB700C00912533 /* ffApiError.m in Sources */,
 				133E1FA920AB4F5E00CA800C /* ffCharacterModelResult.m in Sources */,
 				133E1FA720AB4F5E00CA800C /* ffCharacterModelThumbnail.m in Sources */,
 				133E1FA820AB4F5E00CA800C /* ffCharacterModelUrl.m in Sources */,
@@ -580,10 +580,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -599,10 +596,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -616,11 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -635,11 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
