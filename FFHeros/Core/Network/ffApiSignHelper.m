@@ -7,11 +7,37 @@
 //
 
 #import "ffApiSignHelper.h"
+#import "DESUtils.h"
 
 @implementation ffApiSignHelper
 
-- (NSString *)signQueryFrom:(NSDictionary<NSString *,NSString *> *)param {
-    return @"";
++ (NSString *_Nullable)signQueryFrom:(nonnull NSDictionary<NSString *,NSString *> *)param withOrder:(nonnull NSArray<NSString *> *)order
+{
+    if ([order count] != [param.allKeys count]) return nil;
+
+    NSMutableArray<NSString *> *tmpParamsArray = [[NSMutableArray alloc] init];
+
+    for (NSString *each_key in order) {
+        if (NOT [param.allKeys containsObject:each_key]) {
+            return nil;
+        }
+        NSString *each_value = [param valueForKey:each_key];
+        [tmpParamsArray addObject:[NSString stringWithFormat:@"%@=%@", each_key, each_value]];
+    }
+    if ([tmpParamsArray count] == 0) return nil;
+
+    return  [self signQueryFrom:tmpParamsArray withCombineComponent:@"&"];
+}
+
++ (NSString *_Nullable)signQueryFrom:(nonnull NSArray<NSString *> *)param withCombineComponent:(NSString *_Nullable)component {
+    if ([param count] == 0) return nil;
+
+    NSString *result = [param componentsJoinedByString:(component?:@"")];
+    if ([result length] == 0) return nil;
+
+    result = [DESUtils MD5:result];
+    return result;
 }
 
 @end
+

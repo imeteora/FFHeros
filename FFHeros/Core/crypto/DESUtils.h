@@ -16,4 +16,6 @@
 + (NSString *) encryptStr:(NSString *) str usingKey: (NSString*)key;
 + (NSString *) decryptStr:(NSString *) str usingKey: (NSString*)key;
 
++ (NSString *) MD5:(NSString *)origin;
+
 @end

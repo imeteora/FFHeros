@@ -23,6 +23,7 @@
 		133B2A0920AA6F9800117E4F /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0720AA6F9800117E4F /* DESUtils.m */; };
 		133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0B20AA71FB00117E4F /* ffApiModel.m */; };
 		13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */; };
+		13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1C20AB02DE00C3063A /* FFCode_Decode.m */; };
 		13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */; };
 		13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7F220AABB7500461972 /* ffApiRequestOperation.m */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		133B2A0B20AA71FB00117E4F /* ffApiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiModel.m; sourceTree = "<group>"; };
 		13974C1920AAFBF800C3063A /* ffApiSignHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiSignHelper.h; sourceTree = "<group>"; };
 		13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiSignHelper.m; sourceTree = "<group>"; };
+		13974C1C20AB02DE00C3063A /* FFCode_Decode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Decode.m; sourceTree = "<group>"; };
 		13F5F7E120AA87A400461972 /* ffApiRequestOperationQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiRequestOperationQueue.h; sourceTree = "<group>"; };
 		13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiRequestOperationQueue.m; sourceTree = "<group>"; };
 		13F5F7F020AAB7B200461972 /* FFHeros-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFHeros-Prefix.pch"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		133B29E220AA56E500117E4F /* FFHerosTests */ = {
 			isa = PBXGroup;
 			children = (
+				13974C1C20AB02DE00C3063A /* FFCode_Decode.m */,
 				133B29E320AA56E500117E4F /* FFHerosTests.m */,
 				133B29E520AA56E500117E4F /* Info.plist */,
 			);
@@ -337,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */,
 				133B29E420AA56E500117E4F /* FFHerosTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

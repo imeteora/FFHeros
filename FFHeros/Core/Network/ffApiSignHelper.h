@@ -10,6 +10,7 @@
 
 @interface ffApiSignHelper : NSObject
 
-- (NSString *)signQueryFrom:(NSDictionary<NSString *, NSString *> *)param;
++ (NSString *_Nullable)signQueryFrom:(nonnull NSDictionary<NSString *,NSString *> *)param withOrder:(nonnull NSArray<NSString *> *)order;
++ (NSString *_Nullable)signQueryFrom:(nonnull NSArray<NSString *> *)param withCombineComponent:(NSString *_Nullable)component;
 
 @end

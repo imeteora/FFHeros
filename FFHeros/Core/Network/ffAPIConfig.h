@@ -16,10 +16,16 @@ typedef enum : NSUInteger {
     FFApiRequestMethodDELETE,
 } ffAPIRequestMethod;
 
+typedef enum : NSUInteger {
+    FFApiSignNone,
+    FFApiSignAutho,
+} ffAPISignType;
+
 @interface ffAPIConfig : NSObject
 
 @property (nonatomic, nonnull, copy)  NSString *baseURL;
 @property (nonatomic, assign) ffAPIRequestMethod method;
+@property (nonatomic, assign) ffAPISignType signType;
 @property (nonatomic, assign) NSTimeInterval timeout;
 @property (nonatomic, nullable, strong) NSDictionary<NSString *, NSString *> *params;
 @property (nonatomic, nullable, strong) NSDictionary<NSString *, NSString *> *extHttpHeader;

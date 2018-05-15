@@ -13,6 +13,8 @@
 - (instancetype)init {
     if (self = [super init]) {
         _timeout = 30;
+        _method = FFApiRequestMethodGET;
+        _signType = FFApiSignNone;
     }
     return self;
 }

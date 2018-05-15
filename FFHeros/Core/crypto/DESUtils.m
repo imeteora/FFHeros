@@ -82,6 +82,26 @@
     return [[NSData alloc] initWithBase64EncodedString:strBase64 options:0];
 }
 
+
++ (NSString *) MD5:(NSString *)origin {
+    return [self MD5WithData:[origin dataUsingEncoding:(NSUTF8StringEncoding)]];
+}
+
++ (NSString *) MD5WithData:(NSData *)data
+{
+    const char*cStr = [data bytes];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+
+    CC_MD5(cStr, (CC_LONG)data.length, result);
+    return [[NSString stringWithFormat:
+             @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+             result[0], result[1], result[2], result[3],
+             result[4], result[5], result[6], result[7],
+             result[8], result[9], result[10], result[11],
+             result[12], result[13], result[14], result[15]
+             ] lowercaseString];
+}
+
 @end
 
 
