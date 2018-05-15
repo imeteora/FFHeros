@@ -65,12 +65,24 @@
 }
 
 #pragma mark - private helpers
-- (void)_queryNowOrNot:(BOOL)bNowOrNot {
+- (void)_queryNowOrNot:(BOOL)bNowOrNot
+{
+    BOOL (^preHttpRequestBlock)(void) = ^BOOL{
+        return YES;
+    };
 
+    void (^postHttpRequestBlock)(NSData *_Nullable, NSURLResponse * _Nullable, NSError * _Nullable) = ^(NSData *_Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+
+    };
+
+    ffApiRequestOperation *operation = [self _makeRequestOperationWithPreOp:preHttpRequestBlock andPostOp:postHttpRequestBlock];
+    _requestOperation = operation;
+    [_requestOperation establish:bNowOrNot];
 }
 
 
-- (nullable ffApiRequestOperation *)_makeRequestOperationWithPreOp:(BOOL (^)(void))preRequestBlock andPostOp:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))postRequestBlock {
+- (nullable ffApiRequestOperation *)_makeRequestOperationWithPreOp:(BOOL (^)(void))preRequestBlock andPostOp:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))postRequestBlock
+{
     ffApiRequestOperation *result = [[ffApiRequestOperation alloc] init];
     result.preRequestHandler = preRequestBlock;
     result.postRequestHandler = ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
