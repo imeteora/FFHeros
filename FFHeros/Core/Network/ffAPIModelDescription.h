@@ -13,6 +13,32 @@
 @property (nonatomic, assign) BOOL  isArray;
 @property (nonatomic, nonnull, strong) Class mappingClass;
 
+/**
+ create a model description for deserializing the json data which returns from remote server.
+
+ @param keyPath the key-path which client api focus on
+ @param mappingClass model which would be mapping from a json object
+ @param isArray property is in array model
+ @return the instance of the model description 
+ */
 + (_Nonnull instancetype) modelWith:(nonnull NSString *)keyPath toMappingClass:(nonnull Class)mappingClass isArray:(BOOL)isArray;
+
+/**
+ find object for json object with key-path
+
+ @param keyPath the key-path for a value
+ @param responseObj the result about finding json object, the result is nullable
+ @return json object data which looking by using key-path
+ */
++ (_Nullable id)findObjectByKeyPath:(NSString * _Nonnull)keyPath inObject:(NSDictionary<NSString *, id> * _Nonnull)responseObj;
+
+/**
+ fetch json object from the origin json object in the interation way.
+
+ @param obj the origin json object
+ @param keyPathArray key-paths in array form
+ @return json object data which looking for by using key-path
+ */
++ (_Nullable id)fetchObjectIn:(NSDictionary<NSString *, id> * _Nonnull)obj keyPathArray:(NSArray<NSString *> * _Nonnull)keyPathArray;
 
 @end

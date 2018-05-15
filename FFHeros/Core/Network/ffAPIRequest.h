@@ -12,7 +12,20 @@
 
 @interface ffAPIRequest : NSObject
 
-- (instancetype)initWithConfig:(ffAPIConfig *)config;
+/**
+ the callback lambda function when web request returns successfully
+ */
+@property (nonatomic, nullable, copy) void (^compleleHandler)(NSDictionary * _Nonnull);
+
+/**
+ the callback lambda function when any error occurs during web request.
+ */
+@property (nonatomic, nullable, copy) void (^errorHandler)(NSError * _Nonnull, NSDictionary * _Nullable);
+
+- (_Nullable instancetype)init UNAVAILABLE_ATTRIBUTE;
++ (_Nullable instancetype)new UNAVAILABLE_ATTRIBUTE;
+
+- (_Nullable instancetype)initWithConfig:(ffAPIConfig * _Nonnull)config;
 
 - (void)requestAsync;
 - (void)requestSync;

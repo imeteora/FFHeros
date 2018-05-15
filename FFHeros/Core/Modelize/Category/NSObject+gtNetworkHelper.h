@@ -17,12 +17,12 @@
  *
  *  @return 所有属性Key
  */
-+ (NSArray *)allPropertyKeys:(BOOL)includeSuper;
++ (NSArray *)obj_allPropertyKeys:(BOOL)includeSuper;
 
 /**
  *
  */
-+ (NSString*)classNameForPropertyName: (NSString*)propertyName;
++ (NSString*)obj_classNameForPropertyName: (NSString*)propertyName;
 
 /**
  *  获取指定属性类型
@@ -31,6 +31,6 @@
  *
  *  @return 类型
  */
-+ (Class)classForPropertyName:(NSString *)propertyName;
++ (Class)obj_classForPropertyName:(NSString *)propertyName;
 
 @end

@@ -22,11 +22,21 @@
 		133B2A0520AA6F1500117E4F /* gtModelizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0220AA6F1500117E4F /* gtModelizable.m */; };
 		133B2A0920AA6F9800117E4F /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0720AA6F9800117E4F /* DESUtils.m */; };
 		133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0B20AA71FB00117E4F /* ffApiModel.m */; };
+		133E1FA420AB4F5E00CA800C /* ffCharacterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1F9C20AB4F5E00CA800C /* ffCharacterModel.m */; };
+		133E1FA520AB4F5E00CA800C /* ffCharacterModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1F9D20AB4F5E00CA800C /* ffCharacterModelData.m */; };
+		133E1FA620AB4F5E00CA800C /* ffCharacterModelCategoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1F9E20AB4F5E00CA800C /* ffCharacterModelCategoryList.m */; };
+		133E1FA720AB4F5E00CA800C /* ffCharacterModelThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1F9F20AB4F5E00CA800C /* ffCharacterModelThumbnail.m */; };
+		133E1FA820AB4F5E00CA800C /* ffCharacterModelUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FA020AB4F5E00CA800C /* ffCharacterModelUrl.m */; };
+		133E1FA920AB4F5E00CA800C /* ffCharacterModelResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FA120AB4F5E00CA800C /* ffCharacterModelResult.m */; };
+		133E1FAB20AB500100CA800C /* FFCode_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAA20AB500100CA800C /* FFCode_Model.m */; };
+		133E1FAE20AB515B00CA800C /* ffCharacterSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAD20AB515B00CA800C /* ffCharacterSummaryModel.m */; };
+		133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FB420AB587B00CA800C /* ffFooModel.m */; };
 		13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */; };
 		13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1C20AB02DE00C3063A /* FFCode_Decode.m */; };
 		13974C1F20AB114200C3063A /* FFCode_Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1E20AB114200C3063A /* FFCode_Network.m */; };
 		13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */; };
 		13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7F220AABB7500461972 /* ffApiRequestOperation.m */; };
+		13F9E3C020AB700C00912533 /* ffApiError.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E3BF20AB700C00912533 /* ffApiError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +79,23 @@
 		133B2A0820AA6F9800117E4F /* DESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESUtils.h; sourceTree = "<group>"; };
 		133B2A0A20AA71FB00117E4F /* ffApiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiModel.h; sourceTree = "<group>"; };
 		133B2A0B20AA71FB00117E4F /* ffApiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiModel.m; sourceTree = "<group>"; };
+		133E1F9820AB4F5E00CA800C /* ffCharacterModelCategoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffCharacterModelCategoryList.h; sourceTree = "<group>"; };
+		133E1F9920AB4F5E00CA800C /* ffCharacterModelUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffCharacterModelUrl.h; sourceTree = "<group>"; };
+		133E1F9A20AB4F5E00CA800C /* ffCharacterModelThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffCharacterModelThumbnail.h; sourceTree = "<group>"; };
+		133E1F9B20AB4F5E00CA800C /* ffCharacterModelResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffCharacterModelResult.h; sourceTree = "<group>"; };
+		133E1F9C20AB4F5E00CA800C /* ffCharacterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffCharacterModel.m; sourceTree = "<group>"; };
+		133E1F9D20AB4F5E00CA800C /* ffCharacterModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffCharacterModelData.m; sourceTree = "<group>"; };
+		133E1F9E20AB4F5E00CA800C /* ffCharacterModelCategoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffCharacterModelCategoryList.m; sourceTree = "<group>"; };
+		133E1F9F20AB4F5E00CA800C /* ffCharacterModelThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffCharacterModelThumbnail.m; sourceTree = "<group>"; };
+		133E1FA020AB4F5E00CA800C /* ffCharacterModelUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffCharacterModelUrl.m; sourceTree = "<group>"; };
+		133E1FA120AB4F5E00CA800C /* ffCharacterModelResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffCharacterModelResult.m; sourceTree = "<group>"; };
+		133E1FA220AB4F5E00CA800C /* ffCharacterModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffCharacterModelData.h; sourceTree = "<group>"; };
+		133E1FA320AB4F5E00CA800C /* ffCharacterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffCharacterModel.h; sourceTree = "<group>"; };
+		133E1FAA20AB500100CA800C /* FFCode_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Model.m; sourceTree = "<group>"; };
+		133E1FAC20AB515B00CA800C /* ffCharacterSummaryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffCharacterSummaryModel.h; sourceTree = "<group>"; };
+		133E1FAD20AB515B00CA800C /* ffCharacterSummaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffCharacterSummaryModel.m; sourceTree = "<group>"; };
+		133E1FB320AB587B00CA800C /* ffFooModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFooModel.h; sourceTree = "<group>"; };
+		133E1FB420AB587B00CA800C /* ffFooModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFooModel.m; sourceTree = "<group>"; };
 		13974C1920AAFBF800C3063A /* ffApiSignHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiSignHelper.h; sourceTree = "<group>"; };
 		13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiSignHelper.m; sourceTree = "<group>"; };
 		13974C1C20AB02DE00C3063A /* FFCode_Decode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Decode.m; sourceTree = "<group>"; };
@@ -78,6 +105,8 @@
 		13F5F7F020AAB7B200461972 /* FFHeros-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFHeros-Prefix.pch"; sourceTree = "<group>"; };
 		13F5F7F120AABB7500461972 /* ffApiRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiRequestOperation.h; sourceTree = "<group>"; };
 		13F5F7F220AABB7500461972 /* ffApiRequestOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiRequestOperation.m; sourceTree = "<group>"; };
+		13F9E3BE20AB700C00912533 /* ffApiError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiError.h; sourceTree = "<group>"; };
+		13F9E3BF20AB700C00912533 /* ffApiError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiError.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +169,11 @@
 			isa = PBXGroup;
 			children = (
 				13974C1C20AB02DE00C3063A /* FFCode_Decode.m */,
+				133E1FAA20AB500100CA800C /* FFCode_Model.m */,
 				13974C1E20AB114200C3063A /* FFCode_Network.m */,
 				133B29E320AA56E500117E4F /* FFHerosTests.m */,
 				133B29E520AA56E500117E4F /* Info.plist */,
+				133E1FB220AB586800CA800C /* Test */,
 			);
 			path = FFHerosTests;
 			sourceTree = "<group>";
@@ -167,6 +198,7 @@
 		133B29F020AA57FE00117E4F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				133E1F9620AB4F4600CA800C /* Models */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -188,6 +220,8 @@
 				13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */,
 				13974C1920AAFBF800C3063A /* ffApiSignHelper.h */,
 				13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */,
+				13F9E3BE20AB700C00912533 /* ffApiError.h */,
+				13F9E3BF20AB700C00912533 /* ffApiError.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -220,6 +254,44 @@
 				133B2A0720AA6F9800117E4F /* DESUtils.m */,
 			);
 			path = crypto;
+			sourceTree = "<group>";
+		};
+		133E1F9620AB4F4600CA800C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				133E1F9720AB4F5E00CA800C /* CharacterModel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		133E1F9720AB4F5E00CA800C /* CharacterModel */ = {
+			isa = PBXGroup;
+			children = (
+				133E1FA320AB4F5E00CA800C /* ffCharacterModel.h */,
+				133E1F9C20AB4F5E00CA800C /* ffCharacterModel.m */,
+				133E1F9820AB4F5E00CA800C /* ffCharacterModelCategoryList.h */,
+				133E1F9E20AB4F5E00CA800C /* ffCharacterModelCategoryList.m */,
+				133E1FA220AB4F5E00CA800C /* ffCharacterModelData.h */,
+				133E1F9D20AB4F5E00CA800C /* ffCharacterModelData.m */,
+				133E1F9B20AB4F5E00CA800C /* ffCharacterModelResult.h */,
+				133E1FA120AB4F5E00CA800C /* ffCharacterModelResult.m */,
+				133E1F9A20AB4F5E00CA800C /* ffCharacterModelThumbnail.h */,
+				133E1F9F20AB4F5E00CA800C /* ffCharacterModelThumbnail.m */,
+				133E1F9920AB4F5E00CA800C /* ffCharacterModelUrl.h */,
+				133E1FA020AB4F5E00CA800C /* ffCharacterModelUrl.m */,
+				133E1FAC20AB515B00CA800C /* ffCharacterSummaryModel.h */,
+				133E1FAD20AB515B00CA800C /* ffCharacterSummaryModel.m */,
+			);
+			path = CharacterModel;
+			sourceTree = "<group>";
+		};
+		133E1FB220AB586800CA800C /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				133E1FB320AB587B00CA800C /* ffFooModel.h */,
+				133E1FB420AB587B00CA800C /* ffFooModel.m */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +403,15 @@
 				13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */,
 				13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */,
 				13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */,
+				133E1FA420AB4F5E00CA800C /* ffCharacterModel.m in Sources */,
+				133E1FA620AB4F5E00CA800C /* ffCharacterModelCategoryList.m in Sources */,
+				133E1FA520AB4F5E00CA800C /* ffCharacterModelData.m in Sources */,
+				13F9E3C020AB700C00912533 /* ffApiError.m in Sources */,
+				133E1FA920AB4F5E00CA800C /* ffCharacterModelResult.m in Sources */,
+				133E1FA720AB4F5E00CA800C /* ffCharacterModelThumbnail.m in Sources */,
+				133E1FA820AB4F5E00CA800C /* ffCharacterModelUrl.m in Sources */,
+				133E1FAE20AB515B00CA800C /* ffCharacterSummaryModel.m in Sources */,
+				133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */,
 				133B2A0520AA6F1500117E4F /* gtModelizable.m in Sources */,
 				133B29DA20AA56E500117E4F /* main.m in Sources */,
 				133B2A0320AA6F1500117E4F /* NSObject+gtNetworkHelper.m in Sources */,
@@ -344,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */,
+				133E1FAB20AB500100CA800C /* FFCode_Model.m in Sources */,
 				13974C1F20AB114200C3063A /* FFCode_Network.m in Sources */,
 				133B29E420AA56E500117E4F /* FFHerosTests.m in Sources */,
 			);
@@ -498,7 +580,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -514,7 +599,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -528,7 +616,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -543,7 +635,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

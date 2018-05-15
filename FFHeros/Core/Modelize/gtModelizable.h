@@ -8,7 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
-@interface gtModelizable : NSObject
+@protocol gtModelizableProtocol <NSObject>
+@optional
+
+/**
+ 获得指定属性的数据类型
+
+ @param propertyName 属性名称
+ @return 类型成员属性的类型
+ */
++ (Class)classForPropertyName:(NSString *)propertyName;
+
+/**
+ 获得属性名称的别名
+
+ @remark 由于objc把一些惯用标识符名称作为保留关键字，因此需要针对这些可能的保留关键字别名进行识别。另外一些开发者的开发习惯，也会导致类似的问题。
+ @param propertyName 模型数据中的名称
+ @return 数据模型中的别名
+ */
++ (NSString *)aliasPropertyName:(NSString *)propertyName;
+
+@end
+
+
+
+@interface gtModelizable : NSObject <gtModelizableProtocol>
 
 /**
  *  通过JSON字典初始化模型对象
@@ -27,8 +51,16 @@
  *
  *  @return item类
  */
-+ (Class)classForCollectionPropertyName:(NSString *)propertyName;
++ (Class)classForPropertyName:(NSString *)propertyName;
 
+/**
+ 获得属性名称的别名
+
+ @remark 由于objc把一些惯用标识符名称作为保留关键字，因此需要针对这些可能的保留关键字别名进行识别。另外一些开发者的开发习惯，也会导致类似的问题。
+ @param propertyName 模型数据中的名称
+ @return 数据模型中的别名
+ */
++ (NSString *)aliasPropertyName:(NSString *)propertyName;
 
 /**
  *  获得当前类型的属性键值对

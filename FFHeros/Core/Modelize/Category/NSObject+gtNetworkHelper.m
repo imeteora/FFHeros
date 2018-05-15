@@ -49,7 +49,7 @@ static const char *getPropertyType(objc_property_t property) {
 
 #pragma mark - Interface Methods
 
-+ (NSArray *)allPropertyKeys:(BOOL)includeSuper {
++ (NSArray *)obj_allPropertyKeys:(BOOL)includeSuper {
     
     Class clazz = self.class;
     u_int count;
@@ -66,7 +66,7 @@ static const char *getPropertyType(objc_property_t property) {
     if (includeSuper) {
         Class superClass = class_getSuperclass(self.class);
         if (superClass != [NSObject class]) {
-            NSArray *superPropertyArray = [superClass allPropertyKeys:YES];
+            NSArray *superPropertyArray = [superClass obj_allPropertyKeys:YES];
             [propertyArray addObjectsFromArray:superPropertyArray];
         }
     }
@@ -74,7 +74,7 @@ static const char *getPropertyType(objc_property_t property) {
     return [NSArray arrayWithArray:propertyArray];
 }
 
-+ (NSString*)classNameForPropertyName:(NSString *)propertyName
++ (NSString*)obj_classNameForPropertyName:(NSString *)propertyName
 {
     objc_property_t property = class_getProperty(self.class, propertyName.UTF8String);
     if (property) {
@@ -83,9 +83,9 @@ static const char *getPropertyType(objc_property_t property) {
     return nil;
 }
 
-+ (Class)classForPropertyName:(NSString *)propertyName
++ (Class)obj_classForPropertyName:(NSString *)propertyName
 {
-    return NSClassFromString([self classNameForPropertyName:propertyName]);
+    return NSClassFromString([self obj_classNameForPropertyName:propertyName]);
 }
 
 @end

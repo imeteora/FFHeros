@@ -9,6 +9,7 @@
 #import "ffAPIRequest.h"
 #import "ffApiRequestOperation.h"
 #import "ffApiSignHelper.h"
+#import "ffApiError.h"
 
 @interface ffAPIRequest () <ffApiRequestOperationDelegate>
 {
@@ -68,11 +69,21 @@
 - (void)_queryNowOrNot:(BOOL)bNowOrNot
 {
     BOOL (^preHttpRequestBlock)(void) = ^BOOL{
+        //TODO: coding for local cache later.
         return YES;
     };
 
     void (^postHttpRequestBlock)(NSData *_Nullable, NSURLResponse * _Nullable, NSError * _Nullable) = ^(NSData *_Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data == nil OR error) {
 
+        }
+        else {
+            NSError *error = nil;
+            NSDictionary *jsonDict = [self _deserializeData:data response:response ifErrorOrNot:&error];
+            if (jsonDict == nil OR error) {
+#warning "key coding here for deserliazing json obj into model according by the model description"
+            }
+        }
     };
 
     ffApiRequestOperation *operation = [self _makeRequestOperationWithPreOp:preHttpRequestBlock andPostOp:postHttpRequestBlock];
@@ -175,6 +186,48 @@
     return [query dataUsingEncoding:kCFStringEncodingUTF8];
 }
 
+- (nullable NSDictionary *)_deserializeData:(NSData *)data response:(NSURLResponse * _Nonnull)response ifErrorOrNot:(NSError * __autoreleasing _Nonnull * _Nullable)errorPtr
+{
+    if (NOT data) return nil;
+    id x = [NSJSONSerialization JSONObjectWithData:data options:0 error:errorPtr];
+    if (errorPtr != nil AND *errorPtr) {
+        *errorPtr = [NSError errorWithDomain:ffApiErrorDomainParser code:ffApiRequestErrorCodeSerialization userInfo:nil];
+        return nil;
+    }
+    if (NOT [x isKindOfClass:[NSDictionary class]]) {
+        *errorPtr = [NSError errorWithDomain:ffApiErrorDomainFeature code:ffApiNetworkErrorCodeInvalidResult userInfo:nil];
+        return nil;
+    }
+    return x;
+}
+
+- (nullable NSDictionary<NSString *, id> *)_mappingModelFrom:(NSDictionary * _Nonnull)jsonDict errorIfError:(NSError * _Nonnull __autoreleasing * _Nullable)error {
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+    for (id each_model in _requestConfig.modelDescriptions) {
+        NSAssert([each_model isKindOfClass:[ffAPIModelDescription class]], @"ffApiRequest: invalid model reflect description model.");
+        ffAPIModelDescription *each_desc = (ffAPIModelDescription *)each_model;
+        id x = [ffAPIModelDescription findObjectByKeyPath:each_desc.keyPath inObject:jsonDict];
+        if (x) {
+            if ([x isKindOfClass:[NSDictionary class]]) {
+                Class clsTarget = each_desc.mappingClass;
+                id objTarget = [[clsTarget alloc] initWithDictionary:((NSDictionary *)x)];
+                if (objTarget) {
+                    result[each_desc.keyPath] = objTarget;
+                }
+            } else if ([x isKindOfClass:[NSArray class]]) {
+                for (id sub_value in ((NSArray *)x)) {
+                    NSAssert([sub_value isKindOfClass:[NSDictionary class]], @"ffApiRequest: dictiona is needed in the leaf node");
+                    Class clsTarget = each_desc.mappingClass;
+                    id objTarget = [[clsTarget alloc] initWithDictionary:((NSDictionary *)sub_value)];
+                    if (objTarget) {
+                        result[each_desc.keyPath] = objTarget;
+                    }
+                }
+            }
+        }
+    }
+    return result;
+}
 
 #pragma mark - ffApiRequestOperationDelegate
 - (void)didCanceledRequestOperation:(ffApiRequestOperation *)requestOperation {

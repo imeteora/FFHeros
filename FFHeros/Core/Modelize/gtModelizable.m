@@ -32,7 +32,7 @@
 
 - (NSDictionary *)dictionaryWithKeyValues {
     Class superClass = class_getSuperclass(self.class);
-    NSArray* allPropertiesKeys = [self.class allPropertyKeys: (superClass != gtModelizable.class)];
+    NSArray* allPropertiesKeys = [self.class obj_allPropertyKeys: (superClass != gtModelizable.class)];
     
     /// 去掉value为nil的键值对的键
     NSMutableArray* keysWithoutNilValue = [NSMutableArray array];
@@ -103,17 +103,34 @@
 }
 
 
-+ (Class)classForCollectionPropertyName:(NSString *)propertyName {
-    return nil;
++ (Class)classForPropertyNameWrapper:(NSString *)propertyName {
+    Class aClass = [self classForPropertyName:propertyName];
+    if (aClass == Nil) {
+        return [self obj_classForPropertyName:propertyName];
+    }
+    return aClass;
+}
+
++ (NSString *)aliasPropertyNameWrapper:(NSString *)propertyName {
+    NSString *pn = [self aliasPropertyName:propertyName];
+    if ([pn length] == 0) {
+        return propertyName;
+    }
+    return pn;
 }
 
 #pragma mark - NSKeyValueCoding
 
 - (void)setValue:(id)value forKey:(NSString *)key
 {
+    // get alias name of key for avoid objc's keyword conflict.
+    NSString *tmpKeyName = [[self class] aliasPropertyNameWrapper:key];
+    if ([tmpKeyName length] > 0) {
+        key = tmpKeyName;
+    }
+
     if ([value isKindOfClass:[NSArray class]]) {
-        
-        Class propertyItemClass = [self.class classForCollectionPropertyName:key];
+        Class propertyItemClass = [self.class classForPropertyNameWrapper:key];
         if ([propertyItemClass isSubclassOfClass:[gtModelizable class]]) {
             NSMutableArray *propertyModel = [NSMutableArray array];
             for (id propertyItem in value) {
@@ -123,18 +140,19 @@
             value = propertyModel;
         }
         [super setValue:value forKey:key];
+
     }
     else if ([value isKindOfClass:[NSDictionary class]]) {
-        
-        Class propertyClass = [self.class classForPropertyName:key];
+        Class propertyClass = [self.class classForPropertyNameWrapper:key];
         if ([propertyClass isSubclassOfClass:[gtModelizable class]]) {
             gtModelizable *propertyModel = [[propertyClass alloc]initWithDictionary:value];
             value = propertyModel;
         }
         [super setValue:value forKey:key];
+
     }
     else {
-        Class keyClass = [self.class classForPropertyName:key];
+        Class keyClass = [self.class classForPropertyNameWrapper:key];
         
         Class superClass = class_getSuperclass(keyClass);
         if (superClass != [NSObject class]) {           /// 如果key的类型不是NSObject的子集，那么就直接会把value设置进去. 比如NSInteger此类的。
@@ -146,22 +164,37 @@
         if (!value || value == [NSNull null])
             return;
         
-        if ([keyClassName isEqualToString:@"i"] || [keyClassName isEqualToString:@"l"] || [keyClassName isEqualToString:@"s"] || [keyClassName isEqualToString:@"q"])
+        if ([keyClassName isEqualToString:@"i"] ||
+            [keyClassName isEqualToString:@"l"] ||
+            [keyClassName isEqualToString:@"s"] ||
+            [keyClassName isEqualToString:@"q"]) {
             [super setValue:[NSNumber numberWithInteger:[value integerValue]] forKey: key];
-        else if ([keyClassName isEqualToString:@"I"] || [keyClassName isEqualToString:@"L"] || [keyClassName isEqualToString:@"S"] || [keyClassName isEqualToString:@"Q"])
+        }
+        else if ([keyClassName isEqualToString:@"I"] ||
+                 [keyClassName isEqualToString:@"L"] ||
+                 [keyClassName isEqualToString:@"S"] ||
+                 [keyClassName isEqualToString:@"Q"]) {
             [super setValue:[NSNumber numberWithLong: [value longValue]] forKey:key];
-        else if ([keyClassName isEqualToString:@"f"] || [keyClassName isEqualToString:@"d"])
+        }
+        else if ([keyClassName isEqualToString:@"f"] ||
+                 [keyClassName isEqualToString:@"d"]) {
             [super setValue:[NSNumber numberWithFloat:[value floatValue]] forKey:key];
-        else if ([keyClassName isEqualToString:@"c"])
+        }
+        else if ([keyClassName isEqualToString:@"c"]) {
             [super setValue:[NSNumber numberWithChar:[value charValue]] forKey:key];
-        else if ([keyClassName isEqualToString:@"B"])
+        }
+        else if ([keyClassName isEqualToString:@"B"]) {
             [super setValue:[NSNumber numberWithBool:[value boolValue]] forKey:key];
-        else if ([keyClassName isEqualToString:@"NSNumber"])
+        }
+        else if ([keyClassName isEqualToString:@"NSNumber"]) {
             [super setValue:value forKeyPath:key];
-        else if ([keyClassName isEqualToString:@"NSString"])
+        }
+        else if ([keyClassName isEqualToString:@"NSString"]) {
             [super setValue:[NSString stringWithFormat:@"%@", value] forKey:key];
-        else
+        }
+        else {
             [super setValue:value forKey:key];
+        }
     }
 }
 
@@ -169,6 +202,16 @@
 #ifdef DEBUG
     NSLog(@"[warning] !!!!!!--%@--Undefined--key[%@]--!!!!!!",NSStringFromClass(self.class),key);
 #endif
+}
+
+
+#pragma mark - gtModelizableProtocol
++ (Class)classForPropertyName:(NSString *)propertyName {
+    return Nil;
+}
+
++ (NSString *)aliasPropertyName:(NSString *)propertyName {
+    return nil;
 }
 
 
