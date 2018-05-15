@@ -1,5 +1,5 @@
 //
-//  NSObject+VLNetworkHelper.m
+//  NSObject+ReflectHelper.m
 //  VanBuren Plan
 //
 //  Created by Zhu Delun on 15-4-17.
@@ -9,7 +9,7 @@
 #import "NSObject+gtNetworkHelper.h"
 @import ObjectiveC.runtime;
 
-@implementation NSObject (NetworkHelper)
+@implementation NSObject (ReflectHelper)
 
 #pragma mark - Private Methods
 

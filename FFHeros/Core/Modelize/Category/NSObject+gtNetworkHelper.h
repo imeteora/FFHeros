@@ -1,5 +1,5 @@
 //
-//  NSObject+VLNetworkHelper.h
+//  NSObject+ReflectHelper.h
 //  VanBuren Plan
 //
 //  Created by Zhu Delun on 15-4-17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (NetworkHelper)
+@interface NSObject (ReflectHelper)
 
 /**
  *  获取所有属性Key
