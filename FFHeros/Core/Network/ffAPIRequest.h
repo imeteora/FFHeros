@@ -10,8 +10,11 @@
 
 @class ffAPIConfig;
 
-@interface ffAPIRequest : NSOperation
+@interface ffAPIRequest : NSObject
 
 - (instancetype)initWithConfig:(ffAPIConfig *)config;
+
+- (void)requestAsync;
+- (void)requestSync;
 
 @end

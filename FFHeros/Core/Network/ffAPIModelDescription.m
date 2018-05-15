@@ -10,7 +10,7 @@
 
 @implementation ffAPIModelDescription
 
-+ (instancetype)modelWith:(NSString *)keyPath toMappingClass:(Class)mappingClass isArray:(BOOL)isArray
++ (_Nonnull instancetype)modelWith:(NSString *)keyPath toMappingClass:(Class)mappingClass isArray:(BOOL)isArray
 {
     NSAssert(((keyPath != nil) && ([keyPath length] > 0)), @"key path for deserialization is needed.");
     NSAssert((mappingClass != Nil), @"class for deserialization is needed.");

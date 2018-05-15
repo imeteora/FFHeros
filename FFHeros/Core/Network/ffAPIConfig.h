@@ -10,17 +10,22 @@
 #import "ffAPIModelDescription.h"
 
 typedef enum : NSUInteger {
-    API_METHOD_GET = 0,
-    API_METHOD_POST,
-    API_METHOD_PUT,
-    API_METHOD_DELETE,
+    FFApiRequestMethodGET = 0,
+    FFApiRequestMethodPOST,
+    FFApiRequestMethodPUT,
+    FFApiRequestMethodDELETE,
 } ffAPIRequestMethod;
 
 @interface ffAPIConfig : NSObject
 
-@property (nonatomic, copy) NSString       *baseURL;
-@property (nonatomic, assign) ffAPIRequestMethod    method;
-@property (nonatomic, copy) NSDictionary<NSString *, NSString *> *params;
-@property (nonatomic, strong) NSArray<ffAPIModelDescription *> *modelDescriptions;
+@property (nonatomic, nonnull, copy)  NSString *baseURL;
+@property (nonatomic, assign) ffAPIRequestMethod method;
+@property (nonatomic, assign) NSTimeInterval timeout;
+@property (nonatomic, nullable, strong) NSDictionary<NSString *, NSString *> *params;
+@property (nonatomic, nullable, strong) NSDictionary<NSString *, NSString *> *extHttpHeader;
+@property (nonatomic, nullable, strong) NSArray<ffAPIModelDescription *> *modelDescriptions;
+
+- (nullable NSString *)authSignStringOfRequest;
+- (nullable NSDictionary<NSString *, NSString *> *)authSignDictOfRequest;
 
 @end

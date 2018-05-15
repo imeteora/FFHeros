@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface ffAPIModelDescription : NSObject
-@property (nonatomic, copy) NSString *keyPath;
+@property (nonatomic, nonnull, copy) NSString *keyPath;
 @property (nonatomic, assign) BOOL  isArray;
-@property (nonatomic, strong) Class mappingClass;
+@property (nonatomic, nonnull, strong) Class mappingClass;
 
-+ (instancetype)modelWith:(NSString *)keyPath toMappingClass:(nonnull Class)mappingClass isArray:(BOOL)isArray;
++ (_Nonnull instancetype) modelWith:(nonnull NSString *)keyPath toMappingClass:(nonnull Class)mappingClass isArray:(BOOL)isArray;
 
 @end

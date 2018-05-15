@@ -10,4 +10,19 @@
 
 @implementation ffAPIConfig
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _timeout = 30;
+    }
+    return self;
+}
+
+- (nullable NSString *)authSignStringOfRequest {
+    return @"";
+}
+
+- (nullable NSDictionary<NSString *,NSString *> *)authSignDictOfRequest {
+    return @{};
+}
+
 @end

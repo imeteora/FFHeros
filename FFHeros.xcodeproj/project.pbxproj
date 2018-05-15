@@ -22,6 +22,9 @@
 		133B2A0520AA6F1500117E4F /* gtModelizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0220AA6F1500117E4F /* gtModelizable.m */; };
 		133B2A0920AA6F9800117E4F /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0720AA6F9800117E4F /* DESUtils.m */; };
 		133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0B20AA71FB00117E4F /* ffApiModel.m */; };
+		13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */; };
+		13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */; };
+		13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7F220AABB7500461972 /* ffApiRequestOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,13 @@
 		133B2A0820AA6F9800117E4F /* DESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESUtils.h; sourceTree = "<group>"; };
 		133B2A0A20AA71FB00117E4F /* ffApiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiModel.h; sourceTree = "<group>"; };
 		133B2A0B20AA71FB00117E4F /* ffApiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiModel.m; sourceTree = "<group>"; };
+		13974C1920AAFBF800C3063A /* ffApiSignHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiSignHelper.h; sourceTree = "<group>"; };
+		13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiSignHelper.m; sourceTree = "<group>"; };
+		13F5F7E120AA87A400461972 /* ffApiRequestOperationQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiRequestOperationQueue.h; sourceTree = "<group>"; };
+		13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiRequestOperationQueue.m; sourceTree = "<group>"; };
+		13F5F7F020AAB7B200461972 /* FFHeros-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFHeros-Prefix.pch"; sourceTree = "<group>"; };
+		13F5F7F120AABB7500461972 /* ffApiRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiRequestOperation.h; sourceTree = "<group>"; };
+		13F5F7F220AABB7500461972 /* ffApiRequestOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiRequestOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,7 @@
 				133B29EF20AA57F200117E4F /* Components */,
 				133B29EE20AA57EB00117E4F /* Core */,
 				133B29F020AA57FE00117E4F /* Features */,
+				13F5F7F020AAB7B200461972 /* FFHeros-Prefix.pch */,
 				133B29D820AA56E500117E4F /* Info.plist */,
 				133B29D520AA56E500117E4F /* LaunchScreen.storyboard */,
 				133B29D920AA56E500117E4F /* main.m */,
@@ -159,12 +170,18 @@
 			children = (
 				133B29F220AA587900117E4F /* ffAPIConfig.h */,
 				133B29F320AA587900117E4F /* ffAPIConfig.m */,
+				133B2A0A20AA71FB00117E4F /* ffApiModel.h */,
+				133B2A0B20AA71FB00117E4F /* ffApiModel.m */,
 				133B29F820AA5B1A00117E4F /* ffAPIModelDescription.h */,
 				133B29F920AA5B1A00117E4F /* ffAPIModelDescription.m */,
 				133B29F520AA589200117E4F /* ffAPIRequest.h */,
 				133B29F620AA589200117E4F /* ffAPIRequest.m */,
-				133B2A0A20AA71FB00117E4F /* ffApiModel.h */,
-				133B2A0B20AA71FB00117E4F /* ffApiModel.m */,
+				13F5F7F120AABB7500461972 /* ffApiRequestOperation.h */,
+				13F5F7F220AABB7500461972 /* ffApiRequestOperation.m */,
+				13F5F7E120AA87A400461972 /* ffApiRequestOperationQueue.h */,
+				13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */,
+				13974C1920AAFBF800C3063A /* ffApiSignHelper.h */,
+				13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -305,6 +322,9 @@
 				133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */,
 				133B29FA20AA5B1A00117E4F /* ffAPIModelDescription.m in Sources */,
 				133B29F720AA589200117E4F /* ffAPIRequest.m in Sources */,
+				13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */,
+				13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */,
+				13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */,
 				133B2A0520AA6F1500117E4F /* gtModelizable.m in Sources */,
 				133B29DA20AA56E500117E4F /* main.m in Sources */,
 				133B2A0320AA6F1500117E4F /* NSObject+gtNetworkHelper.m in Sources */,
@@ -468,11 +488,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -486,11 +504,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -504,11 +520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,11 +535,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

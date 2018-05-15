@@ -7,15 +7,135 @@
 //
 
 #import "ffAPIRequest.h"
+#import "ffApiRequestOperation.h"
 
-#warning "keep coding here about http request."
+@interface ffAPIRequest () <ffApiRequestOperationDelegate>
+{
+    ffApiRequestOperation *_requestOperation;
+    ffAPIConfig *_requestConfig;
+    NSThread    *_currentThread;
+    BOOL _isFinished;
+    BOOL _isCanceled;
+    BOOL _isRequested;
+}
+@end
 
 @implementation ffAPIRequest
 
 - (instancetype)initWithConfig:(ffAPIConfig *)config {
     if (self = [super init]) {
-        //TODO: coding here.
+
     }
     return self;
 }
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _requestOperation = [[ffApiRequestOperation alloc] init];
+        _currentThread = [NSThread currentThread];
+        _isFinished = NO;
+        _isCanceled = NO;
+        _isRequested = NO;
+    }
+    return self;
+}
+
+#pragma mark - public helpers
+- (void)requestSync {
+    return;
+}
+
+- (void)requestAsync {
+    return;
+}
+
+#pragma mark - private helpers
+- (nullable ffApiRequestOperation *)_makeRequestOperationWithPreOp:(BOOL (^)(void))preRequestBlock andPostOp:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))postRequestBlock {
+    ffApiRequestOperation *result = [[ffApiRequestOperation alloc] init];
+    result.preRequestHandler = preRequestBlock;
+    result.postRequestHandler = ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        postRequestBlock(data, response, error);
+        weakify(self);
+        @synchronized(self) {
+            strongify(self);
+            self->_requestOperation = nil;
+            self->_isCanceled = YES;
+            self->_isFinished = YES;
+            self->_isRequested = YES;
+        }
+    };
+
+    NSMutableURLRequest *request = nil;
+    if (NOT request) {
+        NSString *queryString = [self _quertyString];
+
+        if ([_requestConfig.authSignStringOfRequest length] > 0) {
+            if ([queryString hasSuffix:@"&"]) {
+                queryString = [queryString stringByAppendingString:_requestConfig.authSignStringOfRequest];
+            } else {
+                queryString = [queryString stringByAppendingFormat:@"&%@", _requestConfig.authSignStringOfRequest];
+            }
+        }
+
+        if (_requestConfig.method == FFApiRequestMethodGET) {
+            NSString *requestUrlStr = nil;
+            if ([queryString length]) {
+                requestUrlStr = [NSString stringWithFormat:@"%@?%@", _requestConfig.baseURL, queryString];
+            } else {
+                requestUrlStr = _requestConfig.baseURL;
+            }
+            NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
+            request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:(_requestConfig.timeout > 0?:15)];
+            [request setHTTPMethod:@"GET"];
+
+        } else if (_requestConfig.method == FFApiRequestMethodPOST) {
+            NSString *requestUrlStr = _requestConfig.baseURL;
+            NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
+            request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:(_requestConfig.timeout > 0?:15)];
+            [request setHTTPMethod:@"POST"];
+
+        } else if (_requestConfig.method == FFApiRequestMethodPUT) {
+            NSAssert(NO, @"not implemented yet");
+        } else if (_requestConfig.method == FFApiRequestMethodDELETE) {
+            NSAssert(NO, @"not implemented yet");
+        }
+
+        // external http header if has some.
+        for (NSString *each_key in _requestConfig.extHttpHeader.allKeys) {
+            NSString *each_value = [_requestConfig.extHttpHeader valueForKey:each_key];
+            [request setValue:each_value forHTTPHeaderField:each_key];
+        }
+
+        for (NSString *each_key in _requestConfig.authSignDictOfRequest.allKeys) {
+            NSString *each_value = [_requestConfig.authSignDictOfRequest valueForKey:each_key];
+            [request setValue:each_value forHTTPHeaderField:each_key];
+        }
+
+        NSData *httpBodyData = [self _queryBodyFromQuery:queryString];
+        if (httpBodyData) {
+            [request setHTTPBody:httpBodyData];
+        }
+    }
+    
+    result.request = request;
+    return result;
+}
+
+- (NSString *)_quertyString {
+    return @"";
+}
+
+- (nullable NSData *)_queryBodyFromQuery:(NSString *)query {
+    if (_requestConfig.method == FFApiRequestMethodGET) return nil;
+    return [query dataUsingEncoding:kCFStringEncodingUTF8];
+}
+
+
+#pragma mark - ffApiRequestOperationDelegate
+- (void)didCanceledRequestOperation:(ffApiRequestOperation *)requestOperation {
+    if (_requestOperation == requestOperation) {
+        _requestOperation = nil;
+    }
+}
+
 @end
