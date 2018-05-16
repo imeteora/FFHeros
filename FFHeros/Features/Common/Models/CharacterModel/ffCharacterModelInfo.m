@@ -5,9 +5,9 @@
 //	Copyright © 2018. All rights reserved.
 //
 
-#import "ffCharacterModelResult.h"
+#import "ffCharacterModelInfo.h"
 
-@implementation ffCharacterModelResult
+@implementation ffCharacterModelInfo
 + (NSString *)aliasPropertyName:(NSString *)propertyName {
     return @{@"id": @"idField",
              @"descField": @"Description"

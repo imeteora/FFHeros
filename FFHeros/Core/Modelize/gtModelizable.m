@@ -8,7 +8,7 @@
 
 @import ObjectiveC.runtime;
 #import "gtModelizable.h"
-#import "NSObject+gtNetworkHelper.h"
+#import "NSObject+ReflectHelper.h"
 
 @implementation gtModelizable
 

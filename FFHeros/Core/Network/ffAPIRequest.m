@@ -68,20 +68,49 @@
 #pragma mark - private helpers
 - (void)_queryNowOrNot:(BOOL)bNowOrNot
 {
+    weakify(self);
     BOOL (^preHttpRequestBlock)(void) = ^BOOL{
         //TODO: coding for local cache later.
         return YES;
     };
 
     void (^postHttpRequestBlock)(NSData *_Nullable, NSURLResponse * _Nullable, NSError * _Nullable) = ^(NSData *_Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        strongify(self);
         if (data == nil OR error) {
-
+            if (self.errorHandler) {
+                if (bNowOrNot) {
+                    self.errorHandler(error, nil);
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        self.errorHandler(error, nil);
+                    });
+                }
+            }
         }
         else {
             NSError *error = nil;
             NSDictionary *jsonDict = [self _deserializeData:data response:response ifErrorOrNot:&error];
             if (jsonDict == nil OR error) {
-#warning "key coding here for deserliazing json obj into model according by the model description"
+                if (self.errorHandler) {
+                    if (bNowOrNot) {
+                        self.errorHandler(error, jsonDict);
+                    } else {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            self.errorHandler(error, jsonDict);
+                        });
+                    }
+                }
+            } else {
+                NSDictionary<NSString *, id> * result = [self _mappingModelFrom:jsonDict errorIfError:&error];
+                if (self.compleleHandler) {
+                    if (bNowOrNot) {
+                        self.compleleHandler(result);
+                    } else {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            self.compleleHandler(result);
+                        });
+                    }
+                }
             }
         }
     };
@@ -94,11 +123,11 @@
 
 - (nullable ffApiRequestOperation *)_makeRequestOperationWithPreOp:(BOOL (^)(void))preRequestBlock andPostOp:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))postRequestBlock
 {
+    weakify(self);
     ffApiRequestOperation *result = [[ffApiRequestOperation alloc] init];
     result.preRequestHandler = preRequestBlock;
     result.postRequestHandler = ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         postRequestBlock(data, response, error);
-        weakify(self);
         @synchronized(self) {
             strongify(self);
             self->_requestOperation = nil;
@@ -109,7 +138,7 @@
     };
 
     NSMutableURLRequest *request = nil;
-    if (NOT request) {
+    {
         NSString *queryString = [self _quertyString];
 
         if ([_requestConfig.authSignStringOfRequest length] > 0) {
@@ -215,14 +244,16 @@
                     result[each_desc.keyPath] = objTarget;
                 }
             } else if ([x isKindOfClass:[NSArray class]]) {
+                NSMutableArray *tmpArray = [NSMutableArray arrayWithCapacity:[(NSArray *)x count]];
                 for (id sub_value in ((NSArray *)x)) {
                     NSAssert([sub_value isKindOfClass:[NSDictionary class]], @"ffApiRequest: dictiona is needed in the leaf node");
                     Class clsTarget = each_desc.mappingClass;
                     id objTarget = [[clsTarget alloc] initWithDictionary:((NSDictionary *)sub_value)];
                     if (objTarget) {
-                        result[each_desc.keyPath] = objTarget;
+                         [tmpArray addObject:objTarget];
                     }
                 }
+                result[each_desc.keyPath] = tmpArray;
             }
         }
     }

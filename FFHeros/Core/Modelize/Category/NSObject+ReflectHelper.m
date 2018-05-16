@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 Gamebable Studio. All rights reserved.
 //
 
-#import "NSObject+gtNetworkHelper.h"
+#import "NSObject+ReflectHelper.h"
 @import ObjectiveC.runtime;
 
 @implementation NSObject (ReflectHelper)

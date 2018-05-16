@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "ffFooModel.h"
+#import "ffFetchCharacterInfoApi.h"
 #import "ffAPIModelDescription.h"
 
 @interface FFCode_Model : XCTestCase
@@ -42,6 +43,13 @@
 - (void)testFetchValueInJsonObjectWithKeyPath {
     id value = [ffAPIModelDescription findObjectByKeyPath:@"/selected/name" inObject:self.json];
     XCTAssert(value != nil && [value isKindOfClass:[NSString class]] && [value isEqualToString:@"Michael"]);
+}
+
+- (void)testSerializeApi {
+    ffFetchCharacterInfoApi *api = [[ffFetchCharacterInfoApi alloc] init];
+    api.name = @"Iron Man";
+    NSDictionary *param = [api dictionaryWithKeyValues];
+    NSLog(@"%@", param);
 }
 
 - (void)testPerformanceExample {

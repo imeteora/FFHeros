@@ -13,7 +13,7 @@
 #import "ffCharacterModelThumbnail.h"
 #import "ffCharacterModelUrl.h"
 
-@interface ffCharacterModelResult : gtModelizable
+@interface ffCharacterModelInfo : gtModelizable
 
 @property (nonatomic, copy) NSString *idField;      // -> id
 @property (nonatomic, copy) NSString *name;

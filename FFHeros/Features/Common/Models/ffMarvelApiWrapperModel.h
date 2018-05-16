@@ -9,15 +9,15 @@
 
 #import <UIKit/UIKit.h>
 #import "gtModelizable.h"
-#import "ffCharacterModelData.h"
+#import "ffMarvalApiModelResult.h"
 
-@interface ffCharacterModel : gtModelizable
+@interface ffMarvelApiWrapperModel : gtModelizable
 
 @property (nonatomic, copy) NSString * attributionHTML;
 @property (nonatomic, copy) NSString * attributionText;
 @property (nonatomic, assign) NSInteger code;
 @property (nonatomic, copy) NSString * copyright;
-@property (nonatomic, strong) ffCharacterModelData * data;
+@property (nonatomic, strong) ffMarvalApiModelResult * data;
 @property (nonatomic, copy) NSString * etag;
 @property (nonatomic, copy) NSString * status;
 
