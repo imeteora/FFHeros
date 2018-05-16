@@ -33,6 +33,12 @@
 
 
 @interface gtModelizable : NSObject <gtModelizableProtocol>
+/**
+ *  扩展字段，既能够方便的实现业务功能，也不会污染业务model
+ */
+@property(nonatomic,assign) NSInteger  extention;
+
+- (NSString *)description;
 
 /**
  *  通过JSON字典初始化模型对象
@@ -77,11 +83,6 @@
  *  @return 返回转换好的目标实例
  */
 - (instancetype)generateObjectForClass: (Class)targetClass;
-
-/**
- *  扩展字段，既能够方便的实现业务功能，也不会污染业务model
- */
-@property(nonatomic,assign) NSInteger  extention;
 
 
 @end

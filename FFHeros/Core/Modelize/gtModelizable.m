@@ -30,6 +30,17 @@
     return self;
 }
 
+- (NSString *)description {
+    NSDictionary *kv = [self dictionaryWithKeyValues];
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:kv options:NSJSONWritingPrettyPrinted error:&error];
+    if (jsonData == nil || error) {
+        return [super description];
+    } else {
+        return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+}
+
 - (NSDictionary *)dictionaryWithKeyValues {
     Class superClass = class_getSuperclass(self.class);
     NSArray* allPropertiesKeys = [self.class obj_allPropertyKeys: (superClass != gtModelizable.class)];

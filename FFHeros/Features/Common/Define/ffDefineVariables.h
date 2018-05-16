@@ -8,15 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ffDefineVariables : NSObject
+#define MARVEL_BASE_URL         @"http://gateway.marvel.com"
+#define MARVEL_BASE_HTTPS_URL   @"https://gateway.marvel.com"
 
-+ (nonnull NSString *)marver_key_pub;
-+ (nonnull NSString *)marver_key_pri;
+#define MARVEL_PUB_KEY  @"aaee6fa40625a68298d42a9bb9dcd09d"
+#define MARVEL_PRI_KEY  @"434b12e530a9e279ddec58cadeed1da51334b020"
 
-+ (nonnull NSString *)marver_base_url;
-+ (nonnull NSString *)marvel_base_security_url;
-
-@end
-
-#define MARVEL_BASE_URL(xxx)        [NSString stringWithFormat:@"%@%@", [ffDefineVariables marver_base_url], xxx]
-#define MARVEL_BASE_HTTPS_URL(xxx)  [NSString stringWithFormat:@"%@%@", [ffDefineVariables marvel_base_security_url], xxx]

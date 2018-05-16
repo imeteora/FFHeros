@@ -2,24 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee117c7a-cd9e-4044-8465-d2add2f26c01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelCategoryList.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCategoryListModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelCategoryList.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCategoryListModel.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelInfo.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModel.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelThumbnail.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffImageModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelThumbnail.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffImageModel.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelUrl.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffUrlModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelUrl.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffUrlModel.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterSummaryModel.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterSummaryModel.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataWrapperModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataWrapperModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataWrapperModel.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataWrapperModel.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ffMarvalApiModelResult.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataContainerModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ffMarvalApiModelResult.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataContainerModel.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/ViewController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHerosTests/FFCode_Model.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHerosTests/FFCode_Model.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHerosTests/FFCode_Network.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHerosTests/FFCode_Network.m" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/FFHeros-fyvnaxpvpdoltqeqgwuydvlqeaph/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,80 +27,89 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_D4926966-2119-4E16-8540-65EFE1689F9B" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ffCharacterDataContainerModel.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataContainerModel.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ffCharacterModel.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModel.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ffUrlModel.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffUrlModel.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ffCharacterModel.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModel.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ffCategoryListModel.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCategoryListModel.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ffSummaryModel.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffSummaryModel.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ffSummaryModel.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffSummaryModel.m">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="ffImageModel.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffImageModel.h">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="ffImageModel.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffImageModel.m">
+      <file leaf-file-name="ffCharacterDataContainerModel.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataContainerModel.m">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="ffCharacterDataWrapperModel.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataWrapperModel.h">
+      <file leaf-file-name="ffFetchCharactersApi.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+            <state relative-caret-position="194">
+              <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ffFetchCharacterInfoApi.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="39" />
+              <folding>
+                <element signature="e#97#132#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewController.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFHeros/ViewController.h">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="ViewController.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FFHeros/ViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="44" column="79" selection-start-line="44" selection-start-column="79" selection-end-line="44" selection-end-column="79" />
+              <folding>
+                <element signature="e#133#159#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ffFetchCharacterInfoApi.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+              <folding>
+                <element signature="e#97#130#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ffFetchCharactersApi.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ffDefineVariables.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ffAPIConfig.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -129,6 +133,14 @@
         <option value="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelCategoryList.h" />
         <option value="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCategoryListModel.h" />
         <option value="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterSummaryModel.h" />
+        <option value="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.h" />
+        <option value="$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.h" />
+        <option value="$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.m" />
+        <option value="$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m" />
+        <option value="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.m" />
+        <option value="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.h" />
+        <option value="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.m" />
+        <option value="$PROJECT_DIR$/FFHeros/ViewController.m" />
       </list>
     </option>
   </component>
@@ -141,9 +153,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
-    <option name="width" value="959" />
+    <option name="width" value="1622" />
     <option name="height" value="1058" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -197,6 +209,22 @@
               <item name="FFHeros" type="fcab9f18:XcodeViewNode" />
               <item name="Features" type="fcab9f18:XcodeViewNode" />
               <item name="Common" type="fcab9f18:XcodeViewNode" />
+              <item name="API" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="FFHeros" type="1d218c8b:XcodeProjectNode" />
+              <item name="FFHeros" type="fcab9f18:XcodeViewNode" />
+              <item name="Features" type="fcab9f18:XcodeViewNode" />
+              <item name="Common" type="fcab9f18:XcodeViewNode" />
+              <item name="Define" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="FFHeros" type="1d218c8b:XcodeProjectNode" />
+              <item name="FFHeros" type="fcab9f18:XcodeViewNode" />
+              <item name="Features" type="fcab9f18:XcodeViewNode" />
+              <item name="Common" type="fcab9f18:XcodeViewNode" />
               <item name="Models" type="fcab9f18:XcodeViewNode" />
             </path>
             <path>
@@ -216,6 +244,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="OBJC.PRESERVED_TARGET_SELECTION" value="FFHeros" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunDashboard">
@@ -247,26 +276,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526490201025</updated>
-      <workItem from="1526490205713" duration="561000" />
+      <workItem from="1526490205713" duration="2653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="561000" />
+    <option name="totallyTimeSpent" value="2653000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="959" height="1058" extended-state="0" />
+    <frame x="0" y="22" width="1920" height="1058" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.32942432" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32942432" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36993605" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15429173" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32942432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -316,14 +345,11 @@
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffUrlModel.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffImageModel.m">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffImageModel.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModel.m">
@@ -333,6 +359,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffSummaryModel.m">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffSummaryModel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffApiModel.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCategoryListModel.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -340,13 +386,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffSummaryModel.m">
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffImageModel.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffSummaryModel.h">
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/ffCharacterDataContainerModel.m">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="150">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding>
+            <element signature="e#97#130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="39" />
+          <folding>
+            <element signature="e#97#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/ViewController.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/ViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="44" column="79" selection-start-line="44" selection-start-column="79" selection-end-line="44" selection-end-column="79" />
+          <folding>
+            <element signature="e#133#159#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -19,11 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBa-FA-SFg">
-                                <rect key="frame" x="129" y="49" width="116" height="30"/>
+                                <rect key="frame" x="131" y="49" width="113" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Test Api Request"/>
+                                <state key="normal" title="fetch characters"/>
                                 <connections>
                                     <action selector="btnTextApiRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b0S-4g-NKD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDX-wG-TAq">
+                                <rect key="frame" x="110" y="87" width="154" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="fetch character with id"/>
+                                <connections>
+                                    <action selector="btnTestCharacterUseId:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D0S-VM-Sf5"/>
                                 </connections>
                             </button>
                         </subviews>

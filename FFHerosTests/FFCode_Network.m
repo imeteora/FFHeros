@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "ffFetchCharacterInfoApi.h"
+#import "ffFetchCharactersApi.h"
 
 @interface FFCode_Network : XCTestCase
 
@@ -30,7 +30,7 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     XCTestExpectation *apiExpectation = [[XCTestExpectation alloc] initWithDescription:@"test http request"];
     __block BOOL bSuccess = NO;
-    ffFetchCharacterInfoApi *api = [[ffFetchCharacterInfoApi alloc] init];
+    ffFetchCharactersApi *api = [[ffFetchCharactersApi alloc] init];
     [api requestAfterComplete:^(NSDictionary * _Nonnull result) {
         bSuccess = YES;
         [apiExpectation fulfill];

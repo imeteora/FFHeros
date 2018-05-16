@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ffFetchCharactersApi.h"
 #import "ffFetchCharacterInfoApi.h"
 
 @interface ViewController ()
@@ -27,16 +28,25 @@
 }
 
 - (IBAction)btnTextApiRequest:(id)sender {
-    ffFetchCharacterInfoApi *api = [[ffFetchCharacterInfoApi alloc] init];
+    ffFetchCharactersApi *api = [[ffFetchCharactersApi alloc] init];
     api.nameStartsWith = @"Iron";
     api.limit = @10;
 
-    [api requestAfterComplete:^(NSDictionary * _Nonnull result) {
-        NSLog(@"OK");
+    [api requestAfterComplete:^(ffCharacterDataContainerModel * _Nonnull result) {
+        NSLog(@"OK\n%@", [result description]);
     } ifError:^(NSError * _Nonnull error, id _Nullable result) {
         NSLog(@"Error");
     }];
 
+}
+
+- (IBAction)btnTestCharacterUseId:(id)sender {
+    ffFetchCharacterInfoApi *api = [[ffFetchCharacterInfoApi alloc] init];
+    [api requestWithCharacterId:@"1011334" afterComplete:^(ffCharacterDataContainerModel *result) {
+        NSLog(@"OK\n%@", [result description]);
+    } ifError:^(NSError *error, id o) {
+        NSLog(@"Error");
+    }];
 }
 
 @end
