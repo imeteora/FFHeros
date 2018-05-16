@@ -15,4 +15,5 @@
 @property (nonatomic, copy) NSString * collectionURI;
 @property (nonatomic, strong) NSArray<ffSummaryModel *> * items;
 @property (nonatomic, assign) NSInteger returned;
+
 @end

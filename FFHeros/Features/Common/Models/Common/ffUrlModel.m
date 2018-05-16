@@ -6,7 +6,6 @@
 // 
 
 
-
 #import "ffUrlModel.h"
 
 @implementation ffUrlModel

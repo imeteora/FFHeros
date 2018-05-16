@@ -39,6 +39,11 @@
 		13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7F220AABB7500461972 /* ffApiRequestOperation.m */; };
 		13F9E3C020AB700C00912533 /* ffApiError.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E3BF20AB700C00912533 /* ffApiError.m */; };
 		13FFEB3720AC8D98008615C6 /* ffDefineVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB3620AC8D98008615C6 /* ffDefineVariables.m */; };
+		13FFEB3C20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB3B20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m */; };
+		13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB3E20ACAB34008615C6 /* ffPriceModel.m */; };
+		13FFEB5220ACAB35008615C6 /* ffDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB4420ACAB34008615C6 /* ffDateModel.m */; };
+		13FFEB5520ACAB35008615C6 /* ffComicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB4920ACAB34008615C6 /* ffComicsModel.m */; };
+		13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */; };
 		CC2F3DCFE3054608BAD5D13C /* ffFetchCharacterInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2F39BB2337F2605B2EB203 /* ffFetchCharacterInfoApi.m */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +119,16 @@
 		13F9E3BF20AB700C00912533 /* ffApiError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiError.m; sourceTree = "<group>"; };
 		13FFEB3520AC8D98008615C6 /* ffDefineVariables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffDefineVariables.h; sourceTree = "<group>"; };
 		13FFEB3620AC8D98008615C6 /* ffDefineVariables.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffDefineVariables.m; sourceTree = "<group>"; };
+		13FFEB3A20ACA9DC008615C6 /* ffFetchCharacterComicsApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFetchCharacterComicsApi.h; sourceTree = "<group>"; };
+		13FFEB3B20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharacterComicsApi.m; sourceTree = "<group>"; };
+		13FFEB3E20ACAB34008615C6 /* ffPriceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffPriceModel.m; sourceTree = "<group>"; };
+		13FFEB4020ACAB34008615C6 /* ffComicsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffComicsModel.h; sourceTree = "<group>"; };
+		13FFEB4320ACAB34008615C6 /* ffDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffDateModel.h; sourceTree = "<group>"; };
+		13FFEB4420ACAB34008615C6 /* ffDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffDateModel.m; sourceTree = "<group>"; };
+		13FFEB4620ACAB34008615C6 /* ffPriceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffPriceModel.h; sourceTree = "<group>"; };
+		13FFEB4920ACAB34008615C6 /* ffComicsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffComicsModel.m; sourceTree = "<group>"; };
+		13FFEB5A20ACB05B008615C6 /* ffTextObjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffTextObjectModel.h; sourceTree = "<group>"; };
+		13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffTextObjectModel.m; sourceTree = "<group>"; };
 		CC2F39BB2337F2605B2EB203 /* ffFetchCharacterInfoApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharacterInfoApi.m; sourceTree = "<group>"; };
 		CC2F3D684481592581F5A930 /* ffFetchCharacterInfoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffFetchCharacterInfoApi.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,6 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				133E1F9720AB4F5E00CA800C /* CharacterModel */,
+				13FFEB3D20ACAA51008615C6 /* ComicsModel */,
+				13FFEB5920ACAC66008615C6 /* Common */,
 				133E1FA220AB4F5E00CA800C /* ffCharacterDataContainerModel.h */,
 				133E1F9D20AB4F5E00CA800C /* ffCharacterDataContainerModel.m */,
 				133E1FA320AB4F5E00CA800C /* ffCharacterDataWrapperModel.h */,
@@ -280,16 +297,8 @@
 		133E1F9720AB4F5E00CA800C /* CharacterModel */ = {
 			isa = PBXGroup;
 			children = (
-				133E1F9820AB4F5E00CA800C /* ffCategoryListModel.h */,
-				133E1F9E20AB4F5E00CA800C /* ffCategoryListModel.m */,
 				133E1F9B20AB4F5E00CA800C /* ffCharacterModel.h */,
 				133E1FA120AB4F5E00CA800C /* ffCharacterModel.m */,
-				133E1F9A20AB4F5E00CA800C /* ffImageModel.h */,
-				133E1F9F20AB4F5E00CA800C /* ffImageModel.m */,
-				133E1FAC20AB515B00CA800C /* ffSummaryModel.h */,
-				133E1FAD20AB515B00CA800C /* ffSummaryModel.m */,
-				133E1F9920AB4F5E00CA800C /* ffUrlModel.h */,
-				133E1FA020AB4F5E00CA800C /* ffUrlModel.m */,
 			);
 			path = CharacterModel;
 			sourceTree = "<group>";
@@ -316,6 +325,8 @@
 		13885BA520ABBC4500D9F9E5 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				13FFEB3A20ACA9DC008615C6 /* ffFetchCharacterComicsApi.h */,
+				13FFEB3B20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m */,
 				CC2F3D684481592581F5A930 /* ffFetchCharacterInfoApi.h */,
 				CC2F39BB2337F2605B2EB203 /* ffFetchCharacterInfoApi.m */,
 				13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersApi.h */,
@@ -331,6 +342,36 @@
 				13FFEB3620AC8D98008615C6 /* ffDefineVariables.m */,
 			);
 			path = Define;
+			sourceTree = "<group>";
+		};
+		13FFEB3D20ACAA51008615C6 /* ComicsModel */ = {
+			isa = PBXGroup;
+			children = (
+				13FFEB4020ACAB34008615C6 /* ffComicsModel.h */,
+				13FFEB4920ACAB34008615C6 /* ffComicsModel.m */,
+			);
+			path = ComicsModel;
+			sourceTree = "<group>";
+		};
+		13FFEB5920ACAC66008615C6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				133E1F9820AB4F5E00CA800C /* ffCategoryListModel.h */,
+				133E1F9E20AB4F5E00CA800C /* ffCategoryListModel.m */,
+				13FFEB4320ACAB34008615C6 /* ffDateModel.h */,
+				13FFEB4420ACAB34008615C6 /* ffDateModel.m */,
+				133E1F9A20AB4F5E00CA800C /* ffImageModel.h */,
+				133E1F9F20AB4F5E00CA800C /* ffImageModel.m */,
+				13FFEB4620ACAB34008615C6 /* ffPriceModel.h */,
+				13FFEB3E20ACAB34008615C6 /* ffPriceModel.m */,
+				133E1FAC20AB515B00CA800C /* ffSummaryModel.h */,
+				133E1FAD20AB515B00CA800C /* ffSummaryModel.m */,
+				13FFEB5A20ACB05B008615C6 /* ffTextObjectModel.h */,
+				13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */,
+				133E1F9920AB4F5E00CA800C /* ffUrlModel.h */,
+				133E1FA020AB4F5E00CA800C /* ffUrlModel.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,12 +488,17 @@
 				133E1FA520AB4F5E00CA800C /* ffCharacterDataContainerModel.m in Sources */,
 				133E1FA420AB4F5E00CA800C /* ffCharacterDataWrapperModel.m in Sources */,
 				133E1FA920AB4F5E00CA800C /* ffCharacterModel.m in Sources */,
+				13FFEB5520ACAB35008615C6 /* ffComicsModel.m in Sources */,
+				13FFEB5220ACAB35008615C6 /* ffDateModel.m in Sources */,
 				13FFEB3720AC8D98008615C6 /* ffDefineVariables.m in Sources */,
+				13FFEB3C20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m in Sources */,
 				CC2F3DCFE3054608BAD5D13C /* ffFetchCharacterInfoApi.m in Sources */,
 				13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersApi.m in Sources */,
 				133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */,
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
+				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */,
+				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
 				133E1FA820AB4F5E00CA800C /* ffUrlModel.m in Sources */,
 				133B2A0520AA6F1500117E4F /* gtModelizable.m in Sources */,
 				133B29DA20AA56E500117E4F /* main.m in Sources */,

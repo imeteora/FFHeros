@@ -10,7 +10,11 @@
 #import "gtModelizable.h"
 #import "ffCharacterDataContainerModel.h"
 
+/**
+ Fetches lists of comic characters with optional filters. See notes on individual parameters below.
+ */
 @interface ffFetchCharactersApi : gtModelizable
+
 /**
  Return only characters matching the specified full character name (e.g. Spider-Man).
  */
@@ -61,6 +65,12 @@
  */
 @property (nonatomic, nullable, copy) NSNumber *offset;
 
+/**
+ Fetches lists of comic characters with optional filters. See notes on individual parameters below.
+
+ @param completeBlock the success callback lambda block
+ @param errorBlock the error callback lambda block
+ */
 - (void)requestAfterComplete:(void (^_Nullable)(ffCharacterDataContainerModel * _Nonnull))completeBlock ifError:(void (^_Nullable)(NSError * _Nonnull, id __nullable))errorBlock;
 
 @end
