@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ffFetchCharacterInfoApi.h"
 
 @interface FFCode_Network : XCTestCase
 
@@ -27,7 +28,18 @@
 - (void)testCheckQuery {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
+    XCTestExpectation *apiExpectation = [[XCTestExpectation alloc] initWithDescription:@"test http request"];
+    __block BOOL bSuccess = NO;
+    ffFetchCharacterInfoApi *api = [[ffFetchCharacterInfoApi alloc] init];
+    [api requestAfterComplete:^(NSDictionary * _Nonnull result) {
+        bSuccess = YES;
+        [apiExpectation fulfill];
+    } ifError:^(NSError * _Nonnull error, id _Nullable result) {
+        bSuccess = NO;
+        [apiExpectation fulfill];
+    }];
+
+    [self waitForExpectations:@[apiExpectation] timeout:35];
 }
 
 - (void)testPerformanceExample {

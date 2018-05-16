@@ -25,8 +25,9 @@
 @implementation ffAPIRequest
 
 - (instancetype)initWithConfig:(ffAPIConfig *)config {
-    if (self = [super init]) {
-
+    if (self = [self init]) {
+        _requestConfig = config;
+        _requestOperation.config = _requestConfig;
     }
     return self;
 }
@@ -141,14 +142,6 @@
     {
         NSString *queryString = [self _quertyString];
 
-        if ([_requestConfig.authSignStringOfRequest length] > 0) {
-            if ([queryString hasSuffix:@"&"]) {
-                queryString = [queryString stringByAppendingString:_requestConfig.authSignStringOfRequest];
-            } else {
-                queryString = [queryString stringByAppendingFormat:@"&%@", _requestConfig.authSignStringOfRequest];
-            }
-        }
-
         if (_requestConfig.method == FFApiRequestMethodGET) {
             NSString *requestUrlStr = nil;
             if ([queryString length]) {
@@ -157,13 +150,16 @@
                 requestUrlStr = _requestConfig.baseURL;
             }
             NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
-            request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:(_requestConfig.timeout > 0?:15)];
+            request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:(_requestConfig.timeout > 0?:60)];
             [request setHTTPMethod:@"GET"];
+            [request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
+            [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"en-us" forHTTPHeaderField:@"Accept-Language"];
 
         } else if (_requestConfig.method == FFApiRequestMethodPOST) {
             NSString *requestUrlStr = _requestConfig.baseURL;
             NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
-            request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:(_requestConfig.timeout > 0?:15)];
+            request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:(_requestConfig.timeout > 0?:60)];
             [request setHTTPMethod:@"POST"];
 
         } else if (_requestConfig.method == FFApiRequestMethodPUT) {
@@ -195,10 +191,12 @@
 
 - (NSString *)_quertyString {
     NSMutableDictionary<NSString *, NSString *> *mutableParms = [[NSMutableDictionary alloc] init];
-    if (_requestConfig.signType != FFApiSignNone) {
-        mutableParms[_requestConfig.signKey] = [ffApiSignHelper signQueryFrom:_requestConfig.authSignStringOfRequest];
-    }
     [mutableParms addEntriesFromDictionary:_requestConfig.params];
+    if (_requestConfig.signType == FFApiSignOAuthServer) {
+        mutableParms[_requestConfig.signKey] = [ffApiSignHelper signQueryFrom:_requestConfig.authSignStringOfRequest];
+    } else if (_requestConfig.signType == FFApiSignOAuthClient) {
+        mutableParms[_requestConfig.signKey] = _requestConfig.authSignStringOfRequest;
+    }
 
     NSMutableArray<NSString *> *all_params = [[NSMutableArray alloc] init];
     [mutableParms enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {

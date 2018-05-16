@@ -33,6 +33,13 @@
 }
 
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
+//    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+//        if ([challenge.protectionSpace.host containsString:@"marvel.com"]) {
+//            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+//            completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+//            return;
+//        }
+//    }
     completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, challenge.proposedCredential);
 }
 

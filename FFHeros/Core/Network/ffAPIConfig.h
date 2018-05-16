@@ -18,7 +18,8 @@ typedef enum : NSUInteger {
 
 typedef enum : NSUInteger {
     FFApiSignNone,
-    FFApiSignAutho,
+    FFApiSignOAuthClient,
+    FFApiSignOAuthServer,
 } ffAPISignType;
 
 @interface ffAPIConfig : NSObject

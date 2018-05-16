@@ -10,7 +10,7 @@
 
 @interface ffAPIModelDescription : NSObject
 @property (nonatomic, nonnull, copy) NSString *keyPath;
-@property (nonatomic, assign) BOOL  isArray;
+//@property (nonatomic, assign) BOOL  isArray;
 @property (nonatomic, nonnull, strong) Class mappingClass;
 
 /**
@@ -18,10 +18,9 @@
 
  @param keyPath the key-path which client api focus on
  @param mappingClass model which would be mapping from a json object
- @param isArray property is in array model
  @return the instance of the model description 
  */
-+ (_Nonnull instancetype) modelWith:(nonnull NSString *)keyPath toMappingClass:(nonnull Class)mappingClass isArray:(BOOL)isArray;
++ (_Nonnull instancetype) modelWith:(nonnull NSString *)keyPath toMappingClass:(nonnull Class)mappingClass;
 
 /**
  find object for json object with key-path

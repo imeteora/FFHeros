@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class ffAPIConfig;
+#import "ffAPIConfig.h"
 
 @interface ffAPIRequest : NSObject
 
@@ -22,7 +21,6 @@
  */
 @property (nonatomic, nullable, copy) void (^errorHandler)(NSError * _Nonnull, NSDictionary * _Nullable);
 
-- (_Nullable instancetype)init UNAVAILABLE_ATTRIBUTE;
 + (_Nullable instancetype)new UNAVAILABLE_ATTRIBUTE;
 
 - (_Nullable instancetype)initWithConfig:(ffAPIConfig * _Nonnull)config;

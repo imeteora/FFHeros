@@ -14,7 +14,8 @@
     if (self = [super init]) {
         _timeout = 30;
         _method = FFApiRequestMethodGET;
-        _signType = FFApiSignNone;
+        _signType = FFApiSignOAuthServer;
+        _signKey = @"hash";
     }
     return self;
 }
@@ -28,7 +29,7 @@
 }
 
 - (nullable NSString *)authSignStringOfRequest {
-    return @"";
+    return [NSString stringWithFormat:@"%@%@%@", [self ts], MARVEL_API_PRV_KEY, MARVEL_API_PUB_KEY];
 }
 
 - (nullable NSDictionary<NSString *,NSString *> *)authSignDictOfRequest {
@@ -37,6 +38,11 @@
 
 
 - (nonnull NSString *)ts {
-    return [NSString stringWithFormat:@"%lld", (int64_t)[[NSDate date] timeIntervalSince1970]];
+    static NSString * __ts = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        __ts = [NSString stringWithFormat:@"%lld", (int64_t)[[NSDate date] timeIntervalSince1970]];
+    });
+    return __ts;
 }
 @end

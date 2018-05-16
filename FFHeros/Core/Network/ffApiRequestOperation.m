@@ -8,6 +8,7 @@
 
 #import "ffApiRequestOperation.h"
 #import "ffApiRequestOperationQueue.h"
+#import "ffApiError.h"
 
 @implementation ffApiRequestOperation
 
@@ -30,7 +31,55 @@
             }
             return;
         }
+
+        NSCondition *condition = [[NSCondition alloc] init];
+        __block NSData *retData = nil;
+        __block NSURLResponse *retResponse = nil;
+        __block NSError *retError = nil;
+
+        __block BOOL hadBeHandled = NO;
+
+        [self _sessionTaskWithRequest:self.request completeHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (NOT hadBeHandled) {
+                hadBeHandled = YES;
+                retData = data;
+                retResponse = response;
+                retError = error;
+            }
+
+            [condition signal];
+        }];
+
+        [condition lock];
+        [condition waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:MAX(self.request.timeoutInterval, 60)]];
+
+        if (NOT hadBeHandled) {
+            hadBeHandled = YES;
+            retError = [NSError errorWithDomain:ffApiErrorDomainNetwork code:NSURLErrorTimedOut
+                                       userInfo:@{NSLocalizedFailureReasonErrorKey: [NSString stringWithFormat:@"%@, %@, %lld", [NSDate date], self.request.URL.absoluteString, (int64_t)(self.request.timeoutInterval)]}];
+        }
+
+        [condition unlock];
+        if (self.isCancelled) {
+            return;
+        }
+        self.postRequestHandler(retData, retResponse, retError);
     }
+}
+
+- (void)cancel {
+    if (_delegate AND [_delegate respondsToSelector:@selector(didCanceledRequestOperation:)]) {
+        [_delegate didCanceledRequestOperation:self];
+    }
+}
+
+#pragma mark - private helpers
+- (void)_sessionTaskWithRequest:(NSURLRequest *)request completeHandler:(void (^_Nullable)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))completeBlock {
+    [[[[ffApiRequestOperationQueue shared] session] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (completeBlock) {
+            completeBlock(data, response, error);
+        }
+    }] resume];
 }
 
 @end
