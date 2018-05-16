@@ -10,7 +10,7 @@
 @implementation ffCharacterModelInfo
 + (NSString *)aliasPropertyName:(NSString *)propertyName {
     return @{@"id": @"idField",
-             @"descField": @"Description"
+             @"description": @"descField"
              }[propertyName];
 }
 

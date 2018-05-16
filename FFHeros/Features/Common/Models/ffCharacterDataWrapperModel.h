@@ -11,7 +11,7 @@
 #import "gtModelizable.h"
 #import "ffMarvalApiModelResult.h"
 
-@interface ffMarvelApiWrapperModel : gtModelizable
+@interface ffCharacterDataWrapperModel : gtModelizable
 
 @property (nonatomic, copy) NSString * attributionHTML;
 @property (nonatomic, copy) NSString * attributionText;

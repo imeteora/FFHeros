@@ -7,9 +7,9 @@
 
 
 
-#import "ffMarvelApiWrapperModel.h"
+#import "ffCharacterDataWrapperModel.h"
 
-@implementation ffMarvelApiWrapperModel
+@implementation ffCharacterDataWrapperModel
 
 + (Class)classForPropertyName:(NSString *)propertyName {
     return @{@"data": [ffMarvalApiModelResult class]}[propertyName];

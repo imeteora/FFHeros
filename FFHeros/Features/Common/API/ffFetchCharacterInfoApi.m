@@ -7,17 +7,17 @@
 //
 
 #import "ffFetchCharacterInfoApi.h"
-#import "ffMarvelApiWrapperModel.h"
+#import "ffMarvalApiModelResult.h"
 #import "ffAPIRequest.h"
 
 @implementation ffFetchCharacterInfoApi
 
 - (void)requestAfterComplete:(void (^)(NSDictionary * _Nonnull))completeBlock ifError:(void (^)(NSError * _Nonnull, id __nullable))errorBlock {
     ffAPIConfig *config = [[ffAPIConfig alloc] init];
-    config.baseURL = MARVEL_BASE_HTTPS_URL@"/v1/public/characters";
+    config.baseURL = MARVEL_BASE_URL@"/v1/public/characters";
     config.method = FFApiRequestMethodGET;
     config.params = [self dictionaryWithKeyValues];
-    config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/" toMappingClass:[ffMarvelApiWrapperModel class]]];
+    config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data" toMappingClass:[ffMarvalApiModelResult class]]];
 
     ffAPIRequest *request = [[ffAPIRequest alloc] initWithConfig:config];
     [request setCompleleHandler:^(NSDictionary * _Nonnull result) {
