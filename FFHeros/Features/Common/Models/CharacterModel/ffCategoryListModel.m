@@ -7,12 +7,12 @@
 
 
 
-#import "ffCharacterModelCategoryList.h"
+#import "ffCategoryListModel.h"
 
-@implementation ffCharacterModelCategoryList
+@implementation ffCategoryListModel
 
 + (Class)classForPropertyName:(NSString *)propertyName {
-    return @{@"items": [ffCharacterSummaryModel class]}[propertyName];
+    return @{@"items": [ffSummaryModel class]}[propertyName];
 }
 
 @end

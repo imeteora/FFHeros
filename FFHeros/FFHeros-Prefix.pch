@@ -30,12 +30,6 @@
 #define strongify(x)    __strong __typeof__(x) x = weak_##x
 #endif  // strongify
 
-#define MARVEL_API_PUB_KEY  @"aaee6fa40625a68298d42a9bb9dcd09d"
-#define MARVEL_API_PRV_KEY  @"434b12e530a9e279ddec58cadeed1da51334b020"
-
-#define MARVEL_BASE_URL         @"http://gateway.marvel.com"
-#define MARVEL_BASE_HTTPS_URL   @"https://gateway.marvel.com"
-// gateway.marvel.com
-
+#import "ffDefineVariables.h"
 
 #endif /* FFHeros_Prefix_h */

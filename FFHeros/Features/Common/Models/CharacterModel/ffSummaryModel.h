@@ -1,5 +1,5 @@
 //
-//  ffCharacterSummaryModel.h
+//  ffSummaryModel.h
 //  FFHeros
 //
 //  Created by ZhuDelun on 2018/5/16.
@@ -8,10 +8,11 @@
 
 #import "gtModelizable.h"
 
-@interface ffCharacterSummaryModel : gtModelizable
+@interface ffSummaryModel : gtModelizable
 
 @property (nonatomic, copy) NSString * resourceURI;
 @property (nonatomic, copy) NSString * name;
 @property (nonatomic, copy) NSString * type;
+
 
 @end

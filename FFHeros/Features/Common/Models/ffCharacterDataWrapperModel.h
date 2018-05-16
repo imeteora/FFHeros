@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "gtModelizable.h"
-#import "ffMarvalApiModelResult.h"
+#import "ffCharacterDataContainerModel.h"
 
 @interface ffCharacterDataWrapperModel : gtModelizable
 
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString * attributionText;
 @property (nonatomic, assign) NSInteger code;
 @property (nonatomic, copy) NSString * copyright;
-@property (nonatomic, strong) ffMarvalApiModelResult * data;
+@property (nonatomic, strong) ffCharacterDataContainerModel * data;
 @property (nonatomic, copy) NSString * etag;
 @property (nonatomic, copy) NSString * status;
 

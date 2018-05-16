@@ -1,5 +1,5 @@
 //
-//	ffCharacterModelUrl.m
+//	ffImageModel.m
 //
 //	Create by 德伦 朱 on 16/5/2018
 //	Copyright © 2018. All rights reserved.
@@ -7,9 +7,9 @@
 
 
 
-#import "ffCharacterModelUrl.h"
+#import "ffImageModel.h"
 
-@implementation ffCharacterModelUrl
+@implementation ffImageModel
 
 
 @end

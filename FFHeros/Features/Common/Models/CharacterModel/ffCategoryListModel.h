@@ -7,12 +7,12 @@
 
 #import <UIKit/UIKit.h>
 #import "gtModelizable.h"
-#import "ffCharacterSummaryModel.h"
+#import "ffSummaryModel.h"
 
-@interface ffCharacterModelCategoryList : gtModelizable
+@interface ffCategoryListModel : gtModelizable
 
 @property (nonatomic, assign) NSInteger available;
 @property (nonatomic, copy) NSString * collectionURI;
-@property (nonatomic, strong) NSArray<ffCharacterSummaryModel *> * items;
+@property (nonatomic, strong) NSArray<ffSummaryModel *> * items;
 @property (nonatomic, assign) NSInteger returned;
 @end

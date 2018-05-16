@@ -12,7 +12,7 @@
 @implementation ffCharacterDataWrapperModel
 
 + (Class)classForPropertyName:(NSString *)propertyName {
-    return @{@"data": [ffMarvalApiModelResult class]}[propertyName];
+    return @{@"data": [ffCharacterDataContainerModel class]}[propertyName];
 }
 
 @end

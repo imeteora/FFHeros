@@ -23,13 +23,13 @@
 - (NSDictionary<NSString *,NSString *> *)getFinalParams {
     NSMutableDictionary<NSString *, NSString *> *result = [[NSMutableDictionary alloc] init];
     [result setObject:[self ts] forKey:@"ts"];
-    [result setObject:MARVEL_API_PUB_KEY forKey:@"apikey"];
+    [result setObject:[ffDefineVariables marver_base_url] forKey:@"apikey"];
     [result addEntriesFromDictionary:_params];
     return result;
 }
 
 - (nullable NSString *)authSignStringOfRequest {
-    return [NSString stringWithFormat:@"%@%@%@", [self ts], MARVEL_API_PRV_KEY, MARVEL_API_PUB_KEY];
+    return [NSString stringWithFormat:@"%@%@%@", [self ts], [ffDefineVariables marver_key_pri], [ffDefineVariables marver_key_pub]];
 }
 
 - (nullable NSDictionary<NSString *,NSString *> *)authSignDictOfRequest {
