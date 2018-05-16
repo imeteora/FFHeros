@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee117c7a-cd9e-4044-8465-d2add2f26c01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffDateModel.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffDateModel.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffTextObjectModel.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffTextObjectModel.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterInfoApi.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCategoryListModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffCategoryListModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCategoryListModel.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffCategoryListModel.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffSummaryModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffSummaryModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffSummaryModel.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffSummaryModel.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffUrlModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffUrlModel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffUrlModel.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/Common/ffUrlModel.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ComicsModel/ffComicsModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ComicsModel/ffComicsModel.h" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/FFHeros-fyvnaxpvpdoltqeqgwuydvlqeaph/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,8 +67,8 @@
       <file leaf-file-name="ffComicsModel.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/ComicsModel/ffComicsModel.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="330">
+              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -99,25 +86,16 @@
         <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ffPriceModel.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/ComicsModel/ffPriceModel.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ffAPIConfig.m" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ffAPIConfig.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -241,24 +219,6 @@
               <item name="Common" type="fcab9f18:XcodeViewNode" />
               <item name="Models" type="fcab9f18:XcodeViewNode" />
             </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="FFHeros" type="1d218c8b:XcodeProjectNode" />
-              <item name="FFHeros" type="fcab9f18:XcodeViewNode" />
-              <item name="Features" type="fcab9f18:XcodeViewNode" />
-              <item name="Common" type="fcab9f18:XcodeViewNode" />
-              <item name="Models" type="fcab9f18:XcodeViewNode" />
-              <item name="ComicsModel" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="FFHeros" type="1d218c8b:XcodeProjectNode" />
-              <item name="FFHeros" type="fcab9f18:XcodeViewNode" />
-              <item name="Features" type="fcab9f18:XcodeViewNode" />
-              <item name="Common" type="fcab9f18:XcodeViewNode" />
-              <item name="Models" type="fcab9f18:XcodeViewNode" />
-              <item name="CharacterModel" type="fcab9f18:XcodeViewNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -299,12 +259,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526490201025</updated>
-      <workItem from="1526490205713" duration="4131000" />
+      <workItem from="1526490205713" duration="4746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4131000" />
+    <option name="totallyTimeSpent" value="4746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1058" extended-state="6" />
@@ -318,7 +278,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20326488" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20326488" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32942432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978677" />
@@ -429,13 +389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -475,8 +428,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Models/ComicsModel/ffComicsModel.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        <state relative-caret-position="330">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -504,7 +457,7 @@
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -512,6 +465,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
