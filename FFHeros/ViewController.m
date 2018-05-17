@@ -9,8 +9,10 @@
 #import "ViewController.h"
 #import "ffFetchCharactersApi.h"
 #import "ffFetchCharacterInfoApi.h"
+#import "UIView+WebImage.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *previewImageView;
 
 @end
 
@@ -19,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.previewImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 
@@ -47,6 +50,17 @@
     } ifError:^(NSError *error, id o) {
         NSLog(@"Error");
     }];
+}
+
+- (IBAction)actionTapLoadImage:(id)sender
+{
+    weakify(self);
+    [self.previewImageView ff_setImageWithUrl:@"https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1526563845&di=63328738db77d5105fa16f054ed04853&src=http://img.mp.itc.cn/upload/20170613/abc11a2410c44a20bba8fe71a5004329_th.jpg"
+                                afterComplete:^(UIImage *image)
+     {
+         strongify(self);
+         self.previewImageView.image = image;
+     }];
 }
 
 @end

@@ -32,9 +32,13 @@
 		133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAD20AB515B00CA800C /* ffSummaryModel.m */; };
 		133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FB420AB587B00CA800C /* ffFooModel.m */; };
 		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */; };
+		138B1D3720AD8D51006A5708 /* UIView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 138B1D3620AD8D51006A5708 /* UIView+WebImage.m */; };
 		13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */; };
 		13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1C20AB02DE00C3063A /* FFCode_Decode.m */; };
 		13974C1F20AB114200C3063A /* FFCode_Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1E20AB114200C3063A /* FFCode_Network.m */; };
+		13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */; };
+		13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93320AD3480005CF787 /* ffRefreshComponent.m */; };
+		13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */; };
 		13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */; };
 		13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7F220AABB7500461972 /* ffApiRequestOperation.m */; };
 		13F9E3C020AB700C00912533 /* ffApiError.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E3BF20AB700C00912533 /* ffApiError.m */; };
@@ -106,10 +110,18 @@
 		133E1FB420AB587B00CA800C /* ffFooModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFooModel.m; sourceTree = "<group>"; };
 		13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFetchCharactersApi.h; sourceTree = "<group>"; };
 		13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharactersApi.m; sourceTree = "<group>"; };
+		138B1D3520AD8D51006A5708 /* UIView+WebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+WebImage.h"; sourceTree = "<group>"; };
+		138B1D3620AD8D51006A5708 /* UIView+WebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebImage.m"; sourceTree = "<group>"; };
 		13974C1920AAFBF800C3063A /* ffApiSignHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiSignHelper.h; sourceTree = "<group>"; };
 		13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiSignHelper.m; sourceTree = "<group>"; };
 		13974C1C20AB02DE00C3063A /* FFCode_Decode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Decode.m; sourceTree = "<group>"; };
 		13974C1E20AB114200C3063A /* FFCode_Network.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Network.m; sourceTree = "<group>"; };
+		13F2A92F20AD2F26005CF787 /* ffRefreshScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshScrollView.h; sourceTree = "<group>"; };
+		13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshScrollView.m; sourceTree = "<group>"; };
+		13F2A93220AD3480005CF787 /* ffRefreshComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshComponent.h; sourceTree = "<group>"; };
+		13F2A93320AD3480005CF787 /* ffRefreshComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshComponent.m; sourceTree = "<group>"; };
+		13F2A94220AD5BC3005CF787 /* UIView+ffExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ffExt.h"; sourceTree = "<group>"; };
+		13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ffExt.m"; sourceTree = "<group>"; };
 		13F5F7E120AA87A400461972 /* ffApiRequestOperationQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiRequestOperationQueue.h; sourceTree = "<group>"; };
 		13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiRequestOperationQueue.m; sourceTree = "<group>"; };
 		13F5F7F020AAB7B200461972 /* FFHeros-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFHeros-Prefix.pch"; sourceTree = "<group>"; };
@@ -215,6 +227,8 @@
 		133B29EF20AA57F200117E4F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				13F2A92E20AD2EEC005CF787 /* PullRefresh */,
+				138B1D3420AD8D3B006A5708 /* WebImage */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -333,6 +347,28 @@
 				13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		138B1D3420AD8D3B006A5708 /* WebImage */ = {
+			isa = PBXGroup;
+			children = (
+				138B1D3520AD8D51006A5708 /* UIView+WebImage.h */,
+				138B1D3620AD8D51006A5708 /* UIView+WebImage.m */,
+			);
+			path = WebImage;
+			sourceTree = "<group>";
+		};
+		13F2A92E20AD2EEC005CF787 /* PullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				13F2A93220AD3480005CF787 /* ffRefreshComponent.h */,
+				13F2A93320AD3480005CF787 /* ffRefreshComponent.m */,
+				13F2A92F20AD2F26005CF787 /* ffRefreshScrollView.h */,
+				13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */,
+				13F2A94220AD5BC3005CF787 /* UIView+ffExt.h */,
+				13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */,
+			);
+			path = PullRefresh;
 			sourceTree = "<group>";
 		};
 		13FFEB3420AC8D7C008615C6 /* Define */ = {
@@ -497,6 +533,8 @@
 				133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */,
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
 				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
+				13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */,
+				13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */,
 				133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */,
 				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
 				133E1FA820AB4F5E00CA800C /* ffUrlModel.m in Sources */,
@@ -504,6 +542,8 @@
 				133B29DA20AA56E500117E4F /* main.m in Sources */,
 				133B2A0320AA6F1500117E4F /* NSObject+ReflectHelper.m in Sources */,
 				133B2A0420AA6F1500117E4F /* NSString+Format.m in Sources */,
+				13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */,
+				138B1D3720AD8D51006A5708 /* UIView+WebImage.m in Sources */,
 				133B29CF20AA56E400117E4F /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
