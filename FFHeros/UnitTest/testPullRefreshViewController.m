@@ -27,7 +27,7 @@
     [self.tableView ff_addHeaderWith:^{
         strongify(self);
         NSLog(@"Hello world");
-        [self.tableView.headerView endRefreshing];
+        [self.tableView ff_endRefreshing];
     }];
 }
 

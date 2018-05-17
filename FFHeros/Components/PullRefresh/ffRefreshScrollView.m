@@ -22,26 +22,26 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
 
 - (void)ff_addHeaderWith:(ffRefreshBlock)headerRefreshHandler {
     ffRefreshHeader *header = [[ffRefreshHeader alloc] init];
-    self.headerView = header;
-    [self.headerView setRefreshHandler:headerRefreshHandler];
+    self.ff_headerView = header;
+    [self.ff_headerView setRefreshHandler:headerRefreshHandler];
 }
 
 
-- (ffRefreshHeader *)headerView {
+- (ffRefreshHeader *)ff_headerView {
     return objc_getAssociatedObject(self, &FFRefreshHeaderViewKey);
 }
 
-- (void)setHeaderView:(ffRefreshHeader *)header {
-    if (self.headerView != header) {
-        if (self.headerView) {
-            [self.headerView removeFromSuperview];
+- (void)setFf_headerView:(ffRefreshHeader * _Nullable)ff_headerView {
+    if (self.ff_headerView != ff_headerView) {
+        if (self.ff_headerView) {
+            [self.ff_headerView removeFromSuperview];
         }
 
         [self willChangeValueForKey:kFFRefreshHeaderViewKVOKey];
-        objc_setAssociatedObject(self, &FFRefreshHeaderViewKey, header, OBJC_ASSOCIATION_ASSIGN);
+        objc_setAssociatedObject(self, &FFRefreshHeaderViewKey, ff_headerView, OBJC_ASSOCIATION_ASSIGN);
         [self didChangeValueForKey:kFFRefreshHeaderViewKVOKey];
 
-        [self addSubview:header];
+        [self addSubview:ff_headerView];
     }
 }
 
@@ -63,6 +63,9 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
     }
 }
 
+- (void)ff_endRefreshing {
+    [self.ff_headerView endRefreshing];
+}
 
 
 @end

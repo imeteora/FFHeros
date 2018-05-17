@@ -11,12 +11,13 @@
 
 @interface UIScrollView (FFRefresh)
 
-@property (nonatomic, strong, readonly, nullable) ffRefreshHeader *headerView;
+@property (nonatomic, strong, readonly, nullable) ffRefreshHeader *ff_headerView;
 
 - (void)ff_addHeaderWith:(ffRefreshBlock)headerRefreshHandler;
 
-
 - (nullable UIView *)footerView;
 - (void)setFooterView:(UIView * _Nonnull)footer;
+
+- (void)ff_endRefreshing;
 
 @end
