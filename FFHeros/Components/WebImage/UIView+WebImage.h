@@ -10,7 +10,7 @@
 
 @interface UIView (WebImage)
 
-
 - (void)ff_setImageWithUrl:(NSString *)url afterComplete:(void (^)(UIImage *image))complete;
+- (void)ff_setImageWithUrl:(NSString *)url placeHolderImage:(UIImage *)placeHolder afterComplete:(void (^)(UIImage *image))complete;
 
 @end

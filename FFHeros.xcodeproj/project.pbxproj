@@ -48,6 +48,7 @@
 		13FFEB5220ACAB35008615C6 /* ffDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB4420ACAB34008615C6 /* ffDateModel.m */; };
 		13FFEB5520ACAB35008615C6 /* ffComicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB4920ACAB34008615C6 /* ffComicsModel.m */; };
 		13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */; };
+		CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */; };
 		CC2F3DCFE3054608BAD5D13C /* ffFetchCharacterInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2F39BB2337F2605B2EB203 /* ffFetchCharacterInfoApi.m */; };
 /* End PBXBuildFile section */
 
@@ -141,8 +142,10 @@
 		13FFEB4920ACAB34008615C6 /* ffComicsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffComicsModel.m; sourceTree = "<group>"; };
 		13FFEB5A20ACB05B008615C6 /* ffTextObjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffTextObjectModel.h; sourceTree = "<group>"; };
 		13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffTextObjectModel.m; sourceTree = "<group>"; };
+		CC2F31680CA56A8751A6076B /* ffWebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffWebImageCache.h; sourceTree = "<group>"; };
 		CC2F39BB2337F2605B2EB203 /* ffFetchCharacterInfoApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharacterInfoApi.m; sourceTree = "<group>"; };
 		CC2F3D684481592581F5A930 /* ffFetchCharacterInfoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffFetchCharacterInfoApi.h; sourceTree = "<group>"; };
+		CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffWebImageCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +355,8 @@
 		138B1D3420AD8D3B006A5708 /* WebImage */ = {
 			isa = PBXGroup;
 			children = (
+				CC2F31680CA56A8751A6076B /* ffWebImageCache.h */,
+				CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */,
 				138B1D3520AD8D51006A5708 /* UIView+WebImage.h */,
 				138B1D3620AD8D51006A5708 /* UIView+WebImage.m */,
 			);
@@ -538,6 +543,7 @@
 				133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */,
 				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
 				133E1FA820AB4F5E00CA800C /* ffUrlModel.m in Sources */,
+				CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */,
 				133B2A0520AA6F1500117E4F /* gtModelizable.m in Sources */,
 				133B29DA20AA56E500117E4F /* main.m in Sources */,
 				133B2A0320AA6F1500117E4F /* NSObject+ReflectHelper.m in Sources */,

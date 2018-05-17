@@ -7,17 +7,52 @@
 //
 
 #import "UIView+WebImage.h"
+#import "ffWebImageCache.h"
+#import <objc/runtime.h>
+#import <CommonCrypto/CommonDigest.h>       // MD5
+
+static char kffImageCacheKey;
 
 @interface UIView () <NSURLSessionDownloadDelegate>
 @end
 
 @implementation UIView (WebImage)
 
-- (void)ff_setImageWithUrl:(NSString *)url afterComplete:(void (^)(UIImage *image))complete
+- (void)ff_setImageWithUrl:(NSString *)url afterComplete:(void (^)(UIImage *image))complete {
+    [self ff_setImageWithUrl:url placeHolderImage:nil afterComplete:complete];
+}
+
+- (void)ff_setImageWithUrl:(NSString *)url placeHolderImage:(UIImage *)placeHolder afterComplete:(void (^)(UIImage *image))complete
 {
     @autoreleasepool {
         __block UIImage *img = nil;
         __block NSData *imgData = nil;
+
+        __weak typeof(self) __weak_self = self;
+
+        void (^postFinishFetchImageHandler)(UIImage * __nonnull) = ^(UIImage * __nonnull finalImage) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [__weak_self _ff_setImage:finalImage animated:YES];
+                if (complete) {
+                    complete(finalImage);
+                }
+            });
+        };
+
+        void (^cacheFinalImage)(NSString * __nonnull, UIImage * __nonnull) = ^(NSString * __nonnull imgUrl, UIImage * __nonnull finalImage) {
+            [__weak_self.imageCache setObject:finalImage forKey:[__weak_self keyForImage:url]];
+        };
+
+
+        if (placeHolder) {
+            [self _ff_setImage:placeHolder animated:NO];
+        }
+
+        UIImage *cachedImage_ = [self.imageCache objectForKey:[self keyForImage:url]];
+        if (cachedImage_) {
+            postFinishFetchImageHandler(cachedImage_);
+            return;
+        }
 
         NSURL *imgUrl = [NSURL URLWithString:url];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
@@ -34,18 +69,14 @@
 
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self _ff_setImage:img];
-            if (complete) {
-                complete(img);
-            }
-        });
+        cacheFinalImage(url, img);
+        postFinishFetchImageHandler(img);
     }
 }
 
 
 #pragma mark - private helpers
-- (void)_ff_setImage:(UIImage *)image
+- (void)_ff_setImage:(UIImage *)image animated:(BOOL)animated
 {
     if (image == nil) return;
 
@@ -66,11 +97,55 @@
         return;
     }
 
-    self.alpha = 0;
-    [UIView animateWithDuration:0.4 animations:^{
+    if (animated == NO) {
         imageSetter(image);
-        self.alpha = 1.0;
-    } completion:nil];
+    } else {
+        self.alpha = 0;
+        [UIView animateWithDuration:0.4 animations:^{
+            imageSetter(image);
+            self.alpha = 1.0;
+        } completion:nil];
+    }
+}
+
+- (NSString *)keyForImage:(NSString *)url {
+    return [self _MD5:url];
+}
+
+- (NSString *) _MD5:(NSString *)origin {
+    return [self _MD5WithData:[origin dataUsingEncoding:(NSUTF8StringEncoding)]];
+}
+
+- (NSString *) _MD5WithData:(NSData *)data
+{
+    @autoreleasepool {
+        const char*cStr = [data bytes];
+        unsigned char result[CC_MD5_DIGEST_LENGTH];
+
+        CC_MD5(cStr, (CC_LONG)data.length, result);
+        return [[NSString stringWithFormat:
+                @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+                result[0], result[1], result[2], result[3],
+                result[4], result[5], result[6], result[7],
+                result[8], result[9], result[10], result[11],
+                result[12], result[13], result[14], result[15]
+        ] lowercaseString];
+    }
+}
+
+
+- (ffWebImageCache *)imageCache {
+    ffWebImageCache * cache_ = objc_getAssociatedObject(self, &kffImageCacheKey);
+    if (cache_ == nil) {
+        cache_ = [[ffWebImageCache alloc] init];
+        cache_.totalCostLimit = 10 * 1024 * 1024;
+        [self setImageCache:cache_];
+    }
+    return cache_;
+}
+
+- (void)setImageCache:(ffWebImageCache *)newImageCache {
+    objc_setAssociatedObject(self, &kffImageCacheKey, newImageCache, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonDigest.h>
-#import <CommonCrypto/CommonCryptor.h>
 
 @interface DESUtils : NSObject
 
-+ (NSString *) doCipher:(NSString *)sTextIn key:(NSString *)sKey context:(CCOperation)encryptOrDecrypt;
++ (NSString *) doCipher:(NSString *)sTextIn key:(NSString *)sKey context:(uint32_t)encryptOrDecrypt;
 + (NSString *) encryptStr:(NSString *) str usingKey: (NSString*)key;
 + (NSString *) decryptStr:(NSString *) str usingKey: (NSString*)key;
 
