@@ -30,6 +30,7 @@ static char kffImageCacheKey;
 
         __weak typeof(self) __weak_self = self;
 
+        /// the block to handle final job and call the outsider callback
         void (^postFinishFetchImageHandler)(UIImage * __nonnull) = ^(UIImage * __nonnull finalImage) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [__weak_self _ff_setImage:finalImage animated:YES];
@@ -39,21 +40,25 @@ static char kffImageCacheKey;
             });
         };
 
+        /// to cache the image with digested url as the key
         void (^cacheFinalImage)(NSString * __nonnull, UIImage * __nonnull) = ^(NSString * __nonnull imgUrl, UIImage * __nonnull finalImage) {
             [__weak_self.imageCache setObject:finalImage forKey:[__weak_self keyForImage:url]];
         };
 
 
+        /// set placeholder image as a tmp display
         if (placeHolder) {
             [self _ff_setImage:placeHolder animated:NO];
         }
 
+        /// 1) try to get a cached image instance from local cache.
         UIImage *cachedImage_ = [self.imageCache objectForKey:[self keyForImage:url]];
         if (cachedImage_) {
             postFinishFetchImageHandler(cachedImage_);
             return;
         }
 
+        /// 2) if failed in load cached image with key(MD5), try fetch the image data from the remote server
         NSURL *imgUrl = [NSURL URLWithString:url];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
 
@@ -69,7 +74,10 @@ static char kffImageCacheKey;
 
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 
+        /// 3) cache fetched image
         cacheFinalImage(url, img);
+
+        /// 4) calling the callback handler.
         postFinishFetchImageHandler(img);
     }
 }
@@ -112,6 +120,7 @@ static char kffImageCacheKey;
     return [self _MD5:url];
 }
 
+// -------------------------------------------------------------------------------
 - (NSString *) _MD5:(NSString *)origin {
     return [self _MD5WithData:[origin dataUsingEncoding:(NSUTF8StringEncoding)]];
 }
@@ -133,7 +142,7 @@ static char kffImageCacheKey;
     }
 }
 
-
+// -------------------------------------------------------------------------------
 - (ffWebImageCache *)imageCache {
     ffWebImageCache * cache_ = objc_getAssociatedObject(self, &kffImageCacheKey);
     if (cache_ == nil) {
