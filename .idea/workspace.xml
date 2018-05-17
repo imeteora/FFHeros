@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee117c7a-cd9e-4044-8465-d2add2f26c01" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharacterComicsApi.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ComicsModel/ffComicsModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/ComicsModel/ffComicsModel.h" afterDir="false" />
@@ -94,8 +95,8 @@
       <file leaf-file-name="ffAPIConfig.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="270">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -259,12 +260,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526490201025</updated>
-      <workItem from="1526490205713" duration="4746000" />
+      <workItem from="1526490205713" duration="5084000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4746000" />
+    <option name="totallyTimeSpent" value="5084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1058" extended-state="6" />
@@ -470,8 +471,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="270">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>
