@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ffRefreshHeader.h"
 
 @interface UIScrollView (FFRefresh)
 
-- (nullable UIView *)headerView;
-- (void)setHeaderView:(UIView * _Nonnull)header;
+@property (nonatomic, strong, readonly, nullable) ffRefreshHeader *headerView;
+
+- (void)ff_addHeaderWith:(ffRefreshBlock)headerRefreshHandler;
+
 
 - (nullable UIView *)footerView;
 - (void)setFooterView:(UIView * _Nonnull)footer;

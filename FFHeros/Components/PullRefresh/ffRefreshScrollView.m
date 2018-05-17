@@ -19,11 +19,19 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
 
 @implementation UIScrollView (FFRefresh)
 
-- (UIView *)headerView {
+
+- (void)ff_addHeaderWith:(ffRefreshBlock)headerRefreshHandler {
+    ffRefreshHeader *header = [[ffRefreshHeader alloc] init];
+    self.headerView = header;
+    [self.headerView setRefreshHandler:headerRefreshHandler];
+}
+
+
+- (ffRefreshHeader *)headerView {
     return objc_getAssociatedObject(self, &FFRefreshHeaderViewKey);
 }
 
-- (void)setHeaderView:(UIView *)header {
+- (void)setHeaderView:(ffRefreshHeader *)header {
     if (self.headerView != header) {
         if (self.headerView) {
             [self.headerView removeFromSuperview];

@@ -31,6 +31,10 @@
 		133E1FAB20AB500100CA800C /* FFCode_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAA20AB500100CA800C /* FFCode_Model.m */; };
 		133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAD20AB515B00CA800C /* ffSummaryModel.m */; };
 		133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FB420AB587B00CA800C /* ffFooModel.m */; };
+		134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */; };
+		134F31FF20ADF78D00DADFAA /* UIScrollView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FE20ADF78D00DADFAA /* UIScrollView+ffExt.m */; };
+		134F320120AE001000DADFAA /* FFCode_webImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320020AE001000DADFAA /* FFCode_webImage.m */; };
+		134F320720AE03BD00DADFAA /* testPullRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320520AE03BD00DADFAA /* testPullRefreshViewController.m */; };
 		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */; };
 		138B1D3720AD8D51006A5708 /* UIView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 138B1D3620AD8D51006A5708 /* UIView+WebImage.m */; };
 		13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */; };
@@ -109,6 +113,13 @@
 		133E1FAD20AB515B00CA800C /* ffSummaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSummaryModel.m; sourceTree = "<group>"; };
 		133E1FB320AB587B00CA800C /* ffFooModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFooModel.h; sourceTree = "<group>"; };
 		133E1FB420AB587B00CA800C /* ffFooModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFooModel.m; sourceTree = "<group>"; };
+		134F31FA20ADF36C00DADFAA /* ffRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshHeader.h; sourceTree = "<group>"; };
+		134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshHeader.m; sourceTree = "<group>"; };
+		134F31FD20ADF78D00DADFAA /* UIScrollView+ffExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ffExt.h"; sourceTree = "<group>"; };
+		134F31FE20ADF78D00DADFAA /* UIScrollView+ffExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ffExt.m"; sourceTree = "<group>"; };
+		134F320020AE001000DADFAA /* FFCode_webImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_webImage.m; sourceTree = "<group>"; };
+		134F320420AE03BD00DADFAA /* testPullRefreshViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testPullRefreshViewController.h; sourceTree = "<group>"; };
+		134F320520AE03BD00DADFAA /* testPullRefreshViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testPullRefreshViewController.m; sourceTree = "<group>"; };
 		13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFetchCharactersApi.h; sourceTree = "<group>"; };
 		13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharactersApi.m; sourceTree = "<group>"; };
 		138B1D3520AD8D51006A5708 /* UIView+WebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+WebImage.h"; sourceTree = "<group>"; };
@@ -198,6 +209,7 @@
 				133B29D520AA56E500117E4F /* LaunchScreen.storyboard */,
 				133B29D920AA56E500117E4F /* main.m */,
 				133B29D020AA56E400117E4F /* Main.storyboard */,
+				134F320A20AE03D800DADFAA /* UnitTest */,
 				133B29CD20AA56E400117E4F /* ViewController.h */,
 				133B29CE20AA56E400117E4F /* ViewController.m */,
 			);
@@ -210,6 +222,7 @@
 				13974C1C20AB02DE00C3063A /* FFCode_Decode.m */,
 				133E1FAA20AB500100CA800C /* FFCode_Model.m */,
 				13974C1E20AB114200C3063A /* FFCode_Network.m */,
+				134F320020AE001000DADFAA /* FFCode_webImage.m */,
 				133B29E320AA56E500117E4F /* FFHerosTests.m */,
 				133B29E520AA56E500117E4F /* Info.plist */,
 				133E1FB220AB586800CA800C /* Test */,
@@ -329,6 +342,15 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		134F320A20AE03D800DADFAA /* UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				134F320420AE03BD00DADFAA /* testPullRefreshViewController.h */,
+				134F320520AE03BD00DADFAA /* testPullRefreshViewController.m */,
+			);
+			path = UnitTest;
+			sourceTree = "<group>";
+		};
 		13885BA420ABBC3800D9F9E5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,8 +390,12 @@
 			children = (
 				13F2A93220AD3480005CF787 /* ffRefreshComponent.h */,
 				13F2A93320AD3480005CF787 /* ffRefreshComponent.m */,
+				134F31FA20ADF36C00DADFAA /* ffRefreshHeader.h */,
+				134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */,
 				13F2A92F20AD2F26005CF787 /* ffRefreshScrollView.h */,
 				13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */,
+				134F31FD20ADF78D00DADFAA /* UIScrollView+ffExt.h */,
+				134F31FE20ADF78D00DADFAA /* UIScrollView+ffExt.m */,
 				13F2A94220AD5BC3005CF787 /* UIView+ffExt.h */,
 				13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */,
 			);
@@ -539,6 +565,7 @@
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
 				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */,
+				134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */,
 				13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */,
 				133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */,
 				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
@@ -548,6 +575,8 @@
 				133B29DA20AA56E500117E4F /* main.m in Sources */,
 				133B2A0320AA6F1500117E4F /* NSObject+ReflectHelper.m in Sources */,
 				133B2A0420AA6F1500117E4F /* NSString+Format.m in Sources */,
+				134F320720AE03BD00DADFAA /* testPullRefreshViewController.m in Sources */,
+				134F31FF20ADF78D00DADFAA /* UIScrollView+ffExt.m in Sources */,
 				13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */,
 				138B1D3720AD8D51006A5708 /* UIView+WebImage.m in Sources */,
 				133B29CF20AA56E400117E4F /* ViewController.m in Sources */,
@@ -561,6 +590,7 @@
 				13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */,
 				133E1FAB20AB500100CA800C /* FFCode_Model.m in Sources */,
 				13974C1F20AB114200C3063A /* FFCode_Network.m in Sources */,
+				134F320120AE001000DADFAA /* FFCode_webImage.m in Sources */,
 				133B29E420AA56E500117E4F /* FFHerosTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

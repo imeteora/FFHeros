@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee117c7a-cd9e-4044-8465-d2add2f26c01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/FFHeros/Components/WebImage/ffWebImageCache.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Components/WebImage/ffWebImageCache.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/UIScrollView+ffExt.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/UIScrollView+ffExt.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshHeader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshHeader.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/UnitTest/testPullRefreshViewController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/UnitTest/testPullRefreshViewController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHerosTests/FFCode_webImage.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Components/WebImage/UIView+WebImage.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Components/WebImage/UIView+WebImage.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Components/WebImage/UIView+WebImage.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Components/WebImage/UIView+WebImage.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Core/crypto/DESUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Core/crypto/DESUtils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Core/crypto/DESUtils.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Core/crypto/DESUtils.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/AppDelegate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/UIView+ffExt.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/UIView+ffExt.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/UIView+ffExt.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/UIView+ffExt.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshComponent.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshComponent.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshScrollView.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshScrollView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshScrollView.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshScrollView.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Info.plist" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/FFHeros-fyvnaxpvpdoltqeqgwuydvlqeaph/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,32 +31,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_D4926966-2119-4E16-8540-65EFE1689F9B" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ffDefineVariables.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/Define/ffDefineVariables.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ffAPIConfig.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIConfig.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UIView+WebImage.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UIView+WebImage.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFHeros/Components/WebImage/UIView+WebImage.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            <state relative-caret-position="715">
+              <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
               <folding>
                 <element signature="e#135#162#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ffAPIRequest.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIRequest.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="248" column="60" selection-start-line="248" selection-start-column="60" selection-end-line="248" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -56,11 +56,18 @@
         <entry file="file://$PROJECT_DIR$/FFHeros/Components/WebImage/ffWebImageCache.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#97#124#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ffRefreshScrollView.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshScrollView.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-63" />
           </provider>
         </entry>
       </file>
@@ -104,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/FFHeros/Components/WebImage/ffWebImageCache.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -317,12 +324,12 @@
       <option name="presentableId" value="Default" />
       <updated>1526490201025</updated>
       <workItem from="1526490205713" duration="5084000" />
-      <workItem from="1526570372806" duration="2439000" />
+      <workItem from="1526570372806" duration="3324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7523000" />
+    <option name="totallyTimeSpent" value="8408000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -338,18 +345,18 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32942432" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.2196162" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.2196162" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23240939" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20326488" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20326488" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32942432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978677" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.26012793" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -363,6 +370,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIRequest.h">
@@ -524,17 +536,7 @@
     <entry file="file://$PROJECT_DIR$/FFHeros/Components/WebImage/ffWebImageCache.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FFHeros/Components/WebImage/ffWebImageCache.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#97#124#0" expanded="true" />
-          </folding>
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -568,12 +570,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Components/WebImage/UIView+WebImage.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        <state relative-caret-position="715">
+          <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
           <folding>
             <element signature="e#135#162#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIRequest.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="248" column="60" selection-start-line="248" selection-start-column="60" selection-end-line="248" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerQueueDescriptor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Components/WebImage/ffWebImageCache.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#97#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Components/PullRefresh/ffRefreshScrollView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63" />
       </provider>
     </entry>
   </component>

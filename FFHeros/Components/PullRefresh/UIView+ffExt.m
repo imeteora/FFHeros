@@ -9,6 +9,12 @@
 #import "UIView+ffExt.h"
 
 @implementation UIView (ffExt)
+@dynamic viewLeft;
+@dynamic viewTop;
+@dynamic viewWidth;
+@dynamic viewHeight;
+@dynamic viewRight;
+@dynamic viewBottom;
 
 - (void)setViewLeft:(CGFloat)x {
     CGRect frame = self.frame;
