@@ -10,7 +10,21 @@
 
 @interface UIView (WebImage)
 
+/**
+ load image from remote server with the URI.
+
+ @param url image's URI
+ @param complete callback handler when image data was loaded.
+ */
 - (void)ff_setImageWithUrl:(NSString *)url afterComplete:(void (^)(UIImage *image))complete;
+
+/**
+ load image from remote server with the URI.
+
+ @param url image's URI
+ @param placeHolder placeholder image for current view as temporary replacement image before a remote image downloaded.
+ @param complete callback handler when image data was loaded.
+ */
 - (void)ff_setImageWithUrl:(NSString *)url placeHolderImage:(UIImage *)placeHolder afterComplete:(void (^)(UIImage *image))complete;
 
 @end

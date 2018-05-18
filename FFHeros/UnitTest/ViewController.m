@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ffNavigationController.h"
 #import "ffFetchCharactersApi.h"
 #import "ffFetchCharacterInfoApi.h"
 #import "UIView+WebImage.h"
@@ -23,6 +24,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.previewImageView.contentMode = UIViewContentModeScaleAspectFit;
+
 }
 
 

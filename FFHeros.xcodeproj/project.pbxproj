@@ -29,6 +29,7 @@
 		133E1FAB20AB500100CA800C /* FFCode_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAA20AB500100CA800C /* FFCode_Model.m */; };
 		133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAD20AB515B00CA800C /* ffSummaryModel.m */; };
 		133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FB420AB587B00CA800C /* ffFooModel.m */; };
+		13447E6220AF312E0018F23D /* NSObject+FFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072FF20AF0B770037F124 /* NSObject+FFUtils.m */; };
 		134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */; };
 		134F31FF20ADF78D00DADFAA /* UIScrollView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FE20ADF78D00DADFAA /* UIScrollView+ffExt.m */; };
 		134F320120AE001000DADFAA /* FFCode_webImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320020AE001000DADFAA /* FFCode_webImage.m */; };
@@ -43,7 +44,6 @@
 		13A072D020AEE8290037F124 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A072CE20AEE8290037F124 /* ViewController.xib */; };
 		13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F520AEF7850037F124 /* ffBaseViewController.m */; };
 		13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F920AEFBDF0037F124 /* ffNavigationController.m */; };
-		13A0730020AF0B770037F124 /* NSObject+FFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072FF20AF0B770037F124 /* NSObject+FFUtils.m */; };
 		13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */; };
 		13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93320AD3480005CF787 /* ffRefreshComponent.m */; };
 		13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */; };
@@ -166,6 +166,7 @@
 		13FFEB5A20ACB05B008615C6 /* ffTextObjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffTextObjectModel.h; sourceTree = "<group>"; };
 		13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffTextObjectModel.m; sourceTree = "<group>"; };
 		CC2F31680CA56A8751A6076B /* ffWebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffWebImageCache.h; sourceTree = "<group>"; };
+		CC2F3766ECD48B36BF68DF4D /* ffNavigationControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffNavigationControllerProtocol.h; sourceTree = "<group>"; };
 		CC2F39BB2337F2605B2EB203 /* ffFetchCharacterInfoApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharacterInfoApi.m; sourceTree = "<group>"; };
 		CC2F3D684481592581F5A930 /* ffFetchCharacterInfoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffFetchCharacterInfoApi.h; sourceTree = "<group>"; };
 		CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffWebImageCache.m; sourceTree = "<group>"; };
@@ -422,6 +423,7 @@
 			children = (
 				13A072F820AEFBDF0037F124 /* ffNavigationController.h */,
 				13A072F920AEFBDF0037F124 /* ffNavigationController.m */,
+				CC2F3766ECD48B36BF68DF4D /* ffNavigationControllerProtocol.h */,
 			);
 			path = NavigationController;
 			sourceTree = "<group>";
@@ -628,7 +630,7 @@
 				CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */,
 				133B2A0520AA6F1500117E4F /* gt_Modelizable.m in Sources */,
 				133B29DA20AA56E500117E4F /* main.m in Sources */,
-				13A0730020AF0B770037F124 /* NSObject+FFUtils.m in Sources */,
+				13447E6220AF312E0018F23D /* NSObject+FFUtils.m in Sources */,
 				133B2A0320AA6F1500117E4F /* NSObject+ReflectHelper.m in Sources */,
 				133B2A0420AA6F1500117E4F /* NSString+Format.m in Sources */,
 				134F320720AE03BD00DADFAA /* testPullRefreshViewController.m in Sources */,

@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ffNavigationController : UINavigationController
+@property (nonatomic, readonly) UIPanGestureRecognizer *dragbackGesture;
 
 @end
+
+
 
 @interface ffNavigationController (FFAutorotate)
 @end

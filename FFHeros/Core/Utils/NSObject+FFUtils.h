@@ -10,6 +10,11 @@
 
 @interface NSObject (FFUtils)
 
+/**
+ checking if object had been override the super class's some selector
+
+ @return YES, if object had been override the super class's instance method.
+ */
 - (BOOL)ff_checkObject:(id __nonnull)object overrideSelector:(NSString * __nonnull)selectorStr;
 
 @end
