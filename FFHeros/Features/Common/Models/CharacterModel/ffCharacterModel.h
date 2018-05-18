@@ -8,12 +8,12 @@
 // 
 
 #import <UIKit/UIKit.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 #import "ffCategoryListModel.h"
 #import "ffImageModel.h"
 #import "ffUrlModel.h"
 
-@interface ffCharacterModel : gtModelizable
+@interface ffCharacterModel : gt_Modelizable
 
 @property (nonatomic, copy) NSString *idField;      // -> id
 @property (nonatomic, copy) NSString *name;

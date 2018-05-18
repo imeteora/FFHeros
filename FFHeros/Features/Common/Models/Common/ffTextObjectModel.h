@@ -6,9 +6,9 @@
 //  Copyright © 2018 ZhuDelun. All rights reserved.
 //
 
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 
-@interface ffTextObjectModel : gtModelizable
+@interface ffTextObjectModel : gt_Modelizable
 
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *language;

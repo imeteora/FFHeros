@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 #import "ffCategoryListModel.h"
 #import "ffDateModel.h"
 #import "ffPriceModel.h"
@@ -15,7 +15,7 @@
 #import "ffUrlModel.h"
 #import "ffTextObjectModel.h"
 
-@interface ffComicsModel : gtModelizable
+@interface ffComicsModel : gt_Modelizable
 
 /**
  The preferred description of the comic.

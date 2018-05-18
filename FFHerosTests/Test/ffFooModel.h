@@ -6,11 +6,11 @@
 //  Copyright © 2018 ZhuDelun. All rights reserved.
 //
 
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 
 @class ffFooModelItem;
 
-@interface ffFooModel : gtModelizable
+@interface ffFooModel : gt_Modelizable
 
 @property (nonatomic, copy) NSString *idField;
 @property (nonatomic, copy) NSString *name;
@@ -20,6 +20,6 @@
 
 @end
 
-@interface ffFooModelItem : gtModelizable
+@interface ffFooModelItem : gt_Modelizable
 @property (nonatomic, copy) NSString *name;
 @end

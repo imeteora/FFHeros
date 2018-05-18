@@ -237,7 +237,7 @@
         if (x) {
             if ([x isKindOfClass:[NSDictionary class]]) {
                 Class clsTarget = each_desc.mappingClass;
-                id objTarget = [[clsTarget alloc] initWithDictionary:((NSDictionary *)x)];
+                id objTarget = [[clsTarget alloc] initWithDictionary:((NSDictionary *) x)];
                 if (objTarget) {
                     result[each_desc.keyPath] = objTarget;
                 }
@@ -246,7 +246,7 @@
                 for (id sub_value in ((NSArray *)x)) {
                     NSAssert([sub_value isKindOfClass:[NSDictionary class]], @"ffApiRequest: dictiona is needed in the leaf node");
                     Class clsTarget = each_desc.mappingClass;
-                    id objTarget = [[clsTarget alloc] initWithDictionary:((NSDictionary *)sub_value)];
+                    id objTarget = [[clsTarget alloc] initWithDictionary:((NSDictionary *) sub_value)];
                     if (objTarget) {
                          [tmpArray addObject:objTarget];
                     }

@@ -8,13 +8,13 @@
 #import "ffCharacterModel.h"
 
 @implementation ffCharacterModel
-+ (NSString *)aliasPropertyName:(NSString *)propertyName {
++ (NSString *)gt_aliasPropertyName:(NSString *)propertyName {
     return @{@"id": @"idField",
              @"description": @"descField"
              }[propertyName];
 }
 
-+ (Class)classForPropertyName:(NSString *)propertyName {
++ (Class)gt_classForPropertyName:(NSString *)propertyName {
     return @{@"urls": [ffUrlModel class],
              @"thumbnail": [ffImageModel class],
              @"comics": [ffCategoryListModel class],

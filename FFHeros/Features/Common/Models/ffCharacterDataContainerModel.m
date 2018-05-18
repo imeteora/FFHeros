@@ -11,7 +11,7 @@
 
 @implementation ffCharacterDataContainerModel
 
-+ (Class)classForPropertyName:(NSString *)propertyName {
++ (Class)gt_classForPropertyName:(NSString *)propertyName {
     return @{@"results": [ffCharacterModel class]}[propertyName];
 }
 

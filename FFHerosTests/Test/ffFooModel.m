@@ -10,13 +10,13 @@
 
 @implementation ffFooModel
 
-+ (NSString *)aliasPropertyName:(NSString *)propertyName {
++ (NSString *)gt_aliasPropertyName:(NSString *)propertyName {
     return @{@"id": @"idField",
              @"description": @"descriptionField"
              }[propertyName];
 }
 
-+ (Class)classForPropertyName:(NSString *)propertyName {
++ (Class)gt_classForPropertyName:(NSString *)propertyName {
     return @{@"items": [ffFooModelItem class],
              @"selected": [ffFooModelItem class],
              }[propertyName];

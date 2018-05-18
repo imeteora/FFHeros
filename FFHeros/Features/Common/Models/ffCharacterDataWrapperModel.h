@@ -8,10 +8,10 @@
 // 
 
 #import <UIKit/UIKit.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 #import "ffCharacterDataContainerModel.h"
 
-@interface ffCharacterDataWrapperModel : gtModelizable
+@interface ffCharacterDataWrapperModel : gt_Modelizable
 
 @property (nonatomic, copy) NSString * attributionHTML;
 @property (nonatomic, copy) NSString * attributionText;

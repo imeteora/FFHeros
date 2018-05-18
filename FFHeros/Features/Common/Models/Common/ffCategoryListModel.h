@@ -6,10 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 #import "ffSummaryModel.h"
 
-@interface ffCategoryListModel : gtModelizable
+@interface ffCategoryListModel : gt_Modelizable
 
 @property (nonatomic, assign) NSInteger available;
 @property (nonatomic, copy) NSString * collectionURI;

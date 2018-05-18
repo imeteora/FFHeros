@@ -19,7 +19,7 @@
 		133B29FA20AA5B1A00117E4F /* ffAPIModelDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B29F920AA5B1A00117E4F /* ffAPIModelDescription.m */; };
 		133B2A0320AA6F1500117E4F /* NSObject+ReflectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B29FE20AA6F1500117E4F /* NSObject+ReflectHelper.m */; };
 		133B2A0420AA6F1500117E4F /* NSString+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0120AA6F1500117E4F /* NSString+Format.m */; };
-		133B2A0520AA6F1500117E4F /* gtModelizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0220AA6F1500117E4F /* gtModelizable.m */; };
+		133B2A0520AA6F1500117E4F /* gt_Modelizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0220AA6F1500117E4F /* gt_Modelizable.m */; };
 		133B2A0920AA6F9800117E4F /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0720AA6F9800117E4F /* DESUtils.m */; };
 		133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0B20AA71FB00117E4F /* ffApiModel.m */; };
 		133E1FA420AB4F5E00CA800C /* ffCharacterDataWrapperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1F9C20AB4F5E00CA800C /* ffCharacterDataWrapperModel.m */; };
@@ -87,12 +87,12 @@
 		133B29F620AA589200117E4F /* ffAPIRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffAPIRequest.m; sourceTree = "<group>"; };
 		133B29F820AA5B1A00117E4F /* ffAPIModelDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffAPIModelDescription.h; sourceTree = "<group>"; };
 		133B29F920AA5B1A00117E4F /* ffAPIModelDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffAPIModelDescription.m; sourceTree = "<group>"; };
-		133B29FC20AA6F1500117E4F /* gtModelizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gtModelizable.h; sourceTree = "<group>"; };
+		133B29FC20AA6F1500117E4F /* gt_Modelizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gt_Modelizable.h; sourceTree = "<group>"; };
 		133B29FE20AA6F1500117E4F /* NSObject+ReflectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ReflectHelper.m"; sourceTree = "<group>"; };
 		133B29FF20AA6F1500117E4F /* NSString+Format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Format.h"; sourceTree = "<group>"; };
 		133B2A0020AA6F1500117E4F /* NSObject+ReflectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ReflectHelper.h"; sourceTree = "<group>"; };
 		133B2A0120AA6F1500117E4F /* NSString+Format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Format.m"; sourceTree = "<group>"; };
-		133B2A0220AA6F1500117E4F /* gtModelizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gtModelizable.m; sourceTree = "<group>"; };
+		133B2A0220AA6F1500117E4F /* gt_Modelizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gt_Modelizable.m; sourceTree = "<group>"; };
 		133B2A0720AA6F9800117E4F /* DESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESUtils.m; sourceTree = "<group>"; };
 		133B2A0820AA6F9800117E4F /* DESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESUtils.h; sourceTree = "<group>"; };
 		133B2A0A20AA71FB00117E4F /* ffApiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiModel.h; sourceTree = "<group>"; };
@@ -287,8 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				133B29FD20AA6F1500117E4F /* Category */,
-				133B29FC20AA6F1500117E4F /* gtModelizable.h */,
-				133B2A0220AA6F1500117E4F /* gtModelizable.m */,
+				133B29FC20AA6F1500117E4F /* gt_Modelizable.h */,
+				133B2A0220AA6F1500117E4F /* gt_Modelizable.m */,
 			);
 			path = Modelize;
 			sourceTree = "<group>";
@@ -577,7 +577,7 @@
 				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
 				133E1FA820AB4F5E00CA800C /* ffUrlModel.m in Sources */,
 				CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */,
-				133B2A0520AA6F1500117E4F /* gtModelizable.m in Sources */,
+				133B2A0520AA6F1500117E4F /* gt_Modelizable.m in Sources */,
 				133B29DA20AA56E500117E4F /* main.m in Sources */,
 				133B2A0320AA6F1500117E4F /* NSObject+ReflectHelper.m in Sources */,
 				133B2A0420AA6F1500117E4F /* NSString+Format.m in Sources */,

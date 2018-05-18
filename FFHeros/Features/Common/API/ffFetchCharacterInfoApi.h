@@ -4,14 +4,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 #import "ffCharacterDataContainerModel.h"
 
 
 /**
  This method fetches a single character resource. It is the canonical URI for any character resource provided by the API.
  */
-@interface ffFetchCharacterInfoApi : gtModelizable
+@interface ffFetchCharacterInfoApi : gt_Modelizable
 
 /**
  This method fetches a single character resource. It is the canonical URI for any character resource provided by the API.

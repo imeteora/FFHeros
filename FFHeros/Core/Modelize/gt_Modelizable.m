@@ -1,5 +1,5 @@
 //
-//  gtModelizable.m
+//  gt_Modelizable.m
 //  VanBuren Plan
 //
 //  Created by Zhu Delun on 15-4-17.
@@ -7,17 +7,16 @@
 //
 
 @import ObjectiveC.runtime;
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 #import "NSObject+ReflectHelper.h"
 
-@implementation gtModelizable
+@implementation gt_Modelizable
 
 #pragma mark - Interface Method
 
 - (instancetype)initWithDictionary:(NSDictionary *)jsonDictionary
 {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         @try {
             [self setValuesForKeysWithDictionary:jsonDictionary];
         }
@@ -31,7 +30,7 @@
 }
 
 - (NSString *)description {
-    NSDictionary *kv = [self dictionaryWithKeyValues];
+    NSDictionary *kv = [self gt_dictionaryWithKeyValues];
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:kv options:NSJSONWritingPrettyPrinted error:&error];
     if (jsonData == nil || error) {
@@ -41,9 +40,9 @@
     }
 }
 
-- (NSDictionary *)dictionaryWithKeyValues {
+- (NSDictionary *)gt_dictionaryWithKeyValues {
     Class superClass = class_getSuperclass(self.class);
-    NSArray* allPropertiesKeys = [self.class obj_allPropertyKeys: (superClass != gtModelizable.class)];
+    NSArray* allPropertiesKeys = [self.class obj_allPropertyKeys: (superClass != gt_Modelizable.class)];
     
     /// 去掉value为nil的键值对的键
     NSMutableArray* keysWithoutNilValue = [NSMutableArray array];
@@ -64,9 +63,9 @@
     {
         id propertyValue = [self valueForKey:eachProperty];
         
-        if ([[propertyValue class] isSubclassOfClass:[gtModelizable class]]) {
-            gtModelizable* eachPropertyModel = (gtModelizable*)propertyValue;
-            NSDictionary* eachPropertyModelData = [eachPropertyModel dictionaryWithKeyValues];
+        if ([[propertyValue class] isSubclassOfClass:[gt_Modelizable class]]) {
+            gt_Modelizable* eachPropertyModel = (gt_Modelizable*)propertyValue;
+            NSDictionary* eachPropertyModelData = [eachPropertyModel gt_dictionaryWithKeyValues];
             retData[eachProperty] = eachPropertyModelData;
         }
         else if ([propertyValue isKindOfClass:[NSDictionary class]]) {
@@ -75,11 +74,11 @@
             NSDictionary* propertyValueDict = (NSDictionary*)propertyValue;
             for (NSString* eachSubKeys in propertyValueDict.allKeys) {
                 id subValue = [propertyValueDict objectForKey:eachSubKeys];
-                if ([[subValue class] isSubclassOfClass:[gtModelizable class]]) {
+                if ([[subValue class] isSubclassOfClass:[gt_Modelizable class]]) {
                     /// delete the old value
                     [newPropertyDict removeObjectForKey:eachSubKeys];
                     /// append new value;
-                    newPropertyDict[eachSubKeys] = [subValue dictionaryWithKeyValues];
+                    newPropertyDict[eachSubKeys] = [subValue gt_dictionaryWithKeyValues];
                 }
             }
             
@@ -90,11 +89,11 @@
             
             NSArray* propertyValueArray = (NSArray*)propertyValue;
             for (id eachProperty in propertyValueArray) {
-                if ([[eachProperty class] isSubclassOfClass: [gtModelizable class]]) {
+                if ([[eachProperty class] isSubclassOfClass: [gt_Modelizable class]]) {
                     /// reomve the old value
                     [newPropertyArray removeObject: eachProperty];
                     /// append the new value.
-                    [newPropertyArray addObject: [eachProperty dictionaryWithKeyValues]];
+                    [newPropertyArray addObject: [eachProperty gt_dictionaryWithKeyValues]];
                 }
             }
             
@@ -107,23 +106,23 @@
     return retData;
 }
 
-- (instancetype)generateObjectForClass:(Class)targetClass
+- (instancetype)gt_generateObjectForClass:(Class)targetClass
 {
-    NSDictionary* allKeyValuesDict = [self dictionaryWithKeyValues];
-    return [[targetClass alloc] initWithDictionary: allKeyValuesDict];
+    NSDictionary* allKeyValuesDict = [self gt_dictionaryWithKeyValues];
+    return [[targetClass alloc] initWithDictionary:allKeyValuesDict];
 }
 
 
-+ (Class)classForPropertyNameWrapper:(NSString *)propertyName {
-    Class aClass = [self classForPropertyName:propertyName];
++ (Class)_classForPropertyNameWrapper:(NSString *)propertyName {
+    Class aClass = [self gt_classForPropertyName:propertyName];
     if (aClass == Nil) {
         return [self obj_classForPropertyName:propertyName];
     }
     return aClass;
 }
 
-+ (NSString *)aliasPropertyNameWrapper:(NSString *)propertyName {
-    NSString *pn = [self aliasPropertyName:propertyName];
++ (NSString *)_aliasPropertyNameWrapper:(NSString *)propertyName {
+    NSString *pn = [self gt_aliasPropertyName:propertyName];
     if ([pn length] == 0) {
         return propertyName;
     }
@@ -135,17 +134,17 @@
 - (void)setValue:(id)value forKey:(NSString *)key
 {
     // get alias name of key for avoid objc's keyword conflict.
-    NSString *tmpKeyName = [[self class] aliasPropertyNameWrapper:key];
+    NSString *tmpKeyName = [[self class] _aliasPropertyNameWrapper:key];
     if ([tmpKeyName length] > 0) {
         key = tmpKeyName;
     }
 
     if ([value isKindOfClass:[NSArray class]]) {
-        Class propertyItemClass = [self.class classForPropertyNameWrapper:key];
-        if ([propertyItemClass isSubclassOfClass:[gtModelizable class]]) {
+        Class propertyItemClass = [self.class _classForPropertyNameWrapper:key];
+        if ([propertyItemClass isSubclassOfClass:[gt_Modelizable class]]) {
             NSMutableArray *propertyModel = [NSMutableArray array];
             for (id propertyItem in value) {
-                gtModelizable *itemModel = [[propertyItemClass alloc]initWithDictionary:propertyItem];
+                gt_Modelizable *itemModel = [[propertyItemClass alloc] initWithDictionary:propertyItem];
                 [propertyModel addObject:itemModel];
             }
             value = propertyModel;
@@ -154,16 +153,16 @@
 
     }
     else if ([value isKindOfClass:[NSDictionary class]]) {
-        Class propertyClass = [self.class classForPropertyNameWrapper:key];
-        if ([propertyClass isSubclassOfClass:[gtModelizable class]]) {
-            gtModelizable *propertyModel = [[propertyClass alloc]initWithDictionary:value];
+        Class propertyClass = [self.class _classForPropertyNameWrapper:key];
+        if ([propertyClass isSubclassOfClass:[gt_Modelizable class]]) {
+            gt_Modelizable *propertyModel = [[propertyClass alloc] initWithDictionary:value];
             value = propertyModel;
         }
         [super setValue:value forKey:key];
 
     }
     else {
-        Class keyClass = [self.class classForPropertyNameWrapper:key];
+        Class keyClass = [self.class _classForPropertyNameWrapper:key];
         
         Class superClass = class_getSuperclass(keyClass);
         if (superClass != [NSObject class]) {           /// 如果key的类型不是NSObject的子集，那么就直接会把value设置进去. 比如NSInteger此类的。
@@ -217,21 +216,21 @@
 
 
 #pragma mark - gtModelizableProtocol
-+ (Class)classForPropertyName:(NSString *)propertyName {
++ (Class)gt_classForPropertyName:(NSString *)propertyName {
     return Nil;
 }
 
-+ (NSString *)aliasPropertyName:(NSString *)propertyName {
++ (NSString *)gt_aliasPropertyName:(NSString *)propertyName {
     return nil;
 }
 
 
 @end
 
-@implementation gtModelizable (kvCoding)
+@implementation gt_Modelizable (kvCoding)
 
-- (id)keyValueFor:(NSString *)property {
-    NSDictionary *all = [self dictionaryWithKeyValues];
+- (id)gt_valueWithKey:(NSString *)property {
+    NSDictionary *all = [self gt_dictionaryWithKeyValues];
     if (NO == [all.allKeys containsObject:property]) {
         return nil;
     }
@@ -243,14 +242,14 @@
 
 @implementation NSArray (gtNetworkModel)
 
-- (NSArray *)keyValueArray {
+- (NSArray *)gt_keyValueArray {
     if ([self count] == 0) {
         return @[];
     }
     
     NSMutableArray<NSDictionary*>* ret = [[NSMutableArray alloc] initWithCapacity:[self count]];
-    [self enumerateObjectsUsingBlock:^(gtModelizable*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSDictionary *objDict = [obj dictionaryWithKeyValues];
+    [self enumerateObjectsUsingBlock:^(gt_Modelizable*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSDictionary *objDict = [obj gt_dictionaryWithKeyValues];
         [ret addObject:objDict];
     }];
     

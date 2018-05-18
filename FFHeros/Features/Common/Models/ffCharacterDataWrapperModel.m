@@ -11,7 +11,7 @@
 
 @implementation ffCharacterDataWrapperModel
 
-+ (Class)classForPropertyName:(NSString *)propertyName {
++ (Class)gt_classForPropertyName:(NSString *)propertyName {
     return @{@"data": [ffCharacterDataContainerModel class]}[propertyName];
 }
 

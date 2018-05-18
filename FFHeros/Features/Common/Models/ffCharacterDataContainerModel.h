@@ -8,10 +8,10 @@
 // 
 
 #import <UIKit/UIKit.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 #import "ffCharacterModel.h"
 
-@interface ffCharacterDataContainerModel : gtModelizable
+@interface ffCharacterDataContainerModel : gt_Modelizable
 
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic, assign) NSInteger limit;

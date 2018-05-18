@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 #import "ffCharacterDataContainerModel.h"
 
 /**
  Fetches lists of comic characters with optional filters. See notes on individual parameters below.
  */
-@interface ffFetchCharactersApi : gtModelizable
+@interface ffFetchCharactersApi : gt_Modelizable
 
 /**
  Return only characters matching the specified full character name (e.g. Spider-Man).

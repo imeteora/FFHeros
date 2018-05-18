@@ -16,7 +16,7 @@
     ffAPIConfig *config = [[ffAPIConfig alloc] init];
     config.baseURL = MARVEL_BASE_URL@"/v1/public/characters";
     config.method = FFApiRequestMethodGET;
-    config.params = [self dictionaryWithKeyValues];
+    config.params = [self gt_dictionaryWithKeyValues];
     config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data" toMappingClass:[ffCharacterDataContainerModel class]]];
 
     ffAPIRequest *request = [[ffAPIRequest alloc] initWithConfig:config];

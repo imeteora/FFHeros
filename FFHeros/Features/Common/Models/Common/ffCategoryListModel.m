@@ -11,7 +11,7 @@
 
 @implementation ffCategoryListModel
 
-+ (Class)classForPropertyName:(NSString *)propertyName {
++ (Class)gt_classForPropertyName:(NSString *)propertyName {
     return @{@"items": [ffSummaryModel class]}[propertyName];
 }
 

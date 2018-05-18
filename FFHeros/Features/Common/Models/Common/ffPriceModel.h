@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 
-@interface ffPriceModel : gtModelizable
+@interface ffPriceModel : gt_Modelizable
 
 @property (nonatomic, assign) CGFloat price;
 @property (nonatomic, strong) NSString * type;

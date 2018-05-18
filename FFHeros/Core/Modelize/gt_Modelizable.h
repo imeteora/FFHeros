@@ -1,5 +1,5 @@
 //
-//  gtModelizable.h
+//  gt_Modelizable.h
 //  VanBuren Plan
 //
 //  Created by Zhu Delun on 15-4-17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol gtModelizableProtocol <NSObject>
+@protocol gt_ModelizableProtocol <NSObject>
 @optional
 
 /**
@@ -17,7 +17,7 @@
  @param propertyName 属性名称
  @return 类型成员属性的类型
  */
-+ (Class)classForPropertyName:(NSString *)propertyName;
++ (Class)gt_classForPropertyName:(NSString *)propertyName;
 
 /**
  获得属性名称的别名
@@ -26,13 +26,13 @@
  @param propertyName 模型数据中的名称
  @return 数据模型中的别名
  */
-+ (NSString *)aliasPropertyName:(NSString *)propertyName;
++ (NSString *)gt_aliasPropertyName:(NSString *)propertyName;
 
 @end
 
 
 
-@interface gtModelizable : NSObject <gtModelizableProtocol>
+@interface gt_Modelizable : NSObject <gt_ModelizableProtocol>
 /**
  *  扩展字段，既能够方便的实现业务功能，也不会污染业务model
  */
@@ -57,7 +57,7 @@
  *
  *  @return item类
  */
-+ (Class)classForPropertyName:(NSString *)propertyName;
++ (Class)gt_classForPropertyName:(NSString *)propertyName;
 
 /**
  获得属性名称的别名
@@ -66,14 +66,14 @@
  @param propertyName 模型数据中的名称
  @return 数据模型中的别名
  */
-+ (NSString *)aliasPropertyName:(NSString *)propertyName;
++ (NSString *)gt_aliasPropertyName:(NSString *)propertyName;
 
 /**
  *  获得当前类型的属性键值对
  *
  *  @return 当前实例的键值对
  */
-- (NSDictionary*)dictionaryWithKeyValues;
+- (NSDictionary*)gt_dictionaryWithKeyValues;
 
 /**
  *  从当前类型实例中实例化一个新的目标对象。
@@ -82,15 +82,15 @@
  *
  *  @return 返回转换好的目标实例
  */
-- (instancetype)generateObjectForClass: (Class)targetClass;
+- (instancetype)gt_generateObjectForClass: (Class)targetClass;
 
 
 @end
 
-@interface gtModelizable (kvCoding)
-- (id) keyValueFor: (NSString*)property;
+@interface gt_Modelizable (kvCoding)
+- (id) gt_valueWithKey: (NSString*)property;
 @end
 
 @interface NSArray (gtNetworkModel)
-- (NSArray*)keyValueArray;
+- (NSArray*)gt_keyValueArray;
 @end

@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 
-@interface ffUrlModel : gtModelizable
+@interface ffUrlModel : gt_Modelizable
 
 @property (nonatomic, copy) NSString * type;
 @property (nonatomic, copy) NSString * url;

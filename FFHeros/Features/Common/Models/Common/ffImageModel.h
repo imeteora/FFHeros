@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 
-@interface ffImageModel : gtModelizable
+@interface ffImageModel : gt_Modelizable
 
 @property (nonatomic, copy) NSString * extension;
 @property (nonatomic, copy) NSString * path;

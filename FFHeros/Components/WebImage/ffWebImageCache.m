@@ -11,11 +11,11 @@
 }
 
 - (void)setObject:(id)obj forKey:(id)key {
-    [self setObject:obj forKey:key cost:[self costOf:obj]];
+    [self setObject:obj forKey:key cost:[self _costOf:obj]];
 }
 
 #pragma mark - private helper
-- (int64_t)costOf:(id)object {
+- (int64_t)_costOf:(id)object {
     if ([object isKindOfClass:[UIImage class]]) {
         UIImage *img = (UIImage *)object;
         return ((int64_t)(img.size.width * img.size.height) << 3);

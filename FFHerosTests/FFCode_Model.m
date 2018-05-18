@@ -48,7 +48,7 @@
 - (void)testSerializeApi {
     ffFetchCharactersApi *api = [[ffFetchCharactersApi alloc] init];
     api.name = @"Iron Man";
-    NSDictionary *param = [api dictionaryWithKeyValues];
+    NSDictionary *param = [api gt_dictionaryWithKeyValues];
     NSLog(@"%@", param);
 }
 

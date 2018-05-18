@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 
-@interface ffDateModel : gtModelizable
+@interface ffDateModel : gt_Modelizable
 
 @property (nonatomic, strong) NSString * date;
 @property (nonatomic, strong) NSString * type;

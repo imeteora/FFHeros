@@ -6,13 +6,13 @@
 //  Copyright © 2018 ZhuDelun. All rights reserved.
 //
 
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 #import "ffComicsModel.h"
 
 /**
  Fetches lists of comics containing a specific character, with optional filters. See notes on individual parameters below.
  */
-@interface ffFetchCharacterComicsApi : gtModelizable
+@interface ffFetchCharacterComicsApi : gt_Modelizable
 
 /**
  Filter by the issue format (e.g. comic, digital comic, hardcover).

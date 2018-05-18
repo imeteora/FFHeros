@@ -6,8 +6,8 @@
 //  Copyright © 2018 ZhuDelun. All rights reserved.
 //
 
-#import "gtModelizable.h"
+#import "gt_Modelizable.h"
 
-@interface ffApiModel : gtModelizable
+@interface ffApiModel : gt_Modelizable
 
 @end
