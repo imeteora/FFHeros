@@ -41,6 +41,9 @@
 		13A072C820AEB4CC0037F124 /* ffRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072C720AEB4CC0037F124 /* ffRefreshFooter.m */; };
 		13A072CF20AEE8290037F124 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072CD20AEE8290037F124 /* ViewController.m */; };
 		13A072D020AEE8290037F124 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A072CE20AEE8290037F124 /* ViewController.xib */; };
+		13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F520AEF7850037F124 /* ffBaseViewController.m */; };
+		13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F920AEFBDF0037F124 /* ffNavigationController.m */; };
+		13A0730020AF0B770037F124 /* NSObject+FFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072FF20AF0B770037F124 /* NSObject+FFUtils.m */; };
 		13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */; };
 		13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93320AD3480005CF787 /* ffRefreshComponent.m */; };
 		13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */; };
@@ -131,6 +134,12 @@
 		13A072CC20AEE8290037F124 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		13A072CD20AEE8290037F124 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		13A072CE20AEE8290037F124 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		13A072F420AEF7850037F124 /* ffBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseViewController.h; sourceTree = "<group>"; };
+		13A072F520AEF7850037F124 /* ffBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseViewController.m; sourceTree = "<group>"; };
+		13A072F820AEFBDF0037F124 /* ffNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffNavigationController.h; sourceTree = "<group>"; };
+		13A072F920AEFBDF0037F124 /* ffNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffNavigationController.m; sourceTree = "<group>"; };
+		13A072FE20AF0B770037F124 /* NSObject+FFUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+FFUtils.h"; sourceTree = "<group>"; };
+		13A072FF20AF0B770037F124 /* NSObject+FFUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FFUtils.m"; sourceTree = "<group>"; };
 		13F2A92F20AD2F26005CF787 /* ffRefreshScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshScrollView.h; sourceTree = "<group>"; };
 		13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshScrollView.m; sourceTree = "<group>"; };
 		13F2A93220AD3480005CF787 /* ffRefreshComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshComponent.h; sourceTree = "<group>"; };
@@ -233,9 +242,11 @@
 		133B29EE20AA57EB00117E4F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				13A072D220AEEAB60037F124 /* BaseMVC */,
 				133B2A0620AA6F9800117E4F /* crypto */,
 				133B29FB20AA6F1500117E4F /* Modelize */,
 				133B29F120AA583A00117E4F /* Network */,
+				13A072FD20AF0B610037F124 /* Utils */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 		133B29EF20AA57F200117E4F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				13A072F720AEFBC30037F124 /* NavigationController */,
 				13F2A92E20AD2EEC005CF787 /* PullRefresh */,
 				138B1D3420AD8D3B006A5708 /* WebImage */,
 			);
@@ -253,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				13885BA420ABBC3800D9F9E5 /* Common */,
+				13A072D120AEEA9B0037F124 /* Home */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -386,6 +399,40 @@
 				138B1D3620AD8D51006A5708 /* UIView+WebImage.m */,
 			);
 			path = WebImage;
+			sourceTree = "<group>";
+		};
+		13A072D120AEEA9B0037F124 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		13A072D220AEEAB60037F124 /* BaseMVC */ = {
+			isa = PBXGroup;
+			children = (
+				13A072F420AEF7850037F124 /* ffBaseViewController.h */,
+				13A072F520AEF7850037F124 /* ffBaseViewController.m */,
+			);
+			path = BaseMVC;
+			sourceTree = "<group>";
+		};
+		13A072F720AEFBC30037F124 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				13A072F820AEFBDF0037F124 /* ffNavigationController.h */,
+				13A072F920AEFBDF0037F124 /* ffNavigationController.m */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		13A072FD20AF0B610037F124 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				13A072FE20AF0B770037F124 /* NSObject+FFUtils.h */,
+				13A072FF20AF0B770037F124 /* NSObject+FFUtils.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		13F2A92E20AD2EEC005CF787 /* PullRefresh */ = {
@@ -556,6 +603,7 @@
 				13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */,
 				13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */,
 				13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */,
+				13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */,
 				133E1FA620AB4F5E00CA800C /* ffCategoryListModel.m in Sources */,
 				133E1FA520AB4F5E00CA800C /* ffCharacterDataContainerModel.m in Sources */,
 				133E1FA420AB4F5E00CA800C /* ffCharacterDataWrapperModel.m in Sources */,
@@ -568,6 +616,7 @@
 				13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersApi.m in Sources */,
 				133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */,
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
+				13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */,
 				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */,
 				13A072C820AEB4CC0037F124 /* ffRefreshFooter.m in Sources */,
@@ -579,6 +628,7 @@
 				CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */,
 				133B2A0520AA6F1500117E4F /* gt_Modelizable.m in Sources */,
 				133B29DA20AA56E500117E4F /* main.m in Sources */,
+				13A0730020AF0B770037F124 /* NSObject+FFUtils.m in Sources */,
 				133B2A0320AA6F1500117E4F /* NSObject+ReflectHelper.m in Sources */,
 				133B2A0420AA6F1500117E4F /* NSString+Format.m in Sources */,
 				134F320720AE03BD00DADFAA /* testPullRefreshViewController.m in Sources */,

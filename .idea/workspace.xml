@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee117c7a-cd9e-4044-8465-d2add2f26c01" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/FFHeros/Core/Network/ffApiRequestOperation.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Core/Network/ffApiRequestOperation.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/UnitTest/testPullRefreshViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/UnitTest/testPullRefreshViewController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Components/NavigationController/ffNavigationController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Components/NavigationController/ffNavigationController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Core/BaseMVC/ffBaseViewController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Core/BaseMVC/ffBaseViewController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Core/Utils/NSObject+FFUtils.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Core/Utils/NSObject+FFUtils.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/AppDelegate.m" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/FFHeros-fyvnaxpvpdoltqeqgwuydvlqeaph/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/FFHeros/Components/WebImage/UIView+WebImage.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="410">
-              <caret line="74" column="55" lean-forward="true" selection-start-line="74" selection-end-line="75" />
+              <caret line="74" column="55" selection-start-line="74" selection-end-line="75" />
               <folding>
                 <element signature="e#135#162#0" expanded="true" />
               </folding>
@@ -55,23 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFHeros/ViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="47" column="79" selection-start-line="47" selection-start-column="79" selection-end-line="47" selection-end-column="79" />
-              <folding>
-                <element signature="e#133#159#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="testPullRefreshViewController.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FFHeros/UnitTest/testPullRefreshViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="935">
+              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="e#148#189#0" expanded="true" />
               </folding>
@@ -341,12 +335,12 @@
       <updated>1526490201025</updated>
       <workItem from="1526490205713" duration="5084000" />
       <workItem from="1526570372806" duration="3324000" />
-      <workItem from="1526636948371" duration="1842000" />
+      <workItem from="1526636948371" duration="2492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10250000" />
+    <option name="totallyTimeSpent" value="10900000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -658,7 +652,7 @@
     <entry file="file://$PROJECT_DIR$/FFHeros/Components/WebImage/UIView+WebImage.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
-          <caret line="74" column="55" lean-forward="true" selection-start-line="74" selection-end-line="75" />
+          <caret line="74" column="55" selection-start-line="74" selection-end-line="75" />
           <folding>
             <element signature="e#135#162#0" expanded="true" />
           </folding>
@@ -681,8 +675,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/UnitTest/testPullRefreshViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="935">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="e#148#189#0" expanded="true" />
           </folding>
