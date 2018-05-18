@@ -27,6 +27,11 @@ static int32_t const kFFRefreshFooterHeight = 30;
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.viewWidth = self.superview.viewWidth;
+}
+
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     [super willMoveToSuperview:newSuperview];
     [self removeObserver];

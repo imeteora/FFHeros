@@ -35,6 +35,7 @@ static int32_t const kFFRefreshHeaderHeight = 44;
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.viewTop = -self.viewHeight;
+    self.viewWidth = self.superview.viewWidth;
 }
 
 #pragma mark - public helper

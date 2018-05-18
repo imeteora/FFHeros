@@ -62,6 +62,15 @@
     }
 }
 
+#pragma mark - autorotate
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 #pragma mark - keyboard
 - (BOOL)ff_shouldRegisterKeyboardEvent {
     return NO;

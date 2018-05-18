@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ffBaseViewController.h"
 
-@interface testPullRefreshViewController : UIViewController
+@interface testPullRefreshViewController : ffBaseViewController
 
 @end

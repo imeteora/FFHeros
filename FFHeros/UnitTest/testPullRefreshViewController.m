@@ -19,11 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    weakify(self);
     // Do any additional setup after loading the view from its nib.
-    [self.view addSubview:self.tableView];
-    self.tableView.frame = self.view.bounds;
+    weakify(self);
+    [self setTitle:@"单元测试"];
 
+    [self.view addSubview:self.tableView];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:[UITableViewCell description]];
     [self.tableView ff_addHeaderWith:^{
         strongify(self);
@@ -36,6 +36,11 @@
         NSLog(@"Hello world from footer");
         [self.tableView ff_endRefreshing];
     }];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    self.tableView.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning {
