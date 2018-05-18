@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ffRefreshHeader.h"
+#import "ffRefreshFooter.h"
 
 @interface UIScrollView (FFRefresh)
 
 @property (nonatomic, strong, readonly, nullable) ffRefreshHeader *ff_headerView;
+@property (nonatomic, strong, readonly, nullable) ffRefreshFooter *ff_footerView;
 
 - (void)ff_addHeaderWith:(ffRefreshBlock)headerRefreshHandler;
-
-- (nullable UIView *)footerView;
-- (void)setFooterView:(UIView * _Nonnull)footer;
+- (void)ff_addFooterWith:(ffRefreshBlock)footerRefreshHandler;
 
 - (void)ff_endRefreshing;
 

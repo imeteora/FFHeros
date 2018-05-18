@@ -29,6 +29,12 @@
         NSLog(@"Hello world");
         [self.tableView ff_endRefreshing];
     }];
+
+    [self.tableView ff_addFooterWith:^{
+        strongify(self);
+        NSLog(@"Hello world from footer");
+        [self.tableView ff_endRefreshing];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

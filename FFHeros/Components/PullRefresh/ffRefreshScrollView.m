@@ -26,6 +26,11 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
     [self.ff_headerView setRefreshHandler:headerRefreshHandler];
 }
 
+- (void)ff_addFooterWith:(ffRefreshBlock)footerRefreshHandler {
+    ffRefreshFooter *footer = [[ffRefreshFooter alloc] init];
+    self.ff_footerView = footer;
+    [self.ff_footerView setRefreshHandler:footerRefreshHandler];
+}
 
 - (ffRefreshHeader *)ff_headerView {
     return objc_getAssociatedObject(self, &FFRefreshHeaderViewKey);
@@ -45,26 +50,33 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
     }
 }
 
-- (UIView *)footerView {
+- (UIView *)ff_footerView {
     return objc_getAssociatedObject(self, &FFRefreshFooterViewKey);
 }
 
-- (void)setFooterView:(UIView *)footer {
-    if (self.footerView != footer) {
-        if (self.footerView) {
-            [self.footerView removeFromSuperview];
+- (void)setFf_footerView:(UIView *)ff_footerView {
+    if (self.ff_footerView != ff_footerView) {
+        if (self.ff_footerView) {
+            [self.ff_footerView removeFromSuperview];
         }
 
         [self willChangeValueForKey:kFFRefreshFooterViewKVOKey];
-        objc_setAssociatedObject(self, &FFRefreshFooterViewKey, footer, OBJC_ASSOCIATION_ASSIGN);
+        objc_setAssociatedObject(self, &FFRefreshFooterViewKey, ff_footerView, OBJC_ASSOCIATION_ASSIGN);
         [self didChangeValueForKey:kFFRefreshFooterViewKVOKey];
 
-        [self addSubview:footer];
+        [self addSubview:ff_footerView];
     }
 }
 
-- (void)ff_endRefreshing {
-    [self.ff_headerView endRefreshing];
+- (void)ff_endRefreshing
+{
+    if ([self.ff_headerView isRefreshing]) {
+        [self.ff_headerView endRefreshing];
+    }
+
+    if ([self.ff_footerView isRefreshing]) {
+        [self.ff_footerView endRefreshing];
+    }
 }
 
 

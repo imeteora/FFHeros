@@ -17,7 +17,9 @@ static int32_t const kFFRefreshHeaderHeight = 44;
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.refreshState = ffRefreshStateNone;
-        self.backgroundColor = [UIColor yellowColor];
+#if DEBUG
+        self.backgroundColor = [UIColor purpleColor];
+#endif  // DEBUG
     }
     return self;
 }

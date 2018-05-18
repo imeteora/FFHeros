@@ -40,6 +40,7 @@
 		13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */; };
 		13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1C20AB02DE00C3063A /* FFCode_Decode.m */; };
 		13974C1F20AB114200C3063A /* FFCode_Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1E20AB114200C3063A /* FFCode_Network.m */; };
+		13A072C820AEB4CC0037F124 /* ffRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072C720AEB4CC0037F124 /* ffRefreshFooter.m */; };
 		13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */; };
 		13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93320AD3480005CF787 /* ffRefreshComponent.m */; };
 		13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */; };
@@ -128,6 +129,8 @@
 		13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiSignHelper.m; sourceTree = "<group>"; };
 		13974C1C20AB02DE00C3063A /* FFCode_Decode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Decode.m; sourceTree = "<group>"; };
 		13974C1E20AB114200C3063A /* FFCode_Network.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Network.m; sourceTree = "<group>"; };
+		13A072C620AEB4CC0037F124 /* ffRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshFooter.h; sourceTree = "<group>"; };
+		13A072C720AEB4CC0037F124 /* ffRefreshFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshFooter.m; sourceTree = "<group>"; };
 		13F2A92F20AD2F26005CF787 /* ffRefreshScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshScrollView.h; sourceTree = "<group>"; };
 		13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshScrollView.m; sourceTree = "<group>"; };
 		13F2A93220AD3480005CF787 /* ffRefreshComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshComponent.h; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 			children = (
 				13F2A93220AD3480005CF787 /* ffRefreshComponent.h */,
 				13F2A93320AD3480005CF787 /* ffRefreshComponent.m */,
+				13A072C620AEB4CC0037F124 /* ffRefreshFooter.h */,
+				13A072C720AEB4CC0037F124 /* ffRefreshFooter.m */,
 				134F31FA20ADF36C00DADFAA /* ffRefreshHeader.h */,
 				134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */,
 				13F2A92F20AD2F26005CF787 /* ffRefreshScrollView.h */,
@@ -565,6 +570,7 @@
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
 				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */,
+				13A072C820AEB4CC0037F124 /* ffRefreshFooter.m in Sources */,
 				134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */,
 				13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */,
 				133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */,

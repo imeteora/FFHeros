@@ -11,7 +11,8 @@
 typedef NS_ENUM(int32_t, ffRefreshState) {
     ffRefreshStateNone = 0,
     ffRefreshStatePulling,
-    ffRefreshStateRefreshing
+    ffRefreshStateRefreshing,
+    ffRefreshStateNoMoreData,       // just for footer 
 };
 
 static NSString * const kFFContentOffset = @"contentOffset";
