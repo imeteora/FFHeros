@@ -18,6 +18,8 @@
 - (void)ff_addHeaderWith:(ffRefreshBlock)headerRefreshHandler;
 - (void)ff_addFooterWith:(ffRefreshBlock)footerRefreshHandler;
 
+- (void)ff_startRefreshing;
+- (void)ff_startRefreshingMore;
 - (void)ff_endRefreshing;
 
 @end

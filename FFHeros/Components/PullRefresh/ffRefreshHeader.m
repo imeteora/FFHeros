@@ -40,6 +40,7 @@ static int32_t const kFFRefreshHeaderHeight = 44;
 
 #pragma mark - public helper
 - (void)startRefreshing {
+    if ([self isRefreshing]) return;
     self.refreshState = ffRefreshStateRefreshing;
 }
 

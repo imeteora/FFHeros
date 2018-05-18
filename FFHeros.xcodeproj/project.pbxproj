@@ -34,6 +34,9 @@
 		134F31FF20ADF78D00DADFAA /* UIScrollView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FE20ADF78D00DADFAA /* UIScrollView+ffExt.m */; };
 		134F320120AE001000DADFAA /* FFCode_webImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320020AE001000DADFAA /* FFCode_webImage.m */; };
 		134F320720AE03BD00DADFAA /* testPullRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320520AE03BD00DADFAA /* testPullRefreshViewController.m */; };
+		1362BC8920AF6EA500098514 /* ffBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8820AF6EA500098514 /* ffBaseViewModel.m */; };
+		1362BC8C20AF6FE900098514 /* ffBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */; };
+		1362BC8F20AF70AD00098514 /* ffBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */; };
 		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */; };
 		138B1D3720AD8D51006A5708 /* UIView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 138B1D3620AD8D51006A5708 /* UIView+WebImage.m */; };
 		13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */; };
@@ -121,6 +124,12 @@
 		134F320020AE001000DADFAA /* FFCode_webImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_webImage.m; sourceTree = "<group>"; };
 		134F320420AE03BD00DADFAA /* testPullRefreshViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testPullRefreshViewController.h; sourceTree = "<group>"; };
 		134F320520AE03BD00DADFAA /* testPullRefreshViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testPullRefreshViewController.m; sourceTree = "<group>"; };
+		1362BC8720AF6EA500098514 /* ffBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseViewModel.h; sourceTree = "<group>"; };
+		1362BC8820AF6EA500098514 /* ffBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseViewModel.m; sourceTree = "<group>"; };
+		1362BC8A20AF6FE900098514 /* ffBaseListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseListViewController.h; sourceTree = "<group>"; };
+		1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseListViewController.m; sourceTree = "<group>"; };
+		1362BC8D20AF70AD00098514 /* ffBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseTableViewController.h; sourceTree = "<group>"; };
+		1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseTableViewController.m; sourceTree = "<group>"; };
 		13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFetchCharactersApi.h; sourceTree = "<group>"; };
 		13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharactersApi.m; sourceTree = "<group>"; };
 		138B1D3520AD8D51006A5708 /* UIView+WebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+WebImage.h"; sourceTree = "<group>"; };
@@ -414,6 +423,12 @@
 			children = (
 				13A072F420AEF7850037F124 /* ffBaseViewController.h */,
 				13A072F520AEF7850037F124 /* ffBaseViewController.m */,
+				1362BC8720AF6EA500098514 /* ffBaseViewModel.h */,
+				1362BC8820AF6EA500098514 /* ffBaseViewModel.m */,
+				1362BC8A20AF6FE900098514 /* ffBaseListViewController.h */,
+				1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */,
+				1362BC8D20AF70AD00098514 /* ffBaseTableViewController.h */,
+				1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */,
 			);
 			path = BaseMVC;
 			sourceTree = "<group>";
@@ -599,6 +614,7 @@
 				133B2A0920AA6F9800117E4F /* DESUtils.m in Sources */,
 				133B29F420AA587900117E4F /* ffAPIConfig.m in Sources */,
 				13F9E3C020AB700C00912533 /* ffApiError.m in Sources */,
+				1362BC8F20AF70AD00098514 /* ffBaseTableViewController.m in Sources */,
 				133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */,
 				133B29FA20AA5B1A00117E4F /* ffAPIModelDescription.m in Sources */,
 				133B29F720AA589200117E4F /* ffAPIRequest.m in Sources */,
@@ -606,6 +622,7 @@
 				13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */,
 				13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */,
 				13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */,
+				1362BC8C20AF6FE900098514 /* ffBaseListViewController.m in Sources */,
 				133E1FA620AB4F5E00CA800C /* ffCategoryListModel.m in Sources */,
 				133E1FA520AB4F5E00CA800C /* ffCharacterDataContainerModel.m in Sources */,
 				133E1FA420AB4F5E00CA800C /* ffCharacterDataWrapperModel.m in Sources */,
@@ -618,6 +635,7 @@
 				13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersApi.m in Sources */,
 				133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */,
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
+				1362BC8920AF6EA500098514 /* ffBaseViewModel.m in Sources */,
 				13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */,
 				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */,
@@ -794,7 +812,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -810,7 +831,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -824,7 +848,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -839,7 +867,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

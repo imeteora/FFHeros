@@ -88,6 +88,7 @@ static int32_t const kFFRefreshFooterHeight = 30;
 
 #pragma mark - public helper
 - (void)startRefreshing {
+    if ([self isRefreshing]) return;
     self.refreshState = ffRefreshStateRefreshing;
 }
 

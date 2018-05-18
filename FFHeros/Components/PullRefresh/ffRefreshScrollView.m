@@ -68,6 +68,19 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
     }
 }
 
+- (void)ff_startRefreshing {
+    if (self.ff_headerView) {
+        [self.ff_headerView startRefreshing];
+    }
+    self.ff_footerView.hidden = NO;
+}
+
+- (void)ff_startRefreshingMore {
+    if (self.ff_footerView && self.ff_footerView.hidden == NO) {
+        [self.ff_footerView startRefreshing];
+    }
+}
+
 - (void)ff_endRefreshing
 {
     if ([self.ff_headerView isRefreshing]) {
