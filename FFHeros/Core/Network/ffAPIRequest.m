@@ -149,6 +149,7 @@
             } else {
                 requestUrlStr = _requestConfig.baseURL;
             }
+            
             NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
             request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:(_requestConfig.timeout > 0?:60)];
             [request setHTTPMethod:@"GET"];

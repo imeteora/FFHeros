@@ -31,8 +31,6 @@
             }
             return;
         }
-
-//        NSCondition *condition = [[NSCondition alloc] init];
         __block NSData *retData = nil;
         __block NSURLResponse *retResponse = nil;
         __block NSError *retError = nil;
@@ -40,29 +38,25 @@
         __block BOOL hadBeHandled = NO;
 
         dispatch_semaphore_t _semaphore = dispatch_semaphore_create(0);
-        [self _sessionTaskWithRequest:self.request completeHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSMutableURLRequest *request = [self.request mutableCopy];
+        [self _sessionTaskWithRequest:request  completeHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (NOT hadBeHandled) {
                 hadBeHandled = YES;
                 retData = data;
                 retResponse = response;
                 retError = error;
             }
-
             dispatch_semaphore_signal(_semaphore);
-//            [condition signal];
         }];
 
-//        [condition lock];
-//        [condition waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:MAX(self.request.timeoutInterval, 60)]];
         dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, 60 * NSEC_PER_SEC));
 
         if (NOT hadBeHandled) {
             hadBeHandled = YES;
             retError = [NSError errorWithDomain:ffApiErrorDomainNetwork code:NSURLErrorTimedOut
-                                       userInfo:@{NSLocalizedFailureReasonErrorKey: [NSString stringWithFormat:@"%@, %@, %lld", [NSDate date], self.request.URL.absoluteString, (int64_t)(self.request.timeoutInterval)]}];
+                                       userInfo:@{NSLocalizedFailureReasonErrorKey: [NSString stringWithFormat:@"%@, %@, %lld", [NSDate date], request.URL.absoluteString, (int64_t)(request.timeoutInterval)]}];
         }
 
-//        [condition unlock];
         if (self.isCancelled) {
             return;
         }

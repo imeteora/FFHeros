@@ -35,8 +35,8 @@
 
 - (IBAction)btnTextApiRequest:(id)sender {
     ffFetchCharactersApi *api = [[ffFetchCharactersApi alloc] init];
-    api.nameStartsWith = @"Iron";
-    api.limit = @10;
+//    api.nameStartsWith = @"Iron";
+//    api.limit = @10;
 
     [api requestAfterComplete:^(ffCharacterDataContainerModel * _Nonnull result) {
         NSLog(@"OK\n%@", [result description]);
