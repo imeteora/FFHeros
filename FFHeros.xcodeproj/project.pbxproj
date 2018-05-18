@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		133B29CC20AA56E400117E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B29CB20AA56E400117E4F /* AppDelegate.m */; };
-		133B29CF20AA56E400117E4F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B29CE20AA56E400117E4F /* ViewController.m */; };
-		133B29D220AA56E400117E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133B29D020AA56E400117E4F /* Main.storyboard */; };
 		133B29D420AA56E500117E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133B29D320AA56E500117E4F /* Assets.xcassets */; };
 		133B29D720AA56E500117E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133B29D520AA56E500117E4F /* LaunchScreen.storyboard */; };
 		133B29DA20AA56E500117E4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B29D920AA56E500117E4F /* main.m */; };
@@ -41,6 +39,8 @@
 		13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1C20AB02DE00C3063A /* FFCode_Decode.m */; };
 		13974C1F20AB114200C3063A /* FFCode_Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1E20AB114200C3063A /* FFCode_Network.m */; };
 		13A072C820AEB4CC0037F124 /* ffRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072C720AEB4CC0037F124 /* ffRefreshFooter.m */; };
+		13A072CF20AEE8290037F124 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072CD20AEE8290037F124 /* ViewController.m */; };
+		13A072D020AEE8290037F124 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A072CE20AEE8290037F124 /* ViewController.xib */; };
 		13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */; };
 		13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93320AD3480005CF787 /* ffRefreshComponent.m */; };
 		13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */; };
@@ -71,9 +71,6 @@
 		133B29C720AA56E400117E4F /* FFHeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFHeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		133B29CA20AA56E400117E4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		133B29CB20AA56E400117E4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		133B29CD20AA56E400117E4F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		133B29CE20AA56E400117E4F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		133B29D120AA56E400117E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		133B29D320AA56E500117E4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		133B29D620AA56E500117E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		133B29D820AA56E500117E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +128,9 @@
 		13974C1E20AB114200C3063A /* FFCode_Network.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Network.m; sourceTree = "<group>"; };
 		13A072C620AEB4CC0037F124 /* ffRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshFooter.h; sourceTree = "<group>"; };
 		13A072C720AEB4CC0037F124 /* ffRefreshFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshFooter.m; sourceTree = "<group>"; };
+		13A072CC20AEE8290037F124 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		13A072CD20AEE8290037F124 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		13A072CE20AEE8290037F124 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		13F2A92F20AD2F26005CF787 /* ffRefreshScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshScrollView.h; sourceTree = "<group>"; };
 		13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshScrollView.m; sourceTree = "<group>"; };
 		13F2A93220AD3480005CF787 /* ffRefreshComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshComponent.h; sourceTree = "<group>"; };
@@ -211,10 +211,7 @@
 				133B29D820AA56E500117E4F /* Info.plist */,
 				133B29D520AA56E500117E4F /* LaunchScreen.storyboard */,
 				133B29D920AA56E500117E4F /* main.m */,
-				133B29D020AA56E400117E4F /* Main.storyboard */,
 				134F320A20AE03D800DADFAA /* UnitTest */,
-				133B29CD20AA56E400117E4F /* ViewController.h */,
-				133B29CE20AA56E400117E4F /* ViewController.m */,
 			);
 			path = FFHeros;
 			sourceTree = "<group>";
@@ -350,6 +347,9 @@
 			children = (
 				134F320420AE03BD00DADFAA /* testPullRefreshViewController.h */,
 				134F320520AE03BD00DADFAA /* testPullRefreshViewController.m */,
+				13A072CC20AEE8290037F124 /* ViewController.h */,
+				13A072CD20AEE8290037F124 /* ViewController.m */,
+				13A072CE20AEE8290037F124 /* ViewController.xib */,
 			);
 			path = UnitTest;
 			sourceTree = "<group>";
@@ -528,7 +528,7 @@
 			files = (
 				133B29D420AA56E500117E4F /* Assets.xcassets in Resources */,
 				133B29D720AA56E500117E4F /* LaunchScreen.storyboard in Resources */,
-				133B29D220AA56E400117E4F /* Main.storyboard in Resources */,
+				13A072D020AEE8290037F124 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,7 +585,7 @@
 				134F31FF20ADF78D00DADFAA /* UIScrollView+ffExt.m in Sources */,
 				13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */,
 				138B1D3720AD8D51006A5708 /* UIView+WebImage.m in Sources */,
-				133B29CF20AA56E400117E4F /* ViewController.m in Sources */,
+				13A072CF20AEE8290037F124 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,14 +612,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		133B29D020AA56E400117E4F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				133B29D120AA56E400117E4F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		133B29D520AA56E500117E4F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

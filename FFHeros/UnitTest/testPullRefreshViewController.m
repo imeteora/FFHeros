@@ -8,6 +8,7 @@
 
 #import "testPullRefreshViewController.h"
 #import "ffRefreshScrollView.h"
+#import "ViewController.h"
 
 @interface testPullRefreshViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
@@ -54,6 +55,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell description] forIndexPath:indexPath];
     cell.textLabel.text = [@(indexPath.row) stringValue];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        ViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (UITableView *)tableView {

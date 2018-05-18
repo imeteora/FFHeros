@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     testPullRefreshViewController *vc = [[testPullRefreshViewController alloc] init];
-    self.window.rootViewController = vc;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
     [self.window makeKeyAndVisible];
     return YES;
 }

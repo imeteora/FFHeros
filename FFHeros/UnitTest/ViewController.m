@@ -2,7 +2,7 @@
 //  ViewController.m
 //  FFHeros
 //
-//  Created by ZhuDelun on 2018/5/15.
+//  Created by Zhu Delun on 2018/5/18.
 //  Copyright © 2018 ZhuDelun. All rights reserved.
 //
 
@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.previewImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 

@@ -32,13 +32,14 @@
             return;
         }
 
-        NSCondition *condition = [[NSCondition alloc] init];
+//        NSCondition *condition = [[NSCondition alloc] init];
         __block NSData *retData = nil;
         __block NSURLResponse *retResponse = nil;
         __block NSError *retError = nil;
 
         __block BOOL hadBeHandled = NO;
 
+        dispatch_semaphore_t _semaphore = dispatch_semaphore_create(0);
         [self _sessionTaskWithRequest:self.request completeHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             if (NOT hadBeHandled) {
                 hadBeHandled = YES;
@@ -47,11 +48,13 @@
                 retError = error;
             }
 
-            [condition signal];
+            dispatch_semaphore_signal(_semaphore);
+//            [condition signal];
         }];
 
-        [condition lock];
-        [condition waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:MAX(self.request.timeoutInterval, 60)]];
+//        [condition lock];
+//        [condition waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:MAX(self.request.timeoutInterval, 60)]];
+        dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, 60 * NSEC_PER_SEC));
 
         if (NOT hadBeHandled) {
             hadBeHandled = YES;
@@ -59,7 +62,7 @@
                                        userInfo:@{NSLocalizedFailureReasonErrorKey: [NSString stringWithFormat:@"%@, %@, %lld", [NSDate date], self.request.URL.absoluteString, (int64_t)(self.request.timeoutInterval)]}];
         }
 
-        [condition unlock];
+//        [condition unlock];
         if (self.isCancelled) {
             return;
         }
