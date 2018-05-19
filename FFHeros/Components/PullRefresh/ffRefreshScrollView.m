@@ -19,6 +19,9 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
 
 @implementation UIScrollView (FFRefresh)
 
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"contentSize"];
+}
 
 - (void)ff_addHeaderWith:(ffRefreshBlock)headerRefreshHandler {
     ffRefreshHeader *header = [[ffRefreshHeader alloc] init];
@@ -30,6 +33,9 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
     ffRefreshFooter *footer = [[ffRefreshFooter alloc] init];
     self.ff_footerView = footer;
     [self.ff_footerView setRefreshHandler:footerRefreshHandler];
+
+    self.ff_footerView.hidden = (self.contentSize.height <= 0);
+    [self addObserver:self forKeyPath:@"contentSize" options:(NSKeyValueObservingOptionNew) context:nil];
 }
 
 - (ffRefreshHeader *)ff_headerView {
@@ -72,7 +78,6 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
     if (self.ff_headerView) {
         [self.ff_headerView startRefreshing];
     }
-    self.ff_footerView.hidden = NO;
 }
 
 - (void)ff_startRefreshingMore {
@@ -89,6 +94,12 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
 
     if ([self.ff_footerView isRefreshing]) {
         [self.ff_footerView endRefreshing];
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"contentSize"]) {
+        self.ff_footerView.hidden = (self.contentSize.height <= 0);
     }
 }
 

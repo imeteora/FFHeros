@@ -23,6 +23,7 @@
     self.title = @"Marvel";
     self.viewModel = [[ffHomeViewModel alloc] init];
     [self addPullToRefresh];
+    [self addPullToRefreshMore];
     [self.tableView registerNib:[ffHeroInfoTableViewCell nibClass] forCellReuseIdentifier:[ffHeroInfoTableViewCell identifier]];
     [self.tableView setEstimatedRowHeight:[ffHeroInfoTableViewCell heightForData:nil]];
 }

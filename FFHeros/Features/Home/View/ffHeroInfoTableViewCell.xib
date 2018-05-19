@@ -19,31 +19,50 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="137.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZNI-8z-3mH">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZNI-8z-3mH">
                         <rect key="frame" x="16" y="12" width="75" height="112.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="112.5" id="5wX-hD-BOF"/>
+                            <constraint firstAttribute="width" constant="75" id="6Gj-Gh-bE3"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jc-9y-hKW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jc-9y-hKW">
                         <rect key="frame" x="99" y="12" width="205" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="by4-p5-b7c"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isZ-fW-dSJ">
-                        <rect key="frame" x="99" y="37" width="205" height="47"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isZ-fW-dSJ">
+                        <rect key="frame" x="99" y="37" width="205" height="45.5"/>
                         <string key="text">Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description </string>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUY-oK-i8T">
-                        <rect key="frame" x="274" y="97" width="30" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUY-oK-i8T">
+                        <rect key="frame" x="274" y="94.5" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Kpo-BM-sg5"/>
+                            <constraint firstAttribute="width" constant="30" id="Odq-xd-CX8"/>
+                        </constraints>
                         <state key="normal" title="..."/>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9Jc-9y-hKW" secondAttribute="trailing" constant="16" id="CCL-YC-1NJ"/>
+                    <constraint firstAttribute="trailing" secondItem="HUY-oK-i8T" secondAttribute="trailing" constant="16" id="ECT-V5-Q79"/>
+                    <constraint firstItem="ZNI-8z-3mH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Sdi-j4-spi"/>
+                    <constraint firstItem="isZ-fW-dSJ" firstAttribute="trailing" secondItem="9Jc-9y-hKW" secondAttribute="trailing" id="WYZ-be-Bmj"/>
+                    <constraint firstItem="9Jc-9y-hKW" firstAttribute="top" secondItem="ZNI-8z-3mH" secondAttribute="top" id="djW-KH-mRy"/>
+                    <constraint firstItem="ZNI-8z-3mH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="eJd-lv-MSV"/>
+                    <constraint firstItem="HUY-oK-i8T" firstAttribute="bottom" secondItem="ZNI-8z-3mH" secondAttribute="bottom" id="ggG-9N-eC1"/>
+                    <constraint firstItem="9Jc-9y-hKW" firstAttribute="leading" secondItem="ZNI-8z-3mH" secondAttribute="trailing" constant="8" id="i75-cy-CTv"/>
+                    <constraint firstItem="isZ-fW-dSJ" firstAttribute="leading" secondItem="9Jc-9y-hKW" secondAttribute="leading" id="oGO-zn-v1p"/>
+                    <constraint firstItem="isZ-fW-dSJ" firstAttribute="top" secondItem="9Jc-9y-hKW" secondAttribute="bottom" constant="8" id="uQN-Rd-Pog"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>

@@ -55,7 +55,26 @@ static const uint32_t kPageSize = 20;
 }
 
 - (void)loadMoreData {
-    return;
+    self.remoteCursor = (int32_t)([self.objects count] - 1);
+    
+    ffFetchCharactersInfoApi *api = [[ffFetchCharactersInfoApi alloc] init];
+    api.offset = @(self.remoteCursor);
+    api.limit = @(kPageSize);
+
+    weakify(self);
+    [api requestAfterComplete:^(ffCharacterDataContainerModel * _Nonnull result) {
+        strongify(self);
+        self.objects = [self.objects arrayByAddingObjectsFromArray:result.results];
+        self.isLoading = NO;
+        self.isEnd = ([result.results count] < kPageSize);
+        self.error = nil;
+    } ifError:^(NSError * _Nonnull error, id _Nullable result) {
+        strongify(self);
+        self.objects = (self.objects?:nil);
+        self.isLoading = NO;
+        self.isEnd = YES;
+        self.error = error;
+    }];
 }
 
 @end
