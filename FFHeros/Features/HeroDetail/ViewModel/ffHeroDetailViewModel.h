@@ -15,4 +15,10 @@
 
 - (instancetype)initWithCharacterId:(int64_t)cid;
 
+- (int32_t)numberOfSection;
+- (BOOL)containSection:(int32_t)section;
+- (NSString *)titleOfSection:(int32_t)section;
+- (int32_t)numberOfItemsInSection:(int32_t)section;
+- (ffSummaryModel *)summaryDataForIndex:(int32_t)index inSection:(int32_t)section;
+
 @end

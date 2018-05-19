@@ -48,6 +48,8 @@
 		1362BCAC20B007D700098514 /* ffHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BCAB20B007D700098514 /* ffHomeViewModel.m */; };
 		1362BCAF20B00CA100098514 /* ffBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BCAE20B00CA100098514 /* ffBaseTableViewCell.m */; };
 		136DA46D20B0A552003E4A44 /* ffWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 136DA46C20B0A552003E4A44 /* ffWebViewController.m */; };
+		136DA47120B0AE39003E4A44 /* ffSummeryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 136DA46F20B0AE39003E4A44 /* ffSummeryTableViewCell.m */; };
+		136DA47220B0AE39003E4A44 /* ffSummeryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136DA47020B0AE39003E4A44 /* ffSummeryTableViewCell.xib */; };
 		1382394520B088530037BF49 /* ffHeroDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1382394320B088530037BF49 /* ffHeroDetailTableViewCell.m */; };
 		1382394620B088530037BF49 /* ffHeroDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1382394420B088530037BF49 /* ffHeroDetailTableViewCell.xib */; };
 		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */; };
@@ -161,6 +163,9 @@
 		1362BCAE20B00CA100098514 /* ffBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseTableViewCell.m; sourceTree = "<group>"; };
 		136DA46B20B0A552003E4A44 /* ffWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffWebViewController.h; sourceTree = "<group>"; };
 		136DA46C20B0A552003E4A44 /* ffWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffWebViewController.m; sourceTree = "<group>"; };
+		136DA46E20B0AE39003E4A44 /* ffSummeryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffSummeryTableViewCell.h; sourceTree = "<group>"; };
+		136DA46F20B0AE39003E4A44 /* ffSummeryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSummeryTableViewCell.m; sourceTree = "<group>"; };
+		136DA47020B0AE39003E4A44 /* ffSummeryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffSummeryTableViewCell.xib; sourceTree = "<group>"; };
 		1382394220B088530037BF49 /* ffHeroDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffHeroDetailTableViewCell.h; sourceTree = "<group>"; };
 		1382394320B088530037BF49 /* ffHeroDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffHeroDetailTableViewCell.m; sourceTree = "<group>"; };
 		1382394420B088530037BF49 /* ffHeroDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffHeroDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -648,6 +653,9 @@
 				1382394220B088530037BF49 /* ffHeroDetailTableViewCell.h */,
 				1382394320B088530037BF49 /* ffHeroDetailTableViewCell.m */,
 				1382394420B088530037BF49 /* ffHeroDetailTableViewCell.xib */,
+				136DA46E20B0AE39003E4A44 /* ffSummeryTableViewCell.h */,
+				136DA46F20B0AE39003E4A44 /* ffSummeryTableViewCell.m */,
+				136DA47020B0AE39003E4A44 /* ffSummeryTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -735,6 +743,7 @@
 				133B29D420AA56E500117E4F /* Assets.xcassets in Resources */,
 				1382394620B088530037BF49 /* ffHeroDetailTableViewCell.xib in Resources */,
 				1362BCA820B002D600098514 /* ffHeroInfoTableViewCell.xib in Resources */,
+				136DA47220B0AE39003E4A44 /* ffSummeryTableViewCell.xib in Resources */,
 				133B29D720AA56E500117E4F /* LaunchScreen.storyboard in Resources */,
 				13A072D020AEE8290037F124 /* ViewController.xib in Resources */,
 			);
@@ -793,6 +802,7 @@
 				13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */,
 				133B0E6520B0735500E7FC16 /* ffRouter.m in Sources */,
 				133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */,
+				136DA47120B0AE39003E4A44 /* ffSummeryTableViewCell.m in Sources */,
 				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
 				133E1FA820AB4F5E00CA800C /* ffUrlModel.m in Sources */,
 				CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */,

@@ -17,6 +17,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.selectionStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
