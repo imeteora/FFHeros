@@ -23,4 +23,10 @@
     return _instance;
 }
 
+- (void)map:(NSString *)router toViewController:(Class)vcClass {
+    return;
+}
+
+
+
 @end

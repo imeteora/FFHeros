@@ -45,20 +45,6 @@
 - (int32_t)numberOfSection {
     if (self.heroData == nil) return 0;
     else return 5;
-//    int32_t result = 1;
-//    if (self.heroData.comics AND [self.heroData.comics.items count] > 0) {
-//        result += 1;
-//    }
-//    if (self.heroData.events AND [self.heroData.events.items count] > 0) {
-//        result += 1;
-//    }
-//    if (self.heroData.series AND [self.heroData.series.items count] > 0) {
-//        result += 1;
-//    }
-//    if (self.heroData.stories AND [self.heroData.stories.items count] > 0) {
-//        result += 1;
-//    }
-//    return result;
 }
 
 - (BOOL)containSection:(int32_t)section {

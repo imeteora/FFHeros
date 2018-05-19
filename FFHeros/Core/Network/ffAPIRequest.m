@@ -7,7 +7,6 @@
 //
 
 #import "ffAPIRequest.h"
-#import "ffApiRequestOperation.h"
 #import "ffApiSignHelper.h"
 #import "ffApiError.h"
 
