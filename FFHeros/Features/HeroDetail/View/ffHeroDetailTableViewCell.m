@@ -7,6 +7,7 @@
 //
 
 #import "ffHeroDetailTableViewCell.h"
+#import "ffWebViewController.h"
 #import "UIView+WebImage.h"
 #import "UIImage+BlurEffect.h"
 
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *modifyInfoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *linkLabel;
 
 @property (nonatomic, strong) UIImage *blurImage;
 
@@ -71,6 +73,26 @@
         [self.descriptionLabel setText:@"(no description)"];
     } else {
         [self.descriptionLabel setText:description];
+    }
+}
+
+- (void)setReferenceURI:(NSString *)referenceURI {
+    _referenceURI = referenceURI;
+    if ([_referenceURI length] > 0) {
+        [self.linkLabel setText:[NSString stringWithFormat:@"Link:%@", _referenceURI]];
+    } else {
+        [self.linkLabel setText:@"Link: None"];
+    }
+}
+
+#pragma mark - actions & events
+
+- (IBAction)onLinkButtonClicked:(id)sender {
+    if ([self.referenceURI length] > 0 AND
+        self.delegate AND
+        [self.delegate respondsToSelector:@selector(heroDetailCell:showReferenceDoc:)])
+    {
+        [self.delegate heroDetailCell:self showReferenceDoc:self.referenceURI];
     }
 }
 

@@ -7,10 +7,11 @@
 //
 
 #import "ffHeroDetailViewController.h"
+#import "ffWebViewController.h"
 #import "ffHeroDetailViewModel.h"
 #import "ffHeroDetailTableViewCell.h"
 
-@interface ffHeroDetailViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ffHeroDetailViewController () <UITableViewDataSource, UITableViewDelegate, ffHeroDetailTableViewCellDelegate>
 @property (nonatomic, strong) ffHeroDetailViewModel *viewModel;
 @end
 
@@ -69,12 +70,22 @@
         [cell setName:self.viewModel.heroData.name];
         [cell setModifyInfo:self.viewModel.heroData.modified];
         [cell setDescriptionInfo:[self.viewModel.heroData descField]];
+        [cell setReferenceURI:[self.viewModel.heroData detailLink]];
+        cell.delegate = self;
         return cell;
     } else {
         return [super tableView:tableView cellForRowAtIndexPath:indexPath];
     }
 }
 
+#pragma mark - ffHeroDetailViewController
+- (void)heroDetailCell:(ffHeroDetailTableViewCell *)cell showReferenceDoc:(NSString *)url {
+    if ([url length] > 0) {
+        ffWebViewController *webVC = [[ffWebViewController alloc] init];
+        webVC.url = url;
+        [self.navigationController pushViewController:webVC animated:YES];
+    }
+}
 
 #pragma mark - observe object
 - (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context {

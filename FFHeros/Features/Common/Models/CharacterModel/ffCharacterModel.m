@@ -24,4 +24,31 @@
              }[propertyName];
 }
 
+- (NSString *)detailLink {
+    return [self urlLinkWithType:@"detail"];
+}
+
+- (NSString *)wikiLink {
+    return [self urlLinkWithType:@"wiki"];
+}
+
+- (NSString *)comicLink {
+    return [self urlLinkWithType:@"comiclink"];
+}
+
+
+#pragma mark - private helpers
+- (NSString *)urlLinkWithType:(NSString *)type {
+    if ([type length] <= 0) return @"";
+
+    __block NSString *url = @"";
+    [self.urls enumerateObjectsUsingBlock:^(ffUrlModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj.type isEqualToString:type]) {
+            url = obj.url;
+            *stop = YES;
+        }
+    }];
+    return url;
+}
+
 @end

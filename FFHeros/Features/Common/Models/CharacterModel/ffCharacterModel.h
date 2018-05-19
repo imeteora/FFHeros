@@ -27,4 +27,8 @@
 @property (nonatomic, strong) ffCategoryListModel * series;
 @property (nonatomic, strong) ffCategoryListModel * stories;
 
+- (NSString *)detailLink;
+- (NSString *)wikiLink;
+- (NSString *)comicLink;
+
 @end

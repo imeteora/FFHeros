@@ -47,6 +47,7 @@
 		1362BCA820B002D600098514 /* ffHeroInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1362BCA620B002D600098514 /* ffHeroInfoTableViewCell.xib */; };
 		1362BCAC20B007D700098514 /* ffHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BCAB20B007D700098514 /* ffHomeViewModel.m */; };
 		1362BCAF20B00CA100098514 /* ffBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BCAE20B00CA100098514 /* ffBaseTableViewCell.m */; };
+		136DA46D20B0A552003E4A44 /* ffWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 136DA46C20B0A552003E4A44 /* ffWebViewController.m */; };
 		1382394520B088530037BF49 /* ffHeroDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1382394320B088530037BF49 /* ffHeroDetailTableViewCell.m */; };
 		1382394620B088530037BF49 /* ffHeroDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1382394420B088530037BF49 /* ffHeroDetailTableViewCell.xib */; };
 		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */; };
@@ -158,6 +159,8 @@
 		1362BCAB20B007D700098514 /* ffHomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffHomeViewModel.m; sourceTree = "<group>"; };
 		1362BCAD20B00CA100098514 /* ffBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseTableViewCell.h; sourceTree = "<group>"; };
 		1362BCAE20B00CA100098514 /* ffBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseTableViewCell.m; sourceTree = "<group>"; };
+		136DA46B20B0A552003E4A44 /* ffWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffWebViewController.h; sourceTree = "<group>"; };
+		136DA46C20B0A552003E4A44 /* ffWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffWebViewController.m; sourceTree = "<group>"; };
 		1382394220B088530037BF49 /* ffHeroDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffHeroDetailTableViewCell.h; sourceTree = "<group>"; };
 		1382394320B088530037BF49 /* ffHeroDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffHeroDetailTableViewCell.m; sourceTree = "<group>"; };
 		1382394420B088530037BF49 /* ffHeroDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffHeroDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -354,6 +357,7 @@
 				13885BA420ABBC3800D9F9E5 /* Common */,
 				133B0E5C20B072DA00E7FC16 /* HeroDetail */,
 				1362BCA120B000A900098514 /* Home */,
+				136DA46520B0A2EA003E4A44 /* WebViewController */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -501,6 +505,15 @@
 				1362BCAB20B007D700098514 /* ffHomeViewModel.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		136DA46520B0A2EA003E4A44 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				136DA46B20B0A552003E4A44 /* ffWebViewController.h */,
+				136DA46C20B0A552003E4A44 /* ffWebViewController.m */,
+			);
+			path = WebViewController;
 			sourceTree = "<group>";
 		};
 		13885BA420ABBC3800D9F9E5 /* Common */ = {
@@ -783,6 +796,7 @@
 				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
 				133E1FA820AB4F5E00CA800C /* ffUrlModel.m in Sources */,
 				CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */,
+				136DA46D20B0A552003E4A44 /* ffWebViewController.m in Sources */,
 				133B2A0520AA6F1500117E4F /* gt_Modelizable.m in Sources */,
 				133B29DA20AA56E500117E4F /* main.m in Sources */,
 				13447E6220AF312E0018F23D /* NSObject+FFUtils.m in Sources */,

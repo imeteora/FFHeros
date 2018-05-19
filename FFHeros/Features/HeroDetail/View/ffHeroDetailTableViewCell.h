@@ -8,7 +8,16 @@
 
 #import "ffBaseTableViewCell.h"
 
+@class ffHeroDetailTableViewCell;
+
+@protocol ffHeroDetailTableViewCellDelegate <NSObject>
+@optional
+- (void)heroDetailCell:(ffHeroDetailTableViewCell *)cell showReferenceDoc:(NSString *)url;
+@end
+
 @interface ffHeroDetailTableViewCell : ffBaseTableViewCell
+@property (nonatomic, weak) id<ffHeroDetailTableViewCellDelegate> delegate;
+@property (nonatomic, copy) NSString *referenceURI;
 
 - (void)setAvatar:(NSString *)avatarUri;
 - (void)setName:(NSString *)name;
