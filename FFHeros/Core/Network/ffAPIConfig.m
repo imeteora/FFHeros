@@ -38,11 +38,6 @@
 
 
 - (nonnull NSString *)ts {
-    static NSString * __ts = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        __ts = [NSString stringWithFormat:@"%lld", (int64_t)[[NSDate date] timeIntervalSince1970]];
-    });
-    return __ts;
+    return [NSString stringWithFormat:@"%lld", (int64_t)[[NSDate date] timeIntervalSince1970]];
 }
 @end
