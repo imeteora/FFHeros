@@ -12,6 +12,7 @@
 @property (nonatomic, assign) BOOL isLoading;
 @property (nonatomic, assign) BOOL isEnd;
 @property (nonatomic, assign) BOOL tryLoaded;
+@property (nonatomic, strong) NSArray *objects;
 @property (nonatomic, strong) NSError *error;
 
 - (void)loadData;

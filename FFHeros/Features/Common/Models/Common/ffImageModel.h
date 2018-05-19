@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString * extension;
 @property (nonatomic, copy) NSString * path;
 
+- (NSString *)pathWithSize:(CGSize)size;
+
 @end

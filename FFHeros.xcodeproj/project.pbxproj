@@ -19,7 +19,6 @@
 		133B2A0420AA6F1500117E4F /* NSString+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0120AA6F1500117E4F /* NSString+Format.m */; };
 		133B2A0520AA6F1500117E4F /* gt_Modelizable.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0220AA6F1500117E4F /* gt_Modelizable.m */; };
 		133B2A0920AA6F9800117E4F /* DESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0720AA6F9800117E4F /* DESUtils.m */; };
-		133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B2A0B20AA71FB00117E4F /* ffApiModel.m */; };
 		133E1FA420AB4F5E00CA800C /* ffCharacterDataWrapperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1F9C20AB4F5E00CA800C /* ffCharacterDataWrapperModel.m */; };
 		133E1FA520AB4F5E00CA800C /* ffCharacterDataContainerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1F9D20AB4F5E00CA800C /* ffCharacterDataContainerModel.m */; };
 		133E1FA620AB4F5E00CA800C /* ffCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1F9E20AB4F5E00CA800C /* ffCategoryListModel.m */; };
@@ -38,9 +37,12 @@
 		1362BC8C20AF6FE900098514 /* ffBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */; };
 		1362BC8F20AF70AD00098514 /* ffBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */; };
 		1362BC9820AFF2CC00098514 /* ffHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC9620AFF2CC00098514 /* ffHomeViewController.m */; };
-		1362BC9920AFF2CC00098514 /* ffHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1362BC9720AFF2CC00098514 /* ffHomeViewController.xib */; };
 		1362BC9D20AFF9D300098514 /* ffEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC9C20AFF9D300098514 /* ffEventModel.m */; };
 		1362BCA020AFFB1200098514 /* ffBaseMarvelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC9F20AFFB1200098514 /* ffBaseMarvelModel.m */; };
+		1362BCA720B002D600098514 /* ffHeroInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BCA520B002D600098514 /* ffHeroInfoTableViewCell.m */; };
+		1362BCA820B002D600098514 /* ffHeroInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1362BCA620B002D600098514 /* ffHeroInfoTableViewCell.xib */; };
+		1362BCAC20B007D700098514 /* ffHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BCAB20B007D700098514 /* ffHomeViewModel.m */; };
+		1362BCAF20B00CA100098514 /* ffBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BCAE20B00CA100098514 /* ffBaseTableViewCell.m */; };
 		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */; };
 		138B1D3720AD8D51006A5708 /* UIView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 138B1D3620AD8D51006A5708 /* UIView+WebImage.m */; };
 		13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */; };
@@ -54,8 +56,6 @@
 		13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */; };
 		13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93320AD3480005CF787 /* ffRefreshComponent.m */; };
 		13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */; };
-		13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7E220AA87A400461972 /* ffApiRequestOperationQueue.m */; };
-		13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F5F7F220AABB7500461972 /* ffApiRequestOperation.m */; };
 		13F9E3C020AB700C00912533 /* ffApiError.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F9E3BF20AB700C00912533 /* ffApiError.m */; };
 		13FFEB3720AC8D98008615C6 /* ffDefineVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB3620AC8D98008615C6 /* ffDefineVariables.m */; };
 		13FFEB3C20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB3B20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m */; };
@@ -101,8 +101,6 @@
 		133B2A0220AA6F1500117E4F /* gt_Modelizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gt_Modelizable.m; sourceTree = "<group>"; };
 		133B2A0720AA6F9800117E4F /* DESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DESUtils.m; sourceTree = "<group>"; };
 		133B2A0820AA6F9800117E4F /* DESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DESUtils.h; sourceTree = "<group>"; };
-		133B2A0A20AA71FB00117E4F /* ffApiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiModel.h; sourceTree = "<group>"; };
-		133B2A0B20AA71FB00117E4F /* ffApiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiModel.m; sourceTree = "<group>"; };
 		133E1F9820AB4F5E00CA800C /* ffCategoryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffCategoryListModel.h; sourceTree = "<group>"; };
 		133E1F9920AB4F5E00CA800C /* ffUrlModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffUrlModel.h; sourceTree = "<group>"; };
 		133E1F9A20AB4F5E00CA800C /* ffImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffImageModel.h; sourceTree = "<group>"; };
@@ -133,13 +131,19 @@
 		1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseListViewController.m; sourceTree = "<group>"; };
 		1362BC8D20AF70AD00098514 /* ffBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseTableViewController.h; sourceTree = "<group>"; };
 		1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseTableViewController.m; sourceTree = "<group>"; };
-		1362BC9520AFF2CC00098514 /* ffHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ffHomeViewController.h; path = FFHeros/Core/BaseMVC/ffHomeViewController.h; sourceTree = SOURCE_ROOT; };
-		1362BC9620AFF2CC00098514 /* ffHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ffHomeViewController.m; path = FFHeros/Core/BaseMVC/ffHomeViewController.m; sourceTree = SOURCE_ROOT; };
-		1362BC9720AFF2CC00098514 /* ffHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ffHomeViewController.xib; path = FFHeros/Core/BaseMVC/ffHomeViewController.xib; sourceTree = SOURCE_ROOT; };
+		1362BC9520AFF2CC00098514 /* ffHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ffHomeViewController.h; path = FFHeros/Features/Home/VC/ffHomeViewController.h; sourceTree = SOURCE_ROOT; };
+		1362BC9620AFF2CC00098514 /* ffHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ffHomeViewController.m; path = FFHeros/Features/Home/VC/ffHomeViewController.m; sourceTree = SOURCE_ROOT; };
 		1362BC9B20AFF9D300098514 /* ffEventModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffEventModel.h; sourceTree = "<group>"; };
 		1362BC9C20AFF9D300098514 /* ffEventModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffEventModel.m; sourceTree = "<group>"; };
 		1362BC9E20AFFB1200098514 /* ffBaseMarvelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseMarvelModel.h; sourceTree = "<group>"; };
 		1362BC9F20AFFB1200098514 /* ffBaseMarvelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseMarvelModel.m; sourceTree = "<group>"; };
+		1362BCA420B002D600098514 /* ffHeroInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffHeroInfoTableViewCell.h; sourceTree = "<group>"; };
+		1362BCA520B002D600098514 /* ffHeroInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffHeroInfoTableViewCell.m; sourceTree = "<group>"; };
+		1362BCA620B002D600098514 /* ffHeroInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffHeroInfoTableViewCell.xib; sourceTree = "<group>"; };
+		1362BCAA20B007D700098514 /* ffHomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffHomeViewModel.h; sourceTree = "<group>"; };
+		1362BCAB20B007D700098514 /* ffHomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffHomeViewModel.m; sourceTree = "<group>"; };
+		1362BCAD20B00CA100098514 /* ffBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseTableViewCell.h; sourceTree = "<group>"; };
+		1362BCAE20B00CA100098514 /* ffBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseTableViewCell.m; sourceTree = "<group>"; };
 		13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFetchCharactersInfoApi.h; sourceTree = "<group>"; };
 		13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharactersInfoApi.m; sourceTree = "<group>"; };
 		138B1D3520AD8D51006A5708 /* UIView+WebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+WebImage.h"; sourceTree = "<group>"; };
@@ -283,7 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				13885BA420ABBC3800D9F9E5 /* Common */,
-				13A072D120AEEA9B0037F124 /* Home */,
+				1362BCA120B000A900098514 /* Home */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -295,8 +299,6 @@
 				133B29F320AA587900117E4F /* ffAPIConfig.m */,
 				13F9E3BE20AB700C00912533 /* ffApiError.h */,
 				13F9E3BF20AB700C00912533 /* ffApiError.m */,
-				133B2A0A20AA71FB00117E4F /* ffApiModel.h */,
-				133B2A0B20AA71FB00117E4F /* ffApiModel.m */,
 				133B29F820AA5B1A00117E4F /* ffAPIModelDescription.h */,
 				133B29F920AA5B1A00117E4F /* ffAPIModelDescription.m */,
 				133B29F520AA589200117E4F /* ffAPIRequest.h */,
@@ -397,6 +399,44 @@
 			path = EventModel;
 			sourceTree = "<group>";
 		};
+		1362BCA120B000A900098514 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1362BCA220B002AA00098514 /* VC */,
+				1362BCA320B002B200098514 /* View */,
+				1362BCA920B007B900098514 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1362BCA220B002AA00098514 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				1362BC9520AFF2CC00098514 /* ffHomeViewController.h */,
+				1362BC9620AFF2CC00098514 /* ffHomeViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		1362BCA320B002B200098514 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1362BCA420B002D600098514 /* ffHeroInfoTableViewCell.h */,
+				1362BCA520B002D600098514 /* ffHeroInfoTableViewCell.m */,
+				1362BCA620B002D600098514 /* ffHeroInfoTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1362BCA920B007B900098514 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1362BCAA20B007D700098514 /* ffHomeViewModel.h */,
+				1362BCAB20B007D700098514 /* ffHomeViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		13885BA420ABBC3800D9F9E5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,21 +469,13 @@
 			path = WebImage;
 			sourceTree = "<group>";
 		};
-		13A072D120AEEA9B0037F124 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				1362BC9520AFF2CC00098514 /* ffHomeViewController.h */,
-				1362BC9620AFF2CC00098514 /* ffHomeViewController.m */,
-				1362BC9720AFF2CC00098514 /* ffHomeViewController.xib */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
 		13A072D220AEEAB60037F124 /* BaseMVC */ = {
 			isa = PBXGroup;
 			children = (
 				1362BC8A20AF6FE900098514 /* ffBaseListViewController.h */,
 				1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */,
+				1362BCAD20B00CA100098514 /* ffBaseTableViewCell.h */,
+				1362BCAE20B00CA100098514 /* ffBaseTableViewCell.m */,
 				1362BC8D20AF70AD00098514 /* ffBaseTableViewController.h */,
 				1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */,
 				13A072F420AEF7850037F124 /* ffBaseViewController.h */,
@@ -612,7 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				133B29D420AA56E500117E4F /* Assets.xcassets in Resources */,
-				1362BC9920AFF2CC00098514 /* ffHomeViewController.xib in Resources */,
+				1362BCA820B002D600098514 /* ffHeroInfoTableViewCell.xib in Resources */,
 				133B29D720AA56E500117E4F /* LaunchScreen.storyboard in Resources */,
 				13A072D020AEE8290037F124 /* ViewController.xib in Resources */,
 			);
@@ -636,14 +668,12 @@
 				133B2A0920AA6F9800117E4F /* DESUtils.m in Sources */,
 				133B29F420AA587900117E4F /* ffAPIConfig.m in Sources */,
 				13F9E3C020AB700C00912533 /* ffApiError.m in Sources */,
-				133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */,
 				133B29FA20AA5B1A00117E4F /* ffAPIModelDescription.m in Sources */,
 				133B29F720AA589200117E4F /* ffAPIRequest.m in Sources */,
-				13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */,
-				13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */,
 				13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */,
 				1362BC8C20AF6FE900098514 /* ffBaseListViewController.m in Sources */,
 				1362BCA020AFFB1200098514 /* ffBaseMarvelModel.m in Sources */,
+				1362BCAF20B00CA100098514 /* ffBaseTableViewCell.m in Sources */,
 				1362BC8F20AF70AD00098514 /* ffBaseTableViewController.m in Sources */,
 				13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */,
 				1362BC8920AF6EA500098514 /* ffBaseViewModel.m in Sources */,
@@ -658,7 +688,9 @@
 				13FFEB3C20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m in Sources */,
 				13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m in Sources */,
 				133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */,
+				1362BCA720B002D600098514 /* ffHeroInfoTableViewCell.m in Sources */,
 				1362BC9820AFF2CC00098514 /* ffHomeViewController.m in Sources */,
+				1362BCAC20B007D700098514 /* ffHomeViewModel.m in Sources */,
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
 				13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */,
 				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,

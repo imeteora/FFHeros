@@ -22,7 +22,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[ffApiRequestOperationQueue alloc] init];
-        _instance.maxConcurrentOperationCount = 3;
+        _instance.maxConcurrentOperationCount = 5;
         _instance->_session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:_instance delegateQueue:nil];
     });
     return _instance;

@@ -16,7 +16,7 @@
                      ifError:(void (^)(NSError * _Nonnull, id __nullable))errorBlock
 {
     ffAPIConfig *config = [[ffAPIConfig alloc] init];
-    config.baseURL = MARVEL_BASE_URL@"/v1/public/characters";
+    config.baseURL = MARVEL_BASE_HTTPS_URL@"/v1/public/characters";
     config.method = FFApiRequestMethodGET;
     config.params = [self gt_dictionaryWithKeyValues];
     config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data" toMappingClass:[ffCharacterDataContainerModel class]]];
@@ -44,7 +44,7 @@
                        ifError:(void (^__nullable)(NSError * __nullable, id __nullable ))errorHandler
 {
     ffAPIConfig *config = [[ffAPIConfig alloc] init];
-    config.baseURL = [NSString stringWithFormat:@"%@/v1/public/characters/%@", MARVEL_BASE_URL, characterId];
+    config.baseURL = [NSString stringWithFormat:@"%@/v1/public/characters/%@", MARVEL_BASE_HTTPS_URL, characterId];
     config.method = FFApiRequestMethodGET;
     config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data" toMappingClass:[ffCharacterDataContainerModel class]]];
 

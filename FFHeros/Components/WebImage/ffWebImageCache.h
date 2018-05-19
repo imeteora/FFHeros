@@ -8,4 +8,6 @@
 
 @interface ffWebImageCache : NSCache
 
++ (ffWebImageCache *)shared;
+
 @end

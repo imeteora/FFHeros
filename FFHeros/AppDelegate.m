@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "testPullRefreshViewController.h"
 #import "ffNavigationController.h"
+#import "ffHomeViewController.h"
+
+#import "testPullRefreshViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    testPullRefreshViewController *vc = [[testPullRefreshViewController alloc] init];
+    ffHomeViewController *vc = [[ffHomeViewController alloc] init];
     self.window.rootViewController = [[ffNavigationController alloc] initWithRootViewController:vc];
     [self.window makeKeyAndVisible];
     return YES;

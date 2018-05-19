@@ -10,6 +10,16 @@
 
 }
 
++ (ffWebImageCache *)shared {
+    static ffWebImageCache *_instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[ffWebImageCache alloc] init];
+        _instance.totalCostLimit = 10 * 1024 * 1024;
+    });
+    return _instance;
+}
+
 - (void)setObject:(id)obj forKey:(id)key {
     [self setObject:obj forKey:key cost:[self _costOf:obj]];
 }

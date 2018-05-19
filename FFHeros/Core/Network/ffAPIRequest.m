@@ -11,15 +11,35 @@
 #import "ffApiSignHelper.h"
 #import "ffApiError.h"
 
-@interface ffAPIRequest () <ffApiRequestOperationDelegate>
+@interface ffApiOperationQueue : NSOperationQueue
+@end
+
+@implementation ffApiOperationQueue
++ (ffApiOperationQueue *)shared {
+    static ffApiOperationQueue *_instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[ffApiOperationQueue alloc] init];
+        _instance.maxConcurrentOperationCount = 6;
+    });
+    return _instance;
+}
+@end
+
+@interface ffAPIRequest () <ffApiRequestOperationDelegate, NSURLSessionDelegate>
 {
-    ffApiRequestOperation *_requestOperation;
+    NSURLSessionTask *task;
+    NSURLSession *session;
     ffAPIConfig *_requestConfig;
     NSThread    *_currentThread;
     BOOL _isFinished;
     BOOL _isCanceled;
     BOOL _isRequested;
 }
+
+@property (nonatomic, strong, nonnull) BOOL (^preRequestHandler)(NSString *);
+@property (nonatomic, strong, nonnull) void (^postRequestHandler)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable);
+@property (nonatomic, strong) NSMutableURLRequest *request;
 @end
 
 @implementation ffAPIRequest
@@ -27,14 +47,12 @@
 - (instancetype)initWithConfig:(ffAPIConfig *)config {
     if (self = [self init]) {
         _requestConfig = config;
-        _requestOperation.config = _requestConfig;
     }
     return self;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
-        _requestOperation = [[ffApiRequestOperation alloc] init];
         _currentThread = [NSThread currentThread];
         _isFinished = NO;
         _isCanceled = NO;
@@ -43,23 +61,16 @@
     return self;
 }
 
-#pragma mark - public helpers
-- (void)requestSync {
-    NSAssert(_currentThread == [NSThread currentThread], @"ffApiRquest: current thread is not same as one when request be created.");
-    if (NOT _isRequested) {
-        _isRequested = YES;
-        [self _queryNowOrNot:YES];
-    } else {
-        NSAssert(NO, @"ffApiRequest: current http request had been already established.");
-    }
-    return;
+- (void)dealloc {
+    [self didCanceledRequestOperation];
 }
 
+#pragma mark - public helpers
 - (void)requestAsync {
     NSAssert(_currentThread == [NSThread currentThread], @"ffApiRquest: current thread is not same as one when request be created.");
     if (NOT _isRequested) {
         _isRequested = YES;
-        [self _queryNowOrNot:NO];
+        [[ffApiOperationQueue shared] addOperation:self];
     } else {
         NSAssert(NO, @"ffApiRequest: current http request had been already established.");
     }
@@ -67,11 +78,10 @@
 }
 
 #pragma mark - private helpers
-- (void)_queryNowOrNot:(BOOL)bNowOrNot
+- (void)main
 {
     weakify(self);
-    BOOL (^preHttpRequestBlock)(void) = ^BOOL{
-        //TODO: coding for local cache later.
+    BOOL (^preHttpRequestBlock)(NSString *url) = ^BOOL(NSString *url) {
         return YES;
     };
 
@@ -79,116 +89,145 @@
         strongify(self);
         if (data == nil OR error) {
             if (self.errorHandler) {
-                if (bNowOrNot) {
+                dispatch_async(dispatch_get_main_queue(), ^{
                     self.errorHandler(error, nil);
-                } else {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        self.errorHandler(error, nil);
-                    });
-                }
+                });
             }
         }
         else {
             NSError *error = nil;
             NSDictionary *jsonDict = [self _deserializeData:data response:response ifErrorOrNot:&error];
+#if DEBUG
+            NSLog(@"---- query success ----\n %@ \n------------------", jsonDict);
+#endif  // DEBUG
             if (jsonDict == nil OR error) {
                 if (self.errorHandler) {
-                    if (bNowOrNot) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
                         self.errorHandler(error, jsonDict);
-                    } else {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            self.errorHandler(error, jsonDict);
-                        });
-                    }
+                    });
                 }
             } else {
                 NSDictionary<NSString *, id> * result = [self _mappingModelFrom:jsonDict errorIfError:&error];
                 if (self.compleleHandler) {
-                    if (bNowOrNot) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
                         self.compleleHandler(result);
-                    } else {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            self.compleleHandler(result);
-                        });
-                    }
+                    });
                 }
             }
         }
     };
 
-    ffApiRequestOperation *operation = [self _makeRequestOperationWithPreOp:preHttpRequestBlock andPostOp:postHttpRequestBlock];
-    _requestOperation = operation;
-    [_requestOperation establish:bNowOrNot];
+    [self _makeRequestOperationWithPreOp:preHttpRequestBlock andPostOp:postHttpRequestBlock];
+    [self _establish];
 }
 
 
-- (nullable ffApiRequestOperation *)_makeRequestOperationWithPreOp:(BOOL (^)(void))preRequestBlock andPostOp:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))postRequestBlock
+- (void)_makeRequestOperationWithPreOp:(BOOL (^)(NSString *))preRequestBlock andPostOp:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))postRequestBlock
 {
     weakify(self);
-    ffApiRequestOperation *result = [[ffApiRequestOperation alloc] init];
-    result.preRequestHandler = preRequestBlock;
-    result.postRequestHandler = ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    self.preRequestHandler = preRequestBlock;
+    self.postRequestHandler = ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        strongify(self);
         postRequestBlock(data, response, error);
-        @synchronized(self) {
-            strongify(self);
-            self->_requestOperation = nil;
-            self->_isCanceled = YES;
-            self->_isFinished = YES;
-            self->_isRequested = YES;
-        }
+        [self didCanceledRequestOperation];
     };
 
     NSMutableURLRequest *request = nil;
-    {
-        NSString *queryString = [self _quertyString];
 
-        if (_requestConfig.method == FFApiRequestMethodGET) {
-            NSString *requestUrlStr = nil;
-            if ([queryString length]) {
-                requestUrlStr = [NSString stringWithFormat:@"%@?%@", _requestConfig.baseURL, queryString];
-            } else {
-                requestUrlStr = _requestConfig.baseURL;
-            }
-            
-            NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
-            request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:(_requestConfig.timeout > 0?:60)];
-            [request setHTTPMethod:@"GET"];
-            [request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
-            [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
-            [request setValue:@"en-us" forHTTPHeaderField:@"Accept-Language"];
+    NSString *queryString = [self _quertyString];
 
-        } else if (_requestConfig.method == FFApiRequestMethodPOST) {
-            NSString *requestUrlStr = _requestConfig.baseURL;
-            NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
-            request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:(_requestConfig.timeout > 0?:60)];
-            [request setHTTPMethod:@"POST"];
-
-        } else if (_requestConfig.method == FFApiRequestMethodPUT) {
-            NSAssert(NO, @"not implemented yet");
-        } else if (_requestConfig.method == FFApiRequestMethodDELETE) {
-            NSAssert(NO, @"not implemented yet");
+    if (_requestConfig.method == FFApiRequestMethodGET) {
+        NSString *requestUrlStr = nil;
+        if ([queryString length]) {
+            requestUrlStr = [NSString stringWithFormat:@"%@?%@", _requestConfig.baseURL, queryString];
+        } else {
+            requestUrlStr = _requestConfig.baseURL;
         }
 
-        // external http header if has some.
-        for (NSString *each_key in _requestConfig.extHttpHeader.allKeys) {
-            NSString *each_value = [_requestConfig.extHttpHeader valueForKey:each_key];
-            [request setValue:each_value forHTTPHeaderField:each_key];
-        }
+        NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
+        request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:(_requestConfig.timeout > 0?:60)];
+        [request setHTTPMethod:@"GET"];
+        [request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
+        [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+        [request setValue:@"en-us" forHTTPHeaderField:@"Accept-Language"];
+        [request setValue:@"keep-alive" forHTTPHeaderField:@"Connection"];
 
-        for (NSString *each_key in _requestConfig.authSignDictOfRequest.allKeys) {
-            NSString *each_value = [_requestConfig.authSignDictOfRequest valueForKey:each_key];
-            [request setValue:each_value forHTTPHeaderField:each_key];
-        }
+    } else if (_requestConfig.method == FFApiRequestMethodPOST) {
+        NSString *requestUrlStr = _requestConfig.baseURL;
+        NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
+        request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:(_requestConfig.timeout > 0?:60)];
+        [request setHTTPMethod:@"POST"];
 
-        NSData *httpBodyData = [self _queryBodyFromQuery:queryString];
-        if (httpBodyData) {
-            [request setHTTPBody:httpBodyData];
-        }
+    } else if (_requestConfig.method == FFApiRequestMethodPUT) {
+        NSAssert(NO, @"not implemented yet");
+    } else if (_requestConfig.method == FFApiRequestMethodDELETE) {
+        NSAssert(NO, @"not implemented yet");
     }
+
+    // external http header if has some.
+    for (NSString *each_key in _requestConfig.extHttpHeader.allKeys) {
+        NSString *each_value = [_requestConfig.extHttpHeader valueForKey:each_key];
+        [request setValue:each_value forHTTPHeaderField:each_key];
+    }
+
+    for (NSString *each_key in _requestConfig.authSignDictOfRequest.allKeys) {
+        NSString *each_value = [_requestConfig.authSignDictOfRequest valueForKey:each_key];
+        [request setValue:each_value forHTTPHeaderField:each_key];
+    }
+
+    NSData *httpBodyData = [self _queryBodyFromQuery:queryString];
+    if (httpBodyData) {
+        [request setHTTPBody:httpBodyData];
+    }
+
+#if DEBUG
+    NSLog(@"----\n request URL: %@\n ----", request.URL.absoluteString);
+#endif  // DEBUG
+
     
-    result.request = request;
-    return result;
+    self.request = [request mutableCopy];
 }
+
+
+- (void)_establish
+{
+    NSAssert(self.request, @"HTTP request has no available url request instance.");
+    NSAssert(self.preRequestHandler, @"HTTP request has no available pre operation callback handler");
+    NSAssert(self.postRequestHandler, @"HTTP request has no available url response callback handler");
+
+    if (! self.preRequestHandler(self.request.URL.absoluteString)) {
+        [self didCanceledRequestOperation];
+        return;
+    }
+    __block NSData *retData = nil;
+    __block NSURLResponse *retResponse = nil;
+    __block NSError *retError = nil;
+    __block BOOL hadBeHandled = NO;
+
+    dispatch_semaphore_t _semaphore = dispatch_semaphore_create(0);
+    session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
+    task = [session dataTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (NOT hadBeHandled) {
+            hadBeHandled = YES;
+            retData = data;
+            retResponse = response;
+            retError = error;
+        }
+        dispatch_semaphore_signal(_semaphore);
+    }];
+    [task resume];
+
+    dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, 60 * NSEC_PER_SEC));
+    if (NOT hadBeHandled) {
+        hadBeHandled = YES;
+        retError = [NSError errorWithDomain:ffApiErrorDomainNetwork code:NSURLErrorTimedOut
+                                   userInfo:@{NSLocalizedFailureReasonErrorKey: [NSString stringWithFormat:@"%@, %@, %lld", [NSDate date], self.request.URL.absoluteString, (int64_t)(self.request.timeoutInterval)]}];
+    }
+    self.postRequestHandler(retData, retResponse, retError);
+}
+
+
+
 
 - (NSString *)_quertyString {
     NSMutableDictionary<NSString *, NSString *> *mutableParms = [[NSMutableDictionary alloc] init];
@@ -259,10 +298,28 @@
     return result;
 }
 
+#pragma mark - NSURLSessionDelegate
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        if ([challenge.protectionSpace.host containsString:@"marvel.com"]) {
+            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+            completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+            return;
+        }
+    }
+    completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, challenge.proposedCredential);
+}
+
 #pragma mark - ffApiRequestOperationDelegate
-- (void)didCanceledRequestOperation:(ffApiRequestOperation *)requestOperation {
-    if (_requestOperation == requestOperation) {
-        _requestOperation = nil;
+- (void)didCanceledRequestOperation
+{
+    @synchronized(self) {
+        self->session = nil;
+        self->task = nil;
+        self->_requestConfig = nil;
+        self->_isCanceled = YES;
+        self->_isFinished = YES;
+        self->_isRequested = YES;
     }
 }
 

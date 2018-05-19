@@ -21,12 +21,21 @@
         _tableView.delegate = nil;
         _tableView.dataSource = nil;
     }
+
+    if (self.viewModel) {
+        [self.viewModel removeObserver:self forKeyPath:@"objects" context:nil];
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view addSubview:self.tableView];
+    [self.view insertSubview:self.tableView atIndex:0];
+}
+
+- (void)ff_viewDidFirstAppear {
+    [super ff_viewDidFirstAppear];
+    [self.viewModel addObserver:self forKeyPath:@"objects" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -69,24 +78,31 @@
     return;
 }
 
+#pragma mark - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"objects"]) {
+        [self.tableView ff_endRefreshing];
+        [self.tableView reloadData];
+    }
+}
+
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSAssert(NO, @"%@: %s must be implemented in sub-class.", NSStringFromClass([self class]), __PRETTY_FUNCTION__);
-    return 0;
+    return (self.viewModel.objects)? 1: 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSAssert(NO, @"%@: %s must be implemented in sub-class.", NSStringFromClass([self class]), __PRETTY_FUNCTION__);
+//    NSAssert(NO, @"%@: %s must be implemented in sub-class.", NSStringFromClass([self class]), __PRETTY_FUNCTION__);
     return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSAssert(NO, @"%@: %s must be implemented in sub-class.", NSStringFromClass([self class]), __PRETTY_FUNCTION__);
+//    NSAssert(NO, @"%@: %s must be implemented in sub-class.", NSStringFromClass([self class]), __PRETTY_FUNCTION__);
     return 44.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSAssert(NO, @"%@: %s must be implemented in sub-class.", NSStringFromClass([self class]), __PRETTY_FUNCTION__);
+//    NSAssert(NO, @"%@: %s must be implemented in sub-class.", NSStringFromClass([self class]), __PRETTY_FUNCTION__);
     return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"com.farfetch.tableviewcell.default"];
 }
 

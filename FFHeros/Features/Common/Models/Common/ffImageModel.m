@@ -11,5 +11,8 @@
 
 @implementation ffImageModel
 
+- (NSString *)pathWithSize:(CGSize)size {
+    return [NSString stringWithFormat:@"%@/portrait_xlarge.%@", _path, _extension];
+}
 
 @end

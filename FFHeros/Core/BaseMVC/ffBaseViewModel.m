@@ -19,7 +19,10 @@
 }
 
 - (void)tryLoadData {
-    if (self.isLoading) return;
+    if (self.isLoading) {
+        return;
+    }
+    self.isLoading = YES;
     [self loadData];
 }
 

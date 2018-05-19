@@ -11,8 +11,6 @@
 #import <objc/runtime.h>
 #import <CommonCrypto/CommonDigest.h>       // MD5
 
-static char kffImageCacheKey;
-
 @interface UIView () <NSURLSessionDownloadDelegate>
 @end
 
@@ -31,9 +29,9 @@ static char kffImageCacheKey;
         __weak typeof(self) __weak_self = self;
 
         /// the block to handle final job and call the outsider callback
-        void (^postFinishFetchImageHandler)(UIImage * __nonnull) = ^(UIImage * __nonnull finalImage) {
+        void (^postFinishFetchImageHandler)(UIImage * __nonnull, BOOL) = ^(UIImage * __nonnull finalImage, BOOL animated) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [__weak_self _ff_setImage:finalImage animated:YES];
+                [__weak_self _ff_setImage:finalImage animated:animated];
                 if (complete) {
                     complete(finalImage);
                 }
@@ -42,7 +40,7 @@ static char kffImageCacheKey;
 
         /// to cache the image with digested url as the key
         void (^cacheFinalImage)(NSString * __nonnull, UIImage * __nonnull) = ^(NSString * __nonnull imgUrl, UIImage * __nonnull finalImage) {
-            [__weak_self.imageCache setObject:finalImage forKey:[__weak_self keyForImage:url]];
+            [[ffWebImageCache shared] setObject:finalImage forKey:[__weak_self keyForImage:url]];
         };
 
 
@@ -52,33 +50,34 @@ static char kffImageCacheKey;
         }
 
         /// 1) try to get a cached image instance from local cache.
-        UIImage *cachedImage_ = [self.imageCache objectForKey:[self keyForImage:url]];
+        UIImage *cachedImage_ = [[ffWebImageCache shared] objectForKey:[self keyForImage:url]];
         if (cachedImage_) {
-            postFinishFetchImageHandler(cachedImage_);
+            postFinishFetchImageHandler(cachedImage_, NO);
             return;
         }
 
-        /// 2) if failed in load cached image with key(MD5), try fetch the image data from the remote server
-        NSURL *imgUrl = [NSURL URLWithString:url];
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            /// 2) if failed in load cached image with key(MD5), try fetch the image data from the remote server
+            NSURL *imgUrl = [NSURL URLWithString:url];
+            NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
 
-        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-        [[session downloadTaskWithURL:imgUrl completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if ([location.filePathURL.absoluteString length] > 0 && (error == nil)) {
-                imgData = [NSData dataWithContentsOfURL:location.filePathURL];
-                if (imgData == nil) return;
-                img = [UIImage imageWithData:imgData];
-            }
-            dispatch_semaphore_signal(semaphore);
-        }] resume];
+            dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+            [[session downloadTaskWithURL:imgUrl completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                if ([location.filePathURL.absoluteString length] > 0 && (error == nil)) {
+                    imgData = [NSData dataWithContentsOfURL:location.filePathURL];
+                    if (imgData == nil) return;
+                    img = [UIImage imageWithData:imgData];
+                }
+                dispatch_semaphore_signal(semaphore);
+            }] resume];
 
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+            /// 3) cache fetched image
+            cacheFinalImage(url, img);
 
-        /// 3) cache fetched image
-        cacheFinalImage(url, img);
-
-        /// 4) calling the callback handler.
-        postFinishFetchImageHandler(img);
+            /// 4) calling the callback handler.
+            postFinishFetchImageHandler(img, YES);
+        });
     }
 }
 
@@ -140,21 +139,6 @@ static char kffImageCacheKey;
                 result[12], result[13], result[14], result[15]
         ] lowercaseString];
     }
-}
-
-// -------------------------------------------------------------------------------
-- (ffWebImageCache *)imageCache {
-    ffWebImageCache * cache_ = objc_getAssociatedObject(self, &kffImageCacheKey);
-    if (cache_ == nil) {
-        cache_ = [[ffWebImageCache alloc] init];
-        cache_.totalCostLimit = 10 * 1024 * 1024;
-        [self setImageCache:cache_];
-    }
-    return cache_;
-}
-
-- (void)setImageCache:(ffWebImageCache *)newImageCache {
-    objc_setAssociatedObject(self, &kffImageCacheKey, newImageCache, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

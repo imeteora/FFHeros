@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ffAPIConfig.h"
 
-@interface ffAPIRequest : NSObject
+@interface ffAPIRequest : NSOperation
 
 /**
  the callback lambda function when web request returns successfully
@@ -26,6 +26,5 @@
 - (_Nullable instancetype)initWithConfig:(ffAPIConfig * _Nonnull)config;
 
 - (void)requestAsync;
-- (void)requestSync;
 
 @end
