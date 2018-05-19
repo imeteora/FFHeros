@@ -13,7 +13,7 @@
 /**
  Fetches lists of comic characters with optional filters. See notes on individual parameters below.
  */
-@interface ffFetchCharactersApi : gt_Modelizable
+@interface ffFetchCharactersInfoApi : gt_Modelizable
 
 /**
  Return only characters matching the specified full character name (e.g. Spider-Man).
@@ -72,5 +72,14 @@
  @param errorBlock the error callback lambda block
  */
 - (void)requestAfterComplete:(void (^_Nullable)(ffCharacterDataContainerModel * _Nonnull))completeBlock ifError:(void (^_Nullable)(NSError * _Nonnull, id __nullable))errorBlock;
+
+/**
+ This method fetches a single character resource. It is the canonical URI for any character resource provided by the API.
+
+ @param characterId character's id
+ @param completeHandler the success callback lambda block
+ @param errorHandler the error callback lambda block
+ */
+- (void)requestWithCharacterId:(NSString *_Nonnull)characterId afterComplete:(void (^__nullable)(ffCharacterDataContainerModel * __nullable))completeHandler ifError:(void (^__nullable)(NSError * __nullable, id __nullable ))errorHandler;
 
 @end

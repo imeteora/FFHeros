@@ -5,8 +5,6 @@
 //	Copyright © 2018. All rights reserved.
 // 
 
-
-
 #import "ffCharacterDataContainerModel.h"
 
 @implementation ffCharacterDataContainerModel

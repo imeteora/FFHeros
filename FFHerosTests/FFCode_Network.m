@@ -7,7 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "ffFetchCharactersApi.h"
+#import "ffFetchCharactersInfoApi.h"
+#import "ffFetchCharacterComicsApi.h"
 
 @interface FFCode_Network : XCTestCase
 
@@ -25,19 +26,37 @@
     [super tearDown];
 }
 
-- (void)testCheckQuery {
+- (void)testCheckCharactersInfoQuery {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     XCTestExpectation *apiExpectation = [[XCTestExpectation alloc] initWithDescription:@"test http request"];
     __block BOOL bSuccess = NO;
-    ffFetchCharactersApi *api = [[ffFetchCharactersApi alloc] init];
-    [api requestAfterComplete:^(NSDictionary * _Nonnull result) {
+    ffFetchCharactersInfoApi *api = [[ffFetchCharactersInfoApi alloc] init];
+    [api requestWithCharacterId:@"1009144"
+                  afterComplete:^(ffCharacterDataContainerModel * _Nonnull result)
+    {
         bSuccess = YES;
         [apiExpectation fulfill];
     } ifError:^(NSError * _Nonnull error, id _Nullable result) {
         bSuccess = NO;
         [apiExpectation fulfill];
     }];
+
+    [self waitForExpectations:@[apiExpectation] timeout:35];
+}
+
+- (void)testCheckCharactersComicsQuery {
+    XCTestExpectation *apiExpectation = [[XCTestExpectation alloc] initWithDescription:@"test http request"];
+    __block BOOL bSuccess = NO;
+    ffFetchCharacterComicsApi *api = [[ffFetchCharacterComicsApi alloc] init];
+    [api requestWithCharacterId:@"1009144"
+                  afterComplete:^(ffComicsModel * _Nonnull result) {
+                      bSuccess = YES;
+                      [apiExpectation fulfill];
+                  } ifError:^(NSError * _Nonnull error, id _Nullable result) {
+                      bSuccess = NO;
+                      [apiExpectation fulfill];
+                  }];
 
     [self waitForExpectations:@[apiExpectation] timeout:35];
 }

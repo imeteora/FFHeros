@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "ffFooModel.h"
-#import "ffFetchCharactersApi.h"
+#import "ffFetchCharactersInfoApi.h"
 #import "ffAPIModelDescription.h"
 
 @interface FFCode_Model : XCTestCase
@@ -46,7 +46,7 @@
 }
 
 - (void)testSerializeApi {
-    ffFetchCharactersApi *api = [[ffFetchCharactersApi alloc] init];
+    ffFetchCharactersInfoApi *api = [[ffFetchCharactersInfoApi alloc] init];
     api.name = @"Iron Man";
     NSDictionary *param = [api gt_dictionaryWithKeyValues];
     NSLog(@"%@", param);

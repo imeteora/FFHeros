@@ -16,12 +16,12 @@
     ffAPIConfig *config = [[ffAPIConfig alloc] init];
     config.baseURL = [NSString stringWithFormat:@"%@/v1/public/characters/%@/comics", MARVEL_BASE_URL, cid];
     config.method = FFApiRequestMethodGET;
-    config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data" toMappingClass:[ffComicsModel class]]];
+    config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data/results" toMappingClass:[ffComicsModel class]]];
 
     ffAPIRequest *request = [[ffAPIRequest alloc] initWithConfig:config];
     [request setCompleleHandler:^(NSDictionary * _Nonnull result) {
         if (completeHandler) {
-            completeHandler(result[@"/data"]);
+            completeHandler(result[@"/data/results"]);
         }
     }];
     [request setErrorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable result) {

@@ -13,6 +13,6 @@
 @property (nonatomic, copy) NSString * resourceURI;
 @property (nonatomic, copy) NSString * name;
 @property (nonatomic, copy) NSString * type;
-
+@property (nonatomic, copy) NSString * role;        // special for 'creator' segment
 
 @end

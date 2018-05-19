@@ -37,7 +37,11 @@
 		1362BC8920AF6EA500098514 /* ffBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8820AF6EA500098514 /* ffBaseViewModel.m */; };
 		1362BC8C20AF6FE900098514 /* ffBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */; };
 		1362BC8F20AF70AD00098514 /* ffBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */; };
-		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */; };
+		1362BC9820AFF2CC00098514 /* ffHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC9620AFF2CC00098514 /* ffHomeViewController.m */; };
+		1362BC9920AFF2CC00098514 /* ffHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1362BC9720AFF2CC00098514 /* ffHomeViewController.xib */; };
+		1362BC9D20AFF9D300098514 /* ffEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC9C20AFF9D300098514 /* ffEventModel.m */; };
+		1362BCA020AFFB1200098514 /* ffBaseMarvelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC9F20AFFB1200098514 /* ffBaseMarvelModel.m */; };
+		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */; };
 		138B1D3720AD8D51006A5708 /* UIView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 138B1D3620AD8D51006A5708 /* UIView+WebImage.m */; };
 		13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1A20AAFBF800C3063A /* ffApiSignHelper.m */; };
 		13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = 13974C1C20AB02DE00C3063A /* FFCode_Decode.m */; };
@@ -60,7 +64,6 @@
 		13FFEB5520ACAB35008615C6 /* ffComicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB4920ACAB34008615C6 /* ffComicsModel.m */; };
 		13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */; };
 		CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */; };
-		CC2F3DCFE3054608BAD5D13C /* ffFetchCharacterInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2F39BB2337F2605B2EB203 /* ffFetchCharacterInfoApi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,8 +133,15 @@
 		1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseListViewController.m; sourceTree = "<group>"; };
 		1362BC8D20AF70AD00098514 /* ffBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseTableViewController.h; sourceTree = "<group>"; };
 		1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseTableViewController.m; sourceTree = "<group>"; };
-		13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFetchCharactersApi.h; sourceTree = "<group>"; };
-		13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharactersApi.m; sourceTree = "<group>"; };
+		1362BC9520AFF2CC00098514 /* ffHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ffHomeViewController.h; path = FFHeros/Core/BaseMVC/ffHomeViewController.h; sourceTree = SOURCE_ROOT; };
+		1362BC9620AFF2CC00098514 /* ffHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ffHomeViewController.m; path = FFHeros/Core/BaseMVC/ffHomeViewController.m; sourceTree = SOURCE_ROOT; };
+		1362BC9720AFF2CC00098514 /* ffHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ffHomeViewController.xib; path = FFHeros/Core/BaseMVC/ffHomeViewController.xib; sourceTree = SOURCE_ROOT; };
+		1362BC9B20AFF9D300098514 /* ffEventModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffEventModel.h; sourceTree = "<group>"; };
+		1362BC9C20AFF9D300098514 /* ffEventModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffEventModel.m; sourceTree = "<group>"; };
+		1362BC9E20AFFB1200098514 /* ffBaseMarvelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseMarvelModel.h; sourceTree = "<group>"; };
+		1362BC9F20AFFB1200098514 /* ffBaseMarvelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseMarvelModel.m; sourceTree = "<group>"; };
+		13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFetchCharactersInfoApi.h; sourceTree = "<group>"; };
+		13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharactersInfoApi.m; sourceTree = "<group>"; };
 		138B1D3520AD8D51006A5708 /* UIView+WebImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+WebImage.h"; sourceTree = "<group>"; };
 		138B1D3620AD8D51006A5708 /* UIView+WebImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebImage.m"; sourceTree = "<group>"; };
 		13974C1920AAFBF800C3063A /* ffApiSignHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiSignHelper.h; sourceTree = "<group>"; };
@@ -176,8 +186,6 @@
 		13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffTextObjectModel.m; sourceTree = "<group>"; };
 		CC2F31680CA56A8751A6076B /* ffWebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffWebImageCache.h; sourceTree = "<group>"; };
 		CC2F3766ECD48B36BF68DF4D /* ffNavigationControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffNavigationControllerProtocol.h; sourceTree = "<group>"; };
-		CC2F39BB2337F2605B2EB203 /* ffFetchCharacterInfoApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharacterInfoApi.m; sourceTree = "<group>"; };
-		CC2F3D684481592581F5A930 /* ffFetchCharacterInfoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffFetchCharacterInfoApi.h; sourceTree = "<group>"; };
 		CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffWebImageCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -339,6 +347,9 @@
 				133E1F9720AB4F5E00CA800C /* CharacterModel */,
 				13FFEB3D20ACAA51008615C6 /* ComicsModel */,
 				13FFEB5920ACAC66008615C6 /* Common */,
+				1362BC9A20AFF9BB00098514 /* EventModel */,
+				1362BC9E20AFFB1200098514 /* ffBaseMarvelModel.h */,
+				1362BC9F20AFFB1200098514 /* ffBaseMarvelModel.m */,
 				133E1FA220AB4F5E00CA800C /* ffCharacterDataContainerModel.h */,
 				133E1F9D20AB4F5E00CA800C /* ffCharacterDataContainerModel.m */,
 				133E1FA320AB4F5E00CA800C /* ffCharacterDataWrapperModel.h */,
@@ -377,6 +388,15 @@
 			path = UnitTest;
 			sourceTree = "<group>";
 		};
+		1362BC9A20AFF9BB00098514 /* EventModel */ = {
+			isa = PBXGroup;
+			children = (
+				1362BC9B20AFF9D300098514 /* ffEventModel.h */,
+				1362BC9C20AFF9D300098514 /* ffEventModel.m */,
+			);
+			path = EventModel;
+			sourceTree = "<group>";
+		};
 		13885BA420ABBC3800D9F9E5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,10 +412,8 @@
 			children = (
 				13FFEB3A20ACA9DC008615C6 /* ffFetchCharacterComicsApi.h */,
 				13FFEB3B20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m */,
-				CC2F3D684481592581F5A930 /* ffFetchCharacterInfoApi.h */,
-				CC2F39BB2337F2605B2EB203 /* ffFetchCharacterInfoApi.m */,
-				13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersApi.h */,
-				13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersApi.m */,
+				13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.h */,
+				13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -414,6 +432,9 @@
 		13A072D120AEEA9B0037F124 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1362BC9520AFF2CC00098514 /* ffHomeViewController.h */,
+				1362BC9620AFF2CC00098514 /* ffHomeViewController.m */,
+				1362BC9720AFF2CC00098514 /* ffHomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -421,14 +442,14 @@
 		13A072D220AEEAB60037F124 /* BaseMVC */ = {
 			isa = PBXGroup;
 			children = (
-				13A072F420AEF7850037F124 /* ffBaseViewController.h */,
-				13A072F520AEF7850037F124 /* ffBaseViewController.m */,
-				1362BC8720AF6EA500098514 /* ffBaseViewModel.h */,
-				1362BC8820AF6EA500098514 /* ffBaseViewModel.m */,
 				1362BC8A20AF6FE900098514 /* ffBaseListViewController.h */,
 				1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */,
 				1362BC8D20AF70AD00098514 /* ffBaseTableViewController.h */,
 				1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */,
+				13A072F420AEF7850037F124 /* ffBaseViewController.h */,
+				13A072F520AEF7850037F124 /* ffBaseViewController.m */,
+				1362BC8720AF6EA500098514 /* ffBaseViewModel.h */,
+				1362BC8820AF6EA500098514 /* ffBaseViewModel.m */,
 			);
 			path = BaseMVC;
 			sourceTree = "<group>";
@@ -591,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				133B29D420AA56E500117E4F /* Assets.xcassets in Resources */,
+				1362BC9920AFF2CC00098514 /* ffHomeViewController.xib in Resources */,
 				133B29D720AA56E500117E4F /* LaunchScreen.storyboard in Resources */,
 				13A072D020AEE8290037F124 /* ViewController.xib in Resources */,
 			);
@@ -614,15 +636,17 @@
 				133B2A0920AA6F9800117E4F /* DESUtils.m in Sources */,
 				133B29F420AA587900117E4F /* ffAPIConfig.m in Sources */,
 				13F9E3C020AB700C00912533 /* ffApiError.m in Sources */,
-				1362BC8F20AF70AD00098514 /* ffBaseTableViewController.m in Sources */,
 				133B2A0C20AA71FB00117E4F /* ffApiModel.m in Sources */,
 				133B29FA20AA5B1A00117E4F /* ffAPIModelDescription.m in Sources */,
 				133B29F720AA589200117E4F /* ffAPIRequest.m in Sources */,
 				13F5F7F320AABB7500461972 /* ffApiRequestOperation.m in Sources */,
 				13F5F7E320AA87A400461972 /* ffApiRequestOperationQueue.m in Sources */,
 				13974C1B20AAFBF800C3063A /* ffApiSignHelper.m in Sources */,
-				13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */,
 				1362BC8C20AF6FE900098514 /* ffBaseListViewController.m in Sources */,
+				1362BCA020AFFB1200098514 /* ffBaseMarvelModel.m in Sources */,
+				1362BC8F20AF70AD00098514 /* ffBaseTableViewController.m in Sources */,
+				13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */,
+				1362BC8920AF6EA500098514 /* ffBaseViewModel.m in Sources */,
 				133E1FA620AB4F5E00CA800C /* ffCategoryListModel.m in Sources */,
 				133E1FA520AB4F5E00CA800C /* ffCharacterDataContainerModel.m in Sources */,
 				133E1FA420AB4F5E00CA800C /* ffCharacterDataWrapperModel.m in Sources */,
@@ -630,12 +654,12 @@
 				13FFEB5520ACAB35008615C6 /* ffComicsModel.m in Sources */,
 				13FFEB5220ACAB35008615C6 /* ffDateModel.m in Sources */,
 				13FFEB3720AC8D98008615C6 /* ffDefineVariables.m in Sources */,
+				1362BC9D20AFF9D300098514 /* ffEventModel.m in Sources */,
 				13FFEB3C20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m in Sources */,
-				CC2F3DCFE3054608BAD5D13C /* ffFetchCharacterInfoApi.m in Sources */,
-				13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersApi.m in Sources */,
+				13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m in Sources */,
 				133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */,
+				1362BC9820AFF2CC00098514 /* ffHomeViewController.m in Sources */,
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
-				1362BC8920AF6EA500098514 /* ffBaseViewModel.m in Sources */,
 				13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */,
 				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */,
@@ -812,10 +836,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -831,10 +852,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -848,11 +866,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -867,11 +881,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
