@@ -11,7 +11,10 @@
 #import "ffApiSignHelper.h"
 #import "ffApiError.h"
 
-@interface ffApiOperationQueue : NSOperationQueue
+@interface ffApiOperationQueue : NSOperationQueue <NSURLSessionDelegate>
+{
+    NSURLSession *_session;
+}
 @end
 
 @implementation ffApiOperationQueue
@@ -24,9 +27,30 @@
     });
     return _instance;
 }
+
+- (NSURLSession *)session {
+    if (_session == nil) {
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:config delegate:self delegateQueue:nil];
+    }
+    return _session;
+}
+
+#pragma mark - NSURLSessionDelegate
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        if ([challenge.protectionSpace.host containsString:@"marvel.com"]) {
+            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+            completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+            return;
+        }
+    }
+    completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, challenge.proposedCredential);
+}
+
 @end
 
-@interface ffAPIRequest () <ffApiRequestOperationDelegate, NSURLSessionDelegate>
+@interface ffAPIRequest () <ffApiRequestOperationDelegate>
 {
     NSURLSessionTask *task;
     NSURLSession *session;
@@ -205,8 +229,7 @@
     __block BOOL hadBeHandled = NO;
 
     dispatch_semaphore_t _semaphore = dispatch_semaphore_create(0);
-    session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:nil];
-    task = [session dataTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    task = [[[ffApiOperationQueue shared] session] dataTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (NOT hadBeHandled) {
             hadBeHandled = YES;
             retData = data;
@@ -296,18 +319,6 @@
         }
     }
     return result;
-}
-
-#pragma mark - NSURLSessionDelegate
-- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
-    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
-        if ([challenge.protectionSpace.host containsString:@"marvel.com"]) {
-            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
-            completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
-            return;
-        }
-    }
-    completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, challenge.proposedCredential);
 }
 
 #pragma mark - ffApiRequestOperationDelegate
