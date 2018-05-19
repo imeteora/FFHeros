@@ -40,7 +40,9 @@
 
         /// to cache the image with digested url as the key
         void (^cacheFinalImage)(NSString * __nonnull, UIImage * __nonnull) = ^(NSString * __nonnull imgUrl, UIImage * __nonnull finalImage) {
-            [[ffWebImageCache shared] setObject:finalImage forKey:[__weak_self keyForImage:url]];
+            if (finalImage) {
+                [[ffWebImageCache shared] setObject:finalImage forKey:[__weak_self keyForImage:url]];
+            }
         };
 
 

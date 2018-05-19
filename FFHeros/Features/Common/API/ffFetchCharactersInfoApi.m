@@ -40,18 +40,18 @@
 
 
 - (void)requestWithCharacterId:(NSString * _Nonnull)characterId
-                 afterComplete:(void (^__nullable)(ffCharacterDataContainerModel * __nullable))completeHandler
+                 afterComplete:(void (^__nullable)(ffCharacterModel * __nullable))completeHandler
                        ifError:(void (^__nullable)(NSError * __nullable, id __nullable ))errorHandler
 {
     ffAPIConfig *config = [[ffAPIConfig alloc] init];
     config.baseURL = [NSString stringWithFormat:@"%@/v1/public/characters/%@", MARVEL_BASE_HTTPS_URL, characterId];
     config.method = FFApiRequestMethodGET;
-    config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data" toMappingClass:[ffCharacterDataContainerModel class]]];
+    config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data/results" toMappingClass:[ffCharacterModel class]]];
 
     ffAPIRequest *request = [[ffAPIRequest alloc] initWithConfig:config];
     [request setCompleleHandler:^(NSDictionary *result) {
-        if (completeHandler) {
-            completeHandler(result[@"/data"]);
+        if (completeHandler AND [result[@"/data/results"] count] > 0) {
+            completeHandler(result[@"/data/results"][0]);
         }
     }];
     [request setErrorHandler:^(NSError *error, NSDictionary *result) {

@@ -47,7 +47,7 @@
 
 - (IBAction)btnTestCharacterUseId:(id)sender {
     ffFetchCharactersInfoApi *api = [[ffFetchCharactersInfoApi alloc] init];
-    [api requestWithCharacterId:@"1011334" afterComplete:^(ffCharacterDataContainerModel *result) {
+    [api requestWithCharacterId:@"1011334" afterComplete:^(ffCharacterModel *result) {
         NSLog(@"OK\n%@", [result description]);
     } ifError:^(NSError *error, id o) {
         NSLog(@"Error");

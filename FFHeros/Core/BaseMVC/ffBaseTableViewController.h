@@ -10,6 +10,8 @@
 
 @interface ffBaseTableViewController : ffBaseListViewController
 @property (nonatomic, readonly) UITableView *tableView;
+@property (nonatomic, assign) BOOL disableObservingViewModelObject;
+
 
 - (void)triggerRefresh;
 - (void)addPullToRefresh;

@@ -15,15 +15,17 @@
 
 @implementation ffBaseTableViewController
 
-- (void)dealloc
-{
+- (instancetype)init {
+    if (self = [super init]) {
+        self.disableObservingViewModelObject = NO;
+    }
+    return self;
+}
+
+- (void)dealloc {
     if (_tableView) {
         _tableView.delegate = nil;
         _tableView.dataSource = nil;
-    }
-
-    if (self.viewModel) {
-        [self.viewModel removeObserver:self forKeyPath:@"objects" context:nil];
     }
 }
 
@@ -33,9 +35,22 @@
     [self.view insertSubview:self.tableView atIndex:0];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.viewModel AND (NOT self.disableObservingViewModelObject)) {
+        [self.viewModel addObserver:self forKeyPath:@"objects" options:NSKeyValueObservingOptionNew context:nil];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (self.viewModel AND (NOT self.disableObservingViewModelObject)) {
+        [self.viewModel removeObserver:self forKeyPath:@"objects" context:nil];
+    }
+}
+
 - (void)ff_viewDidFirstAppear {
     [super ff_viewDidFirstAppear];
-    [self.viewModel addObserver:self forKeyPath:@"objects" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)viewDidLayoutSubviews {

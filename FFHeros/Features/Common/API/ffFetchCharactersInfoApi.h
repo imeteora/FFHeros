@@ -80,6 +80,6 @@
  @param completeHandler the success callback lambda block
  @param errorHandler the error callback lambda block
  */
-- (void)requestWithCharacterId:(NSString *_Nonnull)characterId afterComplete:(void (^__nullable)(ffCharacterDataContainerModel * __nullable))completeHandler ifError:(void (^__nullable)(NSError * __nullable, id __nullable ))errorHandler;
+- (void)requestWithCharacterId:(NSString *_Nonnull)characterId afterComplete:(void (^__nullable)(ffCharacterModel * __nullable))completeHandler ifError:(void (^__nullable)(NSError * __nullable, id __nullable ))errorHandler;
 
 @end

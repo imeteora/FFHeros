@@ -50,7 +50,7 @@
 
 @end
 
-@interface ffAPIRequest () <ffApiRequestOperationDelegate>
+@interface ffAPIRequest ()
 {
     NSURLSessionTask *task;
     NSURLSession *session;

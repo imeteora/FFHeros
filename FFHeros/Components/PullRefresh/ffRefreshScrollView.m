@@ -20,7 +20,9 @@ static NSString * const kFFRefreshFooterViewKVOKey = @"com.farfetch.heros.refres
 @implementation UIScrollView (FFRefresh)
 
 - (void)dealloc {
-    [self removeObserver:self forKeyPath:@"contentSize"];
+    if (self.ff_footerView) {
+        [self removeObserver:self forKeyPath:@"contentSize"];
+    }
 }
 
 - (void)ff_addHeaderWith:(ffRefreshBlock)headerRefreshHandler {

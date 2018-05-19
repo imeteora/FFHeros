@@ -12,6 +12,8 @@
 #import "ffRefreshScrollView.h"
 #import "UIView+WebImage.h"
 
+#import "ffHeroDetailViewController.h"
+
 @interface ffHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -24,8 +26,8 @@
     self.viewModel = [[ffHomeViewModel alloc] init];
     [self addPullToRefresh];
     [self addPullToRefreshMore];
+    
     [self.tableView registerNib:[ffHeroInfoTableViewCell nibClass] forCellReuseIdentifier:[ffHeroInfoTableViewCell identifier]];
-    [self.tableView setEstimatedRowHeight:[ffHeroInfoTableViewCell heightForData:nil]];
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
@@ -54,6 +56,14 @@
     [cell.heroNameLabel setText:pCharacter.name];
     [cell.heroDescLabel setText:pCharacter.descField];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < [self.viewModel.objects count]) {
+        ffCharacterModel *pCharacter = self.viewModel.objects[indexPath.row];
+        ffHeroDetailViewController *detailVC = [[ffHeroDetailViewController alloc] initWithCharacterId:[pCharacter.idField longLongValue]];
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
 }
 
 @end
