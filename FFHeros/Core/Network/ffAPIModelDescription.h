@@ -20,7 +20,7 @@
  @param mappingClass model which would be mapping from a json object
  @return the instance of the model description 
  */
-+ (_Nonnull instancetype) modelWith:(nonnull NSString *)keyPath toMappingClass:(nonnull Class)mappingClass;
++ (instancetype _Nonnull) modelWith:(nonnull NSString *)keyPath toMappingClass:(nonnull Class)mappingClass;
 
 /**
  find object for json object with key-path
@@ -29,7 +29,7 @@
  @param responseObj the result about finding json object, the result is nullable
  @return json object data which looking by using key-path
  */
-+ (_Nullable id)findObjectByKeyPath:(NSString * _Nonnull)keyPath inObject:(NSDictionary<NSString *, id> * _Nonnull)responseObj;
++ (id _Nullable)findObjectByKeyPath:(NSString * _Nonnull)keyPath inObject:(NSDictionary<NSString *, id> * _Nonnull)responseObj;
 
 /**
  fetch json object from the origin json object in the interation way.
@@ -38,6 +38,8 @@
  @param keyPathArray key-paths in array form
  @return json object data which looking for by using key-path
  */
-+ (_Nullable id)fetchObjectIn:(NSDictionary<NSString *, id> * _Nonnull)obj keyPathArray:(NSArray<NSString *> * _Nonnull)keyPathArray;
++ (id _Nullable)fetchObjectIn:(NSDictionary<NSString *, id> * _Nonnull)obj keyPathArray:(NSArray<NSString *> * _Nonnull)keyPathArray;
+
++ (NSDictionary<NSString *, id> * _Nonnull )rebuildRouterMapping:(NSDictionary<NSString *, id> * __nonnull)routerMapping fromRouter:(NSString *)router toClass:(Class __nonnull)cls;
 
 @end
