@@ -41,12 +41,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    [self showLoading];
     [self.viewModel addObserver:self forKeyPath:@"heroData" options:NSKeyValueObservingOptionNew context:nil];
     [self.viewModel tryLoadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self stopLoading];
     [self.viewModel removeObserver:self forKeyPath:@"heroData"];
 }
 
@@ -139,6 +141,7 @@
 #pragma mark - observe object
 - (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context {
     if ([keyPath isEqualToString:@"heroData"]) {
+        [self stopLoading];
         if (self.viewModel.heroData) {
             [self setTitle:self.viewModel.heroData.name];
             [self.tableView reloadData];

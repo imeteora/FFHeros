@@ -34,5 +34,6 @@
 #import "ffHeroDevice.h"
 
 #import "ffNavigationHelper.h"
+#import "ffToasteView.h"
 
 #endif /* FFHeros_Prefix_h */
