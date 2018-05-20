@@ -27,6 +27,13 @@
     return _instance;
 }
 
+- (void)dealloc {
+    if (_session) {
+        [_session invalidateAndCancel];
+        _session = nil;
+    }
+}
+
 - (NSURLSession *)session {
     if (_session == nil) {
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -51,8 +58,6 @@
 
 @interface ffAPIRequest ()
 {
-    NSURLSessionTask *task;
-    NSURLSession *session;
     ffAPIConfig *_requestConfig;
     NSThread    *_currentThread;
     BOOL _isFinished;
@@ -142,8 +147,6 @@
 
     [self _makeRequestOperationWithPreOp:preHttpRequestBlock andPostOp:postHttpRequestBlock];
     [self _establish];
-
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:60]];
 }
 
 
@@ -229,18 +232,32 @@
     __block NSError *retError = nil;
     __block BOOL hadBeHandled = NO;
 
+//    const BOOL bUsingSemaphore = YES;
+
     dispatch_semaphore_t _semaphore = dispatch_semaphore_create(0);
-    task = [[[ffApiOperationQueue shared] session] dataTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//    [[[NSURLSession sharedSession] dataTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        if (NOT hadBeHandled) {
+//            hadBeHandled = YES;
+//            retData = data;
+//            retResponse = response;
+//            retError = error;
+//        }
+//        //dispatch_semaphore_signal(_semaphore);
+//    }] resume];
+
+    [[[NSURLSession sharedSession] downloadTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (NOT hadBeHandled) {
-            hadBeHandled = YES;
-            retData = data;
+            retData = [NSData dataWithContentsOfURL:location];
             retResponse = response;
             retError = error;
+            hadBeHandled = YES;
         }
         dispatch_semaphore_signal(_semaphore);
-    }];
-    [task resume];
+    }] resume];
 
+//    while (NOT hadBeHandled) {
+//        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+//    }
     dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, 60 * NSEC_PER_SEC));
     if (NOT hadBeHandled) {
         hadBeHandled = YES;
@@ -326,8 +343,8 @@
 - (void)didCanceledRequestOperation
 {
     @synchronized(self) {
-        self->session = nil;
-        self->task = nil;
+//        self->session = nil;
+//        self->task = nil;
         self->_requestConfig = nil;
         self->_isCanceled = YES;
         self->_isFinished = YES;

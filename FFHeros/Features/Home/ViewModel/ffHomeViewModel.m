@@ -55,7 +55,7 @@ static const uint32_t kPageSize = 20;
 }
 
 - (void)loadMoreData {
-    self.remoteCursor = (int32_t)([self.objects count] - 1);
+    self.remoteCursor = (int32_t)([self.objects count]);
     
     ffFetchCharactersInfoApi *api = [[ffFetchCharactersInfoApi alloc] init];
     api.offset = @(self.remoteCursor);
