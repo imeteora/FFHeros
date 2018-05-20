@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ffToasteView : UIView
+
 + (void)showToaste:(NSString *)toaste;
++ (void)showLoading;
++ (void)stopLoading;
+
 @end

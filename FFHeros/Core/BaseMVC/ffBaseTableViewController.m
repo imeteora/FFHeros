@@ -70,6 +70,7 @@
     weakify(self);
     [self.tableView ff_addHeaderWith:^{
         strongify(self);
+        [self showLoading];
         [self.viewModel tryLoadData];
     }];
     return;
@@ -85,6 +86,7 @@
     weakify(self);
     [self.tableView ff_addFooterWith:^{
         strongify(self);
+        [self showLoading];
         [self.viewModel loadMoreData];
     }];
     return;
@@ -100,12 +102,22 @@
     [ffToasteView showToaste:info];
 }
 
+- (void)showLoading {
+    [ffToasteView showLoading];
+}
+
+- (void)stopLoading {
+    [ffToasteView stopLoading];
+}
+
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"objects"]) {
+        [self stopLoading];
         [self.tableView ff_endRefreshing];
         [self.tableView reloadData];
     } else if ([keyPath isEqualToString:@"error"]) {
+        [self stopLoading];
         if (self.viewModel.error) {
             [self showToaste:[self.viewModel.error localizedDescription]];
         }
