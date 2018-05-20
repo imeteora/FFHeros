@@ -48,7 +48,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self stopLoading];
     [self.viewModel removeObserver:self forKeyPath:@"heroData"];
 }
 

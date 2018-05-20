@@ -53,10 +53,14 @@ static ffToasteView *gLoadingTV = nil;
 }
 
 + (void)showLoading {
+    [self showLoadingInView:[ffToasteView topWindow]];
+}
+
++ (void)showLoadingInView:(UIView *)view; {
     if (gLoadingTV != nil) return;
 
     gLoadingTV = [[ffToasteView alloc] init];
-    gLoadingTV.frame = [UIScreen mainScreen].bounds;
+    gLoadingTV.frame = view.bounds;
     gLoadingTV.infoLabel.hidden = YES;
 
     gLoadingTV.loadingBgView.frame =
@@ -65,13 +69,14 @@ static ffToasteView *gLoadingTV = nil;
 
     [gLoadingTV.loadingIndicator startAnimating];
 
-    [[ffToasteView topWindow] addSubview:gLoadingTV];
+    [view addSubview:gLoadingTV];
 
     gLoadingTV.alpha = 0;
     [UIView animateWithDuration:0.5 animations:^{
         gLoadingTV.alpha = 1;
     }];
 }
+
 
 + (void)stopLoading {
     if (gLoadingTV == nil) return;

@@ -12,6 +12,7 @@
 
 + (void)showToaste:(NSString *)toaste;
 + (void)showLoading;
++ (void)showLoadingInView:(UIView *)view;
 + (void)stopLoading;
 
 @end
