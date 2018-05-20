@@ -61,6 +61,7 @@
 		136DA47120B0AE39003E4A44 /* ffSummeryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 136DA46F20B0AE39003E4A44 /* ffSummeryTableViewCell.m */; };
 		136DA47220B0AE39003E4A44 /* ffSummeryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136DA47020B0AE39003E4A44 /* ffSummeryTableViewCell.xib */; };
 		137B55D220B1DD5E0068A44C /* ffNavigationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 137B55D120B1DD5E0068A44C /* ffNavigationHelper.m */; };
+		137B55EF20B1E5B50068A44C /* ffToasteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137B55EE20B1E5B50068A44C /* ffToasteView.m */; };
 		1382394520B088530037BF49 /* ffHeroDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1382394320B088530037BF49 /* ffHeroDetailTableViewCell.m */; };
 		1382394620B088530037BF49 /* ffHeroDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1382394420B088530037BF49 /* ffHeroDetailTableViewCell.xib */; };
 		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */; };
@@ -201,6 +202,8 @@
 		136DA47020B0AE39003E4A44 /* ffSummeryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffSummeryTableViewCell.xib; sourceTree = "<group>"; };
 		137B55D020B1DD5E0068A44C /* ffNavigationHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffNavigationHelper.h; sourceTree = "<group>"; };
 		137B55D120B1DD5E0068A44C /* ffNavigationHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffNavigationHelper.m; sourceTree = "<group>"; };
+		137B55ED20B1E5B50068A44C /* ffToasteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffToasteView.h; sourceTree = "<group>"; };
+		137B55EE20B1E5B50068A44C /* ffToasteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffToasteView.m; sourceTree = "<group>"; };
 		1382394220B088530037BF49 /* ffHeroDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffHeroDetailTableViewCell.h; sourceTree = "<group>"; };
 		1382394320B088530037BF49 /* ffHeroDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffHeroDetailTableViewCell.m; sourceTree = "<group>"; };
 		1382394420B088530037BF49 /* ffHeroDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffHeroDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -386,6 +389,7 @@
 		133B29EF20AA57F200117E4F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				137B55D320B1E5270068A44C /* Toast */,
 				132F913F20B08C3A0095F0EE /* Blur */,
 				13A072F720AEFBC30037F124 /* NavigationController */,
 				1349755320B19D9F00687991 /* Preference */,
@@ -637,6 +641,15 @@
 				137B55D120B1DD5E0068A44C /* ffNavigationHelper.m */,
 			);
 			path = NavigationHelper;
+			sourceTree = "<group>";
+		};
+		137B55D320B1E5270068A44C /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				137B55ED20B1E5B50068A44C /* ffToasteView.h */,
+				137B55EE20B1E5B50068A44C /* ffToasteView.m */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		13885BA420ABBC3800D9F9E5 /* Common */ = {
@@ -943,6 +956,7 @@
 				1349755620B19DC100687991 /* ffPreference.m in Sources */,
 				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				137B55D220B1DD5E0068A44C /* ffNavigationHelper.m in Sources */,
+				137B55EF20B1E5B50068A44C /* ffToasteView.m in Sources */,
 				13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */,
 				13A072C820AEB4CC0037F124 /* ffRefreshFooter.m in Sources */,
 				134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */,

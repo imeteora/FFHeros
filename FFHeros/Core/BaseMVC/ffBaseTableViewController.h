@@ -19,6 +19,8 @@
 - (void)addPullToRefreshMore;
 - (void)addPullToRefreshMoreWithActionHandler:(void (^)(void))actionHandler;
 
+- (void)showToaste:(NSString *)info;
+
 // just for inherited class to get default table view cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 

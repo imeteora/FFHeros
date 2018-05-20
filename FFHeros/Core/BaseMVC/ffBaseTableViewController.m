@@ -8,6 +8,7 @@
 
 #import "ffBaseTableViewController.h"
 #import "ffRefreshScrollView.h"
+#import "ffToasteView.h"
 
 @interface ffBaseTableViewController () < UITableViewDelegate, UITableViewDataSource >
 @property (nonatomic, readwrite) UITableView *tableView;
@@ -39,6 +40,7 @@
     [super viewDidAppear:animated];
     if (self.viewModel AND (NOT self.disableObservingViewModelObject)) {
         [self.viewModel addObserver:self forKeyPath:@"objects" options:NSKeyValueObservingOptionNew context:nil];
+        [self.viewModel addObserver:self forKeyPath:@"error" options:(NSKeyValueObservingOptionNew) context:nil];
     }
 }
 
@@ -46,6 +48,7 @@
     [super viewDidDisappear:animated];
     if (self.viewModel AND (NOT self.disableObservingViewModelObject)) {
         [self.viewModel removeObserver:self forKeyPath:@"objects" context:nil];
+        [self.viewModel removeObserver:self forKeyPath:@"error" context:nil];
     }
 }
 
@@ -93,11 +96,19 @@
     return;
 }
 
+- (void)showToaste:(NSString *)info {
+    [ffToasteView showToaste:info];
+}
+
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"objects"]) {
         [self.tableView ff_endRefreshing];
         [self.tableView reloadData];
+    } else if ([keyPath isEqualToString:@"error"]) {
+        if (self.viewModel.error) {
+            [self showToaste:[self.viewModel.error localizedDescription]];
+        }
     }
 }
 
