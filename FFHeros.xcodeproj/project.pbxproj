@@ -39,7 +39,6 @@
 		1349753A20B192A600687991 /* ffFavTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349753820B192A600687991 /* ffFavTableViewController.m */; };
 		1349753E20B192DE00687991 /* ffFavListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349753D20B192DE00687991 /* ffFavListViewModel.m */; };
 		1349754120B19BD900687991 /* ffFavouriteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349754020B19BD900687991 /* ffFavouriteHelper.m */; };
-		1349755620B19DC100687991 /* ffPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349755520B19DC100687991 /* ffPreference.m */; };
 		1349755920B1A54D00687991 /* ffFavouriteItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349755820B1A54D00687991 /* ffFavouriteItemModel.m */; };
 		1349755E20B1A75200687991 /* ffFavItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349755C20B1A75200687991 /* ffFavItemTableViewCell.m */; };
 		1349755F20B1A75200687991 /* ffFavItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1349755D20B1A75200687991 /* ffFavItemTableViewCell.xib */; };
@@ -162,8 +161,6 @@
 		1349753D20B192DE00687991 /* ffFavListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFavListViewModel.m; sourceTree = "<group>"; };
 		1349753F20B19BD900687991 /* ffFavouriteHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFavouriteHelper.h; sourceTree = "<group>"; };
 		1349754020B19BD900687991 /* ffFavouriteHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFavouriteHelper.m; sourceTree = "<group>"; };
-		1349755420B19DC100687991 /* ffPreference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffPreference.h; sourceTree = "<group>"; };
-		1349755520B19DC100687991 /* ffPreference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffPreference.m; sourceTree = "<group>"; };
 		1349755720B1A54D00687991 /* ffFavouriteItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFavouriteItemModel.h; sourceTree = "<group>"; };
 		1349755820B1A54D00687991 /* ffFavouriteItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFavouriteItemModel.m; sourceTree = "<group>"; };
 		1349755B20B1A75200687991 /* ffFavItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFavItemTableViewCell.h; sourceTree = "<group>"; };
@@ -389,12 +386,11 @@
 		133B29EF20AA57F200117E4F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				137B55D320B1E5270068A44C /* Toast */,
 				132F913F20B08C3A0095F0EE /* Blur */,
 				13A072F720AEFBC30037F124 /* NavigationController */,
-				1349755320B19D9F00687991 /* Preference */,
 				13F2A92E20AD2EEC005CF787 /* PullRefresh */,
 				133B0E6220B0733700E7FC16 /* Router */,
+				137B55D320B1E5270068A44C /* Toast */,
 				138B1D3420AD8D3B006A5708 /* WebImage */,
 			);
 			path = Components;
@@ -403,11 +399,11 @@
 		133B29F020AA57FE00117E4F /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				137B55CF20B1DD320068A44C /* NavigationHelper */,
 				13885BA420ABBC3800D9F9E5 /* Common */,
 				1349753420B1927000687991 /* Favourite */,
 				133B0E5C20B072DA00E7FC16 /* HeroDetail */,
 				1362BCA120B000A900098514 /* Home */,
+				137B55CF20B1DD320068A44C /* NavigationHelper */,
 				13AE3CC320B153F300D88D26 /* Search */,
 				136DA46520B0A2EA003E4A44 /* WebViewController */,
 			);
@@ -545,15 +541,6 @@
 				1349755820B1A54D00687991 /* ffFavouriteItemModel.m */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		1349755320B19D9F00687991 /* Preference */ = {
-			isa = PBXGroup;
-			children = (
-				1349755420B19DC100687991 /* ffPreference.h */,
-				1349755520B19DC100687991 /* ffPreference.m */,
-			);
-			path = Preference;
 			sourceTree = "<group>";
 		};
 		1349755A20B1A73900687991 /* View */ = {
@@ -953,10 +940,8 @@
 				1362BCAC20B007D700098514 /* ffHomeViewModel.m in Sources */,
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
 				13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */,
-				1349755620B19DC100687991 /* ffPreference.m in Sources */,
-				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				137B55D220B1DD5E0068A44C /* ffNavigationHelper.m in Sources */,
-				137B55EF20B1E5B50068A44C /* ffToasteView.m in Sources */,
+				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */,
 				13A072C820AEB4CC0037F124 /* ffRefreshFooter.m in Sources */,
 				134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */,
@@ -969,6 +954,7 @@
 				133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */,
 				136DA47120B0AE39003E4A44 /* ffSummeryTableViewCell.m in Sources */,
 				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
+				137B55EF20B1E5B50068A44C /* ffToasteView.m in Sources */,
 				133E1FA820AB4F5E00CA800C /* ffUrlModel.m in Sources */,
 				CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */,
 				136DA46D20B0A552003E4A44 /* ffWebViewController.m in Sources */,
@@ -1140,10 +1126,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1159,10 +1142,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1176,11 +1156,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1195,11 +1171,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
