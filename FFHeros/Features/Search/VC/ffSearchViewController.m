@@ -1,51 +1,53 @@
 //
-//  ffHomeViewController.m
+//  ffSearchViewController.m
 //  FFHeros
 //
-//  Created by ZhuDelun on 2018/5/19.
+//  Created by ZhuDelun on 2018/5/20.
 //  Copyright © 2018 ZhuDelun. All rights reserved.
 //
 
-#import "ffHomeViewController.h"
-#import "ffHomeViewModel.h"
+#import "ffSearchViewController.h"
+#import "ffSearchViewModel.h"
+
+#import "ffCharacterModel.h"
 #import "ffHeroInfoTableViewCell.h"
-#import "ffRefreshScrollView.h"
+#import "ffHeroDetailViewController.h"
+
+#import "UIView+ffExt.h"
 #import "UIView+WebImage.h"
 
-#import "ffHeroDetailViewController.h"
-#import "ffSearchViewController.h"
-
-@interface ffHomeViewController () <UITableViewDelegate, UITableViewDataSource>
-
+@interface ffSearchViewController () <UISearchBarDelegate>
+@property (nonatomic, strong) ffSearchViewModel *viewModel;
+@property (nonatomic, strong) UISearchBar *searchBar;
 @end
 
-@implementation ffHomeViewController
+@implementation ffSearchViewController
+@dynamic viewModel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Marvel";
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Find" style:UIBarButtonItemStylePlain target:self action:@selector(onFindButtonClicked:)];
+    self.viewModel = [[ffSearchViewModel alloc] init];
 
-    self.viewModel = [[ffHomeViewModel alloc] init];
-    [self addPullToRefresh];
-    [self addPullToRefreshMore];
-    
     [self.tableView registerNib:[ffHeroInfoTableViewCell nibClass] forCellReuseIdentifier:[ffHeroInfoTableViewCell identifier]];
+    [self.view addSubview:self.searchBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = NO;
 }
 
-#pragma mark - actions & events
-- (void)onFindButtonClicked:(id)sender
-{
-    ffSearchViewController *vc = [[ffSearchViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    int32_t topY = 0;
+    if (@available(iOS 11, *)) {
+        if (IS_IPHONE_X) {
+            topY = self.additionalSafeAreaInsets.top;
+        }
+    }
+    self.searchBar.frame = CGRectMake(0, topY, self.view.viewWidth, 64);
+    self.tableView.frame = CGRectMake(0, self.searchBar.viewBottom, self.view.viewWidth, self.view.viewHeight - self.searchBar.viewBottom);
 }
-
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -74,6 +76,24 @@
         ffHeroDetailViewController *detailVC = [[ffHeroDetailViewController alloc] initWithCharacterId:[pCharacter.idField longLongValue]];
         [self.navigationController pushViewController:detailVC animated:YES];
     }
+}
+
+
+#pragma mark - lazy load
+- (UISearchBar *)searchBar {
+    if (NOT _searchBar) {
+        _searchBar = [[UISearchBar alloc] init];
+        _searchBar.delegate = self;
+    }
+    return _searchBar;
+}
+
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if ([searchText length] <= 0) return;
+    self.viewModel.keyword = searchText;
+    [self.viewModel tryLoadData];
 }
 
 @end

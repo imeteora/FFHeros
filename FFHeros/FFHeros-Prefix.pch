@@ -31,5 +31,6 @@
 #endif  // strongify
 
 #import "ffDefineVariables.h"
+#import "ffHeroDevice.h"
 
 #endif /* FFHeros_Prefix_h */

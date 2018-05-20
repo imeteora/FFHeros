@@ -33,6 +33,9 @@
 		133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAD20AB515B00CA800C /* ffSummaryModel.m */; };
 		133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FB420AB587B00CA800C /* ffFooModel.m */; };
 		13447E6220AF312E0018F23D /* NSObject+FFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072FF20AF0B770037F124 /* NSObject+FFUtils.m */; };
+		1349751920B1546900687991 /* ffSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349751820B1546900687991 /* ffSearchViewModel.m */; };
+		1349751C20B1551000687991 /* ffSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349751B20B1551000687991 /* ffSearchBarView.m */; };
+		1349751E20B1551B00687991 /* ffSearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1349751D20B1551B00687991 /* ffSearchBarView.xib */; };
 		134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */; };
 		134F31FF20ADF78D00DADFAA /* UIScrollView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FE20ADF78D00DADFAA /* UIScrollView+ffExt.m */; };
 		134F320120AE001000DADFAA /* FFCode_webImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320020AE001000DADFAA /* FFCode_webImage.m */; };
@@ -64,6 +67,7 @@
 		13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F920AEFBDF0037F124 /* ffNavigationController.m */; };
 		13AE3CB220B1449C00D88D26 /* FFCode_Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CB120B1449C00D88D26 /* FFCode_Router.m */; };
 		13AE3CB520B1512100D88D26 /* ffRouterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CB420B1512100D88D26 /* ffRouterHelper.m */; };
+		13AE3CC220B153B900D88D26 /* ffSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CC120B153B900D88D26 /* ffSearchViewController.m */; };
 		13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */; };
 		13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93320AD3480005CF787 /* ffRefreshComponent.m */; };
 		13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */; };
@@ -137,6 +141,12 @@
 		133E1FAD20AB515B00CA800C /* ffSummaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSummaryModel.m; sourceTree = "<group>"; };
 		133E1FB320AB587B00CA800C /* ffFooModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFooModel.h; sourceTree = "<group>"; };
 		133E1FB420AB587B00CA800C /* ffFooModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFooModel.m; sourceTree = "<group>"; };
+		1349751720B1546900687991 /* ffSearchViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffSearchViewModel.h; sourceTree = "<group>"; };
+		1349751820B1546900687991 /* ffSearchViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSearchViewModel.m; sourceTree = "<group>"; };
+		1349751A20B1551000687991 /* ffSearchBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffSearchBarView.h; sourceTree = "<group>"; };
+		1349751B20B1551000687991 /* ffSearchBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSearchBarView.m; sourceTree = "<group>"; };
+		1349751D20B1551B00687991 /* ffSearchBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffSearchBarView.xib; sourceTree = "<group>"; };
+		1349753020B16AA900687991 /* ffHeroDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffHeroDevice.h; sourceTree = "<group>"; };
 		134F31FA20ADF36C00DADFAA /* ffRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshHeader.h; sourceTree = "<group>"; };
 		134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshHeader.m; sourceTree = "<group>"; };
 		134F31FD20ADF78D00DADFAA /* UIScrollView+ffExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ffExt.h"; sourceTree = "<group>"; };
@@ -193,6 +203,8 @@
 		13AE3CB120B1449C00D88D26 /* FFCode_Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Router.m; sourceTree = "<group>"; };
 		13AE3CB320B1512100D88D26 /* ffRouterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRouterHelper.h; sourceTree = "<group>"; };
 		13AE3CB420B1512100D88D26 /* ffRouterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRouterHelper.m; sourceTree = "<group>"; };
+		13AE3CC020B153B900D88D26 /* ffSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffSearchViewController.h; sourceTree = "<group>"; };
+		13AE3CC120B153B900D88D26 /* ffSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSearchViewController.m; sourceTree = "<group>"; };
 		13F2A92F20AD2F26005CF787 /* ffRefreshScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshScrollView.h; sourceTree = "<group>"; };
 		13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshScrollView.m; sourceTree = "<group>"; };
 		13F2A93220AD3480005CF787 /* ffRefreshComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshComponent.h; sourceTree = "<group>"; };
@@ -366,6 +378,7 @@
 				13885BA420ABBC3800D9F9E5 /* Common */,
 				133B0E5C20B072DA00E7FC16 /* HeroDetail */,
 				1362BCA120B000A900098514 /* Home */,
+				13AE3CC320B153F300D88D26 /* Search */,
 				136DA46520B0A2EA003E4A44 /* WebViewController */,
 			);
 			path = Features;
@@ -451,6 +464,25 @@
 				133E1FB420AB587B00CA800C /* ffFooModel.m */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		1349751520B1544300687991 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1349751A20B1551000687991 /* ffSearchBarView.h */,
+				1349751B20B1551000687991 /* ffSearchBarView.m */,
+				1349751D20B1551B00687991 /* ffSearchBarView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1349751620B1545100687991 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1349751720B1546900687991 /* ffSearchViewModel.h */,
+				1349751820B1546900687991 /* ffSearchViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		134F320A20AE03D800DADFAA /* UnitTest */ = {
@@ -589,6 +621,25 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		13AE3CC320B153F300D88D26 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				13AE3CC420B1541300D88D26 /* VC */,
+				1349751520B1544300687991 /* View */,
+				1349751620B1545100687991 /* ViewModel */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		13AE3CC420B1541300D88D26 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				13AE3CC020B153B900D88D26 /* ffSearchViewController.h */,
+				13AE3CC120B153B900D88D26 /* ffSearchViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		13F2A92E20AD2EEC005CF787 /* PullRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +664,7 @@
 			children = (
 				13FFEB3520AC8D98008615C6 /* ffDefineVariables.h */,
 				13FFEB3620AC8D98008615C6 /* ffDefineVariables.m */,
+				1349753020B16AA900687991 /* ffHeroDevice.h */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -743,6 +795,7 @@
 				133B29D420AA56E500117E4F /* Assets.xcassets in Resources */,
 				1382394620B088530037BF49 /* ffHeroDetailTableViewCell.xib in Resources */,
 				1362BCA820B002D600098514 /* ffHeroInfoTableViewCell.xib in Resources */,
+				1349751E20B1551B00687991 /* ffSearchBarView.xib in Resources */,
 				136DA47220B0AE39003E4A44 /* ffSummeryTableViewCell.xib in Resources */,
 				133B29D720AA56E500117E4F /* LaunchScreen.storyboard in Resources */,
 				13A072D020AEE8290037F124 /* ViewController.xib in Resources */,
@@ -802,6 +855,9 @@
 				13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */,
 				133B0E6520B0735500E7FC16 /* ffRouter.m in Sources */,
 				13AE3CB520B1512100D88D26 /* ffRouterHelper.m in Sources */,
+				1349751C20B1551000687991 /* ffSearchBarView.m in Sources */,
+				13AE3CC220B153B900D88D26 /* ffSearchViewController.m in Sources */,
+				1349751920B1546900687991 /* ffSearchViewModel.m in Sources */,
 				133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */,
 				136DA47120B0AE39003E4A44 /* ffSummeryTableViewCell.m in Sources */,
 				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
