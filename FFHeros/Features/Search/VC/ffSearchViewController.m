@@ -16,7 +16,9 @@
 #import "UIView+ffExt.h"
 #import "UIView+WebImage.h"
 
-@interface ffSearchViewController () <UISearchBarDelegate>
+@interface ffSearchViewController () <UISearchBarDelegate, UIScrollViewDelegate> {
+    CGFloat _keyboardHeight;
+}
 @property (nonatomic, strong) ffSearchViewModel *viewModel;
 @property (nonatomic, strong) UISearchBar *searchBar;
 @end
@@ -26,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _keyboardHeight = 0;
 
     self.viewModel = [[ffSearchViewModel alloc] init];
 
@@ -35,6 +38,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    if ([self.searchBar canBecomeFirstResponder]) {
+        [self.searchBar becomeFirstResponder];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([self.searchBar canResignFirstResponder]) {
+        [self.searchBar resignFirstResponder];
+    }
 }
 
 - (void)viewDidLayoutSubviews {
@@ -46,7 +59,32 @@
         }
     }
     self.searchBar.frame = CGRectMake(0, topY, self.view.viewWidth, 64);
-    self.tableView.frame = CGRectMake(0, self.searchBar.viewBottom, self.view.viewWidth, self.view.viewHeight - self.searchBar.viewBottom);
+    self.tableView.frame = CGRectMake(0, self.searchBar.viewBottom, self.view.viewWidth, self.view.viewHeight - self.searchBar.viewBottom - _keyboardHeight);
+}
+
+#pragma mark - keyboard event
+- (BOOL)ff_shouldRegisterKeyboardEvent {
+    return YES;
+}
+
+- (void)ff_keyboardHeightChanged:(CGFloat)newHeight {
+    _keyboardHeight = newHeight;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.tableView.frame = CGRectMake(0, self.searchBar.viewBottom, self.view.viewWidth, self.view.viewHeight - self.searchBar.viewBottom - _keyboardHeight);
+    }];
+}
+
+#pragma mark - private helpers
+- (void)showKeyboard {
+    if ([self.searchBar canBecomeFirstResponder]) {
+        [self.searchBar becomeFirstResponder];
+    }
+}
+
+- (void)hideKeyboard {
+    if ([self.searchBar canResignFirstResponder]) {
+        [self.searchBar resignFirstResponder];
+    }
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
@@ -71,13 +109,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row < [self.viewModel.objects count]) {
+    if (indexPath.row < [self.viewModel.objects count])
+    {
+        [self hideKeyboard];
         ffCharacterModel *pCharacter = self.viewModel.objects[indexPath.row];
         ffHeroDetailViewController *detailVC = [[ffHeroDetailViewController alloc] initWithCharacterId:[pCharacter.idField longLongValue]];
         [self.navigationController pushViewController:detailVC animated:YES];
     }
 }
 
+#pragma mark - UIScrollDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self hideKeyboard];
+}
 
 #pragma mark - lazy load
 - (UISearchBar *)searchBar {
@@ -95,5 +139,12 @@
     self.viewModel.keyword = searchText;
     [self.viewModel tryLoadData];
 }
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    self.viewModel.keyword = searchBar.text;
+    [self.viewModel tryLoadData];
+    [self hideKeyboard];
+}
+
 
 @end
