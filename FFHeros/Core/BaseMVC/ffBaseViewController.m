@@ -62,6 +62,7 @@
     }
 }
 
+
 #pragma mark - autorotate
 - (BOOL)shouldAutorotate {
     return NO;

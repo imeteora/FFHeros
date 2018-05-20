@@ -12,11 +12,12 @@
 #import "ffCharacterModel.h"
 #import "ffHeroInfoTableViewCell.h"
 #import "ffHeroDetailViewController.h"
+#import "ffNavigationControllerProtocol.h"
 
 #import "UIView+ffExt.h"
 #import "UIView+WebImage.h"
 
-@interface ffSearchViewController () <UISearchBarDelegate, UIScrollViewDelegate> {
+@interface ffSearchViewController () <UISearchBarDelegate, UIScrollViewDelegate, ffNavigationControllerProtocol> {
     CGFloat _keyboardHeight;
 }
 @property (nonatomic, strong) ffSearchViewModel *viewModel;
@@ -28,8 +29,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Search";
+    
     _keyboardHeight = 0;
-
+    self.view.backgroundColor = [UIColor whiteColor];
     self.viewModel = [[ffSearchViewModel alloc] init];
 
     [self.tableView registerNib:[ffHeroInfoTableViewCell nibClass] forCellReuseIdentifier:[ffHeroInfoTableViewCell identifier]];
@@ -128,6 +131,7 @@
     if (NOT _searchBar) {
         _searchBar = [[UISearchBar alloc] init];
         _searchBar.delegate = self;
+        _searchBar.showsCancelButton = YES;
     }
     return _searchBar;
 }
@@ -144,6 +148,10 @@
     self.viewModel.keyword = searchBar.text;
     [self.viewModel tryLoadData];
     [self hideKeyboard];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self ff_back];
 }
 
 
