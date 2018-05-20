@@ -55,8 +55,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    ffFavouriteItemModel *model = [self.viewModel itemAtIndex:(int32_t)indexPath.row];
-
+    ffFavouriteItemModel *model = [self.viewModel itemAtIndex:(int32_t)indexPath.row];
+    [[ffNavigationHelper shared] showHeroInfoViewController:(int64_t)[model.cid longLongValue]];
 }
 
 @end

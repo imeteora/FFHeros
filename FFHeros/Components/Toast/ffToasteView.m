@@ -99,6 +99,10 @@ static ffToasteView *gLoadingTV = nil;
     return self;
 }
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    return nil;
+}
+
 - (void)dismiss {
     [self removeFromSuperview];
 }
