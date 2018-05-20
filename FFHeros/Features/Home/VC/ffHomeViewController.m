@@ -8,14 +8,20 @@
 
 #import "ffHomeViewController.h"
 #import "ffHomeViewModel.h"
+#import "ffFavouriteItemModel.h"
+
 #import "ffHeroInfoTableViewCell.h"
 #import "ffRefreshScrollView.h"
-#import "UIView+WebImage.h"
 
 #import "ffHeroDetailViewController.h"
 #import "ffSearchViewController.h"
+#import "ffFavTableViewController.h"
 
-@interface ffHomeViewController () <UITableViewDelegate, UITableViewDataSource>
+#import "ffFavouriteHelper.h"
+
+#import "UIView+WebImage.h"
+
+@interface ffHomeViewController () <UITableViewDelegate, UITableViewDataSource, ffHeroInfoTableViewCellDelegate>
 
 @end
 
@@ -26,6 +32,7 @@
     self.title = @"Marvel";
 
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Find" style:UIBarButtonItemStylePlain target:self action:@selector(onFindButtonClicked:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Like" style:(UIBarButtonItemStylePlain) target:self action:@selector(onFavListButtonClicked:)];
 
     self.viewModel = [[ffHomeViewModel alloc] init];
     [self addPullToRefresh];
@@ -37,13 +44,39 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    [self.tableView reloadData];
 }
 
 #pragma mark - actions & events
 - (void)onFindButtonClicked:(id)sender
 {
-    ffSearchViewController *vc = [[ffSearchViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [[ffNavigationHelper shared] showSearchViewController];
+}
+
+- (void)onFavListButtonClicked:(id)sender {
+    [[ffNavigationHelper shared] showFavouriteListViewController];
+}
+
+#pragma mark - ffHeroInfoTableViewCellDelegate
+- (void)heroInfoItem:(ffHeroInfoTableViewCell *)cell likeButtonDidClicked:(int32_t)index {
+    ffCharacterModel *pHero = self.viewModel.objects[index];
+
+    const int64_t cid = (int64_t)[pHero.idField longLongValue];
+    if ([[ffFavouriteHelper shared] favouriteStatusWithCid:cid]) {
+        [[ffFavouriteHelper shared] removeFavouriteWithCid:cid];
+    } else {
+        ffFavouriteItemModel *favItem = [[ffFavouriteItemModel alloc] init];
+        favItem.cid = @(cid);
+        favItem.avatar = pHero.thumbnail;
+        favItem.name = pHero.name;
+        favItem.descField = pHero.descField;
+        favItem.referenceUri = pHero.resourceURI;
+
+        NSDictionary *favDict = [favItem gt_dictionaryWithKeyValues];
+        [[ffFavouriteHelper shared] addFavourite:favDict asCharacter:(int64_t)[favItem.cid longLongValue]];
+    }
+    [[ffFavouriteHelper shared] save];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:(UITableViewRowAnimationNone)];
 }
 
 
@@ -62,17 +95,23 @@
     }
     ffCharacterModel *pCharacter = self.viewModel.objects[indexPath.row];
     ffHeroInfoTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[ffHeroInfoTableViewCell identifier] forIndexPath:indexPath];
-    [cell.avatarView ff_setImageWithUrl:[pCharacter.thumbnail pathWithSize:CGSizeZero] placeHolderImage:nil afterComplete:nil];
+    cell.delegate = self;
+    cell.index = (int32_t)indexPath.row;
+    [cell.avatarView ff_setImageWithUrl:[pCharacter.thumbnail pathWithPortraitSize:CGSizeZero] placeHolderImage:nil afterComplete:nil];
     [cell.heroNameLabel setText:pCharacter.name];
     [cell.heroDescLabel setText:pCharacter.descField];
+    if ([[ffFavouriteHelper shared] favouriteStatusWithCid:(int64_t)[pCharacter.idField longLongValue]]) {
+        [cell.favouriteBtn setSelected:YES];
+    } else {
+        [cell.favouriteBtn setSelected:NO];
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row < [self.viewModel.objects count]) {
         ffCharacterModel *pCharacter = self.viewModel.objects[indexPath.row];
-        ffHeroDetailViewController *detailVC = [[ffHeroDetailViewController alloc] initWithCharacterId:[pCharacter.idField longLongValue]];
-        [self.navigationController pushViewController:detailVC animated:YES];
+        [[ffNavigationHelper shared] showHeroInfoViewController:(int64_t)[pCharacter.idField longLongValue]];
     }
 }
 

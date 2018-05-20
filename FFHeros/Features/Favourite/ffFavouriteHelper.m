@@ -19,6 +19,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[ffFavouriteHelper alloc] init];
+        [_instance load];
     });
     return _instance;
 }
@@ -28,11 +29,18 @@
 }
 
 - (void)load {
-    self.favDict = [[NSUserDefaults standardUserDefaults] valueForKey:[self _configName]];
-    if (self.favDict == nil) {
-        self.favDict = [[NSMutableDictionary alloc] init];
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:[self _configName]];
+    if (data == nil) {
+        _favDict = [@{} mutableCopy];
         [self save];
     }
+    _favDict = [[NSKeyedUnarchiver unarchiveObjectWithData:data] mutableCopy];
+}
+
+- (void)save {
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:_favDict];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:[self _configName]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (NSMutableDictionary<NSNumber *,id> *)favDict {
@@ -42,13 +50,14 @@
     return _favDict;
 }
 
-- (void)save {
-    [[NSUserDefaults standardUserDefaults] setValue:self.favDict forKey:[self _configName]];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
 - (void)addFavourite:(NSDictionary *)obj asCharacter:(int64_t)cid {
     [self.favDict setObject:obj forKey:@(cid)];
+}
+
+- (void)removeFavouriteWithCid:(int64_t)cid {
+    if ([self.favDict.allKeys containsObject:@(cid)]) {
+        [self.favDict removeObjectForKey:@(cid)];
+    }
 }
 
 - (int32_t)numberOfFavourites {
@@ -65,4 +74,10 @@
     }
     return nil;
 }
+
+- (BOOL)favouriteStatusWithCid:(int64_t)cid {
+    id anyInfo = [self favouriteForCID:cid];
+    return (anyInfo != nil);
+}
+
 @end

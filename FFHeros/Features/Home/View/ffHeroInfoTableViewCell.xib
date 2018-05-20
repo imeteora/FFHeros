@@ -42,13 +42,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUY-oK-i8T">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUY-oK-i8T">
                         <rect key="frame" x="274" y="94.5" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="Kpo-BM-sg5"/>
                             <constraint firstAttribute="width" constant="30" id="Odq-xd-CX8"/>
                         </constraints>
-                        <state key="normal" title="..."/>
+                        <state key="normal" image="ico_like"/>
+                        <state key="selected" image="ico_like_s"/>
+                        <connections>
+                            <action selector="actionLikeButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="66u-FR-mu7"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -66,7 +70,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="avatarView" destination="ZNI-8z-3mH" id="QMn-0z-EkX"/>
+                <outlet property="avatarView" destination="ZNI-8z-3mH" id="cLa-OG-rkG"/>
                 <outlet property="favouriteBtn" destination="HUY-oK-i8T" id="PaQ-Ch-dqy"/>
                 <outlet property="heroDescLabel" destination="isZ-fW-dSJ" id="eNw-DL-8xc"/>
                 <outlet property="heroNameLabel" destination="9Jc-9y-hKW" id="2Dc-WF-UUL"/>
@@ -74,4 +78,8 @@
             <point key="canvasLocation" x="34" y="79"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ico_like" width="16" height="16"/>
+        <image name="ico_like_s" width="16" height="16"/>
+    </resources>
 </document>

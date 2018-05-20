@@ -11,7 +11,12 @@
 @implementation ffFavouriteItemModel
 + (NSString *)gt_aliasPropertyName:(NSString *)propertyName {
     return @{@"id": @"cid",
-             @"description": @"descField"
+             @"description": @"descField",
+             }[propertyName];
+}
+
++ (Class)gt_classForPropertyName:(NSString *)propertyName {
+    return @{@"avatar": [ffImageModel class],
              }[propertyName];
 }
 @end

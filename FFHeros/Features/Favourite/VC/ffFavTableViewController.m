@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"My Favourite";
+    self.viewModel = [[ffFavListViewModel alloc] init];
     [self.tableView registerNib:[ffFavItemTableViewCell nibClass] forCellReuseIdentifier:[ffFavItemTableViewCell identifier]];
 }
 
@@ -46,7 +47,7 @@
     ffFavItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ffFavItemTableViewCell identifier] forIndexPath:indexPath];
     ffFavouriteItemModel *model = [self.viewModel itemAtIndex:(int32_t)indexPath.row];
     if (model) {
-        [cell setAvatar:model.avatarUrl];
+        [cell setAvatar:[model.avatar pathWithLandscapeSize:CGSizeZero]];
         [cell setName:model.name];
         [cell setDetail:model.descField];
     }

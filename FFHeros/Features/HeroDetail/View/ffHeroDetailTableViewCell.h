@@ -13,6 +13,7 @@
 @protocol ffHeroDetailTableViewCellDelegate <NSObject>
 @optional
 - (void)heroDetailCell:(ffHeroDetailTableViewCell *)cell showReferenceDoc:(NSString *)url;
+- (void)didSelectedLikeButtonInHeroDetail:(ffHeroDetailTableViewCell *)cell;
 @end
 
 @interface ffHeroDetailTableViewCell : ffBaseTableViewCell
@@ -23,5 +24,6 @@
 - (void)setName:(NSString *)name;
 - (void)setModifyInfo:(NSString *)modifyInfo;
 - (void)setDescriptionInfo:(NSString *)description;
+- (void)setFavouriteState:(BOOL)favState;
 
 @end

@@ -10,7 +10,7 @@
 #import "ffFavouriteItemModel.h"
 
 @interface ffFavListViewModel : ffBaseViewModel
-@property (nonatomic, assign) int64_t cid;
+//@property (nonatomic, assign) int64_t cid;
 
 - (int32_t)numberOfFavouriteList;
 - (ffFavouriteItemModel *)itemAtIndex:(int32_t)index;

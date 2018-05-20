@@ -11,8 +11,17 @@
 
 @implementation ffImageModel
 
-- (NSString *)pathWithSize:(CGSize)size {
+- (NSString *)pathWithPortraitSize:(CGSize)size {
     return [NSString stringWithFormat:@"%@/portrait_xlarge.%@", _path, _extension];
 }
+
+- (NSString *)pathWithSquareSize:(CGSize)size {
+    return [NSString stringWithFormat:@"%@/standard_large.%@", _path, _extension];
+}
+
+- (NSString *)pathWithLandscapeSize:(CGSize)size {
+    return [NSString stringWithFormat:@"%@/landscape_large.%@", _path, _extension];
+}
+
 
 @end

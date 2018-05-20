@@ -105,7 +105,7 @@
     }
     ffCharacterModel *pCharacter = self.viewModel.objects[indexPath.row];
     ffHeroInfoTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[ffHeroInfoTableViewCell identifier] forIndexPath:indexPath];
-    [cell.avatarView ff_setImageWithUrl:[pCharacter.thumbnail pathWithSize:CGSizeZero] placeHolderImage:nil afterComplete:nil];
+    [cell.avatarView ff_setImageWithUrl:[pCharacter.thumbnail pathWithPortraitSize:CGSizeZero] placeHolderImage:nil afterComplete:nil];
     [cell.heroNameLabel setText:pCharacter.name];
     [cell.heroDescLabel setText:pCharacter.descField];
     return cell;
@@ -116,8 +116,7 @@
     {
         [self hideKeyboard];
         ffCharacterModel *pCharacter = self.viewModel.objects[indexPath.row];
-        ffHeroDetailViewController *detailVC = [[ffHeroDetailViewController alloc] initWithCharacterId:[pCharacter.idField longLongValue]];
-        [self.navigationController pushViewController:detailVC animated:YES];
+        [[ffNavigationHelper shared] showHeroInfoViewController:(int64_t)[pCharacter.idField longLongValue]];
     }
 }
 

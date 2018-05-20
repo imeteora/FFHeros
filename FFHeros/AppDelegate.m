@@ -23,7 +23,9 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     ffHomeViewController *vc = [[ffHomeViewController alloc] init];
-    self.window.rootViewController = [[ffNavigationController alloc] initWithRootViewController:vc];
+    ffNavigationController *navi = [[ffNavigationController alloc] initWithRootViewController:vc];
+    [ffNavigationHelper shared].navigationController = navi;
+    self.window.rootViewController = navi;
     [self.window makeKeyAndVisible];
     return YES;
 }

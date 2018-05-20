@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ffPreference.h"
+#import "ffFavouriteItemModel.h"
 
 @interface ffFavouriteHelper : NSObject
 
@@ -17,8 +17,10 @@
 - (void)save;
 
 - (void)addFavourite:(NSDictionary *)obj asCharacter:(int64_t)cid;
+- (void)removeFavouriteWithCid:(int64_t)cid;
 - (int32_t)numberOfFavourites;
 - (NSArray *)allFavourites;
 - (NSDictionary<NSNumber *, id> * _Nullable)favouriteForCID:(int64_t)cid;
+- (BOOL)favouriteStatusWithCid:(int64_t)cid;
 
 @end

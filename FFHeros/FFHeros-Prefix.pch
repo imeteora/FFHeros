@@ -33,4 +33,6 @@
 #import "ffDefineVariables.h"
 #import "ffHeroDevice.h"
 
+#import "ffNavigationHelper.h"
+
 #endif /* FFHeros_Prefix_h */

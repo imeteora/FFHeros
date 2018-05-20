@@ -7,11 +7,12 @@
 //
 
 #import "gt_Modelizable.h"
+#import "ffImageModel.h"
 
 @interface ffFavouriteItemModel : gt_Modelizable
 
 @property (nonatomic, copy) NSNumber *cid;
-@property (nonatomic, copy) NSString *avatarUrl;
+@property (nonatomic, strong) ffImageModel *avatar;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *descField;
 @property (nonatomic, copy) NSString *referenceUri;

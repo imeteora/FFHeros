@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *modifyInfoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *linkLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 @property (nonatomic, strong) UIImage *blurImage;
 
@@ -76,6 +77,10 @@
     }
 }
 
+- (void)setFavouriteState:(BOOL)favState {
+    [self.likeButton setSelected:favState];
+}
+
 - (void)setReferenceURI:(NSString *)referenceURI {
     _referenceURI = referenceURI;
     if ([_referenceURI length] > 0) {
@@ -93,6 +98,12 @@
         [self.delegate respondsToSelector:@selector(heroDetailCell:showReferenceDoc:)])
     {
         [self.delegate heroDetailCell:self showReferenceDoc:self.referenceURI];
+    }
+}
+
+- (IBAction)onLikeButtonClicked:(id)sender {
+    if (self.delegate AND [self.delegate respondsToSelector:@selector(didSelectedLikeButtonInHeroDetail:)]) {
+        [self.delegate didSelectedLikeButtonInHeroDetail:self];
     }
 }
 

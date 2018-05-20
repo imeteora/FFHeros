@@ -13,6 +13,8 @@
 @property (nonatomic, copy) NSString * extension;
 @property (nonatomic, copy) NSString * path;
 
-- (NSString *)pathWithSize:(CGSize)size;
+- (NSString *)pathWithPortraitSize:(CGSize)size;
+- (NSString *)pathWithSquareSize:(CGSize)size;
+- (NSString *)pathWithLandscapeSize:(CGSize)size;
 
 @end

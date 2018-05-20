@@ -7,6 +7,7 @@
 //
 
 #import "ffHeroDetailViewController.h"
+#import "ffFavouriteHelper.h"
 #import "ffWebViewController.h"
 #import "ffHeroDetailViewModel.h"
 #import "ffHeroDetailTableViewCell.h"
@@ -53,9 +54,7 @@
 
 #pragma mark - private helpers
 - (void)showWebViewControllerWithUrl:(NSString *)url {
-    ffWebViewController *webVC = [[ffWebViewController alloc] init];
-    webVC.url = url;
-    [self.navigationController pushViewController:webVC animated:YES];
+    [[ffNavigationHelper shared] showWebControllerWithUrl:url];
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
@@ -82,11 +81,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         ffHeroDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ffHeroDetailTableViewCell identifier] forIndexPath:indexPath];
-        [cell setAvatar:[self.viewModel.heroData.thumbnail pathWithSize:CGSizeZero]];
+        [cell setAvatar:[self.viewModel.heroData.thumbnail pathWithPortraitSize:CGSizeZero]];
         [cell setName:self.viewModel.heroData.name];
         [cell setModifyInfo:self.viewModel.heroData.modified];
         [cell setDescriptionInfo:[self.viewModel.heroData descField]];
         [cell setReferenceURI:[self.viewModel.heroData detailLink]];
+        [cell setFavouriteState:[[ffFavouriteHelper shared] favouriteStatusWithCid:(int64_t)[self.viewModel.heroData.idField longLongValue]]];
         cell.delegate = self;
         return cell;
     } else if (indexPath.section >= 1 AND indexPath.section < [self.viewModel numberOfSection]) {
@@ -106,6 +106,27 @@
     if ([url length] > 0) {
         [self showWebViewControllerWithUrl:url];
     }
+}
+
+- (void)didSelectedLikeButtonInHeroDetail:(ffHeroDetailTableViewCell *)cell {
+    ffCharacterModel *pHero = self.viewModel.heroData;
+
+    const int64_t cid = (int64_t)[pHero.idField longLongValue];
+    if ([[ffFavouriteHelper shared] favouriteStatusWithCid:cid]) {
+        [[ffFavouriteHelper shared] removeFavouriteWithCid:cid];
+    } else {
+        ffFavouriteItemModel *favItem = [[ffFavouriteItemModel alloc] init];
+        favItem.cid = @(cid);
+        favItem.avatar = pHero.thumbnail;
+        favItem.name = pHero.name;
+        favItem.descField = pHero.descField;
+        favItem.referenceUri = pHero.resourceURI;
+
+        NSDictionary *favDict = [favItem gt_dictionaryWithKeyValues];
+        [[ffFavouriteHelper shared] addFavourite:favDict asCharacter:(int64_t)[favItem.cid longLongValue]];
+    }
+    [[ffFavouriteHelper shared] save];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:(UITableViewRowAnimationNone)];
 }
 
 #pragma mark - ffSummeryTableViewCellDelegate
