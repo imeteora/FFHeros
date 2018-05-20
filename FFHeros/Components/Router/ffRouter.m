@@ -8,9 +8,13 @@
 
 #import "ffRouter.h"
 
+static NSString * const kInvalidNodeKeyPath = @".";
+static NSString * const kSpecialNodeKeyPath = @"-";
+
 @interface ffRouterNode : NSObject
 @property (nonatomic, copy) NSString *keyPath;
 @property (nonatomic) id ruby;
+@property (nonatomic, weak) ffRouterNode * parentNode;
 @property (nonatomic, strong) NSMutableArray<ffRouterNode *> *childNotes;
 @end
 
@@ -18,8 +22,21 @@
 - (instancetype)init {
     if (self = [super init]) {
         _childNotes = [[NSMutableArray alloc] init];
+        _keyPath = kInvalidNodeKeyPath;
+        _ruby = nil;
+        _parentNode = nil;
+        _childNotes = [[NSMutableArray alloc] init];
     }
     return self;
+}
+
+- (void)dealloc {
+    _keyPath = kInvalidNodeKeyPath;
+    _ruby = nil;
+    _parentNode = nil;
+    if ([_childNotes count]) {
+        [_childNotes removeAllObjects];
+    }
 }
 
 // just find node with key 'component' in current children nodes.
@@ -34,40 +51,87 @@
     return result;
 }
 
-- (ffRouterNode * _Nullable)childNodeDeeplyIn:(ffRouterNode * __nonnull)routerNode withKeyPath:(NSArray<NSString *> * __nonnull)keyPath {
+- (ffRouterNode * _Nullable)childNodeDeeplyWithKeyPath:(NSArray<NSString *> * __nonnull)keyPath {
     NSString * const key = keyPath[0];
     ffRouterNode *node = [self childNodeWith:key];
-    if (node == nil OR [keyPath count] == 1) {
+    if (node == nil) {
+        return node;
+    }
+    if ([keyPath count] == 1) {
         return node;
     }
 
     NSArray<NSString *> *tailKeyPath = [keyPath subarrayWithRange:NSMakeRange(1, [keyPath count] - 1)];
-    return [self childNodeDeeplyIn:node withKeyPath:tailKeyPath];
+    return [node childNodeDeeplyWithKeyPath:tailKeyPath];
 }
 
 
-- (ffRouterNode * _Nullable)findRouterNode:(ffRouterNode *)root WithKeyPath:(NSString *)keyPath
+- (ffRouterNode * _Nullable)findRouterNodeWithKeyPath:(NSString *)keyPath
 {
     NSArray<NSString *> *allKeyPaths = [keyPath componentsSeparatedByString:@"/"];
-    if ([allKeyPaths count] == 1) {
-        if ([root.keyPath isEqualToString:allKeyPaths[0]]) {
-            return root;
-        } else {
-            return nil;
-        }
+    NSString *key = allKeyPaths[0];
+
+    if ([self _isNum:key]) {
+        key = kSpecialNodeKeyPath;
     }
 
-    ffRouterNode *subNode = [self childNodeWith:allKeyPaths[0]];
-    if (subNode == nil) return nil;
+    ffRouterNode *subNode = [self childNodeWith:key];
+    if (subNode == nil) {
+        return subNode;
+    }
+
+    if ([allKeyPaths count] == 1) {
+        return subNode;
+    }
+
     NSArray<NSString *> *tailKeyPaths = [allKeyPaths subarrayWithRange:NSMakeRange(1, [allKeyPaths count] - 1)];
-    return [self childNodeDeeplyIn:subNode withKeyPath:tailKeyPaths];
+    return [subNode childNodeDeeplyWithKeyPath:tailKeyPaths];
+}
+
+- (void)buildKeyPath:(NSArray<NSString *> * __nonnull)keyPath forObject:(id __nonnull)obj {
+    NSString * key = keyPath[0];
+
+    // 如果key是一个可变参数(以':'开头), 则将可变参数系列的后续节点都统一放置在KeyPath为"-"的节点下面
+    if ([key hasPrefix:@":"]) {
+        key = kSpecialNodeKeyPath;
+    }
+
+    ffRouterNode *node = [self childNodeWith:key];
+    if (node == nil) {
+        node = [ffRouterNode new];
+        node.keyPath = key;
+        node.parentNode = self;
+        [self.childNotes addObject:node];
+
+        if ([keyPath count] == 1) {
+            node.ruby = obj;
+        } else {
+            NSArray<NSString *> *tailKeyPath = [keyPath subarrayWithRange:NSMakeRange(1, [keyPath count] - 1)];
+            [node buildKeyPath:tailKeyPath forObject:obj];
+        }
+    } else {
+        if ([keyPath count] == 1) {
+            /// !!! overwrite could be happend here !!!
+            node.ruby = obj;
+        } else {
+            NSArray<NSString *> *tailKeyPath = [keyPath subarrayWithRange:NSMakeRange(1, [keyPath count] - 1)];
+            [node buildKeyPath:tailKeyPath forObject:obj];
+        }
+    }
+}
+
+#pragma mark - private helpers
+- (BOOL)_isNum:(NSString * _Nonnull)val {
+    NSScanner *scanner = [NSScanner scannerWithString:val];
+    int32_t d;
+    return [scanner scanInt:&d] && [scanner isAtEnd];
 }
 
 @end
 
 
 @interface ffRouter ()
-@property (nonatomic, strong) NSDictionary<NSString *, id> *allRouter;
+@property (nonatomic, strong) ffRouterNode *root;
 @end
 
 @implementation ffRouter
@@ -77,31 +141,23 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[ffRouter alloc] init];
+        _instance.root = [[ffRouterNode alloc] init];
     });
     return _instance;
 }
 
-- (void)map:(NSString *)router toViewController:(Class)vcClass {
-    return;
+- (void)map:(NSString *)router toClass:(Class)vcClass {
+    [ffRouter rebuildRouterMapping:_root fromRouter:router toClass:vcClass];
 }
 
+- (id _Nullable)classMatchRouter:(NSString *)router {
+    ffRouterNode *node = [_root findRouterNodeWithKeyPath:router];
+    return node.ruby;
+}
 
-+ (NSDictionary<NSString *, id> * _Nonnull )rebuildRouterMapping:(ffRouterNode *__nonnull)routerMappingDict fromRouter:(NSString *)router toClass:(Class __nonnull)cls {
-    NSMutableDictionary<NSString *, id> *result = [routerMappingDict mutableCopy];
-    if (result == nil) {
-        result = [[NSMutableDictionary alloc] init];
-    }
-
-    NSArray<NSString *> *keyPaths = [router componentsSeparatedByString:@"/"];
-
-    if ([keyPaths count] == 1) {
-        result[keyPaths[0]] = cls;
-        return result;
-    }
-
-    NSArray<NSString *> *tailKeyPaths = [keyPaths subarrayWithRange:NSMakeRange(1, [keyPaths count] - 1)];
-    result[keyPaths[0]] = [self storeClass:cls intoRouterMapping:tailKeyPaths];
-    return result;
++ (void)rebuildRouterMapping:(ffRouterNode *__nonnull)root fromRouter:(NSString *)router toClass:(Class __nonnull)cls {
+    NSArray<NSString *> *keyPath = [router componentsSeparatedByString:@"/"];
+    [root buildKeyPath:keyPath forObject:cls];
 }
 
 + (NSDictionary<NSString *, id> * _Nonnull)storeClass:(Class __nonnull)cls intoRouterMapping:(NSArray<NSString *> * __nonnull)keyPath {

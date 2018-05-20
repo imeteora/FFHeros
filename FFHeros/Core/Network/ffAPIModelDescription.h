@@ -40,6 +40,5 @@
  */
 + (id _Nullable)fetchObjectIn:(NSDictionary<NSString *, id> * _Nonnull)obj keyPathArray:(NSArray<NSString *> * _Nonnull)keyPathArray;
 
-+ (NSDictionary<NSString *, id> * _Nonnull )rebuildRouterMapping:(NSDictionary<NSString *, id> * __nonnull)routerMapping fromRouter:(NSString *)router toClass:(Class __nonnull)cls;
 
 @end

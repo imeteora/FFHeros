@@ -33,7 +33,7 @@
     __block BOOL bSuccess = NO;
     ffFetchCharactersInfoApi *api = [[ffFetchCharactersInfoApi alloc] init];
     [api requestWithCharacterId:@"1009144"
-                  afterComplete:^(ffCharacterDataContainerModel * _Nonnull result)
+                  afterComplete:^(ffCharacterModel * _Nonnull result)
     {
         bSuccess = YES;
         [apiExpectation fulfill];

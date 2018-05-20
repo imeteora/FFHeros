@@ -13,7 +13,8 @@
 
 + (nonnull ffRouter *)shared;
 
-- (void)map:(NSString *)router toViewController:(Class __nonnull)vcClass;
-- (UIViewController *)viewControllerMatchRouter:(NSString *)router;
+- (void)map:(NSString *)router toClass:(Class __nonnull)vcClass;
+- (id _Nullable)classMatchRouter:(NSString *)router;
+
 
 @end

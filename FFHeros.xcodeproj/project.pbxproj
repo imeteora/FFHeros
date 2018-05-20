@@ -62,6 +62,8 @@
 		13A072D020AEE8290037F124 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A072CE20AEE8290037F124 /* ViewController.xib */; };
 		13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F520AEF7850037F124 /* ffBaseViewController.m */; };
 		13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F920AEFBDF0037F124 /* ffNavigationController.m */; };
+		13AE3CB220B1449C00D88D26 /* FFCode_Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CB120B1449C00D88D26 /* FFCode_Router.m */; };
+		13AE3CB520B1512100D88D26 /* ffRouterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CB420B1512100D88D26 /* ffRouterHelper.m */; };
 		13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */; };
 		13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93320AD3480005CF787 /* ffRefreshComponent.m */; };
 		13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */; };
@@ -188,6 +190,9 @@
 		13A072F920AEFBDF0037F124 /* ffNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffNavigationController.m; sourceTree = "<group>"; };
 		13A072FE20AF0B770037F124 /* NSObject+FFUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+FFUtils.h"; sourceTree = "<group>"; };
 		13A072FF20AF0B770037F124 /* NSObject+FFUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FFUtils.m"; sourceTree = "<group>"; };
+		13AE3CB120B1449C00D88D26 /* FFCode_Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Router.m; sourceTree = "<group>"; };
+		13AE3CB320B1512100D88D26 /* ffRouterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRouterHelper.h; sourceTree = "<group>"; };
+		13AE3CB420B1512100D88D26 /* ffRouterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRouterHelper.m; sourceTree = "<group>"; };
 		13F2A92F20AD2F26005CF787 /* ffRefreshScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshScrollView.h; sourceTree = "<group>"; };
 		13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshScrollView.m; sourceTree = "<group>"; };
 		13F2A93220AD3480005CF787 /* ffRefreshComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshComponent.h; sourceTree = "<group>"; };
@@ -274,6 +279,8 @@
 			children = (
 				133B0E6320B0735500E7FC16 /* ffRouter.h */,
 				133B0E6420B0735500E7FC16 /* ffRouter.m */,
+				13AE3CB320B1512100D88D26 /* ffRouterHelper.h */,
+				13AE3CB420B1512100D88D26 /* ffRouterHelper.m */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -320,6 +327,7 @@
 				13974C1C20AB02DE00C3063A /* FFCode_Decode.m */,
 				133E1FAA20AB500100CA800C /* FFCode_Model.m */,
 				13974C1E20AB114200C3063A /* FFCode_Network.m */,
+				13AE3CB120B1449C00D88D26 /* FFCode_Router.m */,
 				134F320020AE001000DADFAA /* FFCode_webImage.m */,
 				133B29E320AA56E500117E4F /* FFHerosTests.m */,
 				133B29E520AA56E500117E4F /* Info.plist */,
@@ -793,6 +801,7 @@
 				134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */,
 				13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */,
 				133B0E6520B0735500E7FC16 /* ffRouter.m in Sources */,
+				13AE3CB520B1512100D88D26 /* ffRouterHelper.m in Sources */,
 				133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */,
 				136DA47120B0AE39003E4A44 /* ffSummeryTableViewCell.m in Sources */,
 				13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */,
@@ -820,6 +829,7 @@
 				13974C1D20AB02DE00C3063A /* FFCode_Decode.m in Sources */,
 				133E1FAB20AB500100CA800C /* FFCode_Model.m in Sources */,
 				13974C1F20AB114200C3063A /* FFCode_Network.m in Sources */,
+				13AE3CB220B1449C00D88D26 /* FFCode_Router.m in Sources */,
 				134F320120AE001000DADFAA /* FFCode_webImage.m in Sources */,
 				133B29E420AA56E500117E4F /* FFHerosTests.m in Sources */,
 			);
@@ -966,10 +976,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -985,10 +992,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1002,11 +1006,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1021,11 +1021,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
