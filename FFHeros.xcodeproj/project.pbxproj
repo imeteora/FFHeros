@@ -36,6 +36,13 @@
 		1349751920B1546900687991 /* ffSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349751820B1546900687991 /* ffSearchViewModel.m */; };
 		1349751C20B1551000687991 /* ffSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349751B20B1551000687991 /* ffSearchBarView.m */; };
 		1349751E20B1551B00687991 /* ffSearchBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1349751D20B1551B00687991 /* ffSearchBarView.xib */; };
+		1349753A20B192A600687991 /* ffFavTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349753820B192A600687991 /* ffFavTableViewController.m */; };
+		1349753E20B192DE00687991 /* ffFavListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349753D20B192DE00687991 /* ffFavListViewModel.m */; };
+		1349754120B19BD900687991 /* ffFavouriteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349754020B19BD900687991 /* ffFavouriteHelper.m */; };
+		1349755620B19DC100687991 /* ffPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349755520B19DC100687991 /* ffPreference.m */; };
+		1349755920B1A54D00687991 /* ffFavouriteItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349755820B1A54D00687991 /* ffFavouriteItemModel.m */; };
+		1349755E20B1A75200687991 /* ffFavItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349755C20B1A75200687991 /* ffFavItemTableViewCell.m */; };
+		1349755F20B1A75200687991 /* ffFavItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1349755D20B1A75200687991 /* ffFavItemTableViewCell.xib */; };
 		134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */; };
 		134F31FF20ADF78D00DADFAA /* UIScrollView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FE20ADF78D00DADFAA /* UIScrollView+ffExt.m */; };
 		134F320120AE001000DADFAA /* FFCode_webImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320020AE001000DADFAA /* FFCode_webImage.m */; };
@@ -147,6 +154,19 @@
 		1349751B20B1551000687991 /* ffSearchBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSearchBarView.m; sourceTree = "<group>"; };
 		1349751D20B1551B00687991 /* ffSearchBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffSearchBarView.xib; sourceTree = "<group>"; };
 		1349753020B16AA900687991 /* ffHeroDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffHeroDevice.h; sourceTree = "<group>"; };
+		1349753720B192A600687991 /* ffFavTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFavTableViewController.h; sourceTree = "<group>"; };
+		1349753820B192A600687991 /* ffFavTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFavTableViewController.m; sourceTree = "<group>"; };
+		1349753C20B192DE00687991 /* ffFavListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFavListViewModel.h; sourceTree = "<group>"; };
+		1349753D20B192DE00687991 /* ffFavListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFavListViewModel.m; sourceTree = "<group>"; };
+		1349753F20B19BD900687991 /* ffFavouriteHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFavouriteHelper.h; sourceTree = "<group>"; };
+		1349754020B19BD900687991 /* ffFavouriteHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFavouriteHelper.m; sourceTree = "<group>"; };
+		1349755420B19DC100687991 /* ffPreference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffPreference.h; sourceTree = "<group>"; };
+		1349755520B19DC100687991 /* ffPreference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffPreference.m; sourceTree = "<group>"; };
+		1349755720B1A54D00687991 /* ffFavouriteItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFavouriteItemModel.h; sourceTree = "<group>"; };
+		1349755820B1A54D00687991 /* ffFavouriteItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFavouriteItemModel.m; sourceTree = "<group>"; };
+		1349755B20B1A75200687991 /* ffFavItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFavItemTableViewCell.h; sourceTree = "<group>"; };
+		1349755C20B1A75200687991 /* ffFavItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFavItemTableViewCell.m; sourceTree = "<group>"; };
+		1349755D20B1A75200687991 /* ffFavItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffFavItemTableViewCell.xib; sourceTree = "<group>"; };
 		134F31FA20ADF36C00DADFAA /* ffRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshHeader.h; sourceTree = "<group>"; };
 		134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshHeader.m; sourceTree = "<group>"; };
 		134F31FD20ADF78D00DADFAA /* UIScrollView+ffExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ffExt.h"; sourceTree = "<group>"; };
@@ -365,6 +385,7 @@
 			children = (
 				132F913F20B08C3A0095F0EE /* Blur */,
 				13A072F720AEFBC30037F124 /* NavigationController */,
+				1349755320B19D9F00687991 /* Preference */,
 				13F2A92E20AD2EEC005CF787 /* PullRefresh */,
 				133B0E6220B0733700E7FC16 /* Router */,
 				138B1D3420AD8D3B006A5708 /* WebImage */,
@@ -376,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				13885BA420ABBC3800D9F9E5 /* Common */,
+				1349753420B1927000687991 /* Favourite */,
 				133B0E5C20B072DA00E7FC16 /* HeroDetail */,
 				1362BCA120B000A900098514 /* Home */,
 				13AE3CC320B153F300D88D26 /* Search */,
@@ -483,6 +505,57 @@
 				1349751820B1546900687991 /* ffSearchViewModel.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1349753420B1927000687991 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				1349753F20B19BD900687991 /* ffFavouriteHelper.h */,
+				1349754020B19BD900687991 /* ffFavouriteHelper.m */,
+				1349753520B1927C00687991 /* VC */,
+				1349755A20B1A73900687991 /* View */,
+				1349753620B1928200687991 /* ViewModel */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		1349753520B1927C00687991 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				1349753720B192A600687991 /* ffFavTableViewController.h */,
+				1349753820B192A600687991 /* ffFavTableViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		1349753620B1928200687991 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1349753C20B192DE00687991 /* ffFavListViewModel.h */,
+				1349753D20B192DE00687991 /* ffFavListViewModel.m */,
+				1349755720B1A54D00687991 /* ffFavouriteItemModel.h */,
+				1349755820B1A54D00687991 /* ffFavouriteItemModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1349755320B19D9F00687991 /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				1349755420B19DC100687991 /* ffPreference.h */,
+				1349755520B19DC100687991 /* ffPreference.m */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
+		1349755A20B1A73900687991 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1349755B20B1A75200687991 /* ffFavItemTableViewCell.h */,
+				1349755C20B1A75200687991 /* ffFavItemTableViewCell.m */,
+				1349755D20B1A75200687991 /* ffFavItemTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		134F320A20AE03D800DADFAA /* UnitTest */ = {
@@ -793,6 +866,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				133B29D420AA56E500117E4F /* Assets.xcassets in Resources */,
+				1349755F20B1A75200687991 /* ffFavItemTableViewCell.xib in Resources */,
 				1382394620B088530037BF49 /* ffHeroDetailTableViewCell.xib in Resources */,
 				1362BCA820B002D600098514 /* ffHeroInfoTableViewCell.xib in Resources */,
 				1349751E20B1551B00687991 /* ffSearchBarView.xib in Resources */,
@@ -837,6 +911,11 @@
 				13FFEB5220ACAB35008615C6 /* ffDateModel.m in Sources */,
 				13FFEB3720AC8D98008615C6 /* ffDefineVariables.m in Sources */,
 				1362BC9D20AFF9D300098514 /* ffEventModel.m in Sources */,
+				1349755E20B1A75200687991 /* ffFavItemTableViewCell.m in Sources */,
+				1349753E20B192DE00687991 /* ffFavListViewModel.m in Sources */,
+				1349754120B19BD900687991 /* ffFavouriteHelper.m in Sources */,
+				1349755920B1A54D00687991 /* ffFavouriteItemModel.m in Sources */,
+				1349753A20B192A600687991 /* ffFavTableViewController.m in Sources */,
 				13FFEB3C20ACA9DC008615C6 /* ffFetchCharacterComicsApi.m in Sources */,
 				13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m in Sources */,
 				133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */,
@@ -848,6 +927,7 @@
 				1362BCAC20B007D700098514 /* ffHomeViewModel.m in Sources */,
 				133E1FA720AB4F5E00CA800C /* ffImageModel.m in Sources */,
 				13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */,
+				1349755620B19DC100687991 /* ffPreference.m in Sources */,
 				13FFEB5020ACAB35008615C6 /* ffPriceModel.m in Sources */,
 				13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */,
 				13A072C820AEB4CC0037F124 /* ffRefreshFooter.m in Sources */,
@@ -1032,10 +1112,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1051,10 +1128,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1068,11 +1142,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1087,11 +1157,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
