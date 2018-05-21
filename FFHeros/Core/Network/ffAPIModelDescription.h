@@ -10,7 +10,6 @@
 
 @interface ffAPIModelDescription : NSObject
 @property (nonatomic, nonnull, copy) NSString *keyPath;
-//@property (nonatomic, assign) BOOL  isArray;
 @property (nonatomic, nonnull, strong) Class mappingClass;
 
 /**

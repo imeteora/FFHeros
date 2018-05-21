@@ -18,7 +18,6 @@
     ffAPIModelDescription *result = [[ffAPIModelDescription alloc] init];
     result.keyPath = keyPath;
     result.mappingClass = mappingClass;
-    //result.isArray = isArray;
     return result;
 }
 
