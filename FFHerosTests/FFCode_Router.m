@@ -7,7 +7,6 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "ffRouter.h"
 #import "ffFooModel.h"
 
 @interface FFCode_Router : XCTestCase
@@ -37,7 +36,7 @@
 //    [[ffRouter shared] map:@"/" toClass:[ffFooModel class]];
 //    Class cls2 = [[ffRouter shared] classMatchRouter:@""];
 //    XCTAssert(cls2 == Nil);
-
+    
     [[ffRouter shared] map:@"/hello/:uid/world/:mid" toClass:[ffFooModel class]];
     
 }

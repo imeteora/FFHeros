@@ -73,8 +73,10 @@
 
 - (void)ff_keyboardHeightChanged:(CGFloat)newHeight {
     _keyboardHeight = newHeight;
+    weakify(self);
     [UIView animateWithDuration:0.3 animations:^{
-        self.tableView.frame = CGRectMake(0, self.searchBar.viewBottom, self.view.viewWidth, self.view.viewHeight - self.searchBar.viewBottom - _keyboardHeight);
+        strongify(self);
+        self.tableView.frame = CGRectMake(0, self.searchBar.viewBottom, self.view.viewWidth, self.view.viewHeight - self.searchBar.viewBottom - self->_keyboardHeight);
     }];
 }
 

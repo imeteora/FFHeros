@@ -10,9 +10,9 @@
 #import <UIKit/UIKit.h>
 
 DEPRECATED_MSG_ATTRIBUTE("并没有完全时限完成，暂时无法适配short url")
-@interface ffRouter : NSObject
+@interface ffRouterManager : NSObject
 
-+ (nonnull ffRouter *)shared;
++ (nonnull ffRouterManager *)shared;
 
 
 /**

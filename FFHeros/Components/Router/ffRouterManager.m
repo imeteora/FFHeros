@@ -6,7 +6,7 @@
 //  Copyright © 2018 ZhuDelun. All rights reserved.
 //
 
-#import "ffRouter.h"
+#import "ffRouterManager.h"
 
 static NSString * const kInvalidNodeKeyPath = @".";
 static NSString * const kSpecialNodeKeyPath = @"-";
@@ -21,7 +21,6 @@ static NSString * const kSpecialNodeKeyPath = @"-";
 @implementation ffRouterNode
 - (instancetype)init {
     if (self = [super init]) {
-        _childNotes = [[NSMutableArray alloc] init];
         _keyPath = kInvalidNodeKeyPath;
         _ruby = nil;
         _parentNode = nil;
@@ -70,10 +69,6 @@ static NSString * const kSpecialNodeKeyPath = @"-";
 {
     NSArray<NSString *> *allKeyPaths = [keyPath componentsSeparatedByString:@"/"];
     NSString *key = allKeyPaths[0];
-
-    if ([self _isNum:key]) {
-        key = kSpecialNodeKeyPath;
-    }
 
     ffRouterNode *subNode = [self childNodeWith:key];
     if (subNode == nil) {
@@ -125,24 +120,24 @@ static NSString * const kSpecialNodeKeyPath = @"-";
 @end
 
 
-@interface ffRouter ()
+@interface ffRouterManager ()
 @property (nonatomic, strong) ffRouterNode *root;
 @end
 
-@implementation ffRouter
+@implementation ffRouterManager
 
-+ (ffRouter *)shared {
-    static ffRouter *_instance = nil;
++ (ffRouterManager *)shared {
+    static ffRouterManager *_instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _instance = [[ffRouter alloc] init];
+        _instance = [[ffRouterManager alloc] init];
         _instance.root = [[ffRouterNode alloc] init];
     });
     return _instance;
 }
 
 - (void)map:(NSString *)router toClass:(Class)vcClass {
-    [ffRouter rebuildRouterMapping:_root fromRouter:router toClass:vcClass];
+    [ffRouterManager rebuildRouterMapping:_root fromRouter:router toClass:vcClass];
 }
 
 - (id _Nullable)classMatchRouter:(NSString *)router {

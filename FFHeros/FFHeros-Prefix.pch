@@ -33,6 +33,8 @@
 #import "ffDefineVariables.h"
 #import "ffHeroDevice.h"
 
+#import "FFHeros-Swift.h"
+
 #import "ffNavigationHelper.h"
 #import "ffToasteView.h"
 
