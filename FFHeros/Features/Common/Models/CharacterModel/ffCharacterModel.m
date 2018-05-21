@@ -36,6 +36,14 @@
     return [self urlLinkWithType:@"comiclink"];
 }
 
+- (NSString *)descField {
+    if ([_descField length] <= 0) {
+        return @"(no description)";
+    } else {
+        return _descField;
+    }
+}
+
 
 #pragma mark - private helpers
 - (NSString *)urlLinkWithType:(NSString *)type {

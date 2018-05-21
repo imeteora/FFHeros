@@ -13,11 +13,12 @@
 #import "ffHeroInfoTableViewCell.h"
 #import "ffHeroDetailViewController.h"
 #import "ffNavigationControllerProtocol.h"
+#import "ffFavouriteHelper.h"
 
 #import "UIView+ffExt.h"
 #import "UIView+WebImage.h"
 
-@interface ffSearchViewController () <UISearchBarDelegate, UIScrollViewDelegate, ffNavigationControllerProtocol> {
+@interface ffSearchViewController () <UISearchBarDelegate, UIScrollViewDelegate, ffNavigationControllerProtocol, ffHeroInfoTableViewCellDelegate> {
     CGFloat _keyboardHeight;
 }
 @property (nonatomic, strong) ffSearchViewModel *viewModel;
@@ -90,6 +91,28 @@
     }
 }
 
+#pragma mark - ffHeroInfoTableViewCellDelegate
+- (void)heroInfoItem:(ffHeroInfoTableViewCell *)cell likeButtonDidClicked:(int32_t)index {
+    ffCharacterModel *pHero = self.viewModel.objects[index];
+
+    const int64_t cid = (int64_t)[pHero.idField longLongValue];
+    if ([[ffFavouriteHelper shared] favouriteStatusWithCid:cid]) {
+        [[ffFavouriteHelper shared] removeFavouriteWithCid:cid];
+    } else {
+        ffFavouriteItemModel *favItem = [[ffFavouriteItemModel alloc] init];
+        favItem.cid = @(cid);
+        favItem.avatar = pHero.thumbnail;
+        favItem.name = pHero.name;
+        favItem.descField = pHero.descField;
+        favItem.referenceUri = pHero.resourceURI;
+
+        NSDictionary *favDict = [favItem gt_dictionaryWithKeyValues];
+        [[ffFavouriteHelper shared] addFavourite:favDict asCharacter:(int64_t)[favItem.cid longLongValue]];
+    }
+    [[ffFavouriteHelper shared] save];
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:(UITableViewRowAnimationNone)];
+}
+
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.viewModel.objects count];
@@ -105,9 +128,15 @@
     }
     ffCharacterModel *pCharacter = self.viewModel.objects[indexPath.row];
     ffHeroInfoTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[ffHeroInfoTableViewCell identifier] forIndexPath:indexPath];
+    cell.delegate = self;
     [cell.avatarView ff_setImageWithUrl:[pCharacter.thumbnail pathWithPortraitSize:CGSizeZero] placeHolderImage:nil afterComplete:nil];
     [cell.heroNameLabel setText:pCharacter.name];
     [cell.heroDescLabel setText:pCharacter.descField];
+    if ([[ffFavouriteHelper shared] favouriteStatusWithCid:(int64_t)[pCharacter.idField longLongValue]]) {
+        [cell.favouriteBtn setSelected:YES];
+    } else {
+        [cell.favouriteBtn setSelected:NO];
+    }
     return cell;
 }
 

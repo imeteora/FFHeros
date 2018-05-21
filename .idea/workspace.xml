@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee117c7a-cd9e-4044-8465-d2add2f26c01" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/FFHeros/Components/Router/ffRouter.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Components/Router/ffRouter.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/HeroDetail/VC/ffHeroDetailViewController.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/HeroDetail/VC/ffHeroDetailViewController.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/HeroDetail/ViewModel/ffHeroDetailViewModel.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FFHeros/Features/HeroDetail/ViewModel/ffHeroDetailViewModel.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Core/BaseMVC/ffBaseTableViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Core/BaseMVC/ffBaseTableViewController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Core/BaseMVC/ffBaseTableViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Core/BaseMVC/ffBaseTableViewController.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FFHeros/Core/Network/ffAPIRequest.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Core/Network/ffAPIRequest.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersInfoApi.h" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersInfoApi.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersInfoApi.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersInfoApi.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModel.m" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModel.m" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/FFHeros-fyvnaxpvpdoltqeqgwuydvlqeaph/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,14 +14,23 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_18d79c3dbcebc43435e6ee50f84b41d681307fb6" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ffHeroDetailViewController.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ffHeroDetailViewController.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFHeros/Features/HeroDetail/VC/ffHeroDetailViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state relative-caret-position="405">
+              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ffHeroDetailTableViewCell.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FFHeros/Features/HeroDetail/View/ffHeroDetailTableViewCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-939">
+              <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -73,8 +72,8 @@
       <file leaf-file-name="ffBaseTableViewController.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFHeros/Core/BaseMVC/ffBaseTableViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1293">
-              <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+            <state relative-caret-position="1440">
+              <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -91,7 +90,7 @@
       <file leaf-file-name="ffFetchCharactersInfoApi.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersInfoApi.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="615">
               <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
               <folding>
                 <element signature="e#134#170#0" expanded="true" />
@@ -103,7 +102,7 @@
       <file leaf-file-name="ffFetchCharactersInfoApi.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersInfoApi.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-385">
+            <state relative-caret-position="120">
               <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
               <folding>
                 <element signature="e#134#167#0" expanded="true" />
@@ -202,6 +201,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -295,7 +296,7 @@
               <item name="FFHeros" type="fcab9f18:XcodeViewNode" />
               <item name="Features" type="fcab9f18:XcodeViewNode" />
               <item name="HeroDetail" type="fcab9f18:XcodeViewNode" />
-              <item name="ViewModel" type="fcab9f18:XcodeViewNode" />
+              <item name="VC" type="fcab9f18:XcodeViewNode" />
             </path>
             <path>
               <item name="" type="efc3779f:XcodeRootNode" />
@@ -303,7 +304,15 @@
               <item name="FFHeros" type="fcab9f18:XcodeViewNode" />
               <item name="Features" type="fcab9f18:XcodeViewNode" />
               <item name="HeroDetail" type="fcab9f18:XcodeViewNode" />
-              <item name="VC" type="fcab9f18:XcodeViewNode" />
+              <item name="View" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="FFHeros" type="1d218c8b:XcodeProjectNode" />
+              <item name="FFHeros" type="fcab9f18:XcodeViewNode" />
+              <item name="Features" type="fcab9f18:XcodeViewNode" />
+              <item name="HeroDetail" type="fcab9f18:XcodeViewNode" />
+              <item name="ViewModel" type="fcab9f18:XcodeViewNode" />
             </path>
             <path>
               <item name="" type="efc3779f:XcodeRootNode" />
@@ -330,8 +339,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,11 +379,12 @@
       <workItem from="1526570372806" duration="3324000" />
       <workItem from="1526636948371" duration="2492000" />
       <workItem from="1526745910490" duration="1385000" />
+      <workItem from="1526866190155" duration="540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17996000" />
+    <option name="totallyTimeSpent" value="18536000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,31 +397,68 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15903106" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32942432" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.2491731" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23209429" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3296582" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26458332" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32910246" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.21792261" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32910246" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_DETAILS" value="true" />
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -424,13 +469,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/CommonCrypto/CommonDigest.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="132" column="22" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/CommonCrypto/CommonCryptor.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
@@ -652,9 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1065">
           <caret line="289" selection-start-line="289" selection-end-line="289" />
-          <folding>
-            <element signature="e#142#176#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -689,15 +724,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding>
-            <element signature="e#123#146#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersInfoApi.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
+        <state relative-caret-position="615">
           <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
           <folding>
             <element signature="e#134#170#0" expanded="true" />
@@ -707,7 +739,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersInfoApi.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-385">
+        <state relative-caret-position="120">
           <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding>
             <element signature="e#134#167#0" expanded="true" />
@@ -727,8 +759,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Core/BaseMVC/ffBaseTableViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1293">
-          <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+        <state relative-caret-position="1440">
+          <caret line="96" column="8" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -764,8 +796,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/HeroDetail/VC/ffHeroDetailViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state relative-caret-position="405">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/HeroDetail/View/ffHeroDetailTableViewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-939">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
         </state>
       </provider>
     </entry>
