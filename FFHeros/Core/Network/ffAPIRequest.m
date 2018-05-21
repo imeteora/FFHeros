@@ -178,7 +178,7 @@
         }
 
         NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
-        request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:(_requestConfig.timeout > 0?:60)];
+        request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:(_requestConfig.timeout > 0?_requestConfig.timeout:60)];
         [request setHTTPMethod:@"GET"];
         [request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
         [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
@@ -188,7 +188,7 @@
     } else if (_requestConfig.method == FFApiRequestMethodPOST) {
         NSString *requestUrlStr = _requestConfig.baseURL;
         NSURL *requestUrl = [NSURL URLWithString:requestUrlStr];
-        request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:(_requestConfig.timeout > 0?:60)];
+        request = [NSMutableURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:(_requestConfig.timeout > 0?_requestConfig.timeout:60)];
         [request setHTTPMethod:@"POST"];
 
     } else if (_requestConfig.method == FFApiRequestMethodPUT) {
@@ -237,32 +237,27 @@
     __block NSError *retError = nil;
     __block BOOL hadBeHandled = NO;
 
-//    const BOOL bUsingSemaphore = YES;
-
     dispatch_semaphore_t _semaphore = dispatch_semaphore_create(0);
-//    [[[NSURLSession sharedSession] dataTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        if (NOT hadBeHandled) {
-//            hadBeHandled = YES;
-//            retData = data;
-//            retResponse = response;
-//            retError = error;
-//        }
-//        //dispatch_semaphore_signal(_semaphore);
-//    }] resume];
-
-    [[[NSURLSession sharedSession] downloadTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [[[[ffApiOperationQueue shared]session] dataTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (NOT hadBeHandled) {
-            retData = [NSData dataWithContentsOfURL:location];
+            hadBeHandled = YES;
+            retData = data;
             retResponse = response;
             retError = error;
-            hadBeHandled = YES;
         }
         dispatch_semaphore_signal(_semaphore);
     }] resume];
 
-//    while (NOT hadBeHandled) {
-//        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-//    }
+//    [[[NSURLSession sharedSession] downloadTaskWithRequest:[self.request mutableCopy] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        if (NOT hadBeHandled) {
+//            retData = [NSData dataWithContentsOfURL:location];
+//            retResponse = response;
+//            retError = error;
+//            hadBeHandled = YES;
+//        }
+//        dispatch_semaphore_signal(_semaphore);
+//    }] resume];
+
     dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, 60 * NSEC_PER_SEC));
     if (NOT hadBeHandled) {
         hadBeHandled = YES;
