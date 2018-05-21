@@ -29,14 +29,17 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    [[ffRouter shared] map:@"/hello/world" toClass:[ffFooModel class]];
-    Class cls = [[ffRouter shared] classMatchRouter:@"/hello/world"];
-    XCTAssert(cls == [ffFooModel class]);
-    Class cls1 = [[ffRouter shared] classMatchRouter:@"/hello/world/foo"];
-    XCTAssert(cls1 == Nil);
-    [[ffRouter shared] map:@"/" toClass:[ffFooModel class]];
-    Class cls2 = [[ffRouter shared] classMatchRouter:@""];
-    XCTAssert(cls1 == Nil);
+//    [[ffRouter shared] map:@"/hello/world" toClass:[ffFooModel class]];
+//    Class cls = [[ffRouter shared] classMatchRouter:@"/hello/world"];
+//    XCTAssert(cls == [ffFooModel class]);
+//    Class cls1 = [[ffRouter shared] classMatchRouter:@"/hello/world/foo"];
+//    XCTAssert(cls1 == Nil);
+//    [[ffRouter shared] map:@"/" toClass:[ffFooModel class]];
+//    Class cls2 = [[ffRouter shared] classMatchRouter:@""];
+//    XCTAssert(cls2 == Nil);
+
+    [[ffRouter shared] map:@"/hello/:uid/world/:mid" toClass:[ffFooModel class]];
+    
 }
 
 - (void)testPerformanceExample {

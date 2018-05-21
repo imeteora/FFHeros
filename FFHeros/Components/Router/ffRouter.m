@@ -91,11 +91,6 @@ static NSString * const kSpecialNodeKeyPath = @"-";
 - (void)buildKeyPath:(NSArray<NSString *> * __nonnull)keyPath forObject:(id __nonnull)obj {
     NSString * key = keyPath[0];
 
-    // 如果key是一个可变参数(以':'开头), 则将可变参数系列的后续节点都统一放置在KeyPath为"-"的节点下面
-    if ([key hasPrefix:@":"]) {
-        key = kSpecialNodeKeyPath;
-    }
-
     ffRouterNode *node = [self childNodeWith:key];
     if (node == nil) {
         node = [ffRouterNode new];
