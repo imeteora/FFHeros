@@ -10,10 +10,10 @@ import UIKit
 
 
 @objc
-class ffRouter: NSObject {
-    private var root: ffRouterNode = ffRouterNode()
+public class ffRouter: NSObject {
+    private var _root: ffRouterNode = ffRouterNode()
 
-    public lazy var shared: ffRouter = {
+    public static var shared: ffRouter = {
         let _instance: ffRouter = ffRouter()
         return _instance;
     }()
@@ -25,7 +25,7 @@ class ffRouter: NSObject {
     ///   - router: 短连接 例如：/abc/def/:param1/ghi/:param2 ...
     ///   - cls: 需要被注册是类型
     public func map(_ router: String!, toClass cls: AnyClass!) {
-
+        ffRouter.rebuildRouterMapping(_root, fromRouter: router, toClass: cls)
     }
 
     /// 证据给定的短连接，查找对应的对象类型
@@ -33,7 +33,17 @@ class ffRouter: NSObject {
     /// - Parameter router: 短连接
     /// - Returns: 被注册好的类型，如果未被注册，则返回空类型
     public func classMatchRouter(_ router: String!) -> AnyClass? {
-        return nil
+        let node: ffRouterNode? = _root.recursiveFindChildNode(router)
+        if (node != nil) {
+            return node?.ruby
+        } else {
+            return nil
+        }
+    }
+
+    private static func rebuildRouterMapping(_ root: ffRouterNode!, fromRouter router: String!, toClass cls: AnyClass!) {
+        let keypathArray: [String]? = router.components(separatedBy: "/")
+        root.mappingKeyValuesTree(cls, withKeyPath: keypathArray)
     }
 }
 
@@ -45,6 +55,7 @@ class ffRouterNode
     }
 
     var keyPath: String = NodeKeyPath.Invalid.rawValue
+    var value: String = ""      // 仅仅用于通过 router 找到对应 class 时，匹配并搜集参数列表时使用的属性。
     var ruby: AnyClass? = nil
     var parentNode: ffRouterNode? = nil
     var childNotes: [ffRouterNode] = []
@@ -73,7 +84,7 @@ class ffRouterNode
             node = ffRouterNode()
             node?.keyPath = key
             node?.parentNode = self
-            node?.childNotes.append(node!);
+            self.childNotes.append(node!);
 
             if keyPath.count == 1 {
                 node?.ruby = object
@@ -107,33 +118,67 @@ class ffRouterNode
         return result
     }
 
-//    func recursiveFindChildNode(_ keyPath: String!) -> (result: ffRouterNode?, param:[String: String]?)? {
-//        let allKeyPaths: [String]! = keyPath.components(separatedBy: "/")
-//        let key: String = allKeyPaths[0]
-//
-//        let subNode: ffRouterNode? = self.childNode(with: key)
-//        if allKeyPaths.count == 1 {
-//            return subNode
-//        } else {
-//            let tailKeyPaths: [String] = Array(allKeyPaths.dropFirst(1))
-//            return subNode?.childNodeDeeplyWith(tailKeyPaths)
-//        }
-//    }
+    func recursiveFindChildNode(_ keyPath: String!) -> ffRouterNode? {
+        let allKeyPaths: [String]! = keyPath.components(separatedBy: "/")
+        let key: String = allKeyPaths[0]
+
+        let subNode: ffRouterNode? = self.childNode(with: key)
+        if allKeyPaths.count == 1 {
+            return subNode
+        } else {
+            let tailKeyPaths: [String] = Array(allKeyPaths.dropFirst(1))
+            return subNode?.childNodeDeeplyWith(tailKeyPaths)
+        }
+    }
 
     /// 从当前节点的子节点中找到对应的子节点
     ///
     /// - Parameter keyPath: 被查找的键
     /// - Returns: 对应键的值（节点）
-    func childNodeDeeplyWith(_ keyPath: [String]!) -> ffRouterNode? {
-        let key: String = keyPath[0];
-        let node: ffRouterNode? = self.childNode(with: key)
-        if keyPath.count == 1 {
-            return node;
+    func childNodeDeeplyWith(_ keyPath: [String]!) -> (rnode:ffRouterNode?, param:[String: String]?)? {
+        var keyPathArray: [String]! = keyPath
+        let key: String = keyPathArray![0];
+
+        if isNumber(key) {
+            for (_, each_node) in childNotes.enumerated() {
+                if !(each_node.keyPath.hasPrefix(":")) {
+                    continue
+                }
+                
+            }
         }
 
-        let tailKeyPath: [String] = Array(keyPath.dropFirst(1))
+        var node: ffRouterNode? = self.childNode(with: key)
+        if keyPathArray.count == 1 {
+            return (rnode:node, param:nil);
+        }
+
+//        if (node?.keyPath.hasPrefix(":"))! {
+//            let param_key: String = String((node?.keyPath.dropFirst(1))!)
+//            let param_value: String = key
+//
+//            let tmpTailKeyPathArray: [String] = Array(keyPathArray.dropFirst(1))
+//            let tmpKey = tmpTailKeyPathArray[0]
+//            let tmpNode: ffRouterNode? = (node?.childNode(with: tmpKey))!
+//            if tmpNode != nil {
+//                keyPathArray = tmpTailKeyPathArray
+//                node = tmpNode
+//            }
+//
+//            if (keyPathArray.count == 1) {
+//
+//                return node
+//            }
+//        }
+
+        let tailKeyPath: [String] = Array(keyPathArray.dropFirst(1))
         return node?.childNodeDeeplyWith(tailKeyPath)
     }
 
+    fileprivate func isNumber(_ value: String!) -> Bool {
+        let scanner: Scanner = Scanner.init(string: value)
+        var d: Int64
+        return scanner.scanInt64(&d) && scanner.isAtEnd
+    }
 
 }

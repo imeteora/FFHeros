@@ -37,8 +37,6 @@
 //    Class cls2 = [[ffRouter shared] classMatchRouter:@""];
 //    XCTAssert(cls2 == Nil);
     
-    [[ffRouter shared] map:@"/hello/:uid/world/:mid" toClass:[ffFooModel class]];
-    
 }
 
 - (void)testPerformanceExample {

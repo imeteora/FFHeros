@@ -150,15 +150,4 @@ static NSString * const kSpecialNodeKeyPath = @"-";
     [root buildKeyPath:keyPath forObject:cls];
 }
 
-+ (NSDictionary<NSString *, id> * _Nonnull)storeClass:(Class __nonnull)cls intoRouterMapping:(NSArray<NSString *> * __nonnull)keyPath {
-    NSMutableDictionary<NSString *, id> *result = [[NSMutableDictionary alloc] init];
-    if ([keyPath count] == 1) {
-        result[keyPath[0]] = cls;
-        return result;
-    }
-    NSArray<NSString *> *tailKeyPath = [keyPath subarrayWithRange:NSMakeRange(1, [keyPath count] - 1)];
-    result[keyPath[0]] = [self storeClass:cls intoRouterMapping:tailKeyPath];
-    return result;
-}
-
 @end
