@@ -25,11 +25,14 @@ class FFRouterTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRouterNormal() {
         ffRouter.shared.map("/hello/world", toClass: ffFoo.self)
-        XCTAssert(ffRouter.shared.classMatchRouter("/hello/world") == ffFoo.self)
+        XCTAssert(ffRouter.shared.classMatchRouter("/hello/world")?.0 == ffFoo.self)
+    }
+
+    func testRouterParamA() {
+        ffRouter.shared.map("/hello/:world", toClass: ffFoo.self)
+        XCTAssert(ffRouter.shared.classMatchRouter("/hello/123")?.0 == ffFoo.self)
     }
     
     func testPerformanceExample() {

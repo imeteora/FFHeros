@@ -32,10 +32,10 @@ public class ffRouter: NSObject {
     ///
     /// - Parameter router: 短连接
     /// - Returns: 被注册好的类型，如果未被注册，则返回空类型
-    public func classMatchRouter(_ router: String!) -> AnyClass? {
-        let node: ffRouterNode? = _root.recursiveFindChildNode(router)
-        if (node != nil) {
-            return node?.ruby
+    public func classMatchRouter(_ router: String!) -> (AnyClass?, [String: String]?)? {
+        let result: (node:ffRouterNode?, param:[String: String]?)? = _root.recursiveFindChildNode(router)
+        if (result?.node != nil) {
+            return (result?.node?.ruby, result?.param)
         } else {
             return nil
         }
@@ -118,13 +118,13 @@ class ffRouterNode
         return result
     }
 
-    func recursiveFindChildNode(_ keyPath: String!) -> ffRouterNode? {
+    func recursiveFindChildNode(_ keyPath: String!) -> (ffRouterNode?, [String: String]?)? {
         let allKeyPaths: [String]! = keyPath.components(separatedBy: "/")
         let key: String = allKeyPaths[0]
 
         let subNode: ffRouterNode? = self.childNode(with: key)
         if allKeyPaths.count == 1 {
-            return subNode
+            return (subNode, [:])
         } else {
             let tailKeyPaths: [String] = Array(allKeyPaths.dropFirst(1))
             return subNode?.childNodeDeeplyWith(tailKeyPaths)
@@ -135,49 +135,50 @@ class ffRouterNode
     ///
     /// - Parameter keyPath: 被查找的键
     /// - Returns: 对应键的值（节点）
-    func childNodeDeeplyWith(_ keyPath: [String]!) -> (rnode:ffRouterNode?, param:[String: String]?)? {
+    func childNodeDeeplyWith(_ keyPath: [String]!) -> (ffRouterNode?, [String: String]?)? {
         var keyPathArray: [String]! = keyPath
         let key: String = keyPathArray![0];
 
+        var node: ffRouterNode? = nil
+        var tailKeyPath: [String] = []
+
+        // 如果是数字，表明本节点的子节点必须要 参数匹配 节点
         if isNumber(key) {
             for (_, each_node) in childNotes.enumerated() {
                 if !(each_node.keyPath.hasPrefix(":")) {
                     continue
                 }
-                
+
+                // 如果是 参数适配 节点，则需要继续深探是否匹配后续的字段，才能够确定是否完全匹配。
+                if (each_node.childNotes.count == 0) || (keyPathArray.count == 1) {
+                    // 当前节点为叶子节点，直接返回ruby
+                    return (each_node, [each_node.keyPath: key])
+                } else {
+                    // 当前节点的 参数适配 孩子节点中的孩子节点中找到后继适配，找到则HIT，否则无法适配
+                    let next_key = keyPathArray[1]
+                    node = each_node.childNode(with: next_key)
+                    if (node != nil) && (keyPathArray.count == 2) {
+                        return (node, [each_node.keyPath: key])
+                    } else {
+                        tailKeyPath = Array(keyPathArray.dropFirst(2))
+                    }
+                }
             }
         }
-
-        var node: ffRouterNode? = self.childNode(with: key)
-        if keyPathArray.count == 1 {
-            return (rnode:node, param:nil);
+        else {
+            node = self.childNode(with: key)
+            if keyPathArray.count == 1 {
+                return (node, [:]);
+            } else {
+                tailKeyPath = Array(keyPathArray.dropFirst(1))
+            }
         }
-
-//        if (node?.keyPath.hasPrefix(":"))! {
-//            let param_key: String = String((node?.keyPath.dropFirst(1))!)
-//            let param_value: String = key
-//
-//            let tmpTailKeyPathArray: [String] = Array(keyPathArray.dropFirst(1))
-//            let tmpKey = tmpTailKeyPathArray[0]
-//            let tmpNode: ffRouterNode? = (node?.childNode(with: tmpKey))!
-//            if tmpNode != nil {
-//                keyPathArray = tmpTailKeyPathArray
-//                node = tmpNode
-//            }
-//
-//            if (keyPathArray.count == 1) {
-//
-//                return node
-//            }
-//        }
-
-        let tailKeyPath: [String] = Array(keyPathArray.dropFirst(1))
         return node?.childNodeDeeplyWith(tailKeyPath)
     }
 
     fileprivate func isNumber(_ value: String!) -> Bool {
         let scanner: Scanner = Scanner.init(string: value)
-        var d: Int64
+        var d: Int64 = 0
         return scanner.scanInt64(&d) && scanner.isAtEnd
     }
 
