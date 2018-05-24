@@ -13,7 +13,7 @@ class ffFoo {
     var hello: String = "world"
 }
 
-class FFRouterTests: XCTestCase {
+class FFModule_RouterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
