@@ -18,6 +18,10 @@ class FFRouterTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        ffRouter.shared.map("/hello/world", toClass: ffFoo.self)
+        ffRouter.shared.map("/hello/:world", toClass: ffFoo.self)
+        ffRouter.shared.map("/hello/:world/guy/:name", toClass: ffFoo.self)
+        ffRouter.shared.map("/hello/:world/user/:id", toClass: ffFoo.self)
     }
     
     override func tearDown() {
@@ -26,22 +30,28 @@ class FFRouterTests: XCTestCase {
     }
     
     func testRouterNormal() {
-        ffRouter.shared.map("/hello/world", toClass: ffFoo.self)
         XCTAssert(ffRouter.shared.classMatchRouter("/hello/world")?.0 == ffFoo.self)
     }
 
     func testRouterParamA() {
-        ffRouter.shared.map("/hello/:world", toClass: ffFoo.self)
         XCTAssert(ffRouter.shared.classMatchRouter("/hello/123")?.0 == ffFoo.self)
     }
 
     func testRouterParamB() {
-        ffRouter.shared.map("/hello/:world/guy/:name", toClass: ffFoo.self)
         var result: (AnyClass?, [String:String]?)?
-        XCTAssert(ffRouter.shared.classMatchRouter("/hello/123")?.0 == nil)
-        XCTAssert(ffRouter.shared.classMatchRouter("/hello/123/guy")?.0 == nil)
+
+        result = ffRouter.shared.classMatchRouter("/hello/123")
+        XCTAssert(result?.0 == ffFoo.self)
+
+        result = ffRouter.shared.classMatchRouter("/hello/123/guy")
+        XCTAssert(result?.0 == nil)
+
         result = ffRouter.shared.classMatchRouter("/hello/123/guy/456")
-        debugPrint(String(describing: result?.0))
+        print(String(describing: result?.1))
+        XCTAssert(result?.0 == ffFoo.self)
+
+        result = ffRouter.shared.classMatchRouter("/hello/234/user/999")
+        print(String(describing: result?.1))
         XCTAssert(result?.0 == ffFoo.self)
     }
     
