@@ -10,7 +10,6 @@
 		132F914520B08C7D0095F0EE /* UIImage+BlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 132F914420B08C7D0095F0EE /* UIImage+BlurEffect.m */; };
 		133B0E5B20B072A900E7FC16 /* ffHeroDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B0E5A20B072A900E7FC16 /* ffHeroDetailViewController.m */; };
 		133B0E6120B0730C00E7FC16 /* ffHeroDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B0E6020B0730C00E7FC16 /* ffHeroDetailViewModel.m */; };
-		133B0E6520B0735500E7FC16 /* ffRouterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B0E6420B0735500E7FC16 /* ffRouterManager.m */; };
 		133B29CC20AA56E400117E4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B29CB20AA56E400117E4F /* AppDelegate.m */; };
 		133B29D420AA56E500117E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133B29D320AA56E500117E4F /* Assets.xcassets */; };
 		133B29D720AA56E500117E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133B29D520AA56E500117E4F /* LaunchScreen.storyboard */; };
@@ -74,7 +73,6 @@
 		13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F520AEF7850037F124 /* ffBaseViewController.m */; };
 		13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F920AEFBDF0037F124 /* ffNavigationController.m */; };
 		13AE3CB220B1449C00D88D26 /* FFCode_Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CB120B1449C00D88D26 /* FFCode_Router.m */; };
-		13AE3CB520B1512100D88D26 /* ffRouterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CB420B1512100D88D26 /* ffRouterHelper.m */; };
 		13AE3CC220B153B900D88D26 /* ffSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CC120B153B900D88D26 /* ffSearchViewController.m */; };
 		13CC069620B47EBF00D328BB /* FFRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CC068D20B47EBE00D328BB /* FFRouter.framework */; };
 		13CC069D20B47EBF00D328BB /* FFRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC069C20B47EBF00D328BB /* FFRouterTests.swift */; };
@@ -1119,8 +1117,6 @@
 				13A072C820AEB4CC0037F124 /* ffRefreshFooter.m in Sources */,
 				134F31FC20ADF36C00DADFAA /* ffRefreshHeader.m in Sources */,
 				13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */,
-				13AE3CB520B1512100D88D26 /* ffRouterHelper.m in Sources */,
-				133B0E6520B0735500E7FC16 /* ffRouterManager.m in Sources */,
 				1349751C20B1551000687991 /* ffSearchBarView.m in Sources */,
 				13AE3CC220B153B900D88D26 /* ffSearchViewController.m in Sources */,
 				1349751920B1546900687991 /* ffSearchViewModel.m in Sources */,

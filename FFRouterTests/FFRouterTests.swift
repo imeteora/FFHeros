@@ -34,6 +34,16 @@ class FFRouterTests: XCTestCase {
         ffRouter.shared.map("/hello/:world", toClass: ffFoo.self)
         XCTAssert(ffRouter.shared.classMatchRouter("/hello/123")?.0 == ffFoo.self)
     }
+
+    func testRouterParamB() {
+        ffRouter.shared.map("/hello/:world/guy/:name", toClass: ffFoo.self)
+        var result: (AnyClass?, [String:String]?)?
+        XCTAssert(ffRouter.shared.classMatchRouter("/hello/123")?.0 == nil)
+        XCTAssert(ffRouter.shared.classMatchRouter("/hello/123/guy")?.0 == nil)
+        result = ffRouter.shared.classMatchRouter("/hello/123/guy/456")
+        debugPrint(String(describing: result?.0))
+        XCTAssert(result?.0 == ffFoo.self)
+    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
