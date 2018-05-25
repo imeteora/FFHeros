@@ -142,6 +142,7 @@ class ffRouterNode
         var node: ffRouterNode? = nil
         var tailKeyPath: [String] = []
 
+        var curMatchResult: [String: String] = [:]
         // 如果是数字，表明本节点的子节点必须要 参数匹配 节点
         if isNumber(key) {
             for (_, each_node) in childNotes.enumerated() {
@@ -149,35 +150,46 @@ class ffRouterNode
                     continue
                 }
 
-                var curMatchResult: [String: String] = [each_node.keyPath: key]
+                curMatchResult = [each_node.keyPath: key]
+
                 // 如果是 参数适配 节点，则需要继续深探是否匹配后续的字段，才能够确定是否完全匹配。
                 if (each_node.childNotes.count == 0) || (keyPathArray.count == 1) {
                     // 当前节点为叶子节点，直接返回ruby
                     return (each_node, [each_node.keyPath: key])
                 } else {
                     // 当前节点的 参数适配 孩子节点中的孩子节点中找到后继适配，找到则HIT，否则无法适配
-                    let next_key = keyPathArray[1]
-                    node = each_node.childNode(with: next_key)
-                    if (node != nil) && (keyPathArray.count == 2) {
-                        return (node, [each_node.keyPath: key])
+                    node = each_node
+                    if keyPathArray.count == 1 {
+                        continue;
                     } else {
-                        tailKeyPath = Array(keyPathArray.dropFirst(2))
-                        let node_result_ = node?.childNodeDeeplyWith(tailKeyPath)
-                        curMatchResult.merge((node_result_?.1)!) { (_, new) in new }
-                        return (node_result_?.0, curMatchResult)
+                        tailKeyPath = Array(keyPathArray.dropFirst(1))
+                    }
+
+                    let node_result = node?.childNodeDeeplyWith(tailKeyPath)
+                    if node_result!.0!.ruby != nil && node_result!.1!.count > 0 {
+                        curMatchResult.merge((node_result?.1)!) { (_, new) in new }
+                        return (node_result?.0, curMatchResult)
                     }
                 }
             }
         }
         else {
             node = self.childNode(with: key)
+            if (node == nil || node?.ruby == nil) && true == self.parentNode?.keyPath.hasPrefix(":") {
+                return (nil, [:])
+            }
             if keyPathArray.count == 1 {
                 return (node, [:]);
             } else {
                 tailKeyPath = Array(keyPathArray.dropFirst(1))
             }
         }
-        return node?.childNodeDeeplyWith(tailKeyPath)
+
+        let node_result = node?.childNodeDeeplyWith(tailKeyPath)
+        if node_result!.0!.ruby != nil && node_result!.1!.count > 0 {
+            curMatchResult.merge((node_result?.1)!) { (_, new) in new }
+        }
+        return (node_result!.0, curMatchResult)
     }
 
     fileprivate func isNumber(_ value: String!) -> Bool {

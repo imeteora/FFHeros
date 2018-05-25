@@ -9,12 +9,6 @@
 import XCTest
 @testable import FFRouter
 
-class ffFooViewController: UIViewController {
-    public override func setUpWith(_ param: [String : String]!, userInfo: AnyObject?) -> Bool {
-        print("param: " + param.description)
-        return true
-    }
-}
 
 class FFModule_RouterUITest: XCTestCase {
         
@@ -29,7 +23,6 @@ class FFModule_RouterUITest: XCTestCase {
         XCUIApplication().launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-        ffRouter.shared.map("/foo/:param1/:param2", toClass: ffFooViewController.self)
     }
     
     override func tearDown() {
@@ -40,8 +33,6 @@ class FFModule_RouterUITest: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let vc: UIViewController = UIViewController.viewController("/foo/123/456", userInfo: nil)!
-        XCTAssert(vc != nil)
     }
     
 }
