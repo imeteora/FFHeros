@@ -155,7 +155,7 @@ class ffRouterNode
                 // 如果是 参数适配 节点，则需要继续深探是否匹配后续的字段，才能够确定是否完全匹配。
                 if (each_node.childNotes.count == 0) || (keyPathArray.count == 1) {
                     // 当前节点为叶子节点，直接返回ruby
-                    return (each_node, [each_node.keyPath: key])
+                    return (each_node, curMatchResult)
                 } else {
                     // 当前节点的 参数适配 孩子节点中的孩子节点中找到后继适配，找到则HIT，否则无法适配
                     node = each_node
