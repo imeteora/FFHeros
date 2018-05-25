@@ -18,6 +18,14 @@ public class ffRouter: NSObject {
         return _instance;
     }()
 
+    deinit {
+        self.clearAllRouterMapping()
+    }
+
+    func clearAllRouterMapping() {
+        _root.clearNode()
+    }
+
     /// 用短链接注册目标对象，短连接格式 "/abc/def/:param1/ghi/:param2 ..."
     ///
     /// - code [[ffRouter shared] map:@"/hero/:cid/comics" toClass:[ffHeroDetailViewController class]];
@@ -68,12 +76,20 @@ class ffRouterNode
     }
 
     deinit {
-        keyPath = NodeKeyPath.Invalid.rawValue
-        ruby = nil
-        parentNode = nil
+        self.clearNode()
+    }
+
+    func clearNode() {
+        for (_, each_sub_node) in self.childNotes.enumerated() {
+            each_sub_node.clearNode()
+        }
+        
         if (childNotes.count > 0) {
             childNotes.removeAll()
         }
+        keyPath = NodeKeyPath.Invalid.rawValue
+        ruby = nil
+        parentNode = nil
     }
 
 
