@@ -12,6 +12,7 @@
 #import "ffSearchViewController.h"
 #import "ffFavTableViewController.h"
 #import "ffWebViewController.h"
+#import <FFRouter/FFRouter.h>
 
 @implementation ffNavigationHelper
 
@@ -40,9 +41,10 @@
 }
 
 - (void)showWebControllerWithUrl:(NSString *)url {
-    ffWebViewController *webVC = [[ffWebViewController alloc] init];
-    webVC.url = url;
-    [self.navigationController pushViewController:webVC animated:YES];
+    [[ffRouterTransfer shared] processUrl:url animted:YES];
+//    ffWebViewController *webVC = [[ffWebViewController alloc] init];
+//    webVC.url = url;
+//    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 @end

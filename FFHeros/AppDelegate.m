@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ffNavigationController.h"
 #import "ffHomeViewController.h"
-
+@import FFRouter;
 #import "testPullRefreshViewController.h"
 
 @interface AppDelegate ()
@@ -24,7 +24,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     ffHomeViewController *vc = [[ffHomeViewController alloc] init];
     ffNavigationController *navi = [[ffNavigationController alloc] initWithRootViewController:vc];
+
     [ffNavigationHelper shared].navigationController = navi;
+    [ffRouterTransfer shared].navigationController = navi;
+    [ffRouterTransfer shared].acceptHosts = @[@"*.marvel.com"];
+
     self.window.rootViewController = navi;
     [self.window makeKeyAndVisible];
     return YES;

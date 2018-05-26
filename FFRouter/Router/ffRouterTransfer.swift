@@ -8,26 +8,26 @@
 
 import UIKit
 
-protocol ffRouterTransferProtocol {
+public protocol ffRouterTransferProtocol {
     func tryTransferUrl(_ url:String!) -> String!;
 }
 
 @objc
-class ffRouterTransfer: NSObject
+public class ffRouterTransfer: NSObject
 {
-    public var navigationController: UINavigationController? = nil
+    @objc public var navigationController: UINavigationController? = nil
 
-    var acceptHosts: [String] = []
-    var acceptScheme: [String] = []
+    @objc public var acceptHosts: [String] = []
+    @objc public var acceptScheme: [String] = []
     private var allRouterTransfer: [String: ffRouterTransferProtocol] = [:]
 
-    public static let shared: ffRouterTransfer = {
+    @objc public static let shared: ffRouterTransfer = {
         let _instance: ffRouterTransfer = ffRouterTransfer()
         return _instance
     }()
 
 
-    required override init() {
+    required override public init() {
         acceptScheme = ["http", "https"]
     }
 
@@ -36,11 +36,11 @@ class ffRouterTransfer: NSObject
         self.acceptHosts.removeAll()
     }
 
-    public func registerTransfer(_ domain: String!, transfer: ffRouterTransferProtocol) {
-        self.registerTransfer(domain, transfer: transfer, forceReplace: true)
+    @objc public func registerTransfer(_ domain: String!, transfer: AnyObject!) {
+        self.registerTransfer(domain, transfer:transfer, forceReplace:true)
     }
 
-    public func registerTransfer(_ domain: String!, transfer: ffRouterTransferProtocol, forceReplace: Bool = false) {
+    @objc public func registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) {
         let alreadyHasOne: Bool  = allRouterTransfer.contains { (key:String, _) -> Bool in
             return (key == domain)
         }
@@ -48,11 +48,13 @@ class ffRouterTransfer: NSObject
         if alreadyHasOne == true && forceReplace == false {
             return
         }
-        allRouterTransfer[domain] = transfer;
+        allRouterTransfer[domain] = transfer as? ffRouterTransferProtocol;
     }
 
-    public func processUrl(_ url: String!, animted:Bool) -> Bool
+    @objc public func processUrl(_ url: String!, animted:Bool) -> Bool
     {
+        assert(acceptHosts.count != 0, self.classForCoder.description() + ": acceptable host list is empty")
+        
         let _url: URL? = URL.init(string: url)
         if _url == nil {
             return false
@@ -101,12 +103,12 @@ class ffRouterTransfer: NSObject
     private func _internalPushUrl(_ url:String!, animated: Bool) -> Bool {
         assert(navigationController != nil, self.classForCoder.description() + ": NavigationController is null")
 
-        let cls: (AnyClass?, [String: String]?)? = ffRouter.shared.classMatchRouter(url)
+        let cls: [AnyObject]? = ffRouter.shared.classMatchRouter(url)
         if cls == nil {
             return false;
         }
 
-        if cls!.0 == UIViewController.self {
+        if (cls![0] as? AnyClass) == UIViewController.self {
             let vc: UIViewController? = UIViewController.viewController(url, userInfo: nil)
             if vc != nil {
                 self.navigationController?.pushViewController(vc!, animated: animated)
@@ -136,12 +138,13 @@ class ffRouterTransfer: NSObject
         }
 
         let hostStr: String = url!.host!
-        if hostStr.hasPrefix(domain) {
+        let hostArr: [String] = hostStr.components(separatedBy: ".")
+        if hostArr.count == 3 && hostArr[0].elementsEqual(domain) {
             return true
         }
 
         let pathStr: String = url!.path
-        if pathStr.hasPrefix("/" + domain) {
+        if pathStr.hasPrefix("/" + domain + "/") {
             return true
         }
         return false

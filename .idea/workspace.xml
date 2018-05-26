@@ -23,7 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee117c7a-cd9e-4044-8465-d2add2f26c01" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/FFHeros/Features/RouterHelper/ffRouterHelper.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FFHeros/Features/RouterHelper/ffRouterHelper.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FFRouter/Router/ffRouterTransfer.swift" beforeDir="false" afterPath="$PROJECT_DIR$/FFRouter/Router/ffRouterTransfer.swift" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/FFHeros-fyvnaxpvpdoltqeqgwuydvlqeaph/" />
@@ -58,8 +61,8 @@
       <file leaf-file-name="ffRouterTransfer.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterTransfer.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
+            <state relative-caret-position="-617">
+              <caret line="98" selection-start-line="98" selection-end-line="98" />
             </state>
           </provider>
         </entry>
@@ -354,8 +357,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Cidr.FilesView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,12 +401,13 @@
       <workItem from="1526745910490" duration="1385000" />
       <workItem from="1526866190155" duration="540000" />
       <workItem from="1527334560784" duration="1129000" />
-      <workItem from="1527335767652" duration="4928000" />
+      <workItem from="1527335767652" duration="5570000" />
+      <workItem from="1527354388705" duration="107000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24593000" />
+    <option name="totallyTimeSpent" value="25342000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,20 +419,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1058" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1058" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32942432" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.22921109" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.2491731" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23209429" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.16311301" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15903106" />
-      <window_info anchor="bottom" id="TeamCity" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32942432" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="TeamCity" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32942432" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.2491731" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23209429" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.16311301" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26458332" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -438,6 +441,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32910246" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.22921109" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -800,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterTransfer.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
+        <state relative-caret-position="-617">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
         </state>
       </provider>
     </entry>

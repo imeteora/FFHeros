@@ -16,12 +16,12 @@ public protocol ffRouterable {
 
 extension UIViewController: ffRouterable {
     static func viewController(_ router: String!, userInfo:AnyObject?) -> UIViewController? {
-        let cls_parma: (AnyClass?, [String: String]?)? = ffRouter.shared.classMatchRouter(router)
+        let cls_parma: [AnyObject]? = ffRouter.shared.classMatchRouter(router)
         if cls_parma == nil {
             return nil
         }
-        let cls_vc: UIViewController.Type = cls_parma!.0 as! UIViewController.Type
-        let vc_param: [String: String]? = cls_parma?.1
+        let cls_vc: UIViewController.Type = cls_parma![0] as! UIViewController.Type
+        let vc_param: [String: String]? = cls_parma![1] as? [String: String]
         let vc = cls_vc.init()
         if vc.responds(to: #selector(ffRouterable.setUpWith(_:userInfo:))) {
             if false == vc.setUpWith(vc_param, userInfo: userInfo) {
