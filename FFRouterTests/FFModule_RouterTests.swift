@@ -39,7 +39,7 @@ class FFModule_RouterTests: XCTestCase {
     }
 
     func testUIViewController() {
-        let vc: UIViewController = UIViewController.viewController("/foo/123/456", userInfo: nil)!
+        let vc: UIViewController? = UIViewController.viewController("/foo/123/456", userInfo: nil)!
         XCTAssert(vc != nil)
     }
     
