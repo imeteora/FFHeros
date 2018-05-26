@@ -32,6 +32,16 @@ class FFRouter_Transfer: XCTestCase {
         transfer.processUrl("http://www.marvel.com/hello", animted: true)
         XCTAssert(true)
     }
+
+    func testURLEncodeAndDecode() {
+        let url: String = "http://www.baidu.com/?hello world=123"
+        let encoded_url: String = ff_router_encodeUrl(url)
+        let decoded_url: String = ff_router_decodeUrl(encoded_url)
+
+        print(url + "\n")
+        print(encoded_url + "\n")
+        print(decoded_url + "\n")
+    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
