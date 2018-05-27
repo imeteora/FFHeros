@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		132F914520B08C7D0095F0EE /* UIImage+BlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 132F914420B08C7D0095F0EE /* UIImage+BlurEffect.m */; };
-		1336385B20B6C1E700C9F901 /* ffRouterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336385A20B6C1E700C9F901 /* ffRouterHelper.swift */; };
+		1336385B20B6C1E700C9F901 /* ffRouterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336385A20B6C1E700C9F901 /* ffRouterable.swift */; };
 		1336386720B6EBB100C9F901 /* FFModule_RouterUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336386620B6EBB100C9F901 /* FFModule_RouterUITest.swift */; };
 		133B0E5B20B072A900E7FC16 /* ffHeroDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B0E5A20B072A900E7FC16 /* ffHeroDetailViewController.m */; };
 		133B0E6120B0730C00E7FC16 /* ffHeroDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B0E6020B0730C00E7FC16 /* ffHeroDetailViewModel.m */; };
@@ -147,7 +147,7 @@
 /* Begin PBXFileReference section */
 		132F914320B08C7D0095F0EE /* UIImage+BlurEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+BlurEffect.h"; sourceTree = "<group>"; };
 		132F914420B08C7D0095F0EE /* UIImage+BlurEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BlurEffect.m"; sourceTree = "<group>"; };
-		1336385A20B6C1E700C9F901 /* ffRouterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ffRouterHelper.swift; sourceTree = "<group>"; };
+		1336385A20B6C1E700C9F901 /* ffRouterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ffRouterable.swift; sourceTree = "<group>"; };
 		1336386620B6EBB100C9F901 /* FFModule_RouterUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFModule_RouterUITest.swift; sourceTree = "<group>"; };
 		133B0E5920B072A900E7FC16 /* ffHeroDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ffHeroDetailViewController.h; path = FFHeros/Features/HeroDetail/VC/ffHeroDetailViewController.h; sourceTree = SOURCE_ROOT; };
 		133B0E5A20B072A900E7FC16 /* ffHeroDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ffHeroDetailViewController.m; path = FFHeros/Features/HeroDetail/VC/ffHeroDetailViewController.m; sourceTree = SOURCE_ROOT; };
@@ -356,7 +356,7 @@
 		1336385920B6C14400C9F901 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				1336385A20B6C1E700C9F901 /* ffRouterHelper.swift */,
+				1336385A20B6C1E700C9F901 /* ffRouterable.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
