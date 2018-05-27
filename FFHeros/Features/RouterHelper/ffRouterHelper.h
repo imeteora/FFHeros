@@ -10,6 +10,6 @@
 
 @interface ffRouterHelper : NSObject
 
-- (instancetype)init;
++ (ffRouterHelper *)shared;
 
 @end

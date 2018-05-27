@@ -41,11 +41,23 @@ public class ffRouter: NSObject {
     /// - Parameter router: 短连接
     /// - Returns: 被注册好的类型，如果未被注册，则返回空类型
     @objc public func classMatchRouter(_ router: String!) -> [AnyObject]?
-        // (AnyClass?, [String: String]?)?
     {
+        let result: (AnyClass?, [String: String]?)? = self.classMatchRouter(router)
+        if (result?.0 != nil) {
+            return [(result?.0!)!, result?.1 as AnyObject]
+        } else {
+            return nil
+        }
+    }
+
+    /// 证据给定的短连接，查找对应的对象类型
+    ///
+    /// - Parameter router: 短连接
+    /// - Returns: 被注册好的类型，如果未被注册，则返回空类型
+    public func classMatchRouter(_ router: String!) -> (AnyClass?, [String: String]?)? {
         let result: (ffRouterNode?, [String: String]?)? = _root.recursiveFindChildNode(router)
         if (result?.0 != nil) {
-            return [(result?.0?.ruby!)!, result?.1 as AnyObject]
+            return (result?.0?.ruby!, result?.1)
         } else {
             return nil
         }

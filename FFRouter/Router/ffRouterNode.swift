@@ -87,7 +87,15 @@ class ffRouterNode
         return result
     }
 
-    func recursiveFindChildNode(_ keyPath: String!) -> (ffRouterNode?, [String: String]?)? {
+    func recursiveFindChildNode(_ url: String!) -> (ffRouterNode?, [String: String]?)? {
+
+        let startOfQuery = url.index(of: "?")
+        if startOfQuery != nil {
+            print(url.prefix(upTo: startOfQuery!))
+        }
+
+        let keyPath = ""
+
         let allKeyPaths: [String]! = keyPath.components(separatedBy: "/")
         let key: String = allKeyPaths[0]
 

@@ -12,6 +12,15 @@
 
 @implementation ffRouterHelper
 
++ (ffRouterHelper *)shared {
+    static ffRouterHelper *_instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[ffRouterHelper alloc] init];
+    });
+    return _instance;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         [self registerRouters];
