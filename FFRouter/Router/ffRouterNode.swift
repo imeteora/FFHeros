@@ -174,5 +174,4 @@ class ffRouterNode
         var d: Int64 = 0
         return scanner.scanInt64(&d) && scanner.isAtEnd
     }
-
 }

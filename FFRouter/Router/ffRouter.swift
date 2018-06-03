@@ -8,9 +8,9 @@
 
 import UIKit
 
-
 @objc
-public class ffRouter: NSObject {
+public class ffRouter: NSObject
+{
     private var _root: ffRouterNode = ffRouterNode()
 
     @objc public static var shared: ffRouter = {

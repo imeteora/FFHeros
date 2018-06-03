@@ -97,7 +97,7 @@
 		13FFEB5520ACAB35008615C6 /* ffComicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB4920ACAB34008615C6 /* ffComicsModel.m */; };
 		13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */; };
 		CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */; };
-		CC2F3A9F7A0832E0947BB216 /* ffStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F3DE280F90D4D68B13CE0 /* ffStringUtils.swift */; };
+		CC2F3A9F7A0832E0947BB216 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F3DE280F90D4D68B13CE0 /* StringUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -308,7 +308,7 @@
 		13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffTextObjectModel.m; sourceTree = "<group>"; };
 		CC2F31680CA56A8751A6076B /* ffWebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffWebImageCache.h; sourceTree = "<group>"; };
 		CC2F3766ECD48B36BF68DF4D /* ffNavigationControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffNavigationControllerProtocol.h; sourceTree = "<group>"; };
-		CC2F3DE280F90D4D68B13CE0 /* ffStringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ffStringUtils.swift; sourceTree = "<group>"; };
+		CC2F3DE280F90D4D68B13CE0 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffWebImageCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -906,7 +906,7 @@
 		CC2F34F10767A3C02C3ED3B5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CC2F3DE280F90D4D68B13CE0 /* ffStringUtils.swift */,
+				CC2F3DE280F90D4D68B13CE0 /* StringUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1194,7 +1194,7 @@
 				1336385B20B6C1E700C9F901 /* ffRouterable.swift in Sources */,
 				1385F03D20B9391A009261ED /* ffRouterNode.swift in Sources */,
 				1385F03F20B94DDD009261ED /* ffRouterTransfer.swift in Sources */,
-				CC2F3A9F7A0832E0947BB216 /* ffStringUtils.swift in Sources */,
+				CC2F3A9F7A0832E0947BB216 /* StringUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1367,10 +1367,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FFHeros/FFHeros-Bridging-Header.h";
@@ -1391,10 +1388,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FFHeros/FFHeros-Bridging-Header.h";
@@ -1410,11 +1404,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1429,11 +1419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1455,11 +1441,7 @@
 				INFOPLIST_FILE = FFRouter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFRouter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1486,11 +1468,7 @@
 				INFOPLIST_FILE = FFRouter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFRouter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1510,11 +1488,7 @@
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFRouterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFRouterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1532,11 +1506,7 @@
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFRouterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFRouterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;

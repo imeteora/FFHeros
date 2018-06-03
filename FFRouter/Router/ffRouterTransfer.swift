@@ -12,6 +12,22 @@ public protocol ffRouterTransferProtocol {
     func tryTransferUrl(_ url:String!) -> String!;
 }
 
+fileprivate func ff_router_encodeUrl(_ url: String) -> String {
+    if url.count <= 0 {
+        return url
+    }
+    let encodedUrl: String = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+    return encodedUrl
+}
+
+fileprivate func ff_router_decodeUrl(_ url: String) -> String {
+    if url.count <= 0  {
+        return url
+    }
+    let decodedUrl: String = url.removingPercentEncoding ?? ""
+    return decodedUrl
+}
+
 @objc
 public class ffRouterTransfer: NSObject
 {
@@ -44,7 +60,7 @@ public class ffRouterTransfer: NSObject
         let alreadyHasOne: Bool  = allRouterTransfer.contains { (key:String, _) -> Bool in
             return (key == domain)
         }
-        
+
         if alreadyHasOne == true && forceReplace == false {
             return
         }
@@ -54,7 +70,7 @@ public class ffRouterTransfer: NSObject
     @objc public func processUrl(_ url: String!, animted:Bool) -> Bool
     {
         assert(acceptHosts.count != 0, self.classForCoder.description() + ": acceptable host list is empty")
-        
+
         let _url: URL? = URL.init(string: url)
         if _url == nil {
             return false
@@ -157,38 +173,7 @@ public class ffRouterTransfer: NSObject
     ///   - url: 被检查的url链接
     /// - Returns: 返回true表示符合所期望的格式，否则不匹配
     private func _matchUrl(_ base: String!, url: String!) -> Bool {
-        let baseArray: [String] = base.components(separatedBy: ".")
-        let urlArray: [String] = url.components(separatedBy: ".")
-        if baseArray.count != urlArray.count {
-            return false
-        }
-
-        var result = true
-        for (idx, each_base) in baseArray.enumerated() {
-            if each_base == "*" {
-                continue
-            }
-            if each_base.elementsEqual(urlArray[idx]) == false {
-                result = false
-                break;
-            }
-        }
-        return result
+        return StringUtils.matchString(base, withSource: url, separatedBy: ".")
     }
 }
 
-func ff_router_encodeUrl(_ url: String) -> String {
-    if url.count <= 0 {
-        return url
-    }
-    let encodedUrl: String = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-    return encodedUrl
-}
-
-func ff_router_decodeUrl(_ url: String) -> String {
-    if url.count <= 0  {
-        return url
-    }
-    let decodedUrl: String = url.removingPercentEncoding ?? ""
-    return decodedUrl
-}
