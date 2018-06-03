@@ -16,7 +16,7 @@ public protocol ffRouterable {
 
 extension UIViewController: ffRouterable {
     static func viewController(_ router: String!, userInfo:AnyObject?) -> UIViewController? {
-        let cls_parma: [AnyObject]? = ffRouter.shared.classMatchRouter(router)
+        let cls_parma: [Any]? = ffRouter.shared.classMatchRouter(router)
         if cls_parma == nil {
             return nil
         }

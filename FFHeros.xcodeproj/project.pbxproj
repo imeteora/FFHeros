@@ -97,6 +97,7 @@
 		13FFEB5520ACAB35008615C6 /* ffComicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB4920ACAB34008615C6 /* ffComicsModel.m */; };
 		13FFEB5C20ACB05B008615C6 /* ffTextObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */; };
 		CC2F38DE00422075403706B7 /* ffWebImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */; };
+		CC2F3A9F7A0832E0947BB216 /* ffStringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F3DE280F90D4D68B13CE0 /* ffStringUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,6 +308,7 @@
 		13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffTextObjectModel.m; sourceTree = "<group>"; };
 		CC2F31680CA56A8751A6076B /* ffWebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffWebImageCache.h; sourceTree = "<group>"; };
 		CC2F3766ECD48B36BF68DF4D /* ffNavigationControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffNavigationControllerProtocol.h; sourceTree = "<group>"; };
+		CC2F3DE280F90D4D68B13CE0 /* ffStringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ffStringUtils.swift; sourceTree = "<group>"; };
 		CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffWebImageCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -816,6 +818,7 @@
 				13CC068F20B47EBE00D328BB /* FFRouter.h */,
 				13CC069020B47EBE00D328BB /* Info.plist */,
 				13F4171A20B31CED0092FC94 /* Router */,
+				CC2F34F10767A3C02C3ED3B5 /* Utils */,
 			);
 			path = FFRouter;
 			sourceTree = "<group>";
@@ -898,6 +901,14 @@
 				133E1FA020AB4F5E00CA800C /* ffUrlModel.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		CC2F34F10767A3C02C3ED3B5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CC2F3DE280F90D4D68B13CE0 /* ffStringUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		CC2F39EE7D0211DAC3862ADA /* View */ = {
@@ -1180,9 +1191,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				13CC06AB20B47F1600D328BB /* ffRouter.swift in Sources */,
-				1336385B20B6C1E700C9F901 /* ffRouterHelper.swift in Sources */,
+				1336385B20B6C1E700C9F901 /* ffRouterable.swift in Sources */,
 				1385F03D20B9391A009261ED /* ffRouterNode.swift in Sources */,
 				1385F03F20B94DDD009261ED /* ffRouterTransfer.swift in Sources */,
+				CC2F3A9F7A0832E0947BB216 /* ffStringUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

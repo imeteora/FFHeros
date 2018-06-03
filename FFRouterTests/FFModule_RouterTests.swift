@@ -65,6 +65,17 @@ class FFModule_RouterTests: XCTestCase {
         let vc: UIViewController? = UIViewController.viewController("/foo/123/456", userInfo: nil)!
         XCTAssert(vc != nil)
     }
+
+    func testMatchHost() {
+        var result: Bool = ff.ffStringUtils.matchString("*.marvel.com", withSource:"marvel.com", separatedBy:".")
+        XCTAssert(result == true)
+
+        result = ff.ffStringUtils.matchString("*.marvel.com", withSource:"www.marvel.com", separatedBy:".")
+        XCTAssert(result == true)
+
+        result = ff.ffStringUtils.matchString("marvel.com", withSource:"www.marvel.com", separatedBy:".")
+        XCTAssert(result == false)
+    }
     
     func testRouterNormal() {
         XCTAssert(ffRouter.shared.classMatchRouter("/hello/world")?.0 == ffFoo.self)

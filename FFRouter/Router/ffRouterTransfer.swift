@@ -103,7 +103,7 @@ public class ffRouterTransfer: NSObject
     private func _internalPushUrl(_ url:String!, animated: Bool) -> Bool {
         assert(navigationController != nil, self.classForCoder.description() + ": NavigationController is null")
 
-        let cls: [AnyObject]? = ffRouter.shared.classMatchRouter(url)
+        let cls: [Any]? = ffRouter.shared.classMatchRouter(url)
         if cls == nil {
             return false;
         }
