@@ -8,8 +8,7 @@
 
 import UIKit
 
-@objc
-public class ffRouter: NSObject
+@objc public class ffRouter: NSObject
 {
     private var _root: ffRouterNode = ffRouterNode()
 
@@ -43,7 +42,7 @@ public class ffRouter: NSObject
     @objc public func classMatchRouter(_ router: String!) -> [Any]?
     {
         let result: (AnyClass?, [String: String]?)? = self.classMatchRouter(router)
-        if result != nil {
+        if result != nil && result!.0 != nil {
             return [(result!.0)!, result?.1 as AnyObject]
         } else {
             return nil
@@ -57,7 +56,7 @@ public class ffRouter: NSObject
     public func classMatchRouter(_ router: String!) -> (AnyClass?, [String: String]?)? {
         let result: (ffRouterNode?, [String: String]?)? = _root.recursiveFindChildNode(router)
         if result != nil {
-            return (result!.0?.ruby!, result?.1)
+            return (result!.0?.ruby, result?.1)
         } else {
             return nil
         }

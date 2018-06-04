@@ -12,7 +12,7 @@ public protocol ffRouterTransferProtocol {
     func tryTransferUrl(_ url:String!) -> String!;
 }
 
-fileprivate func ff_router_encodeUrl(_ url: String) -> String {
+public func ff_router_encodeUrl(_ url: String) -> String {
     if url.count <= 0 {
         return url
     }
@@ -20,7 +20,7 @@ fileprivate func ff_router_encodeUrl(_ url: String) -> String {
     return encodedUrl
 }
 
-fileprivate func ff_router_decodeUrl(_ url: String) -> String {
+public func ff_router_decodeUrl(_ url: String) -> String {
     if url.count <= 0  {
         return url
     }
@@ -28,8 +28,7 @@ fileprivate func ff_router_decodeUrl(_ url: String) -> String {
     return decodedUrl
 }
 
-@objc
-public class ffRouterTransfer: NSObject
+@objc public class ffRouterTransfer: NSObject
 {
     @objc public var navigationController: UINavigationController? = nil
 
@@ -67,7 +66,7 @@ public class ffRouterTransfer: NSObject
         allRouterTransfer[domain] = transfer as? ffRouterTransferProtocol;
     }
 
-    @objc public func processUrl(_ url: String!, animted:Bool) -> Bool
+    @objc public func processUrl(_ url: String!, animated:Bool) -> Bool
     {
         assert(acceptHosts.count != 0, self.classForCoder.description() + ": acceptable host list is empty")
 
@@ -103,14 +102,14 @@ public class ffRouterTransfer: NSObject
             }
         }
 
-        if true == _internalPushUrl(_urlTransfered, animated: animted) {
+        if true == _internalPushUrl(_urlTransfered, animated: animated) {
             return true;
         }
 
 
         if _urlTransfered.count > 0 && _isWebUrl(_urlTransfered) {
             let webWrapUrl = "/browser/?url=" + ff_router_encodeUrl(_urlTransfered);
-            return _internalPushUrl(webWrapUrl, animated: animted);
+            return _internalPushUrl(webWrapUrl, animated: animated);
         }
 
         return false
