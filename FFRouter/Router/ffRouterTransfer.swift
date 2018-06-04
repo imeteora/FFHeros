@@ -30,10 +30,10 @@ public func ff_router_decodeUrl(_ url: String) -> String {
 
 @objc public class ffRouterTransfer: NSObject
 {
-    @objc public var navigationController: UINavigationController? = nil
-
+    @objc weak public var navigationController: UINavigationController? = nil
     @objc public var acceptHosts: [String] = []
     @objc public var acceptScheme: [String] = []
+
     private var allRouterTransfer: [String: ffRouterTransferProtocol] = [:]
 
     @objc public static let shared: ffRouterTransfer = {
@@ -51,11 +51,20 @@ public func ff_router_decodeUrl(_ url: String) -> String {
         self.acceptHosts.removeAll()
     }
 
-    @objc public func registerTransfer(_ domain: String!, transfer: AnyObject!) {
-        self.registerTransfer(domain, transfer:transfer, forceReplace:true)
+    @objc public func registerTranfer(_ domain: String!, transfer: AnyObject!) {
+        _registerTransfer(domain, transfer:transfer, forceReplace:true)
     }
 
     @objc public func registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) {
+        _registerTransfer(domain, transfer:transfer, forceReplace:forceReplace)
+    }
+
+    @objc public func processUrl(_ url: String!, animated:Bool) -> Bool {
+        return _processUrl(url, animated: animated)
+    }
+
+
+    fileprivate func _registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) {
         let alreadyHasOne: Bool  = allRouterTransfer.contains { (key:String, _) -> Bool in
             return (key == domain)
         }
@@ -66,7 +75,7 @@ public func ff_router_decodeUrl(_ url: String) -> String {
         allRouterTransfer[domain] = transfer as? ffRouterTransferProtocol;
     }
 
-    @objc public func processUrl(_ url: String!, animated:Bool) -> Bool
+    fileprivate func _processUrl(_ url: String!, animated:Bool) -> Bool
     {
         assert(acceptHosts.count != 0, self.classForCoder.description() + ": acceptable host list is empty")
 

@@ -24,6 +24,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         [self registerRouters];
+        [self registerRouterTransfers];
     }
     return self;
 }
@@ -32,6 +33,10 @@
 #pragma mark - private helpers
 - (void)registerRouters {
     [[ffRouter shared] map:@"/browser" toClass:[ffWebViewController class]];
+}
+
+- (void)registerRouterTransfers {
+
 }
 
 @end
