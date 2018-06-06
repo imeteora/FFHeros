@@ -41,7 +41,7 @@
 }
 
 - (void)showWebControllerWithUrl:(NSString *)url {
-    [[ffRouterTransfer shared] processUrl:url animated:YES];
+    [[ffRouter shared] processUrl:url animated:YES];
 //    ffWebViewController *webVC = [[ffWebViewController alloc] init];
 //    webVC.url = url;
 //    [self.navigationController pushViewController:webVC animated:YES];

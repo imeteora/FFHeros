@@ -8,11 +8,7 @@
 
 import UIKit
 
-public protocol ffRouterTransferProtocol {
-    func tryTransferUrl(_ url:String!) -> String!;
-}
-
-public func ff_router_encodeUrl(_ url: String) -> String {
+internal func ff_router_encodeUrl(_ url: String) -> String {
     if url.count <= 0 {
         return url
     }
@@ -20,7 +16,7 @@ public func ff_router_encodeUrl(_ url: String) -> String {
     return encodedUrl
 }
 
-public func ff_router_decodeUrl(_ url: String) -> String {
+internal func ff_router_decodeUrl(_ url: String) -> String {
     if url.count <= 0  {
         return url
     }
@@ -28,16 +24,16 @@ public func ff_router_decodeUrl(_ url: String) -> String {
     return decodedUrl
 }
 
-@objc public class ffRouterTransfer: NSObject
+@objc internal class ffRouterTranslator: NSObject
 {
     @objc weak public var navigationController: UINavigationController? = nil
-    @objc public var acceptHosts: [String] = []
-    @objc public var acceptScheme: [String] = []
+    @objc internal var acceptHosts: [String] = []
+    @objc internal var acceptScheme: [String] = []
 
-    private var allRouterTransfer: [String: ffRouterTransferProtocol] = [:]
+    private var allRouterTransfer: [String: ffRouterTranslatorBehaviorProtocol] = [:]
 
-    @objc public static let shared: ffRouterTransfer = {
-        let _instance: ffRouterTransfer = ffRouterTransfer()
+    @objc internal static let shared: ffRouterTranslator = {
+        let _instance: ffRouterTranslator = ffRouterTranslator()
         return _instance
     }()
 
@@ -51,28 +47,29 @@ public func ff_router_decodeUrl(_ url: String) -> String {
         self.acceptHosts.removeAll()
     }
 
-    @objc public func registerTranfer(_ domain: String!, transfer: AnyObject!) {
-        _registerTransfer(domain, transfer:transfer, forceReplace:true)
+    @objc internal func registerTranfer(_ domain: String!, transfer: AnyObject!) -> Bool {
+        return _registerTransfer(domain, transfer:transfer, forceReplace:true)
     }
 
-    @objc public func registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) {
-        _registerTransfer(domain, transfer:transfer, forceReplace:forceReplace)
+    @objc internal func registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) -> Bool {
+        return _registerTransfer(domain, transfer:transfer, forceReplace:forceReplace)
     }
 
-    @objc public func processUrl(_ url: String!, animated:Bool) -> Bool {
+    @objc internal func processUrl(_ url: String!, animated:Bool) -> Bool {
         return _processUrl(url, animated: animated)
     }
 
 
-    fileprivate func _registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) {
+    fileprivate func _registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) -> Bool{
         let alreadyHasOne: Bool  = allRouterTransfer.contains { (key:String, _) -> Bool in
             return (key == domain)
         }
 
         if alreadyHasOne == true && forceReplace == false {
-            return
+            return false
         }
-        allRouterTransfer[domain] = transfer as? ffRouterTransferProtocol;
+        allRouterTransfer[domain] = transfer as? ffRouterTranslatorBehaviorProtocol;
+        return true
     }
 
     fileprivate func _processUrl(_ url: String!, animated:Bool) -> Bool
@@ -103,7 +100,7 @@ public func ff_router_decodeUrl(_ url: String) -> String {
         for (eachDomain, eachTransfer) in self.allRouterTransfer {
             if self._matchDomain(eachDomain, url: url)
             {
-                let tmpTransferedUrl:String = eachTransfer.tryTransferUrl(url)
+                let tmpTransferedUrl:String = eachTransfer.tryTranslateUrl(url)
                 if tmpTransferedUrl.elementsEqual(url) == false {
                     _urlTransfered = tmpTransferedUrl
                     break;
@@ -124,7 +121,7 @@ public func ff_router_decodeUrl(_ url: String) -> String {
         return false
     }
 
-    private func _internalPushUrl(_ url:String!, animated: Bool) -> Bool {
+    fileprivate func _internalPushUrl(_ url:String!, animated: Bool) -> Bool {
         assert(navigationController != nil, self.classForCoder.description() + ": NavigationController is null")
 
         let cls: [Any]? = ffRouter.shared.classMatchRouter(url)
@@ -141,7 +138,7 @@ public func ff_router_decodeUrl(_ url: String) -> String {
         return true
     }
 
-    private  func _isWebUrl(_ url:String!) -> Bool {
+    fileprivate  func _isWebUrl(_ url:String!) -> Bool {
         let kRegStr = "^((?:(http|https|Http|Https|rtsp|Rtsp):\\/\\/(?:(?:[a-zA-Z0-9\\$\\-\\_\\.\\+\\!\\*\\'\\(\\)\\,\\;\\?\\&\\=]|(?:\\%[a-fA-F0-9]{2})){1,64}(?:\\:(?:[a-zA-Z0-9\\$\\-\\_\\.\\+\\!\\*\\'\\(\\)\\,\\;\\?\\&\\=]|(?:\\%[a-fA-F0-9]{2})){1,25})?\\@)?)?(?:(([a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]([a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF\\-]{0,61}[a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]){0,1}\\.)+[a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]{2,63}|((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9])\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9]))))(?:\\:\\d{1,5})?)(\\/(?:(?:[a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF\\;\\/\\?\\:\\@\\&\\=\\#\\~\\-\\.\\+\\!\\*\\'\\(\\)\\,\\_])|(?:\\%[a-fA-F0-9]{2}))*)?(?:\\b|$)";
         let regUrlTextWebUrl = NSPredicate.init(format: "SELF MATCHES %@", kRegStr)
         if regUrlTextWebUrl.evaluate(with: url) {
@@ -151,7 +148,7 @@ public func ff_router_decodeUrl(_ url: String) -> String {
         }
     }
 
-    private func _matchDomain(_ domain:String!, url: String!) -> Bool {
+    fileprivate func _matchDomain(_ domain:String!, url: String!) -> Bool {
         let url: URL? = URL.init(string:url)
         if url == nil || url!.host!.count <= 0 {
             return false
@@ -180,7 +177,7 @@ public func ff_router_decodeUrl(_ url: String) -> String {
     ///   - base: 期望的host格式
     ///   - url: 被检查的url链接
     /// - Returns: 返回true表示符合所期望的格式，否则不匹配
-    private func _matchUrl(_ base: String!, url: String!) -> Bool {
+    fileprivate func _matchUrl(_ base: String!, url: String!) -> Bool {
         return StringUtils.matchString(base, withSource: url, separatedBy: ".")
     }
 }

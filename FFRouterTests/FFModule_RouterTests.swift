@@ -21,6 +21,7 @@ class ffFooViewController: UIViewController {
 }
 
 class FFModule_RouterTests: XCTestCase {
+    private let urlstr: String = "http://marvel.com/comics/characters/1017100/a-bomb_has?utm_campaign=apiRef&utm_source=aaee6fa40625a68298d42a9bb9dcd09d"
     
     override func setUp() {
         super.setUp()
@@ -35,11 +36,9 @@ class FFModule_RouterTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        ffRouter.shared.clearAllRouterMapping()
     }
 
     func testUrl() {
-        let urlstr = "http://marvel.com/comics/characters/1017100/a-bomb_has?utm_campaign=apiRef&utm_source=aaee6fa40625a68298d42a9bb9dcd09d"
         let url = URL.init(string: urlstr)
         print(url?.scheme)
         print(url?.host)

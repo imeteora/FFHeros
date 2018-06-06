@@ -9,21 +9,16 @@
 import Foundation
 import UIKit
 
-@objc
-public protocol ffRouterable {
-    func setUpWith(_ param: [String: String]!, userInfo:AnyObject?) -> Bool;
-}
-
-extension UIViewController: ffRouterable {
+extension UIViewController: ffRouterableProtocol {
     static func viewController(_ router: String!, userInfo:AnyObject?) -> UIViewController? {
-        let cls_parma: [Any]? = ffRouter.shared.classMatchRouter(router)
+        let cls_parma: (AnyClass?, [String: String]?)? = ffRouter.shared.classMatchRouter(router)
         if cls_parma == nil {
             return nil
         }
-        let cls_vc: UIViewController.Type = cls_parma![0] as! UIViewController.Type
-        let vc_param: [String: String]? = cls_parma![1] as? [String: String]
+        let cls_vc: UIViewController.Type = cls_parma!.0 as! UIViewController.Type
+        let vc_param: [String: String]? = cls_parma!.1
         let vc = cls_vc.init()
-        if vc.responds(to: #selector(ffRouterable.setUpWith(_:userInfo:))) {
+        if vc.responds(to: #selector(ffRouterableProtocol.setUpWith(_:userInfo:))) {
             if false == vc.setUpWith(vc_param, userInfo: userInfo) {
                 return nil
             }
