@@ -61,7 +61,7 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
     }
 
 
-    fileprivate func _registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) -> Bool{
+    fileprivate func _registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) -> Bool {
         let alreadyHasOne: Bool  = allRouterTransfer.contains { (key:String, _) -> Bool in
             return (key == domain)
         }
@@ -93,9 +93,13 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
             }
         }
 
+        // 没有匹配任何已设定的主机地址，表示不可处理
         if (matchOneHost == false) {
             return false
         }
+
+        // 截取query形成参数键值对
+        var args = URLUtils.parametersInQuery(_url?.query) ?? [:]
 
         var _urlTransfered: String = url   // set as origin url firstly.
         for (eachDomain, eachTransfer) in self.allRouterTransfer {
@@ -109,41 +113,49 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
             }
         }
 
-        if true == _internalPushUrl(_urlTransfered, animated: animated) {
-            return true;
+        if _urlTransfered.count <= 0 {
+            return false
         }
 
-
-        if _urlTransfered.count > 0 && _isWebUrl(_urlTransfered) {
-            let webWrapUrl = "/browser/?url=" + ff_router_encodeUrl(_urlTransfered);
-            return _internalPushUrl(webWrapUrl, animated: animated);
+        if _isWebUrl(_urlTransfered) {
+            args.merge(["url": ff_router_encodeUrl(_urlTransfered)]) { (_, new) -> String in new }
+            _urlTransfered = "/browser"
         }
 
-        return false
+        return _internalProcessRouter(_urlTransfered, withParameter: args, animated: animated)
     }
 
-    fileprivate func _internalPushUrl(_ url:String!, animated: Bool) -> Bool {
+    fileprivate func _internalProcessRouter(_ router:String!, withParameter argu: [String : String]?, animated: Bool = true) -> Bool
+    {
         assert(navigationController != nil, self.classForCoder.description() + ": NavigationController is null")
 
-        let cls: [Any]? = ffRouter.shared.classMatchRouter(url)
+        let cls: (AnyClass?, [String : String]?)? = ffRouter.shared.classMatchRouter(router)
         if cls == nil {
             return false;
         }
 
-        if (cls![0] as? AnyClass) == UIViewController.self {
-            let vc: UIViewController? = UIViewController.viewController(url, userInfo: nil)
-            if vc != nil {
-                self.navigationController?.pushViewController(vc!, animated: animated)
-            }
+        var param: [String: String]! = [:]
+        if cls!.1!.count != 0 {
+            param.merge(cls!.1!) { (_, new) -> String in new }
         }
-        return true
+
+        if cls!.0 == UIViewController.self {
+            if let vc = UIViewController.viewController(router, withParameter: param, userInfo: nil) {
+                self.navigationController?.pushViewController(vc, animated: animated)
+                return true
+            }
+        } else {
+            /// ...
+        }
+        return false
     }
 
     fileprivate  func _isWebUrl(_ url:String!) -> Bool {
         return URLUtils.isWebUrl(url)
     }
 
-    fileprivate func _matchDomain(_ domain:String!, url: String!) -> Bool {
+    fileprivate func _matchDomain(_ domain:String!, url: String!) -> Bool
+    {
         let url: URL? = URL.init(string:url)
         if url == nil || url!.host!.count <= 0 {
             return false

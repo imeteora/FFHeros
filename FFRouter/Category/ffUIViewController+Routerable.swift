@@ -10,13 +10,19 @@ import Foundation
 import UIKit
 
 extension UIViewController: ffRouterableProtocol {
-    static func viewController(_ router: String!, userInfo:AnyObject?) -> UIViewController? {
+    static func viewController(_ router: String!, withParameter args: [String : String] = [:], userInfo: AnyObject? = nil) -> UIViewController? {
         let cls_parma: (AnyClass?, [String: String]?)? = ffRouter.shared.classMatchRouter(router)
         if cls_parma == nil {
             return nil
         }
+
         let cls_vc: UIViewController.Type = cls_parma!.0 as! UIViewController.Type
-        let vc_param: [String: String]? = cls_parma!.1
+        var vc_param: [String: String] = cls_parma!.1 ?? [:]
+
+        if args.count != 0 {
+            vc_param.merge(args) { (_, new) -> String in new }
+        }
+
         let vc = cls_vc.init()
         if vc.responds(to: #selector(ffRouterableProtocol.setUpWith(_:userInfo:))) {
             if false == vc.setUpWith(vc_param, userInfo: userInfo) {

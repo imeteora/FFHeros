@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import FFRouter
+@testable import FFUtils
 
 class ffFoo {
     var hello: String = "world"
@@ -61,18 +62,18 @@ class FFModule_RouterTests: XCTestCase {
     }
 
     func testUIViewController() {
-        let vc: UIViewController? = UIViewController.viewController("/foo/123/456", userInfo: nil)!
+        let vc: UIViewController? = UIViewController.viewController("/foo/123/456", withParameter: ["hello": "world"], userInfo: nil)!
         XCTAssert(vc != nil)
     }
 
     func testMatchHost() {
-        var result: Bool = StringUtils.matchString("*.marvel.com", withSource:"marvel.com", separatedBy:".")
+        var result: Bool = URLUtils.matchString("*.marvel.com", withSource:"marvel.com", separatedBy:".")
         XCTAssert(result == true)
 
-        result = StringUtils.matchString("*.marvel.com", withSource:"www.marvel.com", separatedBy:".")
+        result = URLUtils.matchString("*.marvel.com", withSource:"www.marvel.com", separatedBy:".")
         XCTAssert(result == true)
 
-        result = StringUtils.matchString("marvel.com", withSource:"www.marvel.com", separatedBy:".")
+        result = URLUtils.matchString("marvel.com", withSource:"www.marvel.com", separatedBy:".")
         XCTAssert(result == false)
     }
     

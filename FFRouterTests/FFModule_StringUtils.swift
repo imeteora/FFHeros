@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import FFRouter
+@testable import FFUtils
 
 class FFModule_StringUtils: XCTestCase {
     private let urlstr: String = "http://marvel.com/comics/characters/1017100/a-bomb_has?utm_campaign=apiRef&utm_source=aaee6fa40625a68298d42a9bb9dcd09d"
@@ -23,7 +24,7 @@ class FFModule_StringUtils: XCTestCase {
     }
 
     func testFetchParamInQuery() {
-        let param: [String: String] = StringUtils.parametersInQuery(urlstr)
+        let param: [String: String] = URLUtils.parametersInQuery(urlstr)
         XCTAssert(param == ["utm_source": "aaee6fa40625a68298d42a9bb9dcd09d", "utm_campaign": "apiRef"])
     }
     
