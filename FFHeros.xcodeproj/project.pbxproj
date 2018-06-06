@@ -439,8 +439,8 @@
 				13CC068E20B47EBE00D328BB /* FFRouter */,
 				13CC069B20B47EBF00D328BB /* FFRouterTests */,
 				13AA82E920C7FF3500C88E3F /* FFUtils */,
-				133B29C820AA56E400117E4F /* Products */,
 				13AA82F320C7FFFC00C88E3F /* Frameworks */,
+				133B29C820AA56E400117E4F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -848,8 +848,8 @@
 		13AA82E920C7FF3500C88E3F /* FFUtils */ = {
 			isa = PBXGroup;
 			children = (
-				CC2F34F10767A3C02C3ED3B5 /* Utils */,
 				13AA82EA20C7FF3500C88E3F /* FFUtils.swift */,
+				CC2F34F10767A3C02C3ED3B5 /* Utils */,
 			);
 			path = FFUtils;
 			sourceTree = "<group>";
@@ -1020,8 +1020,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				13AA82F020C7FF7600C88E3F /* PBXTargetDependency */,
 				13CC06A120B47EBF00D328BB /* PBXTargetDependency */,
+				13AA82F020C7FF7600C88E3F /* PBXTargetDependency */,
 			);
 			name = FFHeros;
 			productName = FFHeros;
@@ -1283,8 +1283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13AA82F520C800C000C88E3F /* URLUtils.swift in Sources */,
 				13AA82EB20C7FF3500C88E3F /* FFUtils.swift in Sources */,
+				13AA82F520C800C000C88E3F /* URLUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
