@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FFUtils
 
 internal func ff_router_encodeUrl(_ url: String) -> String {
     if url.count <= 0 {
@@ -139,13 +140,7 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
     }
 
     fileprivate  func _isWebUrl(_ url:String!) -> Bool {
-        let kRegStr = "^((?:(http|https|Http|Https|rtsp|Rtsp):\\/\\/(?:(?:[a-zA-Z0-9\\$\\-\\_\\.\\+\\!\\*\\'\\(\\)\\,\\;\\?\\&\\=]|(?:\\%[a-fA-F0-9]{2})){1,64}(?:\\:(?:[a-zA-Z0-9\\$\\-\\_\\.\\+\\!\\*\\'\\(\\)\\,\\;\\?\\&\\=]|(?:\\%[a-fA-F0-9]{2})){1,25})?\\@)?)?(?:(([a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]([a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF\\-]{0,61}[a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]){0,1}\\.)+[a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]{2,63}|((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9])\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9]))))(?:\\:\\d{1,5})?)(\\/(?:(?:[a-zA-Z0-9\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF\\;\\/\\?\\:\\@\\&\\=\\#\\~\\-\\.\\+\\!\\*\\'\\(\\)\\,\\_])|(?:\\%[a-fA-F0-9]{2}))*)?(?:\\b|$)";
-        let regUrlTextWebUrl = NSPredicate.init(format: "SELF MATCHES %@", kRegStr)
-        if regUrlTextWebUrl.evaluate(with: url) {
-            return true
-        } else {
-            return false
-        }
+        return URLUtils.isWebUrl(url)
     }
 
     fileprivate func _matchDomain(_ domain:String!, url: String!) -> Bool {
@@ -178,7 +173,7 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
     ///   - url: 被检查的url链接
     /// - Returns: 返回true表示符合所期望的格式，否则不匹配
     fileprivate func _matchUrl(_ base: String!, url: String!) -> Bool {
-        return StringUtils.matchString(base, withSource: url, separatedBy: ".")
+        return URLUtils.matchString(base, withSource: url, separatedBy: ".")
     }
 }
 

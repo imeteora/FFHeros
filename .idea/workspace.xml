@@ -24,6 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ee117c7a-cd9e-4044-8465-d2add2f26c01" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/FFHeros.xcodeproj/project.pbxproj" afterDir="false" />
     </list>
     <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/FFHeros-fyvnaxpvpdoltqeqgwuydvlqeaph/" />
     <ignored path="FFHeros.xcodeproj/.idea/.name" />
@@ -41,23 +42,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_EFE47541-74C6-4E98-A496-F6AFF7AC7834" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_C08023EC-F255-4ECB-93AF-157CEE5558F5" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ffRouterTransfer.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterTransfer.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1767">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ffNavigationHelper.m" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ffNavigationHelper.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFHeros/Features/NavigationHelper/ffNavigationHelper.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+            <state relative-caret-position="608">
+              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
               <folding>
                 <element signature="e#138#168#0" expanded="true" />
               </folding>
@@ -74,11 +66,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ffUIViewController+Routerable.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFRouter/Category/ffUIViewController+Routerable.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+              <folding>
+                <element signature="e#138#155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringUtils.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFRouter/Utils/StringUtils.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="767">
+              <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="FFModule_RouterTests.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFRouterTests/FFModule_RouterTests.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1197">
-              <caret line="64" column="60" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
+            <state relative-caret-position="1178">
+              <caret line="63" column="60" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -92,23 +105,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ffRouterable.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFRouter/Category/ffRouterable.swift">
+      <file leaf-file-name="ffRouter.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouter.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-              <folding>
-                <element signature="e#138#155#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="58" column="22" lean-forward="true" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ffRouter.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouter.swift">
+      <file leaf-file-name="ffRouterTranslator.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterTranslator.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <state relative-caret-position="487">
+              <caret line="162" column="48" selection-start-line="162" selection-start-column="48" selection-end-line="162" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -116,8 +126,8 @@
       <file leaf-file-name="ffRouterNode.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterNode.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1691">
-              <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+            <state relative-caret-position="291">
+              <caret line="89" column="24" lean-forward="true" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -139,8 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelInfo.h" />
-        <option value="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModel.h" />
         <option value="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelUrl.h" />
         <option value="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffUrlModel.h" />
         <option value="$PROJECT_DIR$/FFHeros/Features/Common/Models/CharacterModel/ffCharacterModelThumbnail.h" />
@@ -190,6 +198,8 @@
         <option value="$PROJECT_DIR$/FFHeros/Features/NavigationHelper/ffNavigationHelper.m" />
         <option value="$PROJECT_DIR$/FFRouter/Router/ffRouterTransfer.swift" />
         <option value="$PROJECT_DIR$/FFRouter/Router/ffRouter.swift" />
+        <option value="$PROJECT_DIR$/FFHeros/Features/RouterHelper/ffRouterHelper.m" />
+        <option value="$PROJECT_DIR$/FFRouter/Utils/StringUtils.swift" />
       </list>
     </option>
   </component>
@@ -206,7 +216,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1920" />
-    <option name="height" value="1058" />
+    <option name="height" value="1178" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -214,6 +224,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -289,13 +301,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="FFHeros" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/zhudelun/Documents/@private/@github.com/FarFetch/FFHeros/FFHeros/Features/HeroDetail/VC/ffHeroDetailViewController.m" />
+    <property name="SearchEverywhereHistoryKey" value="weburl&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
@@ -311,17 +321,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FFHeros">
+  <component name="RunManager">
     <configuration name="FFHeros" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FFHeros" TARGET_NAME="FFHeros" CONFIG_NAME="Debug" SCHEME_NAME="FFHeros" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="FFHeros" RUN_TARGET_NAME="FFHeros" MAKE_ACTIVE="TRUE">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
       </EXTENSION>
     </configuration>
-    <configuration name="FFModule_RouterTests.testUIViewController" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FFHeros" TARGET_NAME="FFRouterTests" CONFIG_NAME="Debug" SCHEME_NAME="FFModule_RouterTests.testUIViewController" IS_LOCATION_SIMULATION_ALLOWED="true" TEST_CLASS="FFModule_RouterTests" TEST_METHOD="testUIViewController" TEST_MODE="SUITE_TEST" XCODE_SKIPPED_TESTS_HASH_CODE="1808524540" />
-    <list>
-      <item itemvalue="Application.FFHeros" />
-      <item itemvalue="XCTest.FFModule_RouterTests.testUIViewController" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -343,6 +348,8 @@
       <workItem from="1528120096862" duration="331000" />
       <workItem from="1528136753630" duration="3134000" />
       <workItem from="1528142201907" duration="210000" />
+      <workItem from="1528284150877" duration="123000" />
+      <workItem from="1528284296834" duration="447000" />
     </task>
     <task id="LOCAL-00001" summary="[WIP]update router transfer">
       <created>1528142001590</created>
@@ -372,7 +379,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25450000" />
+    <option name="totallyTimeSpent" value="26020000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -384,29 +391,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1058" extended-state="6" />
+    <frame x="0" y="22" width="1920" height="1178" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32942432" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.19281663" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5002633" side_tool="true" weight="0.25053304" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23134328" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.20469083" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.24124882" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19220643" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32942432" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="bottom" id="TeamCity" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5002633" side_tool="true" weight="0.25053304" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.20469083" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23134328" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997367" weight="0.1899811" />
       <window_info id="Structure" order="1" sideWeight="0.50058615" side_tool="true" weight="0.19220643" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.24124882" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.25373134" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TeamCity" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4997367" weight="0.19083156" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.19296375" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,44 +469,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/FFRouterTests/FFModule_RouterTests.swift</url>
-          <line>64</line>
+          <line>63</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/FFRouter/Router/ffRouter.swift</url>
-          <line>44</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/FFRouter/Router/ffRouter.swift</url>
-          <line>57</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/FFRouter/Router/ffRouterTransfer.swift</url>
-          <line>88</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FFHeros/Core/Modelize/gt_Modelizable.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="146" column="78" selection-start-line="146" selection-start-column="78" selection-end-line="146" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FFHeros/Core/crypto/DESUtils.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-625">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FFHeros/Features/Common/API/ffFetchCharactersApi.m" />
     <entry file="file://$PROJECT_DIR$/FFHeros/Core/Network/ffAPIRequest.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -727,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FFRouter/Utils/StringUtils.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FFHeros/Features/WebViewController/ffWebViewController.h">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -742,21 +712,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FFRouterTests/FFModule_RouterTests.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="64" column="60" selection-start-line="64" selection-start-column="60" selection-end-line="64" selection-end-column="60" />
+        <state relative-caret-position="1178">
+          <caret line="63" column="60" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FFRouter/Category/ffRouterable.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <element signature="e#138#155#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/FFRouter/Category/ffRouterable.swift" />
     <entry file="file://$PROJECT_DIR$/FFRouterTests/FFRouter_Transfer.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -764,24 +725,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterNode.swift">
+    <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterTransfer.swift" />
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/NavigationHelper/ffNavigationHelper.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1691">
-          <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+        <state relative-caret-position="608">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+          <folding>
+            <element signature="e#138#168#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouter.swift">
+    <entry file="file://$PROJECT_DIR$/FFHeros/Features/RouterHelper/ffRouterHelper.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterTransfer.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1767">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="494">
+          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -792,13 +750,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FFHeros/Features/NavigationHelper/ffNavigationHelper.m">
+    <entry file="file://$PROJECT_DIR$/FFRouter/Category/ffUIViewController+Routerable.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
+        <state relative-caret-position="247">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding>
-            <element signature="e#138#168#0" expanded="true" />
+            <element signature="e#138#155#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFRouter/Utils/StringUtils.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterNode.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="89" column="24" lean-forward="true" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouter.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="58" column="22" lean-forward="true" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FFRouter/Router/ffRouterTranslator.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="162" column="48" selection-start-line="162" selection-start-column="48" selection-end-line="162" selection-end-column="48" />
         </state>
       </provider>
     </entry>
