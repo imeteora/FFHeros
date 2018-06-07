@@ -40,11 +40,10 @@ public class ffRouter: NSObject
     ///
     /// - Parameter router: 短连接
     /// - Returns: 被注册好的类型，如果未被注册，则返回空类型
-    public func classMatchRouter(_ router: String!) -> [Any]?
+    public func classMatchRouterInArray(_ router: String!) -> [Any]?
     {
-        let result: (AnyClass?, [String: String]?)? = self.classMatchRouter(router)
-        if result != nil && result!.0 != nil {
-            return [(result!.0)!, result?.1 as AnyObject]
+        if let result = self.classMatchRouter(router) {
+            return [result.0, result.1]
         } else {
             return nil
         }
@@ -54,14 +53,14 @@ public class ffRouter: NSObject
     ///
     /// - Parameter router: 短连接
     /// - Returns: 被注册好的类型，如果未被注册，则返回空类型
-    public func classMatchRouter(_ router: String!) -> (AnyClass?, [String: String]?)?
+    public func classMatchRouter(_ router: String!) -> (AnyClass, [String: String])?
     {
-        let result: (ffRouterNode?, [String: String]?)? = _root.recursiveFindChildNode(router)
-        if result != nil {
-            return (result!.0?.ruby, result?.1)
-        } else {
-            return nil
+        if let result = _root.recursiveFindChildNode(router) {
+            if result.0.ruby != nil  {
+                return (result.0.ruby!, result.1)
+            }
         }
+        return nil
     }
 
     fileprivate static func rebuildRouterMapping(_ root: ffRouterNode!, fromRouter router: String!, toClass cls: AnyClass!) {
@@ -78,6 +77,7 @@ extension ffRouter {
     public func setAcceptHosts(_ hosts: [String]!) {
         ffRouterTranslator.shared.acceptHosts = hosts
     }
+
     /// 针对不同的域下的uri注册对应的长连接转义器，实现从正常的RESTful链接转义成内部定义的短连接（短连接只包括PATH，Query)
     ///
     /// - Parameters:

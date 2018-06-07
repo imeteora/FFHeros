@@ -87,21 +87,16 @@ class ffRouterNode
         return result
     }
 
-    func recursiveFindChildNode(_ url: String!) -> (ffRouterNode?, [String: String]?)? {
-
-//        let startOfQuery = url.index(of: "?")
-//        if startOfQuery != nil {
-//            print(url.prefix(upTo: startOfQuery!))
-//        }
-
+    func recursiveFindChildNode(_ url: String!) -> (ffRouterNode, [String: String])?
+    {
         let keyPath: String = url
 
         let allKeyPaths: [String]! = keyPath.components(separatedBy: "/")
         let key: String = allKeyPaths[0]
 
         let subNode: ffRouterNode? = self.childNode(with: key)
-        if allKeyPaths.count == 1 {
-            return (subNode, [:])
+        if allKeyPaths.count == 1 && subNode != nil {
+            return (subNode!, [:])
         } else {
             let tailKeyPaths: [String] = Array(allKeyPaths.dropFirst(1))
             return subNode?.childNodeDeeplyWith(tailKeyPaths)
@@ -112,7 +107,7 @@ class ffRouterNode
     ///
     /// - Parameter keyPath: 被查找的键
     /// - Returns: 对应键的值（节点）
-    func childNodeDeeplyWith(_ keyPath: [String]!) -> (ffRouterNode?, [String: String]?)? {
+    func childNodeDeeplyWith(_ keyPath: [String]!) -> (ffRouterNode, [String: String])? {
         var keyPathArray: [String]! = keyPath
         let key: String = keyPathArray![0];
 
@@ -142,10 +137,9 @@ class ffRouterNode
                         tailKeyPath = Array(keyPathArray.dropFirst(1))
                     }
 
-                    let node_result = node?.childNodeDeeplyWith(tailKeyPath)
-                    if node_result!.0!.ruby != nil && node_result!.1!.count > 0 {
-                        curMatchResult.merge((node_result?.1)!) { (_, new) in new }
-                        return (node_result?.0, curMatchResult)
+                    if let node_result = node?.childNodeDeeplyWith(tailKeyPath) {
+                        curMatchResult.merge(node_result.1) { (_, new) in new }
+                        return (node_result.0, curMatchResult)
                     }
                 }
             }
@@ -153,20 +147,21 @@ class ffRouterNode
         else {
             node = self.childNode(with: key)
             if (node == nil || node?.ruby == nil) && true == self.parentNode?.keyPath.hasPrefix(":") {
-                return (nil, [:])
+                return nil
             }
             if keyPathArray.count == 1 {
-                return (node, [:]);
+                return (node!, [:]);
             } else {
                 tailKeyPath = Array(keyPathArray.dropFirst(1))
             }
         }
 
-        let node_result = node?.childNodeDeeplyWith(tailKeyPath)
-        if node_result!.0!.ruby != nil && node_result!.1!.count > 0 {
-            curMatchResult.merge((node_result?.1)!) { (_, new) in new }
+        if let node_result = node?.childNodeDeeplyWith(tailKeyPath) {
+            curMatchResult.merge(node_result.1) { (_, new) in new }
+            return (node_result.0, curMatchResult)
+        } else {
+            return nil
         }
-        return (node_result!.0, curMatchResult)
     }
 
     fileprivate func isNumber(_ value: String!) -> Bool {

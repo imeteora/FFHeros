@@ -32,6 +32,7 @@ class FFModule_RouterTests: XCTestCase {
         ffRouter.shared.map("/hello/:world/guy/:name", toClass: ffFoo.self)
         ffRouter.shared.map("/hello/:world/user/:id", toClass: ffFoo.self)
         ffRouter.shared.map("/foo/:param1/:param2", toClass: ffFooViewController.self)
+        ffRouter.shared.map("/browser", toClass: ffFooViewController.self)
     }
     
     override func tearDown() {
@@ -66,6 +67,10 @@ class FFModule_RouterTests: XCTestCase {
         XCTAssert(vc != nil)
     }
 
+    func testProcessURL() {
+        XCTAssert(ffRouter.shared.processUrl(urlstr, animated: true))
+    }
+
     func testMatchHost() {
         var result: Bool = URLUtils.matchString("*.marvel.com", withSource:"marvel.com", separatedBy:".")
         XCTAssert(result == true)
@@ -86,7 +91,7 @@ class FFModule_RouterTests: XCTestCase {
     }
 
     func testRouterParamB() {
-        var result: (AnyClass?, [String:String]?)?
+        var result: (AnyClass, [String:String])?
 
         result = ffRouter.shared.classMatchRouter("/hello/123")
         XCTAssert(result?.0 == ffFoo.self)

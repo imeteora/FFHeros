@@ -99,7 +99,7 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
         }
 
         // 截取query形成参数键值对
-        var args = URLUtils.parametersInQuery(_url?.query) ?? [:]
+        var args = URLUtils.parametersInQuery(_url!.absoluteString) ?? [:]
 
         var _urlTransfered: String = url   // set as origin url firstly.
         for (eachDomain, eachTransfer) in self.allRouterTransfer {
@@ -129,25 +129,24 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
     {
         assert(navigationController != nil, self.classForCoder.description() + ": NavigationController is null")
 
-        let cls: (AnyClass?, [String : String]?)? = ffRouter.shared.classMatchRouter(router)
-        if cls == nil {
+        if let cls = ffRouter.shared.classMatchRouter(router) {
+            var param: [String: String]! = [:]
+            if cls.1.count != 0 {
+                param.merge(cls.1) { (_, new) -> String in new }
+            }
+
+            if cls.0 == UIViewController.self {
+                if let vc = UIViewController.viewController(router, withParameter: param, userInfo: nil) {
+                    self.navigationController?.pushViewController(vc, animated: animated)
+                    return true
+                }
+            } else {
+                /// ...
+            }
+            return false
+        } else {
             return false;
         }
-
-        var param: [String: String]! = [:]
-        if cls!.1!.count != 0 {
-            param.merge(cls!.1!) { (_, new) -> String in new }
-        }
-
-        if cls!.0 == UIViewController.self {
-            if let vc = UIViewController.viewController(router, withParameter: param, userInfo: nil) {
-                self.navigationController?.pushViewController(vc, animated: animated)
-                return true
-            }
-        } else {
-            /// ...
-        }
-        return false
     }
 
     fileprivate  func _isWebUrl(_ url:String!) -> Bool {
