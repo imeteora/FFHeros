@@ -135,7 +135,7 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
                 param.merge(cls.1) { (_, new) -> String in new }
             }
 
-            if cls.0 == UIViewController.self {
+            if cls.0 is UIViewController.Type {
                 if let vc = UIViewController.viewController(router, withParameter: param, userInfo: nil) {
                     self.navigationController?.pushViewController(vc, animated: animated)
                     return true

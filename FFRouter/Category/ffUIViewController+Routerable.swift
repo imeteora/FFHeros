@@ -13,6 +13,10 @@ extension UIViewController: ffRouterableProtocol {
     static func viewController(_ router: String!, withParameter args: [String : String] = [:], userInfo: AnyObject? = nil) -> UIViewController? {
 
         if let cls_parma = ffRouter.shared.classMatchRouter(router) {
+            if !(cls_parma.0 is UIViewController.Type) {
+                return nil
+            }
+            
             let cls_vc: UIViewController.Type = cls_parma.0 as! UIViewController.Type
             var vc_param: [String: String] = cls_parma.1
 

@@ -40,28 +40,6 @@ class FFModule_RouterTests: XCTestCase {
         super.tearDown()
     }
 
-    func testUrl() {
-        let url = URL.init(string: urlstr)
-        print(url?.scheme)
-        print(url?.host)
-        print(url?.path)
-        print(url?.query)
-
-        let urlstr2 = "/marvel.com/comics/characters/1017100/a-bomb_has"
-        let url2 = URL.init(string: urlstr2)
-        print(url2?.scheme)
-        print(url2?.host)
-        print(url2?.path)
-        print(url2?.query)
-
-        let urlstr3 = "http://comics/characters/1017100/a-bomb_has"
-        let url3 = URL.init(string: urlstr3)
-        print(url3?.scheme)
-        print(url3?.host)
-        print(url3?.path)
-        print(url3?.query)
-    }
-
     func testUIViewController() {
         let vc: UIViewController? = UIViewController.viewController("/foo/123/456", withParameter: ["hello": "world"], userInfo: nil)!
         XCTAssert(vc != nil)
@@ -91,7 +69,7 @@ class FFModule_RouterTests: XCTestCase {
     }
 
     func testRouterParamB() {
-        var result: (AnyClass, [String:String])?
+        var result: ffRouter.RouterResultType?
 
         result = ffRouter.shared.classMatchRouter("/hello/123")
         XCTAssert(result?.0 == ffFoo.self)

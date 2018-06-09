@@ -29,8 +29,7 @@ class FFRouter_Transfer: XCTestCase {
     func testRouterTransferUrl() {
         let transfer: ffRouterTranslator = ffRouterTranslator.shared
         transfer.acceptHosts = ["*.marvel.com"]
-        let _ = transfer.processUrl("http://www.marvel.com/hello", animated: true)
-        XCTAssert(true)
+        XCTAssert(transfer.processUrl("http://www.marvel.com/hello", animated: true))
     }
 
     func testURLEncodeAndDecode() {

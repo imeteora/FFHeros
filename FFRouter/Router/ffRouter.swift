@@ -11,6 +11,7 @@ import UIKit
 @objcMembers
 public class ffRouter: NSObject
 {
+    public typealias RouterResultType = (AnyClass?, [String: String])
     private var _root: ffRouterNode = ffRouterNode()
 
     public static var shared: ffRouter = {
@@ -43,7 +44,7 @@ public class ffRouter: NSObject
     public func classMatchRouterInArray(_ router: String!) -> [Any]?
     {
         if let result = self.classMatchRouter(router) {
-            return [result.0, result.1]
+            return [result.0!, result.1]
         } else {
             return nil
         }
@@ -53,11 +54,13 @@ public class ffRouter: NSObject
     ///
     /// - Parameter router: 短连接
     /// - Returns: 被注册好的类型，如果未被注册，则返回空类型
-    public func classMatchRouter(_ router: String!) -> (AnyClass, [String: String])?
+    public func classMatchRouter(_ router: String!) -> RouterResultType?
     {
         if let result = _root.recursiveFindChildNode(router) {
             if result.0.ruby != nil  {
-                return (result.0.ruby!, result.1)
+                let target_cls: AnyClass = result.0.ruby!
+                let target_param = result.1
+                return (target_cls, target_param)
             }
         }
         return nil

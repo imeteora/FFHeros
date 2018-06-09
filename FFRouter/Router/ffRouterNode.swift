@@ -10,6 +10,7 @@ import UIKit
 
 class ffRouterNode
 {
+    public typealias RouterNodeResultType = (ffRouterNode, [String : String])
     enum NodeKeyPath: String {
         case Empty = ""
         case Invalid = "."
@@ -18,7 +19,7 @@ class ffRouterNode
     var keyPath: String = NodeKeyPath.Invalid.rawValue
     var value: String = ""      // 仅仅用于通过 router 找到对应 class 时，匹配并搜集参数列表时使用的属性。
     var ruby: AnyClass? = nil
-    var parentNode: ffRouterNode? = nil
+    weak var parentNode: ffRouterNode? = nil
     var childNotes: [ffRouterNode] = []
 
     init() {
@@ -87,7 +88,7 @@ class ffRouterNode
         return result
     }
 
-    func recursiveFindChildNode(_ url: String!) -> (ffRouterNode, [String: String])?
+    func recursiveFindChildNode(_ url: String!) -> RouterNodeResultType?
     {
         let keyPath: String = url
 
@@ -107,7 +108,7 @@ class ffRouterNode
     ///
     /// - Parameter keyPath: 被查找的键
     /// - Returns: 对应键的值（节点）
-    func childNodeDeeplyWith(_ keyPath: [String]!) -> (ffRouterNode, [String: String])? {
+    func childNodeDeeplyWith(_ keyPath: [String]!) -> RouterNodeResultType? {
         var keyPathArray: [String]! = keyPath
         let key: String = keyPathArray![0];
 
@@ -116,7 +117,7 @@ class ffRouterNode
 
         var curMatchResult: [String: String] = [:]
         // 如果是数字，表明本节点的子节点必须要 参数匹配 节点
-        if isNumber(key) {
+        if _isNumber(key) {
             for (_, each_node) in childNotes.enumerated() {
                 if !(each_node.keyPath.hasPrefix(":")) {
                     continue
@@ -164,7 +165,7 @@ class ffRouterNode
         }
     }
 
-    fileprivate func isNumber(_ value: String!) -> Bool {
+    fileprivate func _isNumber(_ value: String!) -> Bool {
         let scanner: Scanner = Scanner.init(string: value)
         var d: Int64 = 0
         return scanner.scanInt64(&d) && scanner.isAtEnd
