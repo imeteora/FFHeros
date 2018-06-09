@@ -134,6 +134,9 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
             if cls.1.count != 0 {
                 param.merge(cls.1) { (_, new) -> String in new }
             }
+            if (argu != nil) && (argu!.count > 0) {
+                param.merge(argu!) { (_, new) -> String in new }
+            }
 
             if cls.0 is UIViewController.Type {
                 if let vc = UIViewController.viewController(router, withParameter: param, userInfo: nil) {
@@ -141,7 +144,7 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
                     return true
                 }
             } else {
-                /// ...
+                //TODO: 准备其他基础类型的判断，并增加对应的实例化过程
             }
             return false
         } else {

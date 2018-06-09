@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 extension UIViewController: ffRouterableProtocol {
-    static func viewController(_ router: String!, withParameter args: [String : String] = [:], userInfo: AnyObject? = nil) -> UIViewController? {
-
+    static func viewController(_ router: String!, withParameter args: [String : String] = [:], userInfo: AnyObject? = nil) -> UIViewController?
+    {
         if let cls_parma = ffRouter.shared.classMatchRouter(router) {
             if !(cls_parma.0 is UIViewController.Type) {
                 return nil
@@ -36,7 +36,7 @@ extension UIViewController: ffRouterableProtocol {
         }
     }
 
-    @objc public  func setUpWith(_ param: [String : String]!,userInfo:AnyObject?) -> Bool {
+    @objc public func setUpWith(_ param: [String : String]!,userInfo:AnyObject?) -> Bool {
         return true
     }
 }
