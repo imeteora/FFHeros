@@ -77,29 +77,35 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
     {
         assert(acceptHosts.count != 0, self.classForCoder.description() + ": acceptable host list is empty")
 
-        let _url: URL? = URL.init(string: url)
-        if _url == nil {
-            return false
-        }
-        if self.acceptScheme.contains((_url?.scheme!)!) == false {
-            return false
-        }
+        var args: [String: String] = [:]
 
-        var matchOneHost: Bool = false
-        for (_, eachAcceptHost) in self.acceptHosts.enumerated() {
-            matchOneHost = self._matchUrl(eachAcceptHost, url:_url?.host)
-            if matchOneHost {
-                break;
+        if _isWebUrl(url) {
+            let _url: URL? = URL.init(string: url)
+            if _url == nil {
+                return false
             }
-        }
+            if self.acceptScheme.contains((_url?.scheme!)!) == false {
+                return false
+            }
 
-        // 没有匹配任何已设定的主机地址，表示不可处理
-        if (matchOneHost == false) {
-            return false
-        }
+            var matchOneHost: Bool = false
+            for (_, eachAcceptHost) in self.acceptHosts.enumerated() {
+                matchOneHost = self._matchUrl(eachAcceptHost, url:_url?.host)
+                if matchOneHost {
+                    break;
+                }
+            }
 
-        // 截取query形成参数键值对
-        var args = URLUtils.parametersInQuery(_url!.absoluteString) ?? [:]
+            // 没有匹配任何已设定的主机地址，表示不可处理
+            if (matchOneHost == false) {
+                return false
+            }
+
+            // 截取query形成参数键值对
+            args = URLUtils.parametersInQuery(_url!.absoluteString) ?? [:]
+        } else {
+            args = URLUtils.parametersInQuery(url) ?? [:]
+        }
 
         var _urlTransfered: String = url   // set as origin url firstly.
         for (eachDomain, eachTransfer) in self.allRouterTransfer {

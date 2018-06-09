@@ -18,7 +18,7 @@ class ffRouterNode
 
     var keyPath: String = NodeKeyPath.Invalid.rawValue
     var value: String = ""      // 仅仅用于通过 router 找到对应 class 时，匹配并搜集参数列表时使用的属性。
-    var ruby: AnyClass? = nil
+    var ruby: Any? = nil
     weak var parentNode: ffRouterNode? = nil
     var childNotes: [ffRouterNode] = []
 
@@ -47,7 +47,8 @@ class ffRouterNode
     }
 
 
-    func mappingKeyValuesTree(_ object: AnyClass!, withKeyPath keyPath: [String]!) {
+    func mappingKeyValuesTree(_ object: Any!, withKeyPath keyPath: [String]!)
+    {
         let key: String = keyPath[0]
         var node: ffRouterNode? = self.childNode(with: key)
         if node == nil {

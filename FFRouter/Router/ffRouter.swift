@@ -11,7 +11,8 @@ import UIKit
 @objcMembers
 public class ffRouter: NSObject
 {
-    public typealias MatchResultType = (AnyClass, [String: String])
+    public typealias MatchCallbackType = (_ param: [String: String]) -> ()
+    public typealias MatchResultType = (Any, [String: String])
     public typealias MatchResultArrayType = [Any]
 
     private var _root: ffRouterNode = ffRouterNode()
@@ -35,6 +36,10 @@ public class ffRouter: NSObject
         ffRouter._rebuildRouterMapping(_root, fromRouter: router, toClass: cls)
     }
 
+    public func map(_ router: String!, toCallback cb: MatchCallbackType!) {
+        ffRouter._rebuildRouterMapping(_root, fromRouter: router, toCallback: cb)
+    }
+
     /// 证据给定的短连接，查找对应的对象类型
     ///
     /// - Parameter router: 短连接
@@ -56,7 +61,7 @@ public class ffRouter: NSObject
     {
         if let result = _root.recursiveFindChildNode(router) {
             if result.0.ruby != nil  {
-                let target_cls: AnyClass = result.0.ruby!
+                let target_cls = result.0.ruby!
                 let target_param = result.1
                 return (target_cls, target_param)
             }
@@ -69,8 +74,16 @@ public class ffRouter: NSObject
     }
 
     fileprivate static func _rebuildRouterMapping(_ root: ffRouterNode!, fromRouter router: String!, toClass cls: AnyClass!) {
+        _rebuildRouterMapping(root, fromRouter: router, toAnything: cls)
+    }
+
+    fileprivate static func _rebuildRouterMapping(_ root: ffRouterNode!, fromRouter router: String!, toCallback cb: MatchCallbackType!) {
+        _rebuildRouterMapping(root, fromRouter: router, toAnything: cb)
+    }
+
+    fileprivate static func _rebuildRouterMapping(_ root: ffRouterNode!, fromRouter router: String!, toAnything anything: Any!) {
         let keypathArray: [String]? = router.components(separatedBy: "/")
-        root.mappingKeyValuesTree(cls, withKeyPath: keypathArray)
+        root.mappingKeyValuesTree(anything, withKeyPath: keypathArray)
     }
 }
 

@@ -33,6 +33,10 @@ class FFModule_RouterTests: XCTestCase {
         ffRouter.shared.map("/hello/:world/user/:id", toClass: ffFoo.self)
         ffRouter.shared.map("/foo/:param1/:param2", toClass: ffFooViewController.self)
         ffRouter.shared.map("/browser", toClass: ffFooViewController.self)
+
+        ffRouter.shared.map("/hello/block/:keyword") { (param: [String: String]) in
+            print("\(param)")
+        }
     }
     
     override func tearDown() {
@@ -49,6 +53,10 @@ class FFModule_RouterTests: XCTestCase {
         XCTAssert(ffRouter.shared.processUrl(urlstr, animated: true))
     }
 
+    func testClosesureFromRouter() {
+        XCTAssert(ffRouter.shared.processUrl("/hello/block/32", animated: true))
+    }
+
     func testMatchHost() {
         var result: Bool = URLUtils.matchString("*.marvel.com", withSource:"marvel.com", separatedBy:".")
         XCTAssert(result == true)
@@ -61,29 +69,29 @@ class FFModule_RouterTests: XCTestCase {
     }
     
     func testRouterNormal() {
-        XCTAssert(ffRouter.shared.classMatchRouter("/hello/world")?.0 == ffFoo.self)
+        XCTAssert(ffRouter.shared.classMatchRouter("/hello/world")?.0 is ffFoo.Type)
     }
 
     func testRouterParamA() {
-        XCTAssert(ffRouter.shared.classMatchRouter("/hello/123")?.0 == ffFoo.self)
+        XCTAssert(ffRouter.shared.classMatchRouter("/hello/123")?.0 is ffFoo.Type)
     }
 
     func testRouterParamB() {
         var result: ffRouter.MatchResultType?
 
         result = ffRouter.shared.classMatchRouter("/hello/123")
-        XCTAssert(result?.0 == ffFoo.self)
+        XCTAssert(result?.0 is ffFoo.Type)
 
         result = ffRouter.shared.classMatchRouter("/hello/123/guy")
         XCTAssert(result?.0 == nil)
 
         result = ffRouter.shared.classMatchRouter("/hello/123/guy/456")
         print(String(describing: result?.1))
-        XCTAssert(result?.0 == ffFoo.self)
+        XCTAssert(result?.0 is ffFoo.Type)
 
         result = ffRouter.shared.classMatchRouter("/hello/234/user/999")
         print(String(describing: result?.1))
-        XCTAssert(result?.0 == ffFoo.self)
+        XCTAssert(result?.0 is ffFoo.Type)
     }
     
     func testPerformanceExample() {
