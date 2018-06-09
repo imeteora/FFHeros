@@ -11,7 +11,9 @@ import UIKit
 @objcMembers
 public class ffRouter: NSObject
 {
-    public typealias RouterResultType = (AnyClass?, [String: String])
+    public typealias MatchResultType = (AnyClass, [String: String])
+    public typealias MatchResultArrayType = [Any]
+
     private var _root: ffRouterNode = ffRouterNode()
 
     public static var shared: ffRouter = {
@@ -23,10 +25,6 @@ public class ffRouter: NSObject
         _clearAllRouterMapping()
     }
 
-    fileprivate func _clearAllRouterMapping() {
-        _root.clearNode()
-    }
-
     /// 用短链接注册目标对象，短连接格式 "/abc/def/:param1/ghi/:param2 ..."
     ///
     /// - code [[ffRouter shared] map:@"/hero/:cid/comics" toClass:[ffHeroDetailViewController class]];
@@ -34,17 +32,17 @@ public class ffRouter: NSObject
     ///   - router: 短连接 例如：/abc/def/:param1/ghi/:param2 ...
     ///   - cls: 需要被注册是类型
     public func map(_ router: String!, toClass cls: AnyClass!) {
-        ffRouter.rebuildRouterMapping(_root, fromRouter: router, toClass: cls)
+        ffRouter._rebuildRouterMapping(_root, fromRouter: router, toClass: cls)
     }
 
     /// 证据给定的短连接，查找对应的对象类型
     ///
     /// - Parameter router: 短连接
     /// - Returns: 被注册好的类型，如果未被注册，则返回空类型
-    public func classMatchRouterInArray(_ router: String!) -> [Any]?
+    public func classMatchRouter(_ router: String!) -> MatchResultArrayType?
     {
-        if let result = self.classMatchRouter(router) {
-            return [result.0!, result.1]
+        if let result: MatchResultType = self.classMatchRouter(router) {
+            return [result.0, result.1]
         } else {
             return nil
         }
@@ -54,7 +52,7 @@ public class ffRouter: NSObject
     ///
     /// - Parameter router: 短连接
     /// - Returns: 被注册好的类型，如果未被注册，则返回空类型
-    public func classMatchRouter(_ router: String!) -> RouterResultType?
+    public func classMatchRouter(_ router: String!) -> MatchResultType?
     {
         if let result = _root.recursiveFindChildNode(router) {
             if result.0.ruby != nil  {
@@ -66,7 +64,11 @@ public class ffRouter: NSObject
         return nil
     }
 
-    fileprivate static func rebuildRouterMapping(_ root: ffRouterNode!, fromRouter router: String!, toClass cls: AnyClass!) {
+    fileprivate func _clearAllRouterMapping() {
+        _root.clearNode()
+    }
+
+    fileprivate static func _rebuildRouterMapping(_ root: ffRouterNode!, fromRouter router: String!, toClass cls: AnyClass!) {
         let keypathArray: [String]? = router.components(separatedBy: "/")
         root.mappingKeyValuesTree(cls, withKeyPath: keypathArray)
     }

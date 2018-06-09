@@ -69,7 +69,7 @@ class FFModule_RouterTests: XCTestCase {
     }
 
     func testRouterParamB() {
-        var result: ffRouter.RouterResultType?
+        var result: ffRouter.MatchResultType?
 
         result = ffRouter.shared.classMatchRouter("/hello/123")
         XCTAssert(result?.0 == ffFoo.self)

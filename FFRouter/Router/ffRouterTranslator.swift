@@ -129,7 +129,7 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
     {
         assert(navigationController != nil, self.classForCoder.description() + ": NavigationController is null")
 
-        if let cls = ffRouter.shared.classMatchRouter(router) {
+        if let cls: ffRouter.MatchResultType = ffRouter.shared.classMatchRouter(router) {
             var param: [String: String]! = [:]
             if cls.1.count != 0 {
                 param.merge(cls.1) { (_, new) -> String in new }
