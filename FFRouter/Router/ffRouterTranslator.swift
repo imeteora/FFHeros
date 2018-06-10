@@ -48,14 +48,34 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
         self.acceptHosts.removeAll()
     }
 
-    @objc internal func registerTranfer(_ domain: String!, transfer: AnyObject!) -> Bool {
+
+    /// 以域名domain注册RESTful URL转义成内部router格式的转义器
+    ///
+    /// - Parameters:
+    ///   - domain: 需要关注并过滤的特定domain
+    ///   - transfer: 域名转义器
+    /// - Returns: 注册成功，返回true；否则返回false
+    @objc internal func registerTransfer(_ domain: String!, transfer: AnyObject!) -> Bool {
         return _registerTransfer(domain, transfer:transfer, forceReplace:true)
     }
 
-    @objc internal func registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool = false) -> Bool {
+    /// 以域名domain注册RESTful URL转义成内部router格式的转义器
+    ///
+    /// - Parameters:
+    ///   - domain: 需要关注并过滤的特定domain
+    ///   - transfer: 域名转义器
+    ///   - forceReplace: 如果已经之前已注册了相关domain下的转义器，是否需要强行覆盖早起已注册的转义器
+    /// - Returns: 注册成功，返回true；否则返回false
+    @objc internal func registerTransfer(_ domain: String!, transfer: AnyObject!, forceReplace: Bool) -> Bool {
         return _registerTransfer(domain, transfer:transfer, forceReplace:forceReplace)
     }
 
+    /// 处理URL，可能是视图跳转，也有可能执行已注册的block
+    ///
+    /// - Parameters:
+    ///   - url: 需要处理的URL
+    ///   - animated: 如果是视图跳转是否需要进行动画跳转
+    /// - Returns: 如果处理成功，返回true；否则返回false
     @objc internal func processUrl(_ url: String!, animated:Bool) -> Bool {
         return _processUrl(url, animated: animated)
     }
@@ -149,6 +169,10 @@ internal func ff_router_decodeUrl(_ url: String) -> String {
                     self.navigationController?.pushViewController(vc, animated: animated)
                     return true
                 }
+            } else if cls.0 is ffRouter.MatchCallbackType {
+                let __callback: ffRouter.MatchCallbackType = cls.0 as! ffRouter.MatchCallbackType
+                __callback(cls.1)
+                return true
             } else {
                 //TODO: 准备其他基础类型的判断，并增加对应的实例化过程
             }
