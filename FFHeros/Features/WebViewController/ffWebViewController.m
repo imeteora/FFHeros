@@ -8,9 +8,10 @@
 
 #import "ffWebViewController.h"
 #import <WebKit/WebKit.h>
+#import <FFRouter/FFRouter.h>
 #import "ffToasteView.h"
 
-@interface ffWebViewController () <WKUIDelegate>
+@interface ffWebViewController () <WKUIDelegate, ffRouterableProtocol>
 @property (nonatomic, strong) WKWebView *webView;
 @end
 
@@ -19,12 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.webView];
-
     [self.webView addObserver:self forKeyPath:@"loading" options:(NSKeyValueObservingOptionNew) context:nil];
+}
 
-    NSURL *urlForLoading = [NSURL URLWithString:self.url];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:urlForLoading cachePolicy:(NSURLRequestUseProtocolCachePolicy) timeoutInterval:30];
-    [self.webView loadRequest:request];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self loadRequest:self.url];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -35,6 +36,23 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     self.webView.frame = self.view.bounds;
+}
+
+#pragma mark - private helpers
+- (void)loadRequest:(NSString * _Nonnull)url {
+    NSURL *urlForLoading = [NSURL URLWithString:url];
+    if (urlForLoading) {
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:urlForLoading cachePolicy:(NSURLRequestUseProtocolCachePolicy) timeoutInterval:30];
+        [self.webView loadRequest:request];
+    }
+}
+
+#pragma mark - ffRouterableProtocol
+- (BOOL)setUpWith:(NSDictionary<NSString *,NSString *> *)param userInfo:(id)userInfo {
+    if ([param.allKeys containsObject:@"url"]) {
+        self.url = param[@"url"];
+    }
+    return YES;
 }
 
 #pragma mark - observer
