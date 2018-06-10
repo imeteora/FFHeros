@@ -9,6 +9,8 @@
 #import "ffRouterHelper.h"
 @import FFRouter;
 #import "ffWebViewController.h"
+#import "ffFavTableViewController.h"
+#import "ffSearchViewController.h"
 
 @implementation ffRouterHelper
 
@@ -33,6 +35,8 @@
 #pragma mark - private helpers
 - (void)registerRouters {
     [[ffRouter shared] map:@"/browser" toClass:[ffWebViewController class]];
+    [[ffRouter shared] map:@"/favourite" toClass:[ffFavTableViewController class]];
+    [[ffRouter shared] map:@"/search" toClass:[ffSearchViewController class]];
 }
 
 - (void)registerRouterTransfers {

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FFRouter/FFRouter.h>
 
-@interface ffBaseViewController : UIViewController
+@interface ffBaseViewController : UIViewController <ffRouterableProtocol>
 
 - (void)ff_viewWillFirstAppear;
 - (void)ff_viewDidFirstAppear;
@@ -19,5 +20,9 @@
 
 #pragma mark - close
 - (void)ff_back;
+
+
+#pragma mark - ffRouterableProtocol
+- (BOOL)setUpWith:(NSDictionary<NSString *,NSString *> *)param userInfo:(id)userInfo;
 
 @end

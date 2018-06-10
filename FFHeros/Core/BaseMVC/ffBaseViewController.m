@@ -62,6 +62,10 @@
     }
 }
 
+#pragma mark - ffRouterableProtocol
+- (BOOL)setUpWith:(NSDictionary<NSString *,NSString *> *)param userInfo:(id)userInfo {
+    return YES;
+}
 
 #pragma mark - autorotate
 - (BOOL)shouldAutorotate {

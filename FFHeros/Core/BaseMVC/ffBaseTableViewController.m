@@ -10,7 +10,7 @@
 #import "ffRefreshScrollView.h"
 #import "ffToasteView.h"
 
-@interface ffBaseTableViewController () < UITableViewDelegate, UITableViewDataSource >
+@interface ffBaseTableViewController () < UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, readwrite) UITableView *tableView;
 @end
 

@@ -8,10 +8,9 @@
 
 #import "ffWebViewController.h"
 #import <WebKit/WebKit.h>
-#import <FFRouter/FFRouter.h>
 #import "ffToasteView.h"
 
-@interface ffWebViewController () <WKUIDelegate, ffRouterableProtocol>
+@interface ffWebViewController () <WKUIDelegate>
 @property (nonatomic, strong) WKWebView *webView;
 @end
 

@@ -34,6 +34,11 @@
     self.tableView.frame = self.view.bounds;
 }
 
+#pragma mark - ffRouterableProtocol
+- (BOOL)setUpWith:(NSDictionary<NSString *,NSString *> *)param userInfo:(id)userInfo {
+    return YES;
+}
+
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.viewModel numberOfFavouriteList];

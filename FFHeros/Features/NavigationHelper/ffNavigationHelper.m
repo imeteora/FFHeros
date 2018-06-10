@@ -10,8 +10,6 @@
 #import "ffNavigationController.h"
 #import "ffHeroDetailViewController.h"
 #import "ffSearchViewController.h"
-#import "ffFavTableViewController.h"
-#import "ffWebViewController.h"
 #import <FFRouter/FFRouter.h>
 
 @implementation ffNavigationHelper
@@ -31,20 +29,17 @@
 }
 
 - (void)showFavouriteListViewController {
-    ffFavTableViewController *vc = [[ffFavTableViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [[ffRouter shared] processUrl:@"/favourite" animated:YES];
 }
 
 - (void)showSearchViewController {
-    ffSearchViewController *vc = [[ffSearchViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [[ffRouter shared] processUrl:@"/search" animated:YES];
+//    ffSearchViewController *vc = [[ffSearchViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)showWebControllerWithUrl:(NSString *)url {
     [[ffRouter shared] processUrl:url animated:YES];
-//    ffWebViewController *webVC = [[ffWebViewController alloc] init];
-//    webVC.url = url;
-//    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 @end

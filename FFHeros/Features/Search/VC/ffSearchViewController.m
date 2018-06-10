@@ -66,6 +66,11 @@
     self.tableView.frame = CGRectMake(0, self.searchBar.viewBottom, self.view.viewWidth, self.view.viewHeight - self.searchBar.viewBottom - _keyboardHeight);
 }
 
+
+- (BOOL)setUpWith:(NSDictionary<NSString *,NSString *> *)param userInfo:(id)userInfo {
+    return YES;
+}
+
 #pragma mark - keyboard event
 - (BOOL)ff_shouldRegisterKeyboardEvent {
     return YES;
