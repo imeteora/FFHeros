@@ -8,8 +8,6 @@
 
 #import "ffNavigationHelper.h"
 #import "ffNavigationController.h"
-#import "ffHeroDetailViewController.h"
-#import "ffSearchViewController.h"
 #import <FFRouter/FFRouter.h>
 
 @implementation ffNavigationHelper
@@ -24,8 +22,10 @@
 }
 
 - (void)showHeroInfoViewController:(int64_t)cid {
-    ffHeroDetailViewController *detailVC = [[ffHeroDetailViewController alloc] initWithCharacterId:cid];
-    [self.navigationController pushViewController:detailVC animated:YES];
+    NSString *router = [NSString stringWithFormat:@"/character/%lld", cid];
+    [[ffRouter shared] processUrl:router animated:YES];
+//    ffHeroDetailViewController *detailVC = [[ffHeroDetailViewController alloc] initWithCharacterId:cid];
+//    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)showFavouriteListViewController {
@@ -34,8 +34,6 @@
 
 - (void)showSearchViewController {
     [[ffRouter shared] processUrl:@"/search" animated:YES];
-//    ffSearchViewController *vc = [[ffSearchViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)showWebControllerWithUrl:(NSString *)url {

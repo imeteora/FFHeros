@@ -15,6 +15,8 @@
 
 @interface ffHeroDetailViewController () <UITableViewDataSource, UITableViewDelegate, ffHeroDetailTableViewCellDelegate, ffSummeryTableViewCellDelegate>
 @property (nonatomic, strong) ffHeroDetailViewModel *viewModel;
+
+@property (nonatomic, assign) int64_t cid;
 @end
 
 @implementation ffHeroDetailViewController
@@ -31,7 +33,7 @@
     [super viewDidLoad];
 
     self.disableObservingViewModelObject = YES;
-
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[ffSummeryTableViewCell nibClass] forCellReuseIdentifier:[ffSummeryTableViewCell identifier]];
@@ -51,11 +53,23 @@
     [self.viewModel removeObserver:self forKeyPath:@"heroData"];
 }
 
+- (BOOL)setUpWith:(NSDictionary<NSString *,NSString *> *)param userInfo:(id)userInfo {
+    if ([param.allKeys containsObject:@":cid"]) {
+        self.cid = [param[@":cid"] longLongValue];
+    }
+    [self generateViewModel];
+    return YES;
+}
+
 #pragma mark - public helpers
 
 #pragma mark - private helpers
 - (void)showWebViewControllerWithUrl:(NSString *)url {
     [[ffNavigationHelper shared] showWebControllerWithUrl:url];
+}
+
+- (void)generateViewModel {
+    self.viewModel = [[ffHeroDetailViewModel alloc] initWithCharacterId:self.cid];
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
