@@ -50,7 +50,7 @@
                     <constraint firstItem="ryc-Fu-mw8" firstAttribute="trailing" secondItem="XeB-E7-Rce" secondAttribute="trailing" id="ziK-4M-Bck"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <viewLayoutGuide key="safeArea" id="vwP-4C-geZ"/>
             <connections>
                 <outlet property="avatarImageView" destination="rbx-Lu-odt" id="9Cn-qn-ZHj"/>
                 <outlet property="descriptionLabel" destination="ryc-Fu-mw8" id="zkO-1E-aEz"/>

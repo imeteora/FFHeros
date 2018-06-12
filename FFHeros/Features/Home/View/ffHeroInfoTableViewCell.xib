@@ -68,7 +68,7 @@
                     <constraint firstItem="isZ-fW-dSJ" firstAttribute="top" secondItem="9Jc-9y-hKW" secondAttribute="bottom" constant="8" id="uQN-Rd-Pog"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <viewLayoutGuide key="safeArea" id="fN9-ky-4tb"/>
             <connections>
                 <outlet property="avatarView" destination="ZNI-8z-3mH" id="cLa-OG-rkG"/>
                 <outlet property="favouriteBtn" destination="HUY-oK-i8T" id="PaQ-Ch-dqy"/>
