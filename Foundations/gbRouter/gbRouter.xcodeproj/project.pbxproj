@@ -14,7 +14,7 @@
 		135A010C20D00C7600FC17DC /* gbRouterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B720D008F800FC17DC /* gbRouterNode.swift */; };
 		135A010D20D00C7600FC17DC /* gbRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B820D008F800FC17DC /* gbRouter.swift */; };
 		135A010E20D00C7C00FC17DC /* gbRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 135A00AF20D008F700FC17DC /* gbRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		135A013120D0103F00FC17DC /* gbUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A013020D0103F00FC17DC /* gbUtils.framework */; };
+		135A014520D013F700FC17DC /* gbUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A014420D013F700FC17DC /* gbUtils.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +26,8 @@
 		135A00B720D008F800FC17DC /* gbRouterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gbRouterNode.swift; sourceTree = "<group>"; };
 		135A00B820D008F800FC17DC /* gbRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gbRouter.swift; sourceTree = "<group>"; };
 		135A00B920D008F800FC17DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		135A00F920D009B700FC17DC /* libgbUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgbUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		135A010020D00C1700FC17DC /* gbRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = gbRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		135A010F20D00C8600FC17DC /* libgbUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libgbUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		135A012C20D00EA600FC17DC /* gbUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = gbUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		135A012E20D00EC300FC17DC /* gbUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = gbUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		135A013020D0103F00FC17DC /* gbUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = gbUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		135A014420D013F700FC17DC /* gbUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = gbUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				135A013120D0103F00FC17DC /* gbUtils.framework in Frameworks */,
+				135A014520D013F700FC17DC /* gbUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,11 +93,7 @@
 		135A00F820D009B700FC17DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				135A013020D0103F00FC17DC /* gbUtils.framework */,
-				135A012E20D00EC300FC17DC /* gbUtils.framework */,
-				135A012C20D00EA600FC17DC /* gbUtils.framework */,
-				135A010F20D00C8600FC17DC /* libgbUtils.a */,
-				135A00F920D009B700FC17DC /* libgbUtils.a */,
+				135A014420D013F700FC17DC /* gbUtils.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

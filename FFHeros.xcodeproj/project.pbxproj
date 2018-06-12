@@ -47,9 +47,10 @@
 		134F31FF20ADF78D00DADFAA /* UIScrollView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FE20ADF78D00DADFAA /* UIScrollView+ffExt.m */; };
 		134F320120AE001000DADFAA /* FFCode_webImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320020AE001000DADFAA /* FFCode_webImage.m */; };
 		134F320720AE03BD00DADFAA /* testPullRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320520AE03BD00DADFAA /* testPullRefreshViewController.m */; };
-		135A011120D00D3300FC17DC /* libgbRouter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00AE20D0087400FC17DC /* libgbRouter.a */; };
-		135A011220D00D3700FC17DC /* libgbUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00F120D0095F00FC17DC /* libgbUtils.a */; };
-		135A011820D00E1A00FC17DC /* libgbRouter.a in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00AE20D0087400FC17DC /* libgbRouter.a */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		135A013920D013CF00FC17DC /* gbRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00AE20D0087400FC17DC /* gbRouter.framework */; };
+		135A013A20D013CF00FC17DC /* gbRouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00AE20D0087400FC17DC /* gbRouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		135A013D20D013CF00FC17DC /* gbUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00F120D0095F00FC17DC /* gbUtils.framework */; };
+		135A013E20D013CF00FC17DC /* gbUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00F120D0095F00FC17DC /* gbUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1362BC8920AF6EA500098514 /* ffBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8820AF6EA500098514 /* ffBaseViewModel.m */; };
 		1362BC8C20AF6FE900098514 /* ffBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */; };
 		1362BC8F20AF70AD00098514 /* ffBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */; };
@@ -117,26 +118,33 @@
 			remoteGlobalIDString = 135A00E220D0095E00FC17DC;
 			remoteInfo = gbUtils;
 		};
-		135A011320D00D4000FC17DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 135A011F20D00E5E00FC17DC;
-			remoteInfo = gbUtils;
-		};
-		135A011520D00D4000FC17DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 135A00A920D0087300FC17DC /* gbRouter.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 135A00FF20D00C1700FC17DC;
-			remoteInfo = gbRouter;
-		};
 		135A011920D00E1A00FC17DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 135A00A920D0087300FC17DC /* gbRouter.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 135A00FF20D00C1700FC17DC;
 			remoteInfo = gbRouter;
+		};
+		135A013720D013A000FC17DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 135A011F20D00E5E00FC17DC;
+			remoteInfo = gbUtils;
+		};
+		135A013B20D013CF00FC17DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 135A00A920D0087300FC17DC /* gbRouter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 135A00FF20D00C1700FC17DC;
+			remoteInfo = gbRouter;
+		};
+		135A013F20D013CF00FC17DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 135A011F20D00E5E00FC17DC;
+			remoteInfo = gbUtils;
 		};
 		13CC069920B47EBF00D328BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -148,13 +156,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		13CC06A720B47EBF00D328BB /* Embed Frameworks */ = {
+		135A014120D013CF00FC17DC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				135A011820D00E1A00FC17DC /* libgbRouter.a in Embed Frameworks */,
+				135A013A20D013CF00FC17DC /* gbRouter.framework in Embed Frameworks */,
+				135A013E20D013CF00FC17DC /* gbUtils.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,8 +337,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				135A011120D00D3300FC17DC /* libgbRouter.a in Frameworks */,
-				135A011220D00D3700FC17DC /* libgbUtils.a in Frameworks */,
+				135A013920D013CF00FC17DC /* gbRouter.framework in Frameworks */,
+				135A013D20D013CF00FC17DC /* gbUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +658,7 @@
 		135A00AA20D0087300FC17DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				135A00AE20D0087400FC17DC /* libgbRouter.a */,
+				135A00AE20D0087400FC17DC /* gbRouter.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -657,7 +666,7 @@
 		135A00ED20D0095E00FC17DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				135A00F120D0095F00FC17DC /* libgbUtils.a */,
+				135A00F120D0095F00FC17DC /* gbUtils.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -933,14 +942,15 @@
 				133B29C320AA56E400117E4F /* Sources */,
 				133B29C420AA56E400117E4F /* Frameworks */,
 				133B29C520AA56E400117E4F /* Resources */,
-				13CC06A720B47EBF00D328BB /* Embed Frameworks */,
+				135A014120D013CF00FC17DC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				135A011620D00D4000FC17DC /* PBXTargetDependency */,
 				135A011A20D00E1A00FC17DC /* PBXTargetDependency */,
-				135A011420D00D4000FC17DC /* PBXTargetDependency */,
+				135A013C20D013CF00FC17DC /* PBXTargetDependency */,
+				135A013820D013A000FC17DC /* PBXTargetDependency */,
+				135A014020D013CF00FC17DC /* PBXTargetDependency */,
 			);
 			name = FFHeros;
 			productName = FFHeros;
@@ -1039,17 +1049,17 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		135A00AE20D0087400FC17DC /* libgbRouter.a */ = {
+		135A00AE20D0087400FC17DC /* gbRouter.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libgbRouter.a;
+			fileType = wrapper.framework;
+			path = gbRouter.framework;
 			remoteRef = 135A00AD20D0087400FC17DC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		135A00F120D0095F00FC17DC /* libgbUtils.a */ = {
+		135A00F120D0095F00FC17DC /* gbUtils.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libgbUtils.a;
+			fileType = wrapper.framework;
+			path = gbUtils.framework;
 			remoteRef = 135A00F020D0095F00FC17DC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1192,20 +1202,25 @@
 			target = 133B29C620AA56E400117E4F /* FFHeros */;
 			targetProxy = 133B29E020AA56E500117E4F /* PBXContainerItemProxy */;
 		};
-		135A011420D00D4000FC17DC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = gbUtils;
-			targetProxy = 135A011320D00D4000FC17DC /* PBXContainerItemProxy */;
-		};
-		135A011620D00D4000FC17DC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = gbRouter;
-			targetProxy = 135A011520D00D4000FC17DC /* PBXContainerItemProxy */;
-		};
 		135A011A20D00E1A00FC17DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = gbRouter;
 			targetProxy = 135A011920D00E1A00FC17DC /* PBXContainerItemProxy */;
+		};
+		135A013820D013A000FC17DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = gbUtils;
+			targetProxy = 135A013720D013A000FC17DC /* PBXContainerItemProxy */;
+		};
+		135A013C20D013CF00FC17DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = gbRouter;
+			targetProxy = 135A013B20D013CF00FC17DC /* PBXContainerItemProxy */;
+		};
+		135A014020D013CF00FC17DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = gbUtils;
+			targetProxy = 135A013F20D013CF00FC17DC /* PBXContainerItemProxy */;
 		};
 		13CC069A20B47EBF00D328BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
