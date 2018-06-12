@@ -7,8 +7,8 @@
 //
 
 import XCTest
-@testable import FFRouter
-@testable import FFUtils
+@testable import gbRouter
+@testable import gbUtils
 
 class FFModule_StringUtils: XCTestCase {
     private let urlstr: String = "http://marvel.com/comics/characters/1017100/a-bomb_has?utm_campaign=apiRef&utm_source=aaee6fa40625a68298d42a9bb9dcd09d"

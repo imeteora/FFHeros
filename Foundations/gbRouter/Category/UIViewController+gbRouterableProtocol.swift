@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-extension UIViewController: ffRouterableProtocol {
+extension UIViewController: gbRouterableProtocol {
     static func viewController(_ router: String!, withParameter args: [String : String] = [:], userInfo: AnyObject? = nil) -> UIViewController?
     {
-        if let cls_parma: ffRouter.MatchResultType = ffRouter.shared.classMatchRouter(router) {
+        if let cls_parma: gbRouter.MatchResultType = gbRouter.shared.classMatchRouter(router) {
             if !(cls_parma.0 is UIViewController.Type) {
                 return nil
             }
@@ -25,7 +25,7 @@ extension UIViewController: ffRouterableProtocol {
             }
 
             let vc = cls_vc.init()
-            if vc.responds(to: #selector(ffRouterableProtocol.setUpWith(_:userInfo:))) {
+            if vc.responds(to: #selector(gbRouterableProtocol.setUpWith(_:userInfo:))) {
                 if false == vc.setUpWith(vc_param, userInfo: userInfo) {
                     return nil
                 }

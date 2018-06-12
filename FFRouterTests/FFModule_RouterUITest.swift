@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import FFRouter
+@testable import gbRouter
 
 
 class FFModule_RouterUITest: XCTestCase {

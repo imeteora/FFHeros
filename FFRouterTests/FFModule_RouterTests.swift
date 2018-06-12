@@ -7,8 +7,8 @@
 //
 
 import XCTest
-@testable import FFRouter
-@testable import FFUtils
+@testable import gbRouter
+@testable import gbUtils
 
 class ffFoo {
     var hello: String = "world"
@@ -27,14 +27,14 @@ class FFModule_RouterTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        ffRouter.shared.map("/hello/world", toClass: ffFoo.self)
-        ffRouter.shared.map("/hello/:world", toClass: ffFoo.self)
-        ffRouter.shared.map("/hello/:world/guy/:name", toClass: ffFoo.self)
-        ffRouter.shared.map("/hello/:world/user/:id", toClass: ffFoo.self)
-        ffRouter.shared.map("/foo/:param1/:param2", toClass: ffFooViewController.self)
-        ffRouter.shared.map("/browser", toClass: ffFooViewController.self)
+        gbRouter.shared.map("/hello/world", toClass: ffFoo.self)
+        gbRouter.shared.map("/hello/:world", toClass: ffFoo.self)
+        gbRouter.shared.map("/hello/:world/guy/:name", toClass: ffFoo.self)
+        gbRouter.shared.map("/hello/:world/user/:id", toClass: ffFoo.self)
+        gbRouter.shared.map("/foo/:param1/:param2", toClass: ffFooViewController.self)
+        gbRouter.shared.map("/browser", toClass: ffFooViewController.self)
 
-        ffRouter.shared.map("/hello/block/:keyword") { (param: [String: String]) in
+        gbRouter.shared.map("/hello/block/:keyword") { (param: [String: String]) in
             print("\(param)")
         }
     }
@@ -50,11 +50,11 @@ class FFModule_RouterTests: XCTestCase {
     }
 
     func testProcessURL() {
-        XCTAssert(ffRouter.shared.processUrl(urlstr, animated: true))
+        XCTAssert(gbRouter.shared.processUrl(urlstr, animated: true))
     }
 
     func testClosesureFromRouter() {
-        XCTAssert(ffRouter.shared.processUrl("/hello/block/32", animated: true))
+        XCTAssert(gbRouter.shared.processUrl("/hello/block/32", animated: true))
     }
 
     func testMatchHost() {
@@ -69,27 +69,27 @@ class FFModule_RouterTests: XCTestCase {
     }
     
     func testRouterNormal() {
-        XCTAssert(ffRouter.shared.classMatchRouter("/hello/world")?.0 is ffFoo.Type)
+        XCTAssert(gbRouter.shared.classMatchRouter("/hello/world")?.0 is ffFoo.Type)
     }
 
     func testRouterParamA() {
-        XCTAssert(ffRouter.shared.classMatchRouter("/hello/123")?.0 is ffFoo.Type)
+        XCTAssert(gbRouter.shared.classMatchRouter("/hello/123")?.0 is ffFoo.Type)
     }
 
     func testRouterParamB() {
-        var result: ffRouter.MatchResultType?
+        var result: gbRouter.MatchResultType?
 
-        result = ffRouter.shared.classMatchRouter("/hello/123")
+        result = gbRouter.shared.classMatchRouter("/hello/123")
         XCTAssert(result?.0 is ffFoo.Type)
 
-        result = ffRouter.shared.classMatchRouter("/hello/123/guy")
+        result = gbRouter.shared.classMatchRouter("/hello/123/guy")
         XCTAssert(result?.0 == nil)
 
-        result = ffRouter.shared.classMatchRouter("/hello/123/guy/456")
+        result = gbRouter.shared.classMatchRouter("/hello/123/guy/456")
         print(String(describing: result?.1))
         XCTAssert(result?.0 is ffFoo.Type)
 
-        result = ffRouter.shared.classMatchRouter("/hello/234/user/999")
+        result = gbRouter.shared.classMatchRouter("/hello/234/user/999")
         print(String(describing: result?.1))
         XCTAssert(result?.0 is ffFoo.Type)
     }

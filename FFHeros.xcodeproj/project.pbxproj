@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		132F914520B08C7D0095F0EE /* UIImage+BlurEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 132F914420B08C7D0095F0EE /* UIImage+BlurEffect.m */; };
-		1336385B20B6C1E700C9F901 /* ffUIViewController+Routerable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336385A20B6C1E700C9F901 /* ffUIViewController+Routerable.swift */; };
 		1336386720B6EBB100C9F901 /* FFModule_RouterUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336386620B6EBB100C9F901 /* FFModule_RouterUITest.swift */; };
 		133B0E5B20B072A900E7FC16 /* ffHeroDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B0E5A20B072A900E7FC16 /* ffHeroDetailViewController.m */; };
 		133B0E6120B0730C00E7FC16 /* ffHeroDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133B0E6020B0730C00E7FC16 /* ffHeroDetailViewModel.m */; };
@@ -33,8 +32,6 @@
 		133E1FAB20AB500100CA800C /* FFCode_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAA20AB500100CA800C /* FFCode_Model.m */; };
 		133E1FAE20AB515B00CA800C /* ffSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FAD20AB515B00CA800C /* ffSummaryModel.m */; };
 		133E1FB520AB587B00CA800C /* ffFooModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 133E1FB420AB587B00CA800C /* ffFooModel.m */; };
-		13403CAE20C6372000E19AFC /* ffRouterTranslatorProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13403CAD20C6372000E19AFC /* ffRouterTranslatorProcotol.swift */; };
-		13403CB120C645A300E19AFC /* ffRouterableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13403CB020C645A300E19AFC /* ffRouterableProtocol.swift */; };
 		13447E6220AF312E0018F23D /* NSObject+FFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072FF20AF0B770037F124 /* NSObject+FFUtils.m */; };
 		134974D920C7F6430051B8EF /* FFModule_StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134974D820C7F6430051B8EF /* FFModule_StringUtils.swift */; };
 		1349751920B1546900687991 /* ffSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1349751820B1546900687991 /* ffSearchViewModel.m */; };
@@ -50,6 +47,9 @@
 		134F31FF20ADF78D00DADFAA /* UIScrollView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F31FE20ADF78D00DADFAA /* UIScrollView+ffExt.m */; };
 		134F320120AE001000DADFAA /* FFCode_webImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320020AE001000DADFAA /* FFCode_webImage.m */; };
 		134F320720AE03BD00DADFAA /* testPullRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 134F320520AE03BD00DADFAA /* testPullRefreshViewController.m */; };
+		135A011120D00D3300FC17DC /* libgbRouter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00AE20D0087400FC17DC /* libgbRouter.a */; };
+		135A011220D00D3700FC17DC /* libgbUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00F120D0095F00FC17DC /* libgbUtils.a */; };
+		135A011820D00E1A00FC17DC /* libgbRouter.a in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 135A00AE20D0087400FC17DC /* libgbRouter.a */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1362BC8920AF6EA500098514 /* ffBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8820AF6EA500098514 /* ffBaseViewModel.m */; };
 		1362BC8C20AF6FE900098514 /* ffBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8B20AF6FE900098514 /* ffBaseListViewController.m */; };
 		1362BC8F20AF70AD00098514 /* ffBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362BC8E20AF70AD00098514 /* ffBaseTableViewController.m */; };
@@ -67,8 +67,6 @@
 		137B55EF20B1E5B50068A44C /* ffToasteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 137B55EE20B1E5B50068A44C /* ffToasteView.m */; };
 		1382394520B088530037BF49 /* ffHeroDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1382394320B088530037BF49 /* ffHeroDetailTableViewCell.m */; };
 		1382394620B088530037BF49 /* ffHeroDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1382394420B088530037BF49 /* ffHeroDetailTableViewCell.xib */; };
-		1385F03D20B9391A009261ED /* ffRouterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385F03C20B9391A009261ED /* ffRouterNode.swift */; };
-		1385F03F20B94DDD009261ED /* ffRouterTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385F03E20B94DDD009261ED /* ffRouterTranslator.swift */; };
 		1385F04120B96C82009261ED /* FFRouter_Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1385F04020B96C82009261ED /* FFRouter_Transfer.swift */; };
 		13885BA820ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */; };
 		138B1D3720AD8D51006A5708 /* UIView+WebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 138B1D3620AD8D51006A5708 /* UIView+WebImage.m */; };
@@ -81,17 +79,9 @@
 		13A072D020AEE8290037F124 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13A072CE20AEE8290037F124 /* ViewController.xib */; };
 		13A072F620AEF7850037F124 /* ffBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F520AEF7850037F124 /* ffBaseViewController.m */; };
 		13A072FA20AEFBDF0037F124 /* ffNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13A072F920AEFBDF0037F124 /* ffNavigationController.m */; };
-		13AA82EB20C7FF3500C88E3F /* FFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AA82EA20C7FF3500C88E3F /* FFUtils.swift */; };
-		13AA82F420C7FFFC00C88E3F /* libFFUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA82E820C7FF3500C88E3F /* libFFUtils.a */; };
-		13AA82F520C800C000C88E3F /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F3DE280F90D4D68B13CE0 /* URLUtils.swift */; };
 		13AE3CB220B1449C00D88D26 /* FFCode_Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CB120B1449C00D88D26 /* FFCode_Router.m */; };
 		13AE3CC220B153B900D88D26 /* ffSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE3CC120B153B900D88D26 /* ffSearchViewController.m */; };
-		13CC069620B47EBF00D328BB /* FFRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CC068D20B47EBE00D328BB /* FFRouter.framework */; };
 		13CC069D20B47EBF00D328BB /* FFModule_RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC069C20B47EBF00D328BB /* FFModule_RouterTests.swift */; };
-		13CC069F20B47EBF00D328BB /* FFRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 13CC068F20B47EBE00D328BB /* FFRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		13CC06A220B47EBF00D328BB /* FFRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CC068D20B47EBE00D328BB /* FFRouter.framework */; };
-		13CC06A320B47EBF00D328BB /* FFRouter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13CC068D20B47EBE00D328BB /* FFRouter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		13CC06AB20B47F1600D328BB /* ffRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4171C20B31D3D0092FC94 /* ffRouter.swift */; };
 		13F2A93120AD2F26005CF787 /* ffRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93020AD2F26005CF787 /* ffRefreshScrollView.m */; };
 		13F2A93420AD3480005CF787 /* ffRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A93320AD3480005CF787 /* ffRefreshComponent.m */; };
 		13F2A94420AD5BC3005CF787 /* UIView+ffExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */; };
@@ -113,26 +103,40 @@
 			remoteGlobalIDString = 133B29C620AA56E400117E4F;
 			remoteInfo = FFHeros;
 		};
-		13AA82EF20C7FF7600C88E3F /* PBXContainerItemProxy */ = {
+		135A00AD20D0087400FC17DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 133B29BF20AA56E300117E4F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13AA82E720C7FF3500C88E3F;
-			remoteInfo = FFUtils;
+			containerPortal = 135A00A920D0087300FC17DC /* gbRouter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 135A009F20D0087300FC17DC;
+			remoteInfo = gbRouter;
 		};
-		13AA82F120C7FF8100C88E3F /* PBXContainerItemProxy */ = {
+		135A00F020D0095F00FC17DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 133B29BF20AA56E300117E4F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13AA82E720C7FF3500C88E3F;
-			remoteInfo = FFUtils;
+			containerPortal = 135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 135A00E220D0095E00FC17DC;
+			remoteInfo = gbUtils;
 		};
-		13CC069720B47EBF00D328BB /* PBXContainerItemProxy */ = {
+		135A011320D00D4000FC17DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 133B29BF20AA56E300117E4F /* Project object */;
+			containerPortal = 135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 13CC068C20B47EBE00D328BB;
-			remoteInfo = FFRouter;
+			remoteGlobalIDString = 135A011F20D00E5E00FC17DC;
+			remoteInfo = gbUtils;
+		};
+		135A011520D00D4000FC17DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 135A00A920D0087300FC17DC /* gbRouter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 135A00FF20D00C1700FC17DC;
+			remoteInfo = gbRouter;
+		};
+		135A011920D00E1A00FC17DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 135A00A920D0087300FC17DC /* gbRouter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 135A00FF20D00C1700FC17DC;
+			remoteInfo = gbRouter;
 		};
 		13CC069920B47EBF00D328BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -141,32 +145,16 @@
 			remoteGlobalIDString = 133B29C620AA56E400117E4F;
 			remoteInfo = FFHeros;
 		};
-		13CC06A020B47EBF00D328BB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 133B29BF20AA56E300117E4F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 13CC068C20B47EBE00D328BB;
-			remoteInfo = FFRouter;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		13AA82E620C7FF3500C88E3F /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13CC06A720B47EBF00D328BB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				13CC06A320B47EBF00D328BB /* FFRouter.framework in Embed Frameworks */,
+				135A011820D00E1A00FC17DC /* libgbRouter.a in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +164,6 @@
 /* Begin PBXFileReference section */
 		132F914320B08C7D0095F0EE /* UIImage+BlurEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+BlurEffect.h"; sourceTree = "<group>"; };
 		132F914420B08C7D0095F0EE /* UIImage+BlurEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BlurEffect.m"; sourceTree = "<group>"; };
-		1336385A20B6C1E700C9F901 /* ffUIViewController+Routerable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ffUIViewController+Routerable.swift"; sourceTree = "<group>"; };
 		1336386620B6EBB100C9F901 /* FFModule_RouterUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFModule_RouterUITest.swift; sourceTree = "<group>"; };
 		133B0E5920B072A900E7FC16 /* ffHeroDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ffHeroDetailViewController.h; path = FFHeros/Features/HeroDetail/VC/ffHeroDetailViewController.h; sourceTree = SOURCE_ROOT; };
 		133B0E5A20B072A900E7FC16 /* ffHeroDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ffHeroDetailViewController.m; path = FFHeros/Features/HeroDetail/VC/ffHeroDetailViewController.m; sourceTree = SOURCE_ROOT; };
@@ -223,8 +210,6 @@
 		133E1FAD20AB515B00CA800C /* ffSummaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSummaryModel.m; sourceTree = "<group>"; };
 		133E1FB320AB587B00CA800C /* ffFooModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFooModel.h; sourceTree = "<group>"; };
 		133E1FB420AB587B00CA800C /* ffFooModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFooModel.m; sourceTree = "<group>"; };
-		13403CAD20C6372000E19AFC /* ffRouterTranslatorProcotol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ffRouterTranslatorProcotol.swift; sourceTree = "<group>"; };
-		13403CB020C645A300E19AFC /* ffRouterableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ffRouterableProtocol.swift; sourceTree = "<group>"; };
 		134974D820C7F6430051B8EF /* FFModule_StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFModule_StringUtils.swift; sourceTree = "<group>"; };
 		1349751720B1546900687991 /* ffSearchViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffSearchViewModel.h; sourceTree = "<group>"; };
 		1349751820B1546900687991 /* ffSearchViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSearchViewModel.m; sourceTree = "<group>"; };
@@ -250,6 +235,8 @@
 		134F320020AE001000DADFAA /* FFCode_webImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_webImage.m; sourceTree = "<group>"; };
 		134F320420AE03BD00DADFAA /* testPullRefreshViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testPullRefreshViewController.h; sourceTree = "<group>"; };
 		134F320520AE03BD00DADFAA /* testPullRefreshViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testPullRefreshViewController.m; sourceTree = "<group>"; };
+		135A00A920D0087300FC17DC /* gbRouter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gbRouter.xcodeproj; path = gbRouter/gbRouter.xcodeproj; sourceTree = "<group>"; };
+		135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gbUtils.xcodeproj; path = gbUtils/gbUtils.xcodeproj; sourceTree = "<group>"; };
 		1362BC8720AF6EA500098514 /* ffBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseViewModel.h; sourceTree = "<group>"; };
 		1362BC8820AF6EA500098514 /* ffBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffBaseViewModel.m; sourceTree = "<group>"; };
 		1362BC8A20AF6FE900098514 /* ffBaseListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffBaseListViewController.h; sourceTree = "<group>"; };
@@ -281,8 +268,6 @@
 		1382394220B088530037BF49 /* ffHeroDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffHeroDetailTableViewCell.h; sourceTree = "<group>"; };
 		1382394320B088530037BF49 /* ffHeroDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffHeroDetailTableViewCell.m; sourceTree = "<group>"; };
 		1382394420B088530037BF49 /* ffHeroDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffHeroDetailTableViewCell.xib; sourceTree = "<group>"; };
-		1385F03C20B9391A009261ED /* ffRouterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ffRouterNode.swift; sourceTree = "<group>"; };
-		1385F03E20B94DDD009261ED /* ffRouterTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ffRouterTranslator.swift; sourceTree = "<group>"; };
 		1385F04020B96C82009261ED /* FFRouter_Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFRouter_Transfer.swift; sourceTree = "<group>"; };
 		13885BA620ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFetchCharactersInfoApi.h; sourceTree = "<group>"; };
 		13885BA720ABBCBC00D9F9E5 /* ffFetchCharactersInfoApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFetchCharactersInfoApi.m; sourceTree = "<group>"; };
@@ -305,14 +290,9 @@
 		13A072F920AEFBDF0037F124 /* ffNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffNavigationController.m; sourceTree = "<group>"; };
 		13A072FE20AF0B770037F124 /* NSObject+FFUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+FFUtils.h"; sourceTree = "<group>"; };
 		13A072FF20AF0B770037F124 /* NSObject+FFUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FFUtils.m"; sourceTree = "<group>"; };
-		13AA82E820C7FF3500C88E3F /* libFFUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFFUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		13AA82EA20C7FF3500C88E3F /* FFUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFUtils.swift; sourceTree = "<group>"; };
 		13AE3CB120B1449C00D88D26 /* FFCode_Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFCode_Router.m; sourceTree = "<group>"; };
 		13AE3CC020B153B900D88D26 /* ffSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffSearchViewController.h; sourceTree = "<group>"; };
 		13AE3CC120B153B900D88D26 /* ffSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSearchViewController.m; sourceTree = "<group>"; };
-		13CC068D20B47EBE00D328BB /* FFRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FFRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		13CC068F20B47EBE00D328BB /* FFRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFRouter.h; sourceTree = "<group>"; };
-		13CC069020B47EBE00D328BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13CC069520B47EBF00D328BB /* FFRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FFRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13CC069C20B47EBF00D328BB /* FFModule_RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFModule_RouterTests.swift; sourceTree = "<group>"; };
 		13CC069E20B47EBF00D328BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -323,7 +303,6 @@
 		13F2A94220AD5BC3005CF787 /* UIView+ffExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ffExt.h"; sourceTree = "<group>"; };
 		13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ffExt.m"; sourceTree = "<group>"; };
 		13F4171B20B31D3D0092FC94 /* FFHeros-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFHeros-Bridging-Header.h"; sourceTree = "<group>"; };
-		13F4171C20B31D3D0092FC94 /* ffRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ffRouter.swift; sourceTree = "<group>"; };
 		13F5F7F020AAB7B200461972 /* FFHeros-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FFHeros-Prefix.pch"; sourceTree = "<group>"; };
 		13F9E3BE20AB700C00912533 /* ffApiError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffApiError.h; sourceTree = "<group>"; };
 		13F9E3BF20AB700C00912533 /* ffApiError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffApiError.m; sourceTree = "<group>"; };
@@ -341,7 +320,6 @@
 		13FFEB5B20ACB05B008615C6 /* ffTextObjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffTextObjectModel.m; sourceTree = "<group>"; };
 		CC2F31680CA56A8751A6076B /* ffWebImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffWebImageCache.h; sourceTree = "<group>"; };
 		CC2F3766ECD48B36BF68DF4D /* ffNavigationControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffNavigationControllerProtocol.h; sourceTree = "<group>"; };
-		CC2F3DE280F90D4D68B13CE0 /* URLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLUtils.swift; sourceTree = "<group>"; };
 		CC2F3EB07B215637AD60B4DD /* ffWebImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ffWebImageCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -350,7 +328,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13CC06A220B47EBF00D328BB /* FFRouter.framework in Frameworks */,
+				135A011120D00D3300FC17DC /* libgbRouter.a in Frameworks */,
+				135A011220D00D3700FC17DC /* libgbUtils.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,26 +340,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		13AA82E520C7FF3500C88E3F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		13CC068920B47EBE00D328BB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				13AA82F420C7FFFC00C88E3F /* libFFUtils.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13CC069220B47EBF00D328BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13CC069620B47EBF00D328BB /* FFRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,14 +357,6 @@
 				132F914420B08C7D0095F0EE /* UIImage+BlurEffect.m */,
 			);
 			path = Blur;
-			sourceTree = "<group>";
-		};
-		1336385920B6C14400C9F901 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				1336385A20B6C1E700C9F901 /* ffUIViewController+Routerable.swift */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		133B0E5C20B072DA00E7FC16 /* HeroDetail */ = {
@@ -436,9 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				133B29C920AA56E400117E4F /* FFHeros */,
-				13CC068E20B47EBE00D328BB /* FFRouter */,
 				13CC069B20B47EBF00D328BB /* FFRouterTests */,
-				13AA82E920C7FF3500C88E3F /* FFUtils */,
+				135A009520D007D200FC17DC /* Foundations */,
 				13AA82F320C7FFFC00C88E3F /* Frameworks */,
 				133B29C820AA56E400117E4F /* Products */,
 			);
@@ -449,9 +403,7 @@
 			children = (
 				133B29C720AA56E400117E4F /* FFHeros.app */,
 				133B29DF20AA56E500117E4F /* FFHerosTests.xctest */,
-				13CC068D20B47EBE00D328BB /* FFRouter.framework */,
 				13CC069520B47EBF00D328BB /* FFRouterTests.xctest */,
-				13AA82E820C7FF3500C88E3F /* libFFUtils.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -612,15 +564,6 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		13403CAC20C636E700E19AFC /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				13403CB020C645A300E19AFC /* ffRouterableProtocol.swift */,
-				13403CAD20C6372000E19AFC /* ffRouterTranslatorProcotol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		1349751520B1544300687991 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,6 +635,31 @@
 				13A072CE20AEE8290037F124 /* ViewController.xib */,
 			);
 			path = UnitTest;
+			sourceTree = "<group>";
+		};
+		135A009520D007D200FC17DC /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				135A00A920D0087300FC17DC /* gbRouter.xcodeproj */,
+				135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
+		135A00AA20D0087300FC17DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				135A00AE20D0087400FC17DC /* libgbRouter.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		135A00ED20D0095E00FC17DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				135A00F120D0095F00FC17DC /* libgbUtils.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		1362BC9A20AFF9BB00098514 /* EventModel */ = {
@@ -845,15 +813,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		13AA82E920C7FF3500C88E3F /* FFUtils */ = {
-			isa = PBXGroup;
-			children = (
-				13AA82EA20C7FF3500C88E3F /* FFUtils.swift */,
-				CC2F34F10767A3C02C3ED3B5 /* Utils */,
-			);
-			path = FFUtils;
-			sourceTree = "<group>";
-		};
 		13AA82F320C7FFFC00C88E3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -878,18 +837,6 @@
 				13AE3CC120B153B900D88D26 /* ffSearchViewController.m */,
 			);
 			path = VC;
-			sourceTree = "<group>";
-		};
-		13CC068E20B47EBE00D328BB /* FFRouter */ = {
-			isa = PBXGroup;
-			children = (
-				1336385920B6C14400C9F901 /* Category */,
-				13CC068F20B47EBE00D328BB /* FFRouter.h */,
-				13CC069020B47EBE00D328BB /* Info.plist */,
-				13403CAC20C636E700E19AFC /* Protocols */,
-				13F4171A20B31CED0092FC94 /* Router */,
-			);
-			path = FFRouter;
 			sourceTree = "<group>";
 		};
 		13CC069B20B47EBF00D328BB /* FFRouterTests */ = {
@@ -921,16 +868,6 @@
 				13F2A94320AD5BC3005CF787 /* UIView+ffExt.m */,
 			);
 			path = PullRefresh;
-			sourceTree = "<group>";
-		};
-		13F4171A20B31CED0092FC94 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				13F4171C20B31D3D0092FC94 /* ffRouter.swift */,
-				1385F03C20B9391A009261ED /* ffRouterNode.swift */,
-				1385F03E20B94DDD009261ED /* ffRouterTranslator.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		13FFEB3420AC8D7C008615C6 /* Define */ = {
@@ -973,14 +910,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		CC2F34F10767A3C02C3ED3B5 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				CC2F3DE280F90D4D68B13CE0 /* URLUtils.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		CC2F39EE7D0211DAC3862ADA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -996,17 +925,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		13CC068A20B47EBE00D328BB /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				13CC069F20B47EBF00D328BB /* FFRouter.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		133B29C620AA56E400117E4F /* FFHeros */ = {
 			isa = PBXNativeTarget;
@@ -1020,8 +938,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				13CC06A120B47EBF00D328BB /* PBXTargetDependency */,
-				13AA82F020C7FF7600C88E3F /* PBXTargetDependency */,
+				135A011620D00D4000FC17DC /* PBXTargetDependency */,
+				135A011A20D00E1A00FC17DC /* PBXTargetDependency */,
+				135A011420D00D4000FC17DC /* PBXTargetDependency */,
 			);
 			name = FFHeros;
 			productName = FFHeros;
@@ -1046,42 +965,6 @@
 			productReference = 133B29DF20AA56E500117E4F /* FFHerosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13AA82E720C7FF3500C88E3F /* FFUtils */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 13AA82EC20C7FF3500C88E3F /* Build configuration list for PBXNativeTarget "FFUtils" */;
-			buildPhases = (
-				13AA82E420C7FF3500C88E3F /* Sources */,
-				13AA82E520C7FF3500C88E3F /* Frameworks */,
-				13AA82E620C7FF3500C88E3F /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FFUtils;
-			productName = FFUtils;
-			productReference = 13AA82E820C7FF3500C88E3F /* libFFUtils.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		13CC068C20B47EBE00D328BB /* FFRouter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 13CC06A420B47EBF00D328BB /* Build configuration list for PBXNativeTarget "FFRouter" */;
-			buildPhases = (
-				13CC068820B47EBE00D328BB /* Sources */,
-				13CC068920B47EBE00D328BB /* Frameworks */,
-				13CC068A20B47EBE00D328BB /* Headers */,
-				13CC068B20B47EBE00D328BB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				13AA82F220C7FF8100C88E3F /* PBXTargetDependency */,
-			);
-			name = FFRouter;
-			productName = FFRouter;
-			productReference = 13CC068D20B47EBE00D328BB /* FFRouter.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		13CC069420B47EBF00D328BB /* FFRouterTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13CC06A820B47EBF00D328BB /* Build configuration list for PBXNativeTarget "FFRouterTests" */;
@@ -1094,7 +977,6 @@
 			);
 			dependencies = (
 				13CC069A20B47EBF00D328BB /* PBXTargetDependency */,
-				13CC069820B47EBF00D328BB /* PBXTargetDependency */,
 			);
 			name = FFRouterTests;
 			productName = FFRouterTests;
@@ -1120,12 +1002,6 @@
 						CreatedOnToolsVersion = 9.3;
 						TestTargetID = 133B29C620AA56E400117E4F;
 					};
-					13AA82E720C7FF3500C88E3F = {
-						CreatedOnToolsVersion = 9.3.1;
-					};
-					13CC068C20B47EBE00D328BB = {
-						CreatedOnToolsVersion = 9.3.1;
-					};
 					13CC069420B47EBF00D328BB = {
 						CreatedOnToolsVersion = 9.3.1;
 						TestTargetID = 133B29C620AA56E400117E4F;
@@ -1143,16 +1019,41 @@
 			mainGroup = 133B29BE20AA56E300117E4F;
 			productRefGroup = 133B29C820AA56E400117E4F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 135A00AA20D0087300FC17DC /* Products */;
+					ProjectRef = 135A00A920D0087300FC17DC /* gbRouter.xcodeproj */;
+				},
+				{
+					ProductGroup = 135A00ED20D0095E00FC17DC /* Products */;
+					ProjectRef = 135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				133B29C620AA56E400117E4F /* FFHeros */,
 				133B29DE20AA56E500117E4F /* FFHerosTests */,
-				13CC068C20B47EBE00D328BB /* FFRouter */,
 				13CC069420B47EBF00D328BB /* FFRouterTests */,
-				13AA82E720C7FF3500C88E3F /* FFUtils */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		135A00AE20D0087400FC17DC /* libgbRouter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgbRouter.a;
+			remoteRef = 135A00AD20D0087400FC17DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		135A00F120D0095F00FC17DC /* libgbUtils.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgbUtils.a;
+			remoteRef = 135A00F020D0095F00FC17DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		133B29C520AA56E400117E4F /* Resources */ = {
@@ -1171,13 +1072,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		133B29DD20AA56E500117E4F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		13CC068B20B47EBE00D328BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1279,28 +1173,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		13AA82E420C7FF3500C88E3F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				13AA82EB20C7FF3500C88E3F /* FFUtils.swift in Sources */,
-				13AA82F520C800C000C88E3F /* URLUtils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		13CC068820B47EBE00D328BB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				13CC06AB20B47F1600D328BB /* ffRouter.swift in Sources */,
-				13403CB120C645A300E19AFC /* ffRouterableProtocol.swift in Sources */,
-				1385F03D20B9391A009261ED /* ffRouterNode.swift in Sources */,
-				1385F03F20B94DDD009261ED /* ffRouterTranslator.swift in Sources */,
-				13403CAE20C6372000E19AFC /* ffRouterTranslatorProcotol.swift in Sources */,
-				1336385B20B6C1E700C9F901 /* ffUIViewController+Routerable.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		13CC069120B47EBF00D328BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1320,30 +1192,25 @@
 			target = 133B29C620AA56E400117E4F /* FFHeros */;
 			targetProxy = 133B29E020AA56E500117E4F /* PBXContainerItemProxy */;
 		};
-		13AA82F020C7FF7600C88E3F /* PBXTargetDependency */ = {
+		135A011420D00D4000FC17DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13AA82E720C7FF3500C88E3F /* FFUtils */;
-			targetProxy = 13AA82EF20C7FF7600C88E3F /* PBXContainerItemProxy */;
+			name = gbUtils;
+			targetProxy = 135A011320D00D4000FC17DC /* PBXContainerItemProxy */;
 		};
-		13AA82F220C7FF8100C88E3F /* PBXTargetDependency */ = {
+		135A011620D00D4000FC17DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13AA82E720C7FF3500C88E3F /* FFUtils */;
-			targetProxy = 13AA82F120C7FF8100C88E3F /* PBXContainerItemProxy */;
+			name = gbRouter;
+			targetProxy = 135A011520D00D4000FC17DC /* PBXContainerItemProxy */;
 		};
-		13CC069820B47EBF00D328BB /* PBXTargetDependency */ = {
+		135A011A20D00E1A00FC17DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13CC068C20B47EBE00D328BB /* FFRouter */;
-			targetProxy = 13CC069720B47EBF00D328BB /* PBXContainerItemProxy */;
+			name = gbRouter;
+			targetProxy = 135A011920D00E1A00FC17DC /* PBXContainerItemProxy */;
 		};
 		13CC069A20B47EBF00D328BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 133B29C620AA56E400117E4F /* FFHeros */;
 			targetProxy = 13CC069920B47EBF00D328BB /* PBXContainerItemProxy */;
-		};
-		13CC06A120B47EBF00D328BB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 13CC068C20B47EBE00D328BB /* FFRouter */;
-			targetProxy = 13CC06A020B47EBF00D328BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1555,99 +1422,6 @@
 			};
 			name = Release;
 		};
-		13AA82ED20C7FF3500C88E3F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 78ZP32GK3R;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		13AA82EE20C7FF3500C88E3F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 78ZP32GK3R;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		13CC06A520B47EBF00D328BB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 78ZP32GK3R;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FFRouter/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFRouter;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		13CC06A620B47EBF00D328BB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 78ZP32GK3R;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FFRouter/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFRouter;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		13CC06A920B47EBF00D328BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1718,24 +1492,6 @@
 			buildConfigurations = (
 				133B29EC20AA56E500117E4F /* Debug */,
 				133B29ED20AA56E500117E4F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		13AA82EC20C7FF3500C88E3F /* Build configuration list for PBXNativeTarget "FFUtils" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				13AA82ED20C7FF3500C88E3F /* Debug */,
-				13AA82EE20C7FF3500C88E3F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		13CC06A420B47EBF00D328BB /* Build configuration list for PBXNativeTarget "FFRouter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				13CC06A520B47EBF00D328BB /* Debug */,
-				13CC06A620B47EBF00D328BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

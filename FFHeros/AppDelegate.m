@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ffNavigationController.h"
 #import "ffHomeViewController.h"
-@import FFRouter;
+@import gbRouter;
 #import "ffRouterHelper.h"
 #import "testPullRefreshViewController.h"
 
@@ -27,8 +27,8 @@
     ffNavigationController *navi = [[ffNavigationController alloc] initWithRootViewController:vc];
 
     [ffNavigationHelper shared].navigationController = navi;
-    [ffRouter shared].navigationController = navi;
-    [ffRouter shared].acceptHosts = @[@"marvel.com", @"*.marvel.com"];
+    [gbRouter shared].navigationController = navi;
+    [gbRouter shared].acceptHosts = @[@"marvel.com", @"*.marvel.com"];
     [ffRouterHelper shared];
 
     self.window.rootViewController = navi;
