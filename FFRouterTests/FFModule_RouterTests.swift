@@ -58,13 +58,13 @@ class FFModule_RouterTests: XCTestCase {
     }
 
     func testMatchHost() {
-        var result: Bool = URLUtils.matchString("*.marvel.com", withSource:"marvel.com", separatedBy:".")
+        var result: Bool = gbURLUtils.matchString("*.marvel.com", withSource:"marvel.com", separatedBy:".")
         XCTAssert(result == true)
 
-        result = URLUtils.matchString("*.marvel.com", withSource:"www.marvel.com", separatedBy:".")
+        result = gbURLUtils.matchString("*.marvel.com", withSource:"www.marvel.com", separatedBy:".")
         XCTAssert(result == true)
 
-        result = URLUtils.matchString("marvel.com", withSource:"www.marvel.com", separatedBy:".")
+        result = gbURLUtils.matchString("marvel.com", withSource:"www.marvel.com", separatedBy:".")
         XCTAssert(result == false)
     }
     

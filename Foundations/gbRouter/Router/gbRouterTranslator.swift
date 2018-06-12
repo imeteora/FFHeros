@@ -122,9 +122,9 @@ internal func gb_router_decodeUrl(_ url: String) -> String {
             }
 
             // 截取query形成参数键值对
-            args = URLUtils.parametersInQuery(_url!.absoluteString) ?? [:]
+            args = gbURLUtils.parametersInQuery(_url!.absoluteString) ?? [:]
         } else {
-            args = URLUtils.parametersInQuery(url) ?? [:]
+            args = gbURLUtils.parametersInQuery(url) ?? [:]
         }
 
         var _urlTransfered: String = url   // set as origin url firstly.
@@ -183,7 +183,7 @@ internal func gb_router_decodeUrl(_ url: String) -> String {
     }
 
     fileprivate  func _isWebUrl(_ url:String!) -> Bool {
-        return URLUtils.isWebUrl(url)
+        return gbURLUtils.isWebUrl(url)
     }
 
     fileprivate func _matchDomain(_ domain:String!, url: String!) -> Bool
@@ -217,7 +217,7 @@ internal func gb_router_decodeUrl(_ url: String) -> String {
     ///   - url: 被检查的url链接
     /// - Returns: 返回true表示符合所期望的格式，否则不匹配
     fileprivate func _matchUrl(_ base: String!, url: String!) -> Bool {
-        return URLUtils.matchString(base, withSource: url, separatedBy: ".")
+        return gbURLUtils.matchString(base, withSource: url, separatedBy: ".")
     }
 }
 
