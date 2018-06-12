@@ -58,6 +58,10 @@
     CFDataRef dataSource = CGDataProviderCopyData(provider);
     if (NULL == dataSource)
     {
+        if (tempBuffer) {
+            free(tempBuffer);
+            tempBuffer = NULL;
+        }
         return self;
     }
     const UInt8 *dataSourceData = CFDataGetBytePtr(dataSource);

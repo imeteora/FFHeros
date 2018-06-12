@@ -302,7 +302,7 @@
         *errorPtr = [NSError errorWithDomain:ffApiErrorDomainParser code:ffApiRequestErrorCodeSerialization userInfo:nil];
         return nil;
     }
-    if (NOT [x isKindOfClass:[NSDictionary class]]) {
+    if (errorPtr != nil AND NOT [x isKindOfClass:[NSDictionary class]]) {
         *errorPtr = [NSError errorWithDomain:ffApiErrorDomainFeature code:ffApiNetworkErrorCodeInvalidResult userInfo:nil];
         return nil;
     }

@@ -33,6 +33,7 @@
     if (data == nil) {
         _favDict = [@{} mutableCopy];
         [self save];
+        data = [NSKeyedArchiver archivedDataWithRootObject:_favDict];
     }
     _favDict = [[NSKeyedUnarchiver unarchiveObjectWithData:data] mutableCopy];
 }

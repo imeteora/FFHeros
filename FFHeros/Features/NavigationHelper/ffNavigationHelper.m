@@ -24,8 +24,6 @@
 - (void)showHeroInfoViewController:(int64_t)cid {
     NSString *router = [NSString stringWithFormat:@"/character/%lld", cid];
     [[gbRouter shared] processUrl:router animated:YES];
-//    ffHeroDetailViewController *detailVC = [[ffHeroDetailViewController alloc] initWithCharacterId:cid];
-//    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)showFavouriteListViewController {
