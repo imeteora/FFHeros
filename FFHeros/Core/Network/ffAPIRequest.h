@@ -14,7 +14,7 @@
 /**
  the callback lambda function when web request returns successfully
  */
-@property (nonatomic, nullable, copy) void (^compleleHandler)(NSDictionary * _Nonnull);
+@property (nonatomic, nullable, copy) void (^completeHandler)(NSDictionary * _Nonnull);
 
 /**
  the callback lambda function when any error occurs during web request.

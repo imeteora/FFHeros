@@ -141,9 +141,9 @@
                 }
             } else {
                 NSDictionary<NSString *, id> * result = [self _mappingModelFrom:jsonDict errorIfError:&error];
-                if (self.compleleHandler) {
+                if (self.completeHandler) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        self.compleleHandler(result);
+                        self.completeHandler(result);
                     });
                 }
             }

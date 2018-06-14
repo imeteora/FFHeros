@@ -19,7 +19,7 @@
     config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data/results" toMappingClass:[ffComicsModel class]]];
 
     ffAPIRequest *request = [[ffAPIRequest alloc] initWithConfig:config];
-    [request setCompleleHandler:^(NSDictionary * _Nonnull result) {
+    [request setCompleteHandler:^(NSDictionary * _Nonnull result) {
         if (completeHandler) {
             completeHandler(result[@"/data/results"]);
         }

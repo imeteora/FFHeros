@@ -22,7 +22,7 @@
     config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data" toMappingClass:[ffCharacterDataContainerModel class]]];
 
     ffAPIRequest *request = [[ffAPIRequest alloc] initWithConfig:config];
-    [request setCompleleHandler:^(NSDictionary * _Nonnull result) {
+    [request setCompleteHandler:^(NSDictionary * _Nonnull result) {
         if (completeBlock) {
             completeBlock(result[@"/data"]);
         }
@@ -49,7 +49,7 @@
     config.modelDescriptions = @[[ffAPIModelDescription modelWith:@"/data/results" toMappingClass:[ffCharacterModel class]]];
 
     ffAPIRequest *request = [[ffAPIRequest alloc] initWithConfig:config];
-    [request setCompleleHandler:^(NSDictionary *result) {
+    [request setCompleteHandler:^(NSDictionary *result) {
         if (completeHandler AND [result[@"/data/results"] count] > 0) {
             completeHandler(result[@"/data/results"][0]);
         }
