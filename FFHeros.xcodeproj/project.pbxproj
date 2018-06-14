@@ -237,6 +237,7 @@
 		1349755B20B1A75200687991 /* ffFavItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFavItemTableViewCell.h; sourceTree = "<group>"; };
 		1349755C20B1A75200687991 /* ffFavItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFavItemTableViewCell.m; sourceTree = "<group>"; };
 		1349755D20B1A75200687991 /* ffFavItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ffFavItemTableViewCell.xib; sourceTree = "<group>"; };
+		134B61F620D2CA76000B5180 /* gbNetwork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gbNetwork.xcodeproj; path = gbNetwork/gbNetwork.xcodeproj; sourceTree = "<group>"; };
 		134F31FA20ADF36C00DADFAA /* ffRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffRefreshHeader.h; sourceTree = "<group>"; };
 		134F31FB20ADF36C00DADFAA /* ffRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffRefreshHeader.m; sourceTree = "<group>"; };
 		134F31FD20ADF78D00DADFAA /* UIScrollView+ffExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ffExt.h"; sourceTree = "<group>"; };
@@ -649,6 +650,7 @@
 		135A009520D007D200FC17DC /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				134B61F620D2CA76000B5180 /* gbNetwork.xcodeproj */,
 				135A00A920D0087300FC17DC /* gbRouter.xcodeproj */,
 				135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */,
 			);
