@@ -8,7 +8,6 @@
 
 import Foundation
 
-@objc public protocol gbRouterableProtocol {
-    func setUpWith(_ param: [String: String]!, userInfo:AnyObject?) -> Bool;
+@objc public protocol RouterableProtocol {
+    func setUpWith(_ param: [String: String], userInfo: AnyObject?) -> Bool
 }
-

@@ -104,6 +104,20 @@
 			remoteGlobalIDString = 133B29C620AA56E400117E4F;
 			remoteInfo = FFHeros;
 		};
+		134052A720D96E6A00D28114 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 134052A220D96E6900D28114 /* gbModelable.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1340528820D96E6900D28114;
+			remoteInfo = gbModelable;
+		};
+		134052A920D96E6A00D28114 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 134052A220D96E6900D28114 /* gbModelable.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1340529120D96E6900D28114;
+			remoteInfo = gbModelableTests;
+		};
 		135A00AD20D0087400FC17DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 135A00A920D0087300FC17DC /* gbRouter.xcodeproj */;
@@ -146,26 +160,26 @@
 			remoteGlobalIDString = 135A011F20D00E5E00FC17DC;
 			remoteInfo = gbUtils;
 		};
-		13CC069920B47EBF00D328BB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 133B29BF20AA56E300117E4F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 133B29C620AA56E400117E4F;
-			remoteInfo = FFHeros;
-		};
-		13DA91FE20D7F920007ECF21 /* PBXContainerItemProxy */ = {
+		136218DE20D63AB4000B49F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 134B61F620D2CA76000B5180 /* gbNetwork.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134B61DC20D2CA76000B5180;
 			remoteInfo = gbNetwork;
 		};
-		13DA920020D7F920007ECF21 /* PBXContainerItemProxy */ = {
+		136218E020D63AB4000B49F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 134B61F620D2CA76000B5180 /* gbNetwork.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134B61E520D2CA76000B5180;
 			remoteInfo = gbNetworkTests;
+		};
+		13CC069920B47EBF00D328BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 133B29BF20AA56E300117E4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 133B29C620AA56E400117E4F;
+			remoteInfo = FFHeros;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -233,6 +247,7 @@
 		133E1FAD20AB515B00CA800C /* ffSummaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSummaryModel.m; sourceTree = "<group>"; };
 		133E1FB320AB587B00CA800C /* ffFooModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffFooModel.h; sourceTree = "<group>"; };
 		133E1FB420AB587B00CA800C /* ffFooModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffFooModel.m; sourceTree = "<group>"; };
+		134052A220D96E6900D28114 /* gbModelable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gbModelable.xcodeproj; path = gbModelable/gbModelable.xcodeproj; sourceTree = "<group>"; };
 		134974D820C7F6430051B8EF /* FFModule_StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFModule_StringUtils.swift; sourceTree = "<group>"; };
 		1349751720B1546900687991 /* ffSearchViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ffSearchViewModel.h; sourceTree = "<group>"; };
 		1349751820B1546900687991 /* ffSearchViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ffSearchViewModel.m; sourceTree = "<group>"; };
@@ -588,6 +603,15 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		134052A320D96E6900D28114 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				134052A820D96E6A00D28114 /* gbModelable.framework */,
+				134052AA20D96E6A00D28114 /* gbModelableTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1349751520B1544300687991 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,6 +688,7 @@
 		135A009520D007D200FC17DC /* Foundations */ = {
 			isa = PBXGroup;
 			children = (
+				134052A220D96E6900D28114 /* gbModelable.xcodeproj */,
 				134B61F620D2CA76000B5180 /* gbNetwork.xcodeproj */,
 				135A00A920D0087300FC17DC /* gbRouter.xcodeproj */,
 				135A00EC20D0095E00FC17DC /* gbUtils.xcodeproj */,
@@ -683,6 +708,15 @@
 			isa = PBXGroup;
 			children = (
 				135A00F120D0095F00FC17DC /* gbUtils.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		136218DA20D63AB4000B49F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				136218DF20D63AB4000B49F1 /* gbNetwork.framework */,
+				136218E120D63AB4000B49F1 /* gbNetworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -876,15 +910,6 @@
 			path = FFRouterTests;
 			sourceTree = "<group>";
 		};
-		13DA91FA20D7F920007ECF21 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				13DA91FF20D7F920007ECF21 /* gbNetwork.framework */,
-				13DA920120D7F920007ECF21 /* gbNetworkTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		13F2A92E20AD2EEC005CF787 /* PullRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -968,6 +993,7 @@
 				133B29C420AA56E400117E4F /* Frameworks */,
 				133B29C520AA56E400117E4F /* Resources */,
 				135A014120D013CF00FC17DC /* Embed Frameworks */,
+				13B8396F210F6DE400945AAF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1056,7 +1082,11 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 13DA91FA20D7F920007ECF21 /* Products */;
+					ProductGroup = 134052A320D96E6900D28114 /* Products */;
+					ProjectRef = 134052A220D96E6900D28114 /* gbModelable.xcodeproj */;
+				},
+				{
+					ProductGroup = 136218DA20D63AB4000B49F1 /* Products */;
 					ProjectRef = 134B61F620D2CA76000B5180 /* gbNetwork.xcodeproj */;
 				},
 				{
@@ -1078,6 +1108,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		134052A820D96E6A00D28114 /* gbModelable.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = gbModelable.framework;
+			remoteRef = 134052A720D96E6A00D28114 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		134052AA20D96E6A00D28114 /* gbModelableTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = gbModelableTests.xctest;
+			remoteRef = 134052A920D96E6A00D28114 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		135A00AE20D0087400FC17DC /* gbRouter.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1092,18 +1136,18 @@
 			remoteRef = 135A00F020D0095F00FC17DC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		13DA91FF20D7F920007ECF21 /* gbNetwork.framework */ = {
+		136218DF20D63AB4000B49F1 /* gbNetwork.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = gbNetwork.framework;
-			remoteRef = 13DA91FE20D7F920007ECF21 /* PBXContainerItemProxy */;
+			remoteRef = 136218DE20D63AB4000B49F1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		13DA920120D7F920007ECF21 /* gbNetworkTests.xctest */ = {
+		136218E120D63AB4000B49F1 /* gbNetworkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = gbNetworkTests.xctest;
-			remoteRef = 13DA920020D7F920007ECF21 /* PBXContainerItemProxy */;
+			remoteRef = 136218E020D63AB4000B49F1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1139,6 +1183,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13B8396F210F6DE400945AAF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		133B29C320AA56E400117E4F /* Sources */ = {

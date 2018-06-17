@@ -27,15 +27,15 @@ class FFRouter_Transfer: XCTestCase {
     }
 
     func testRouterTransferUrl() {
-        let transfer: gbRouterTranslator = gbRouterTranslator.shared
+        let transfer: RouterTranslator = RouterTranslator.shared
         transfer.acceptHosts = ["*.marvel.com"]
         XCTAssert(transfer.processUrl("http://www.marvel.com/hello", animated: true))
     }
 
     func testURLEncodeAndDecode() {
         let url: String = "http://www.baidu.com/?hello world=123"
-        let encoded_url: String = gb_router_encodeUrl(url)
-        let decoded_url: String = gb_router_decodeUrl(encoded_url)
+        let encoded_url: String = RouterUtils.encodeUrl(url)
+        let decoded_url: String = RouterUtils.decodeUrl(encoded_url)
 
         print(url + "\n")
         print(encoded_url + "\n")

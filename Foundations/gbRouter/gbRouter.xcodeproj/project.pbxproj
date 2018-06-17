@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		135A010820D00C7600FC17DC /* UIViewController+gbRouterableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B120D008F700FC17DC /* UIViewController+gbRouterableProtocol.swift */; };
-		135A010920D00C7600FC17DC /* gbRouterTranslatorBehaviorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B320D008F700FC17DC /* gbRouterTranslatorBehaviorProtocol.swift */; };
-		135A010A20D00C7600FC17DC /* gbRouterableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B420D008F700FC17DC /* gbRouterableProtocol.swift */; };
-		135A010B20D00C7600FC17DC /* gbRouterTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B620D008F800FC17DC /* gbRouterTranslator.swift */; };
-		135A010C20D00C7600FC17DC /* gbRouterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B720D008F800FC17DC /* gbRouterNode.swift */; };
-		135A010D20D00C7600FC17DC /* gbRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B820D008F800FC17DC /* gbRouter.swift */; };
+		135A010820D00C7600FC17DC /* UIViewController+RouterableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B120D008F700FC17DC /* UIViewController+RouterableProtocol.swift */; };
+		135A010920D00C7600FC17DC /* RouterTranslatorBehaviorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B320D008F700FC17DC /* RouterTranslatorBehaviorProtocol.swift */; };
+		135A010A20D00C7600FC17DC /* RouterableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B420D008F700FC17DC /* RouterableProtocol.swift */; };
+		135A010B20D00C7600FC17DC /* RouterTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B620D008F800FC17DC /* RouterTranslator.swift */; };
+		135A010C20D00C7600FC17DC /* RouterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B720D008F800FC17DC /* RouterNode.swift */; };
+		135A010D20D00C7600FC17DC /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00B820D008F800FC17DC /* Router.swift */; };
 		135A010E20D00C7C00FC17DC /* gbRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = 135A00AF20D008F700FC17DC /* gbRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		135A014520D013F700FC17DC /* gbUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A014420D013F700FC17DC /* gbUtils.framework */; };
+		18A3FF36211AEFBB00DFDCD5 /* RouterUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A3FF35211AEFBB00DFDCD5 /* RouterUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		135A00AF20D008F700FC17DC /* gbRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gbRouter.h; sourceTree = "<group>"; };
-		135A00B120D008F700FC17DC /* UIViewController+gbRouterableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+gbRouterableProtocol.swift"; sourceTree = "<group>"; };
-		135A00B320D008F700FC17DC /* gbRouterTranslatorBehaviorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gbRouterTranslatorBehaviorProtocol.swift; sourceTree = "<group>"; };
-		135A00B420D008F700FC17DC /* gbRouterableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gbRouterableProtocol.swift; sourceTree = "<group>"; };
-		135A00B620D008F800FC17DC /* gbRouterTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gbRouterTranslator.swift; sourceTree = "<group>"; };
-		135A00B720D008F800FC17DC /* gbRouterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gbRouterNode.swift; sourceTree = "<group>"; };
-		135A00B820D008F800FC17DC /* gbRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gbRouter.swift; sourceTree = "<group>"; };
+		135A00B120D008F700FC17DC /* UIViewController+RouterableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+RouterableProtocol.swift"; sourceTree = "<group>"; };
+		135A00B320D008F700FC17DC /* RouterTranslatorBehaviorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterTranslatorBehaviorProtocol.swift; sourceTree = "<group>"; };
+		135A00B420D008F700FC17DC /* RouterableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterableProtocol.swift; sourceTree = "<group>"; };
+		135A00B620D008F800FC17DC /* RouterTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterTranslator.swift; sourceTree = "<group>"; };
+		135A00B720D008F800FC17DC /* RouterNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterNode.swift; sourceTree = "<group>"; };
+		135A00B820D008F800FC17DC /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		135A00B920D008F800FC17DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		135A010020D00C1700FC17DC /* gbRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = gbRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		135A014420D013F700FC17DC /* gbUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = gbUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18A3FF35211AEFBB00DFDCD5 /* RouterUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 		135A009620D0087300FC17DC = {
 			isa = PBXGroup;
 			children = (
+				18A3FF34211AEF9800DFDCD5 /* Utils */,
 				135A00B020D008F700FC17DC /* Category */,
 				135A00AF20D008F700FC17DC /* gbRouter.h */,
 				135A00B920D008F800FC17DC /* Info.plist */,
@@ -66,7 +69,7 @@
 		135A00B020D008F700FC17DC /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				135A00B120D008F700FC17DC /* UIViewController+gbRouterableProtocol.swift */,
+				135A00B120D008F700FC17DC /* UIViewController+RouterableProtocol.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -74,8 +77,8 @@
 		135A00B220D008F700FC17DC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				135A00B320D008F700FC17DC /* gbRouterTranslatorBehaviorProtocol.swift */,
-				135A00B420D008F700FC17DC /* gbRouterableProtocol.swift */,
+				135A00B320D008F700FC17DC /* RouterTranslatorBehaviorProtocol.swift */,
+				135A00B420D008F700FC17DC /* RouterableProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -83,9 +86,9 @@
 		135A00B520D008F800FC17DC /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				135A00B620D008F800FC17DC /* gbRouterTranslator.swift */,
-				135A00B720D008F800FC17DC /* gbRouterNode.swift */,
-				135A00B820D008F800FC17DC /* gbRouter.swift */,
+				135A00B620D008F800FC17DC /* RouterTranslator.swift */,
+				135A00B720D008F800FC17DC /* RouterNode.swift */,
+				135A00B820D008F800FC17DC /* Router.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -96,6 +99,14 @@
 				135A014420D013F700FC17DC /* gbUtils.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18A3FF34211AEF9800DFDCD5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				18A3FF35211AEFBB00DFDCD5 /* RouterUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +131,7 @@
 				135A00FC20D00C1700FC17DC /* Frameworks */,
 				135A00FD20D00C1700FC17DC /* Headers */,
 				135A00FE20D00C1700FC17DC /* Resources */,
+				185A6CEB21247CEA003E5413 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -172,17 +184,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		185A6CEB21247CEA003E5413 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		135A00FB20D00C1700FC17DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				135A010820D00C7600FC17DC /* UIViewController+gbRouterableProtocol.swift in Sources */,
-				135A010920D00C7600FC17DC /* gbRouterTranslatorBehaviorProtocol.swift in Sources */,
-				135A010A20D00C7600FC17DC /* gbRouterableProtocol.swift in Sources */,
-				135A010B20D00C7600FC17DC /* gbRouterTranslator.swift in Sources */,
-				135A010C20D00C7600FC17DC /* gbRouterNode.swift in Sources */,
-				135A010D20D00C7600FC17DC /* gbRouter.swift in Sources */,
+				135A010820D00C7600FC17DC /* UIViewController+RouterableProtocol.swift in Sources */,
+				135A010920D00C7600FC17DC /* RouterTranslatorBehaviorProtocol.swift in Sources */,
+				135A010A20D00C7600FC17DC /* RouterableProtocol.swift in Sources */,
+				135A010B20D00C7600FC17DC /* RouterTranslator.swift in Sources */,
+				135A010C20D00C7600FC17DC /* RouterNode.swift in Sources */,
+				135A010D20D00C7600FC17DC /* Router.swift in Sources */,
+				18A3FF36211AEFBB00DFDCD5 /* RouterUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

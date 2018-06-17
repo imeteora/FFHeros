@@ -23,19 +23,19 @@
 
 - (void)showHeroInfoViewController:(int64_t)cid {
     NSString *router = [NSString stringWithFormat:@"/character/%lld", cid];
-    [[gbRouter shared] processUrl:router animated:YES];
+    [[Router shared] processUrl:router animated:YES];
 }
 
 - (void)showFavouriteListViewController {
-    [[gbRouter shared] processUrl:@"/favourite" animated:YES];
+    [[Router shared] processUrl:@"/favourite" animated:YES];
 }
 
 - (void)showSearchViewController {
-    [[gbRouter shared] processUrl:@"/search" animated:YES];
+    [[Router shared] processUrl:@"/search" animated:YES];
 }
 
 - (void)showWebControllerWithUrl:(NSString *)url {
-    [[gbRouter shared] processUrl:url animated:YES];
+    [[Router shared] processUrl:url animated:YES];
 }
 
 @end

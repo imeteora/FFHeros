@@ -27,8 +27,8 @@
     ffNavigationController *navi = [[ffNavigationController alloc] initWithRootViewController:vc];
 
     [ffNavigationHelper shared].navigationController = navi;
-    [gbRouter shared].navigationController = navi;
-    [gbRouter shared].acceptHosts = @[@"marvel.com", @"*.marvel.com"];
+    [Router shared].navigationController = navi;
+    [Router shared].acceptHosts = @[@"marvel.com", @"*.marvel.com"];
     [ffRouterHelper shared];
 
     self.window.rootViewController = navi;

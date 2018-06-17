@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <gbRouter/gbRouter.h>
 
-@interface ffBaseViewController : UIViewController <gbRouterableProtocol>
+@interface ffBaseViewController : UIViewController <RouterableProtocol>
 
 - (void)ff_viewWillFirstAppear;
 - (void)ff_viewDidFirstAppear;

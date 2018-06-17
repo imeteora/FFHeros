@@ -35,10 +35,10 @@
 
 #pragma mark - private helpers
 - (void)registerRouters {
-    [[gbRouter shared] map:@"/character/:cid" toClass:[ffHeroDetailViewController class]];
-    [[gbRouter shared] map:@"/browser" toClass:[ffWebViewController class]];
-    [[gbRouter shared] map:@"/favourite" toClass:[ffFavTableViewController class]];
-    [[gbRouter shared] map:@"/search" toClass:[ffSearchViewController class]];
+    [[Router shared] map:@"/character/:cid" toClass:[ffHeroDetailViewController class]];
+    [[Router shared] map:@"/browser" toClass:[ffWebViewController class]];
+    [[Router shared] map:@"/favourite" toClass:[ffFavTableViewController class]];
+    [[Router shared] map:@"/search" toClass:[ffSearchViewController class]];
 }
 
 - (void)registerRouterTransfers {

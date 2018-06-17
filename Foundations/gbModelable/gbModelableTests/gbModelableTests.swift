@@ -1,15 +1,15 @@
 //
-//  gbNetworkTests.swift
-//  gbNetworkTests
+//  gbModelableTests.swift
+//  gbModelableTests
 //
-//  Created by ZhuDelun on 2018/6/15.
-//  Copyright © 2018 ZhuDelun. All rights reserved.
+//  Created by Zhu Delun on 2018/6/20.
+//  Copyright © 2018 GameBable Inc, Ltd. All rights reserved.
 //
 
 import XCTest
-@testable import gbNetwork
+@testable import gbModelable
 
-class gbNetworkTests: XCTestCase {
+class gbModelableTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

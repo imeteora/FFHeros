@@ -7,13 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130503E620D8EAB4002E2C3B /* DigestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503E520D8EAB4002E2C3B /* DigestType.swift */; };
+		130503E820D8EB6E002E2C3B /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503E720D8EB6E002E2C3B /* Updatable.swift */; };
+		130503EA20D8EBA6002E2C3B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503E920D8EBA6002E2C3B /* Array+Extension.swift */; };
+		130503EC20D8EC42002E2C3B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503EB20D8EC41002E2C3B /* Utils.swift */; };
+		130503EE20D8EC6E002E2C3B /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503ED20D8EC6E002E2C3B /* Int+Extension.swift */; };
+		130503F020D8EC92002E2C3B /* Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503EF20D8EC91002E2C3B /* Bit.swift */; };
+		130503F220D8ECC2002E2C3B /* BatchedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503F120D8ECC2002E2C3B /* BatchedCollection.swift */; };
+		130503F420D8ECE6002E2C3B /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503F320D8ECE6002E2C3B /* Generics.swift */; };
+		130503F620D8EE6A002E2C3B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503F520D8EE6A002E2C3B /* String+Extension.swift */; };
+		130503F820D8EEB1002E2C3B /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503F720D8EEB0002E2C3B /* Cipher.swift */; };
+		130503FD20D8EEC1002E2C3B /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503F920D8EEC0002E2C3B /* Data+Extension.swift */; };
+		130503FE20D8EEC1002E2C3B /* String+FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503FA20D8EEC0002E2C3B /* String+FoundationExtension.swift */; };
+		130503FF20D8EEC1002E2C3B /* Array+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503FB20D8EEC0002E2C3B /* Array+Foundation.swift */; };
+		1305040020D8EEC1002E2C3B /* Utils+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130503FC20D8EEC1002E2C3B /* Utils+Foundation.swift */; };
+		1305040320D8EEE8002E2C3B /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305040220D8EEE8002E2C3B /* Digest.swift */; };
+		1305040520D8EF7C002E2C3B /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1305040420D8EF7B002E2C3B /* Authenticator.swift */; };
+		132EBA0820D82498007B3764 /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EBA0720D82498007B3764 /* MD5.swift */; };
 		135A012B20D00E8000FC17DC /* gbUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 135A012920D00E8000FC17DC /* gbUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		135A013220D010C900FC17DC /* gbURLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00F520D0098200FC17DC /* gbURLUtils.swift */; };
+		135A013220D010C900FC17DC /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135A00F520D0098200FC17DC /* URLUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130503E520D8EAB4002E2C3B /* DigestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigestType.swift; sourceTree = "<group>"; };
+		130503E720D8EB6E002E2C3B /* Updatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updatable.swift; sourceTree = "<group>"; };
+		130503E920D8EBA6002E2C3B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		130503EB20D8EC41002E2C3B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		130503ED20D8EC6E002E2C3B /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		130503EF20D8EC91002E2C3B /* Bit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bit.swift; sourceTree = "<group>"; };
+		130503F120D8ECC2002E2C3B /* BatchedCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchedCollection.swift; sourceTree = "<group>"; };
+		130503F320D8ECE6002E2C3B /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
+		130503F520D8EE6A002E2C3B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		130503F720D8EEB0002E2C3B /* Cipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cipher.swift; sourceTree = "<group>"; };
+		130503F920D8EEC0002E2C3B /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		130503FA20D8EEC0002E2C3B /* String+FoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+FoundationExtension.swift"; sourceTree = "<group>"; };
+		130503FB20D8EEC0002E2C3B /* Array+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Foundation.swift"; sourceTree = "<group>"; };
+		130503FC20D8EEC1002E2C3B /* Utils+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Utils+Foundation.swift"; sourceTree = "<group>"; };
+		1305040220D8EEE8002E2C3B /* Digest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Digest.swift; sourceTree = "<group>"; };
+		1305040420D8EF7B002E2C3B /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		132EBA0720D82498007B3764 /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
 		135A00F220D0098100FC17DC /* gbUtils-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gbUtils-Bridging-Header.h"; sourceTree = "<group>"; };
-		135A00F520D0098200FC17DC /* gbURLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gbURLUtils.swift; sourceTree = "<group>"; };
+		135A00F520D0098200FC17DC /* URLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLUtils.swift; sourceTree = "<group>"; };
 		135A012020D00E5E00FC17DC /* gbUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = gbUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		135A012820D00E8000FC17DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		135A012920D00E8000FC17DC /* gbUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gbUtils.h; sourceTree = "<group>"; };
@@ -30,6 +64,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130503E420D8EAA7002E2C3B /* Secure */ = {
+			isa = PBXGroup;
+			children = (
+				1305040420D8EF7B002E2C3B /* Authenticator.swift */,
+				1305040220D8EEE8002E2C3B /* Digest.swift */,
+				1305040120D8EEC4002E2C3B /* Foundations */,
+				130503F720D8EEB0002E2C3B /* Cipher.swift */,
+				130503F520D8EE6A002E2C3B /* String+Extension.swift */,
+				130503F320D8ECE6002E2C3B /* Generics.swift */,
+				130503F120D8ECC2002E2C3B /* BatchedCollection.swift */,
+				130503EF20D8EC91002E2C3B /* Bit.swift */,
+				130503ED20D8EC6E002E2C3B /* Int+Extension.swift */,
+				130503EB20D8EC41002E2C3B /* Utils.swift */,
+				130503E920D8EBA6002E2C3B /* Array+Extension.swift */,
+				132EBA0720D82498007B3764 /* MD5.swift */,
+				130503E520D8EAB4002E2C3B /* DigestType.swift */,
+				130503E720D8EB6E002E2C3B /* Updatable.swift */,
+			);
+			path = Secure;
+			sourceTree = "<group>";
+		};
+		1305040120D8EEC4002E2C3B /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				130503FB20D8EEC0002E2C3B /* Array+Foundation.swift */,
+				130503F920D8EEC0002E2C3B /* Data+Extension.swift */,
+				130503FA20D8EEC0002E2C3B /* String+FoundationExtension.swift */,
+				130503FC20D8EEC1002E2C3B /* Utils+Foundation.swift */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
 		135A00D920D0095E00FC17DC = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +118,8 @@
 		135A00F420D0098200FC17DC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				135A00F520D0098200FC17DC /* gbURLUtils.swift */,
+				130503E420D8EAA7002E2C3B /* Secure */,
+				135A00F520D0098200FC17DC /* URLUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -136,7 +203,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				135A013220D010C900FC17DC /* gbURLUtils.swift in Sources */,
+				130503FD20D8EEC1002E2C3B /* Data+Extension.swift in Sources */,
+				130503E820D8EB6E002E2C3B /* Updatable.swift in Sources */,
+				130503F620D8EE6A002E2C3B /* String+Extension.swift in Sources */,
+				130503EA20D8EBA6002E2C3B /* Array+Extension.swift in Sources */,
+				1305040020D8EEC1002E2C3B /* Utils+Foundation.swift in Sources */,
+				130503E620D8EAB4002E2C3B /* DigestType.swift in Sources */,
+				130503F020D8EC92002E2C3B /* Bit.swift in Sources */,
+				130503EE20D8EC6E002E2C3B /* Int+Extension.swift in Sources */,
+				130503F820D8EEB1002E2C3B /* Cipher.swift in Sources */,
+				135A013220D010C900FC17DC /* URLUtils.swift in Sources */,
+				132EBA0820D82498007B3764 /* MD5.swift in Sources */,
+				130503FE20D8EEC1002E2C3B /* String+FoundationExtension.swift in Sources */,
+				130503F420D8ECE6002E2C3B /* Generics.swift in Sources */,
+				1305040320D8EEE8002E2C3B /* Digest.swift in Sources */,
+				130503EC20D8EC42002E2C3B /* Utils.swift in Sources */,
+				130503FF20D8EEC1002E2C3B /* Array+Foundation.swift in Sources */,
+				130503F220D8ECC2002E2C3B /* BatchedCollection.swift in Sources */,
+				1305040520D8EF7C002E2C3B /* Authenticator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

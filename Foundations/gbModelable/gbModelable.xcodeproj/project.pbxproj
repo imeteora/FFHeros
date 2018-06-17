@@ -7,221 +7,184 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		132EBA0620D8208C007B3764 /* GBAPISignHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EBA0520D8208C007B3764 /* GBAPISignHelper.swift */; };
-		134B61E620D2CA76000B5180 /* gbNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134B61DC20D2CA76000B5180 /* gbNetwork.framework */; };
-		134B61EB20D2CA76000B5180 /* gbNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134B61EA20D2CA76000B5180 /* gbNetworkTests.swift */; };
-		134B61ED20D2CA76000B5180 /* gbNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 134B61DF20D2CA76000B5180 /* gbNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		134B620020D2CAE0000B5180 /* GBAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134B61FF20D2CAE0000B5180 /* GBAPIConfig.swift */; };
-		134B620220D2CC98000B5180 /* GBAPIModelDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134B620120D2CC98000B5180 /* GBAPIModelDescription.swift */; };
-		1360449520D648190067527A /* GBAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1360449420D648190067527A /* GBAPIRequest.swift */; };
-		1360449A20D6C3040067527A /* GBAPIOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1360449920D6C3040067527A /* GBAPIOperationQueue.swift */; };
-		136218E320D6401A000B49F1 /* GBAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136218E220D6401A000B49F1 /* GBAPIError.swift */; };
-		13EE9ACF20DA068800FE330A /* gbUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EE9ACE20DA068800FE330A /* gbUtils.framework */; };
+		1340529220D96E6900D28114 /* gbModelable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1340528820D96E6900D28114 /* gbModelable.framework */; };
+		1340529720D96E6900D28114 /* gbModelableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1340529620D96E6900D28114 /* gbModelableTests.swift */; };
+		1340529920D96E6900D28114 /* gbModelable.h in Headers */ = {isa = PBXBuildFile; fileRef = 1340528B20D96E6900D28114 /* gbModelable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		134052AE20D96E8B00D28114 /* gbModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134052AD20D96E8B00D28114 /* gbModelable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		134B61E720D2CA76000B5180 /* PBXContainerItemProxy */ = {
+		1340529320D96E6900D28114 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 134B61D320D2CA76000B5180 /* Project object */;
+			containerPortal = 1340527F20D96E6900D28114 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 134B61DB20D2CA76000B5180;
-			remoteInfo = gbNetwork;
+			remoteGlobalIDString = 1340528720D96E6900D28114;
+			remoteInfo = gbModelable;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		132EBA0520D8208C007B3764 /* GBAPISignHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBAPISignHelper.swift; sourceTree = "<group>"; };
-		1340527C20D96DFE00D28114 /* gbUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = gbUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		134B61DC20D2CA76000B5180 /* gbNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = gbNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		134B61DF20D2CA76000B5180 /* gbNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gbNetwork.h; sourceTree = "<group>"; };
-		134B61E020D2CA76000B5180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		134B61E520D2CA76000B5180 /* gbNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gbNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		134B61EA20D2CA76000B5180 /* gbNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gbNetworkTests.swift; sourceTree = "<group>"; };
-		134B61EC20D2CA76000B5180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		134B61FF20D2CAE0000B5180 /* GBAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBAPIConfig.swift; sourceTree = "<group>"; };
-		134B620120D2CC98000B5180 /* GBAPIModelDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBAPIModelDescription.swift; sourceTree = "<group>"; };
-		1360449420D648190067527A /* GBAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBAPIRequest.swift; sourceTree = "<group>"; };
-		1360449920D6C3040067527A /* GBAPIOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBAPIOperationQueue.swift; sourceTree = "<group>"; };
-		136218E220D6401A000B49F1 /* GBAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBAPIError.swift; sourceTree = "<group>"; };
-		13EE9ACE20DA068800FE330A /* gbUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = gbUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1340528820D96E6900D28114 /* gbModelable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = gbModelable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1340528B20D96E6900D28114 /* gbModelable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gbModelable.h; sourceTree = "<group>"; };
+		1340528C20D96E6900D28114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1340529120D96E6900D28114 /* gbModelableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gbModelableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1340529620D96E6900D28114 /* gbModelableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gbModelableTests.swift; sourceTree = "<group>"; };
+		1340529820D96E6900D28114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		134052AD20D96E8B00D28114 /* gbModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gbModelable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		134B61D820D2CA76000B5180 /* Frameworks */ = {
+		1340528420D96E6900D28114 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13EE9ACF20DA068800FE330A /* gbUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		134B61E220D2CA76000B5180 /* Frameworks */ = {
+		1340528E20D96E6900D28114 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				134B61E620D2CA76000B5180 /* gbNetwork.framework in Frameworks */,
+				1340529220D96E6900D28114 /* gbModelable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1340527B20D96DFE00D28114 /* Frameworks */ = {
+		1340527E20D96E6900D28114 = {
 			isa = PBXGroup;
 			children = (
-				1340527C20D96DFE00D28114 /* gbUtils.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		134B61D220D2CA76000B5180 = {
-			isa = PBXGroup;
-			children = (
-				134B61DE20D2CA76000B5180 /* gbNetwork */,
-				134B61E920D2CA76000B5180 /* gbNetworkTests */,
-				134B61DD20D2CA76000B5180 /* Products */,
-				1340527B20D96DFE00D28114 /* Frameworks */,
-				13B8396E210F67FE00945AAF /* Recovered References */,
+				1340528A20D96E6900D28114 /* gbModelable */,
+				1340529520D96E6900D28114 /* gbModelableTests */,
+				1340528920D96E6900D28114 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		134B61DD20D2CA76000B5180 /* Products */ = {
+		1340528920D96E6900D28114 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134B61DC20D2CA76000B5180 /* gbNetwork.framework */,
-				134B61E520D2CA76000B5180 /* gbNetworkTests.xctest */,
+				1340528820D96E6900D28114 /* gbModelable.framework */,
+				1340529120D96E6900D28114 /* gbModelableTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		134B61DE20D2CA76000B5180 /* gbNetwork */ = {
+		1340528A20D96E6900D28114 /* gbModelable */ = {
 			isa = PBXGroup;
 			children = (
-				134B61DF20D2CA76000B5180 /* gbNetwork.h */,
-				134B61E020D2CA76000B5180 /* Info.plist */,
-				134B61FF20D2CAE0000B5180 /* GBAPIConfig.swift */,
-				134B620120D2CC98000B5180 /* GBAPIModelDescription.swift */,
-				136218E220D6401A000B49F1 /* GBAPIError.swift */,
-				1360449420D648190067527A /* GBAPIRequest.swift */,
-				1360449920D6C3040067527A /* GBAPIOperationQueue.swift */,
-				132EBA0520D8208C007B3764 /* GBAPISignHelper.swift */,
+				1340528B20D96E6900D28114 /* gbModelable.h */,
+				1340528C20D96E6900D28114 /* Info.plist */,
+				134052AD20D96E8B00D28114 /* gbModelable.swift */,
 			);
-			path = gbNetwork;
+			path = gbModelable;
 			sourceTree = "<group>";
 		};
-		134B61E920D2CA76000B5180 /* gbNetworkTests */ = {
+		1340529520D96E6900D28114 /* gbModelableTests */ = {
 			isa = PBXGroup;
 			children = (
-				134B61EA20D2CA76000B5180 /* gbNetworkTests.swift */,
-				134B61EC20D2CA76000B5180 /* Info.plist */,
+				1340529620D96E6900D28114 /* gbModelableTests.swift */,
+				1340529820D96E6900D28114 /* Info.plist */,
 			);
-			path = gbNetworkTests;
-			sourceTree = "<group>";
-		};
-		13B8396E210F67FE00945AAF /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				13EE9ACE20DA068800FE330A /* gbUtils.framework */,
-			);
-			name = "Recovered References";
+			path = gbModelableTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		134B61D920D2CA76000B5180 /* Headers */ = {
+		1340528520D96E6900D28114 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				134B61ED20D2CA76000B5180 /* gbNetwork.h in Headers */,
+				1340529920D96E6900D28114 /* gbModelable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		134B61DB20D2CA76000B5180 /* gbNetwork */ = {
+		1340528720D96E6900D28114 /* gbModelable */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 134B61F020D2CA76000B5180 /* Build configuration list for PBXNativeTarget "gbNetwork" */;
+			buildConfigurationList = 1340529C20D96E6900D28114 /* Build configuration list for PBXNativeTarget "gbModelable" */;
 			buildPhases = (
-				134B61D720D2CA76000B5180 /* Sources */,
-				134B61D820D2CA76000B5180 /* Frameworks */,
-				134B61D920D2CA76000B5180 /* Headers */,
-				134B61DA20D2CA76000B5180 /* Resources */,
+				1340528320D96E6900D28114 /* Sources */,
+				1340528420D96E6900D28114 /* Frameworks */,
+				1340528520D96E6900D28114 /* Headers */,
+				1340528620D96E6900D28114 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = gbNetwork;
-			productName = gbNetwork;
-			productReference = 134B61DC20D2CA76000B5180 /* gbNetwork.framework */;
+			name = gbModelable;
+			productName = gbModelable;
+			productReference = 1340528820D96E6900D28114 /* gbModelable.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		134B61E420D2CA76000B5180 /* gbNetworkTests */ = {
+		1340529020D96E6900D28114 /* gbModelableTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 134B61F320D2CA76000B5180 /* Build configuration list for PBXNativeTarget "gbNetworkTests" */;
+			buildConfigurationList = 1340529F20D96E6900D28114 /* Build configuration list for PBXNativeTarget "gbModelableTests" */;
 			buildPhases = (
-				134B61E120D2CA76000B5180 /* Sources */,
-				134B61E220D2CA76000B5180 /* Frameworks */,
-				134B61E320D2CA76000B5180 /* Resources */,
+				1340528D20D96E6900D28114 /* Sources */,
+				1340528E20D96E6900D28114 /* Frameworks */,
+				1340528F20D96E6900D28114 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				134B61E820D2CA76000B5180 /* PBXTargetDependency */,
+				1340529420D96E6900D28114 /* PBXTargetDependency */,
 			);
-			name = gbNetworkTests;
-			productName = gbNetworkTests;
-			productReference = 134B61E520D2CA76000B5180 /* gbNetworkTests.xctest */;
+			name = gbModelableTests;
+			productName = gbModelableTests;
+			productReference = 1340529120D96E6900D28114 /* gbModelableTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		134B61D320D2CA76000B5180 /* Project object */ = {
+		1340527F20D96E6900D28114 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = ZhuDelun;
+				ORGANIZATIONNAME = "GameBable Inc, Ltd.";
 				TargetAttributes = {
-					134B61DB20D2CA76000B5180 = {
-						CreatedOnToolsVersion = 9.4;
+					1340528720D96E6900D28114 = {
+						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 0940;
 					};
-					134B61E420D2CA76000B5180 = {
-						CreatedOnToolsVersion = 9.4;
+					1340529020D96E6900D28114 = {
+						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 134B61D620D2CA76000B5180 /* Build configuration list for PBXProject "gbNetwork" */;
+			buildConfigurationList = 1340528220D96E6900D28114 /* Build configuration list for PBXProject "gbModelable" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 134B61D220D2CA76000B5180;
-			productRefGroup = 134B61DD20D2CA76000B5180 /* Products */;
+			mainGroup = 1340527E20D96E6900D28114;
+			productRefGroup = 1340528920D96E6900D28114 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				134B61DB20D2CA76000B5180 /* gbNetwork */,
-				134B61E420D2CA76000B5180 /* gbNetworkTests */,
+				1340528720D96E6900D28114 /* gbModelable */,
+				1340529020D96E6900D28114 /* gbModelableTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		134B61DA20D2CA76000B5180 /* Resources */ = {
+		1340528620D96E6900D28114 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		134B61E320D2CA76000B5180 /* Resources */ = {
+		1340528F20D96E6900D28114 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -231,39 +194,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		134B61D720D2CA76000B5180 /* Sources */ = {
+		1340528320D96E6900D28114 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				134B620220D2CC98000B5180 /* GBAPIModelDescription.swift in Sources */,
-				1360449520D648190067527A /* GBAPIRequest.swift in Sources */,
-				134B620020D2CAE0000B5180 /* GBAPIConfig.swift in Sources */,
-				136218E320D6401A000B49F1 /* GBAPIError.swift in Sources */,
-				1360449A20D6C3040067527A /* GBAPIOperationQueue.swift in Sources */,
-				132EBA0620D8208C007B3764 /* GBAPISignHelper.swift in Sources */,
+				134052AE20D96E8B00D28114 /* gbModelable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		134B61E120D2CA76000B5180 /* Sources */ = {
+		1340528D20D96E6900D28114 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				134B61EB20D2CA76000B5180 /* gbNetworkTests.swift in Sources */,
+				1340529720D96E6900D28114 /* gbModelableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		134B61E820D2CA76000B5180 /* PBXTargetDependency */ = {
+		1340529420D96E6900D28114 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 134B61DB20D2CA76000B5180 /* gbNetwork */;
-			targetProxy = 134B61E720D2CA76000B5180 /* PBXContainerItemProxy */;
+			target = 1340528720D96E6900D28114 /* gbModelable */;
+			targetProxy = 1340529320D96E6900D28114 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		134B61EE20D2CA76000B5180 /* Debug */ = {
+		1340529A20D96E6900D28114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -326,7 +284,7 @@
 			};
 			name = Debug;
 		};
-		134B61EF20D2CA76000B5180 /* Release */ = {
+		1340529B20D96E6900D28114 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -383,7 +341,7 @@
 			};
 			name = Release;
 		};
-		134B61F120D2CA76000B5180 /* Debug */ = {
+		1340529D20D96E6900D28114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -394,14 +352,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = gbNetwork/Info.plist;
+				INFOPLIST_FILE = gbModelable/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamebable.gbNetwork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamebable.gbModelable;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -410,7 +368,7 @@
 			};
 			name = Debug;
 		};
-		134B61F220D2CA76000B5180 /* Release */ = {
+		1340529E20D96E6900D28114 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -421,14 +379,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = gbNetwork/Info.plist;
+				INFOPLIST_FILE = gbModelable/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamebable.gbNetwork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamebable.gbModelable;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -436,38 +394,38 @@
 			};
 			name = Release;
 		};
-		134B61F420D2CA76000B5180 /* Debug */ = {
+		134052A020D96E6900D28114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
-				INFOPLIST_FILE = gbNetworkTests/Info.plist;
+				INFOPLIST_FILE = gbModelableTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamebable.gbNetworkTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamebable.gbModelableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		134B61F520D2CA76000B5180 /* Release */ = {
+		134052A120D96E6900D28114 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
-				INFOPLIST_FILE = gbNetworkTests/Info.plist;
+				INFOPLIST_FILE = gbModelableTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamebable.gbNetworkTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamebable.gbModelableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -477,34 +435,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		134B61D620D2CA76000B5180 /* Build configuration list for PBXProject "gbNetwork" */ = {
+		1340528220D96E6900D28114 /* Build configuration list for PBXProject "gbModelable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				134B61EE20D2CA76000B5180 /* Debug */,
-				134B61EF20D2CA76000B5180 /* Release */,
+				1340529A20D96E6900D28114 /* Debug */,
+				1340529B20D96E6900D28114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		134B61F020D2CA76000B5180 /* Build configuration list for PBXNativeTarget "gbNetwork" */ = {
+		1340529C20D96E6900D28114 /* Build configuration list for PBXNativeTarget "gbModelable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				134B61F120D2CA76000B5180 /* Debug */,
-				134B61F220D2CA76000B5180 /* Release */,
+				1340529D20D96E6900D28114 /* Debug */,
+				1340529E20D96E6900D28114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		134B61F320D2CA76000B5180 /* Build configuration list for PBXNativeTarget "gbNetworkTests" */ = {
+		1340529F20D96E6900D28114 /* Build configuration list for PBXNativeTarget "gbModelableTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				134B61F420D2CA76000B5180 /* Debug */,
-				134B61F520D2CA76000B5180 /* Release */,
+				134052A020D96E6900D28114 /* Debug */,
+				134052A120D96E6900D28114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 134B61D320D2CA76000B5180 /* Project object */;
+	rootObject = 1340527F20D96E6900D28114 /* Project object */;
 }

@@ -24,7 +24,7 @@ class FFModule_StringUtils: XCTestCase {
     }
 
     func testFetchParamInQuery() {
-        let param: [String: String] = gbURLUtils.parametersInQuery(urlstr)
+        let param: [String: String] = URLUtils.parametersInQuery(urlstr)
         XCTAssert(param == ["utm_source": "aaee6fa40625a68298d42a9bb9dcd09d", "utm_campaign": "apiRef"])
     }
     
