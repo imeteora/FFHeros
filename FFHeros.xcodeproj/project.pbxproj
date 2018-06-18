@@ -153,6 +153,20 @@
 			remoteGlobalIDString = 133B29C620AA56E400117E4F;
 			remoteInfo = FFHeros;
 		};
+		13DA91FE20D7F920007ECF21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 134B61F620D2CA76000B5180 /* gbNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134B61DC20D2CA76000B5180;
+			remoteInfo = gbNetwork;
+		};
+		13DA920020D7F920007ECF21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 134B61F620D2CA76000B5180 /* gbNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134B61E520D2CA76000B5180;
+			remoteInfo = gbNetworkTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -862,6 +876,15 @@
 			path = FFRouterTests;
 			sourceTree = "<group>";
 		};
+		13DA91FA20D7F920007ECF21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13DA91FF20D7F920007ECF21 /* gbNetwork.framework */,
+				13DA920120D7F920007ECF21 /* gbNetworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		13F2A92E20AD2EEC005CF787 /* PullRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1033,6 +1056,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 13DA91FA20D7F920007ECF21 /* Products */;
+					ProjectRef = 134B61F620D2CA76000B5180 /* gbNetwork.xcodeproj */;
+				},
+				{
 					ProductGroup = 135A00AA20D0087300FC17DC /* Products */;
 					ProjectRef = 135A00A920D0087300FC17DC /* gbRouter.xcodeproj */;
 				},
@@ -1063,6 +1090,20 @@
 			fileType = wrapper.framework;
 			path = gbUtils.framework;
 			remoteRef = 135A00F020D0095F00FC17DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		13DA91FF20D7F920007ECF21 /* gbNetwork.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = gbNetwork.framework;
+			remoteRef = 13DA91FE20D7F920007ECF21 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		13DA920120D7F920007ECF21 /* gbNetworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = gbNetworkTests.xctest;
+			remoteRef = 13DA920020D7F920007ECF21 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1365,7 +1406,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FFHeros/FFHeros-Bridging-Header.h";
@@ -1386,7 +1430,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFHeros/FFHeros-Prefix.pch";
 				INFOPLIST_FILE = FFHeros/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FFHeros/FFHeros-Bridging-Header.h";
@@ -1402,7 +1449,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1417,7 +1468,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFHerosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFHerosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1432,7 +1487,11 @@
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFRouterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFRouterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1450,7 +1509,11 @@
 				DEVELOPMENT_TEAM = 78ZP32GK3R;
 				INFOPLIST_FILE = FFRouterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.farfetch.FFRouterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
