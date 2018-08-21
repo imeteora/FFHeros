@@ -26,7 +26,9 @@ extension UIViewController: RouterableProtocol {
             }
 
             let result = clsVC.init()
-            if result.responds(to: #selector(RouterableProtocol.setUpWith(_:userInfo:))) {
+
+            if clsVC.conforms(to: RouterableProtocol.self) ||
+                result.responds(to: #selector(RouterableProtocol.setUpWith(_:userInfo:))) {
 
                 if false == result.setUpWith(vcParam, userInfo: userInfo) {
 

@@ -8,6 +8,8 @@
 
 import Foundation
 
-@objc public protocol RouterTranslatorBehaviorProtocol {
+@objc
+public protocol RouterTranslatorBehaviorProtocol: class {
+
     func tryTranslateUrl(_ url: String) -> String
 }

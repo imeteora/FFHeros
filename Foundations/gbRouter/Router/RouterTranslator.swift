@@ -23,6 +23,7 @@ internal class RouterTranslator: NSObject {
     }()
 
     required override public init() {
+
         acceptScheme = ["http", "https"]
     }
 
@@ -69,10 +70,8 @@ internal class RouterTranslator: NSObject {
     }
 
     fileprivate func registerTransferInternal(_ domain: String, transfer: AnyObject, forceReplace: Bool = false) -> Bool {
-        let alreadyHasOne: Bool  = allRouterTransfer.contains { (key: String, _) -> Bool in
 
-            return (key == domain)
-        }
+        let alreadyHasOne: Bool  = allRouterTransfer.contains { return ($0.0 == domain) }
 
         if alreadyHasOne == true && forceReplace == false {
 
@@ -85,11 +84,13 @@ internal class RouterTranslator: NSObject {
     }
 
     fileprivate func processUrlInternal(_ url: String, animated: Bool) -> Bool {
+
         assert(self.acceptHosts.isEmpty == false, self.classForCoder.description() + ": acceptable host list is empty")
 
         var args: [String: String] = [:]
 
         if isWebUrl(url) {
+
             guard
                 let pUrl = URL.init(string: url),
                 let pUrlScheme = pUrl.scheme,
@@ -102,8 +103,10 @@ internal class RouterTranslator: NSObject {
 
             var matchOneHost: Bool = false
             for eachAcceptHost in self.acceptHosts {
+
                 matchOneHost = self.matchUrlInternal(eachAcceptHost, url: pUrlHost)
                 if matchOneHost {
+
                     break
                 }
             }
@@ -124,9 +127,12 @@ internal class RouterTranslator: NSObject {
 
         var urlTransfered: String = url   // set as origin url firstly.
         for (eachDomain, eachTransfer) in self.allRouterTransfer {
+
             if self.matchDomainInternal(eachDomain, url: url) {
+
                 let tmpTransferedUrl: String = eachTransfer.tryTranslateUrl(url)
                 if tmpTransferedUrl.elementsEqual(url) == false {
+
                     urlTransfered = tmpTransferedUrl
                     break
                 }
@@ -139,6 +145,7 @@ internal class RouterTranslator: NSObject {
         }
 
         if isWebUrl(urlTransfered) {
+
             args.merge(["url": RouterUtils.encodeUrl(urlTransfered)]) { (_, new) -> String in new }
             urlTransfered = "/browser"
         }
@@ -198,7 +205,8 @@ internal class RouterTranslator: NSObject {
 
         guard
             let `url` = URL.init(string: url),
-            let hostStr = url.host, hostStr.isEmpty == false, hostStr == domain else {
+            let hostStr = url.host, hostStr.isEmpty == false, hostStr == domain
+        else {
 
             return false
         }
